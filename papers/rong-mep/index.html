@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	<title>An efficient algorithm for finding the minimum energy path for cation migration in ionic materials.</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- RSS feed -->
+	<link rel="alternate" type="application/rss+xml" title="Canepa Research Lab" href="http://canepa.io/feed.xml">
+
+    <!-- Customized Bootstrap + Font Awesome + Solarized -->
+    <link href="/css/style.css" rel="stylesheet" media="screen">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/images/logo-plex-icon.png"/>
+
+	<!-- Typekit -->
+	<script>
+	  (function(d) {
+		var config = {
+		  kitId: 'xeu8jut',
+		  scriptTimeout: 3000
+		},
+		h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	  })(document);
+	</script>
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-26244371-2', 'bedford.io');
+		ga('send', 'pageview');
+
+	</script>
+
+	<!-- jQuery -->
+	<script src="/js/jquery.min.js"></script>
+
+	<!-- Bootstrap -->
+	<script src="/js/transition.js"></script>
+	<script src="/js/collapse.js"></script>
+
+</head>
+
+<body>
+
+	<div id="header">
+		<nav class="navbar navbar-default navbar-static-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-element" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+					<a class="navbar-brand" href="/">
+						<img class="logo navbar-brand" src="/images/logo-plex-white.svg" type="image/svg+xml">
+					</a>
+					
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-collapse-element">
+					<ul class="nav navbar-nav navbar-right">
+						
+						<li>
+						
+						<a href="/news/">News</a>
+						</li>
+						
+						<li class="active">
+						
+						<a href="/papers/">Papers</a>
+					    </li>
+						
+						<li>
+						
+						<a href="/team/">Team</a>
+					 </li>
+					 <li class="active">
+					 <li>
+					 <a href="https://wiki.nus.edu.sg/display/CAN/Canepa-research" target="_blank">Intranet</a>
+					 </li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<div class="container">
+
+	<div class="row">
+	<div class="col-md-12">
+		<div class="media">
+			
+			<img class="pull-left pad-right media-object" src="/images/papers/rong-2016-NEB-JCP.png">
+			
+			<div class="media-body titlebox">
+				<div class="title media-heading">
+					An efficient algorithm for finding the minimum energy path for cation migration in ionic materials.
+				</div>
+				<p>
+				<div class="smallhead">
+					Z. Rong, D. Kitchaev, <b>P. Canepa</b>, W. Huang, G. Ceder.;
+					J. Chem. Phys. 145, 074112 (2016).
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="bigspacer"></div>
+
+<div class="row">
+	<div class="col-md-3">
+		<div class="bigspacer"></div>
+		<div class="glyphbox note">
+			
+			<div class="smallhead">
+				PDF
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-file-text-o fa-fw"></i>
+				<a class="off" href="/pdfs/papers/rong-2016-NEB-JCP.pdf">rong-2016-NEB-JCP.pdf</a>
+			</div>
+			<div class="bigspacer"></div>
+			
+			
+			
+			<div class="smallhead">
+				DOI
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-external-link fa-fw"></i>
+				<a class="off" href="http://dx.doi.org/10.1063/1.4960790">10.1063/1.4960790</a>
+			</div>
+			<div class="bigspacer"></div>
+			
+			
+			<div class="smallhead">
+				GitHub
+			</div>
+			<div class="pad-left note">
+				<div class="smallspacer"></div>
+				<i class="fa fa-github-alt fa-fw"></i>
+				<a class="off" href="NA">NA</a>
+			</div>
+			<div class="bigspacer"></div>
+			
+		</div>
+	</div>
+	<div class="col-md-8">
+		<div class="post">
+			<h1>Abstract</h1>
+
+<p>The Nudged Elastic Band (NEB) is an established method for finding minimum-energy paths and energy barriers of ion migration in materials, but has been hampered in its general application by its significant computational expense when coupled with density functional theory (DFT) calculations. Typically, an NEB calculation is initialized from a linear interpolation of successive intermediate structures (also known as images) between known initial and final states. However, the linear interpolation introduces two problems: (1) slow convergence of the calculation, particularly in cases where the final path exhibits notable curvature; (2) divergence of the NEB calculations if any intermediate image comes too close to a non-diffusing species, causing instabilities in the ensuing calculation. In this work, we propose a new scheme to accelerate NEB calculations through an improved path initialization and associated energy estimation workflow. We demonstrate that for cation migration in an ionic framework, initializing the diffusion path as the minimum energy path through a static potential built upon the DFT charge density reproduces the true NEB path within a 0.2 &#8491; deviation and yields up to a 25% improvement in typical NEB runtimes. Furthermore, we find that the locally relaxed energy barrier derived from this initialization yields a good approximation of the NEB barrier, with errors within 20 meV of the true NEB value, while reducing computational expense by up to a factor of 5. Finally, and of critical importance for the automation of migration path calculations in high-throughput studies, we find that the new approach significantly enhances the stability of the calculation by avoiding unphysical image initialization. Our algorithm promises to enable efficient calculations of diffusion pathways, resolving a long-standing obstacle to the computational screening of intercalation compounds for Li-ion and multivalent batteries.</p>
+
+		</div>
+	</div>
+	<div class="col-md-1"></div>
+</div>
+
+
+
+
+<div class="hugespacer"></div>
+
+
+		<div class="row">
+		 	<div class="col-md-12">
+				<div class="head">
+					Useful links
+				</div>
+				<div class="spacer"></div>
+			</div>
+		</div>
+
+	<div class="row">
+	<div class="col-md-12 reduced-gutter">
+		<div class="pad-left">
+			<ul class="list-inline">
+				
+				<li class="footernav">
+					<i class="fa fa-caret-right"></i> <a class="off" href="/misc/join/">Join our Group</a>
+				</li>
+				
+				<li class="footernav">
+					<i class="fa fa-caret-right"></i> <a class="off" href="/misc/contact/">Contact</a>
+				</li>
+				
+				<li class="footernav">
+					<i class="fa fa-caret-right"></i> <a class="off" href="http://www.mse.nus.edu.sg/index.php">MSE</a>
+				</li>
+				<li class="footernav">
+					<i class="fa fa-caret-right"></i> <a class="off" href="http://www.nus.edu.sg">NUS</a>
+				</li>
+				<li class="footernav">
+					<a href="https://twitter.com/Piero_Canepa"><i  class="fa fa-twitter"></i></a> 
+				</li>
+				<li class="footernav">
+					<a href="https://github.com/CARE-group"><i  class="fa fa-github"></i></a> 
+				</li>	
+			</ul>
+		</div>
+			<div class="spacer"></div>
+	</div>
+	</div>
+
+
+
+ <div class="spacer"></div>
+ <div class="spacer"></div>
+	<div id="footer">
+		<div class="row">
+		<div class="col-lg-12 container reduced-gutter">
+				<span style="display:none">foo</span>
+				<p class="text-center smallnote">© Pieremanuele 2018. -
+					Proudly running on <a class="off" href="https://jekyllrb.com">Jekyll</a>
+					and based on <a class="off" href="https://github.com/trvrb" target="_blank">bedford.io</a> theme. -
+					<a class="off" href="https://albertocanepa.me/" target="_blank">Canepa Design Ltd</a> is aknowledged.</p>
+		</div>
+		</div>
+	</div>
+
+</body>
+</html>
