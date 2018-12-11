@@ -5,18 +5,32 @@
 	<meta charset="utf-8"/>
 	<title>Understanding the Initial Stages of Reversible Mg Deposition and Stripping in Inorganic Nonaqueous Electrolytes.</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<!-- RSS feed -->
 	<link rel="alternate" type="application/rss+xml" title="Canepa Research Lab" href="http://canepa.io/feed.xml">
-
     <!-- Customized Bootstrap + Font Awesome + Solarized -->
     <link href="/css/style.css" rel="stylesheet" media="screen">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="/images/logo-plex-icon.png"/>
+	<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
 	<!-- Typekit -->
-	<script>
+	<!-- <script>
 	  (function(d) {
 		var config = {
 		  kitId: 'xeu8jut',
@@ -24,26 +38,28 @@
 		},
 		h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 	  })(document);
-	</script>
-
-	<!-- Google Analytics -->
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-26244371-2', 'bedford.io');
-		ga('send', 'pageview');
-
-	</script>
+	</script> -->
 
 	<!-- jQuery -->
-	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery-3.3.1.min.js"></script>
+	<script src="/js/jquery-migrate-1.4.1.min.js"></script>
 
 	<!-- Bootstrap -->
 	<script src="/js/transition.js"></script>
 	<script src="/js/collapse.js"></script>
+	<!-- matchheight -->
+	<script src="/js/jquery.matchHeight-min.js"></script>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130770014-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-130770014-1');
+</script>
+
 
 </head>
 
@@ -51,7 +67,7 @@
 
 	<div id="header">
 		<nav class="navbar navbar-default navbar-static-top" role="navigation">
-			<div class="container">
+			<div class="container">		
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-element" aria-expanded="false">
 						<span class="sr-only">Toggle navigation</span>
@@ -59,11 +75,9 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					
 					<a class="navbar-brand" href="/">
 						<img class="logo navbar-brand" src="/images/logo-plex-white.svg" type="image/svg+xml">
 					</a>
-					
 				</div>
 				<div class="collapse navbar-collapse" id="navbar-collapse-element">
 					<ul class="nav navbar-nav navbar-right">
@@ -76,158 +90,149 @@
 						<li class="active">
 						
 						<a href="/papers/">Papers</a>
-					    </li>
+						</li>
 						
 						<li>
 						
 						<a href="/team/">Team</a>
-					 </li>
-					 <li class="active">
-					 <li>
-					 <a href="https://wiki.nus.edu.sg/display/CAN/Canepa-research" target="_blank">Intranet</a>
-					 </li>
+						</li>
+						<li>
+						<a href="https://github.com/caneparesearch" target="_blank">Software</a>
+						</li>
+						<li class="active">
+						<li>
+						<a href="https://wiki.nus.edu.sg/display/CAN/Canepa-research" target="_blank">Intranet</a>
+						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</div>
 
-	<div class="container">
+	<div class="container main">
 
 	<div class="row">
-	<div class="col-md-12">
-		<div class="media">
-			
-			<img class="pull-left pad-right media-object" src="/images/papers/canepa-2015-MACC_ChemMater.png">
-			
-			<div class="media-body titlebox">
-				<div class="title media-heading">
+	<div class="col-xs-12">
+		
+		<div class="row">
+			<div class="col-sm-9 col-xs-12 col-sm-offset-3">
+				<h1 class="page-title-paper">
 					Understanding the Initial Stages of Reversible Mg Deposition and Stripping in Inorganic Nonaqueous Electrolytes.
-				</div>
+				</h1>
 				<p>
-				<div class="smallhead">
 					<b>P. Canepa</b>, S. G. Gautam, R. Malik, S.  Jayaraman, Z. Rong, K. Zavadil, K. Persson, G. Ceder.;
 					Chem. Mater. 27 (9), 3317–3325 (2015).
-				</div>
+				</p>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="bigspacer"></div>
-
 <div class="row">
-	<div class="col-md-3">
-		<div class="bigspacer"></div>
-		<div class="glyphbox note">
-			
-			<div class="smallhead">
-				PDF
+	<div class="col-md-3 col-xs-12">
+		<div class="row">
+			<div class="col-xs-12">
+					
+					<img class="paper-img" src="/images/papers/canepa-2015-MACC_ChemMater.png">
+					
 			</div>
-			<div class="pad-left note">
-				<div class="smallspacer"></div>
-				<i class="fa fa-file-text-o fa-fw"></i>
-				<a class="off" href="/pdfs/papers/canepa-2015-MACC_ChemMater.pdf">canepa-2015-MACC_ChemMater.pdf</a>
+			<div class="col-xs-12">
+				<div class="glyphbox">
+					
+					<h6>
+						PDF
+					</h6>
+					<div>
+						<div class="smallspacer"></div>
+						<i class="fa fa-file-text-o fa-fw"></i>
+						<a class="off" href="/pdfs/papers/canepa-2015-MACC_ChemMater.pdf">canepa-2015-MACC_ChemMater.pdf</a>
+					</div>
+					<div class="bigspacer"></div>
+					
+					
+					
+					<h6>
+						DOI
+					</h6>
+					<div>
+						<div class="smallspacer"></div>
+						<i class="fa fa-external-link fa-fw"></i>
+						<a class="off" href="http://dx.doi.org/10.1021/acs.chemmater.5b00389">10.1021/acs.chemmater.5b00389</a>
+					</div>
+					<div class="bigspacer"></div>
+					
+					
+					<h6>
+						GitHub
+					</h6>
+					<div>
+						<div class="smallspacer"></div>
+						<i class="fa fa-github-alt fa-fw"></i>
+						<a class="off" href="NA">NA</a>
+					</div>
+					<div class="bigspacer"></div>
+					
+				</div>
 			</div>
-			<div class="bigspacer"></div>
-			
-			
-			
-			<div class="smallhead">
-				DOI
-			</div>
-			<div class="pad-left note">
-				<div class="smallspacer"></div>
-				<i class="fa fa-external-link fa-fw"></i>
-				<a class="off" href="http://dx.doi.org/10.1021/acs.chemmater.5b00389">10.1021/acs.chemmater.5b00389</a>
-			</div>
-			<div class="bigspacer"></div>
-			
-			
-			<div class="smallhead">
-				GitHub
-			</div>
-			<div class="pad-left note">
-				<div class="smallspacer"></div>
-				<i class="fa fa-github-alt fa-fw"></i>
-				<a class="off" href="NA">NA</a>
-			</div>
-			<div class="bigspacer"></div>
-			
 		</div>
 	</div>
-	<div class="col-md-8">
+	<div class="col-md-8 col-sm-9 col-xs-12">
 		<div class="post">
-			<h1>Abstract</h1>
+			<h2>Abstract</h2>
 
 <p>Multivalent (MV) battery architectures based on pairing a Mg metal anode with a high-voltage (∼3 V) intercalation cathode offer a realistic design pathway toward significantly surpassing the energy storage performance of traditional Li-ion-based batteries, but there are currently only few electrolyte systems that support reversible Mg deposition. Using both static first-principles calculations and ab initio molecular dynamics, we perform a comprehensive adsorption study of several salt and solvent species at the interface of Mg metal with an electrolyte of Mg<sup>2+</sup> and Cl<sup>-</sup> dissolved in liquid tetrahydrofuran (THF). Our findings not only provide a picture of the stable species at the interface but also explain how this system can support reversible Mg deposition, and as such, we provide insights in how to design other electrolytes for Mg plating and stripping. The active depositing species are identified to be (MgCl)<sup>+</sup> monomers coordinated by THF, which exhibit preferential adsorption on Mg compared to possible passivating species (such as THF solvent or neutral MgCl<sub>2</sub> complexes). Upon deposition, the energy to desolvate these adsorbed complexes and facilitate charge transfer is shown to be small (∼61–46.2 kJ mol<sup>–1</sup> to remove three THF from the strongest adsorbing complex), and the stable orientations of the adsorbed but desolvated (MgCl)<sup>+</sup> complexes appear to be favorable for charge transfer. Finally, observations of Mg–Cl dissociation at the Mg surface at very low THF coordinations (0 and 1) suggest that deleterious Cl incorporation in the anode may occur upon plating. In the stripping process, this is beneficial by further facilitating the Mg removal reaction.</p>
 
 		</div>
 	</div>
-	<div class="col-md-1"></div>
 </div>
 
 
-
-
-<div class="hugespacer"></div>
-
-
-		<div class="row">
-		 	<div class="col-md-12">
-				<div class="head">
-					Useful links
-				</div>
-				<div class="spacer"></div>
+	<div class="row mt60">
+		<!-- <div class="col-md-12 col-xs-12">
+			<h4>Useful links</h4>
+		</div> -->
+		<div class="col-md-12 col-xs-12">
+			<div>
+				<ul class="list-inline footernav">
+					
+					<li>
+						<i class="fa fa-caret-right"></i> <a class="off" href="/misc/join/">Join our Group</a>
+					</li>
+					
+					<li>
+						<i class="fa fa-caret-right"></i> <a class="off" href="/misc/contact/">Contact</a>
+					</li>
+					
+					<li>
+						<i class="fa fa-caret-right"></i> <a class="off" href="http://www.mse.nus.edu.sg/index.php">MSE</a>
+					</li>
+					<li>
+						<i class="fa fa-caret-right"></i> <a class="off" href="http://www.nus.edu.sg">NUS</a>
+					</li>
+					<li>
+						<a href="https://twitter.com/Piero_Canepa"><i  class="fa fa-twitter"></i></a> 
+					</li>
+					<li>
+						<a href="https://github.com/caneparesearch"><i  class="fa fa-github"></i></a> 
+					</li>	
+				</ul>
 			</div>
 		</div>
-
-	<div class="row">
-	<div class="col-md-12 reduced-gutter">
-		<div class="pad-left">
-			<ul class="list-inline">
-				
-				<li class="footernav">
-					<i class="fa fa-caret-right"></i> <a class="off" href="/misc/join/">Join our Group</a>
-				</li>
-				
-				<li class="footernav">
-					<i class="fa fa-caret-right"></i> <a class="off" href="/misc/contact/">Contact</a>
-				</li>
-				
-				<li class="footernav">
-					<i class="fa fa-caret-right"></i> <a class="off" href="http://www.mse.nus.edu.sg/index.php">MSE</a>
-				</li>
-				<li class="footernav">
-					<i class="fa fa-caret-right"></i> <a class="off" href="http://www.nus.edu.sg">NUS</a>
-				</li>
-				<li class="footernav">
-					<a href="https://twitter.com/Piero_Canepa"><i  class="fa fa-twitter"></i></a> 
-				</li>
-				<li class="footernav">
-					<a href="https://github.com/CARE-group"><i  class="fa fa-github"></i></a> 
-				</li>	
-			</ul>
-		</div>
-			<div class="spacer"></div>
-	</div>
 	</div>
 
-
-
- <div class="spacer"></div>
- <div class="spacer"></div>
-	<div id="footer">
-		<div class="row">
-		<div class="col-lg-12 container reduced-gutter">
-				<span style="display:none">foo</span>
-				<p class="text-center smallnote">© Pieremanuele 2018. -
-					Proudly running on <a class="off" href="https://jekyllrb.com">Jekyll</a>
-					and based on <a class="off" href="https://github.com/trvrb" target="_blank">bedford.io</a> theme. -
-					<a class="off" href="https://albertocanepa.me/" target="_blank">Canepa Design Ltd</a> is aknowledged.</p>
+	<footer class="row footer">
+		<div class="col-lg-12 col-xs-12">
+			<p class="colophon">&copy; Pieremanuele 2018 -
+				Proudly running on <a class="off" href="https://jekyllrb.com" rel="noopener">Jekyll</a>
+				and based on <a class="off" href="https://github.com/trvrb" target="_blank" rel="noopener">bedford.io</a> theme.
+				<a class="off" href="https://albertocanepa.me/" target="_blank" rel="noopener">Canepa web design Ltd</a> is aknowledged.
+			</p>
 		</div>
-		</div>
-	</div>
-
+	</footer>
+	<script>
+		jQuery(function() {
+			jQuery('.equalCard').matchHeight({property: 'height'});
+		});
+	</script>
 </body>
 </html>
