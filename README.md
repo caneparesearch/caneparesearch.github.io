@@ -1,8 +1,6 @@
 # Canepa Research Lab
 
-http://caneparesearch.org
-
-caneparesearch.org 
+This is the repository containing the web-page of http://caneparesearch.org or caneparesearch.org , which the web-site of our research group.
 
 ## Build site
 
