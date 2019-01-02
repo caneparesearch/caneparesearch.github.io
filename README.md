@@ -1,5 +1,9 @@
 # Canepa Research Lab
 
+http://caneparesearch.org
+
+caneparesearch.org 
+
 ## Build site
 
 To build the website locally, clone the repo with:
