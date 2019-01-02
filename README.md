@@ -1,5 +1,10 @@
 # Canepa Research Lab
 
+<<<<<<< HEAD
+=======
+This is the repository containing the web-page of http://caneparesearch.org or caneparesearch.org , which the web-site of our research group.
+
+>>>>>>> ffa28611336847375675b57d7083d7f70714b245
 ## Build site
 
 To build the website locally, clone the repo with:
