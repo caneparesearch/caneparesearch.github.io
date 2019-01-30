@@ -1,1 +1,99 @@
-$(function(){function n(){if(t){l=!0;var n=0,e=$(".post-list").children().length,c=function(){n++;var d=e+n;return d>t.length-1?void i():void(s>n?o(d,c):l=!1)};o(e+n,c)}}function o(n,o){var i=t[n];$.get(i,function(n){$(n).find(".blog-post").appendTo(".post-list"),console.log(i),console.log($(".post-list").children().length),o()})}function i(){e=!1,l=!1,$(".infinite-spinner").fadeOut()}var t,l=!1,e=!0,s=$(".post-list").children().length,c=3e3;$.getJSON("/all-posts.json",function(n){t=n.posts,console.log(s),t.length<=s&&i()}),$(".infinite-spinner").length<1&&(e=!1),$(window).scroll(function(o){if(e&&!l){var i=$(window).height(),t=$(window).scrollTop(),s=i+t,d=$(document).height();s>d-c&&n()}}),$(window).load(function(o){if(e&&!l){var i=$(window).height(),t=$(window).scrollTop(),s=i+t,d=$(document).height();s>d-c&&n()}})});
+$(function() {
+  
+  var postURLs,
+      isFetchingPosts = false,
+      shouldFetchPosts = true,
+      postsToLoad = $(".post-list").children().length,
+      loadNewPostsThreshold = 3000;
+  
+  // Load the JSON file containing all URLs
+  $.getJSON('/all-posts.json', function(data) {
+    postURLs = data["posts"];
+    console.log(postsToLoad);
+
+    // If there aren't any more posts available to load than already visible, disable fetching
+    if (postURLs.length <= postsToLoad)
+      disableFetching();
+  });
+	
+  // If there's no spinner, it's not a page where posts should be fetched
+  if ($(".infinite-spinner").length < 1)
+    shouldFetchPosts = false;
+	
+  // Are we close to the end of the page? If we are, load more posts
+  $(window).scroll(function(e){
+    if (!shouldFetchPosts || isFetchingPosts) return;
+    
+    var windowHeight = $(window).height(),
+        windowScrollPosition = $(window).scrollTop(),
+        bottomScrollPosition = windowHeight + windowScrollPosition,
+        documentHeight = $(document).height();
+    
+    // If we've scrolled past the loadNewPostsThreshold, fetch posts
+    if ((documentHeight - loadNewPostsThreshold) < bottomScrollPosition) {
+      fetchPosts();
+    }
+  });
+  
+  $(window).load(function(e){
+    if (!shouldFetchPosts || isFetchingPosts) return;
+    
+    var windowHeight = $(window).height(),
+        windowScrollPosition = $(window).scrollTop(),
+        bottomScrollPosition = windowHeight + windowScrollPosition,
+        documentHeight = $(document).height();
+    
+    // If we've scrolled past the loadNewPostsThreshold, fetch posts
+    if ((documentHeight - loadNewPostsThreshold) < bottomScrollPosition) {
+      fetchPosts();
+    }
+  });  
+  
+  // Fetch a chunk of posts
+  function fetchPosts() {
+    // Exit if postURLs haven't been loaded
+    if (!postURLs) return;
+    
+    isFetchingPosts = true;
+    
+    // Load as many posts as there were present on the page when it loaded
+    // After successfully loading a post, load the next one
+    var loadedPosts = 0,
+        postCount = $(".post-list").children().length,
+        callback = function() {
+          loadedPosts++;
+          var postIndex = postCount + loadedPosts;
+          
+          if (postIndex > postURLs.length-1) {
+            disableFetching();
+            return;
+          }
+          
+          if (loadedPosts < postsToLoad) {
+            fetchPostWithIndex(postIndex, callback);
+          } else {
+            isFetchingPosts = false;
+          }
+        };
+		
+    fetchPostWithIndex(postCount + loadedPosts, callback);
+  }
+	
+  function fetchPostWithIndex(index, callback) {
+    var postURL = postURLs[index];
+		
+    $.get(postURL, function(data) {
+      $(data).find(".blog-post").appendTo(".post-list");
+      console.log(postURL);
+      console.log($(".post-list").children().length);
+      callback();
+    });
+  }
+  
+  function disableFetching() {
+    shouldFetchPosts = false;
+    isFetchingPosts = false;
+    $(".infinite-spinner").fadeOut();
+  }
+	
+});
