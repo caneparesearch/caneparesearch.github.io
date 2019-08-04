@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<div class="row">
+	<div class="col-xs-12">
+		<div class="row">
+			<div class="col-sm-3 col-xs-12">
+				{% if page.image %}
+				<img src="{{ page.image }}" class="paper-img">
+				{% endif %}
+			</div>
+			<div class="col-sm-9 col-xs-12">
+				<h1 class="page-title-paper">
+					{{ page.title }}
+				</h1>
+				<p>
+					{{ page.authors }};
+					{{ page.journal }}.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-3 col-xs-12">
+		<div class="glyphbox">
+			{% if page.pdf %}
+			<h6>
+				<i class="fa fa-file-text-o fa-fw"></i> PDF
+			</h6>
+			<a class="off" href="{{ page.pdf }}">{{ page.pdf | split: '/' | last }}</a>
+			<div class="bigspacer"></div>
+			{% endif %}
+			{% if page.supplement %}
+			<h6>
+				<i class="fa fa-paperclip fa-fw"></i> Supplement
+			</h6>
+			<a class="off" href="{{ page.supplement }}">{{ page.supplement | split: '/' | last }}</a>
+			<div class="bigspacer"></div>
+			{% endif %}
+			{% if page.doi %}
+			<h6>
+				<i class="ai ai-doi"></i> DOI
+			</h6>
+			<a class="off" href="http://dx.doi.org/{{ page.doi }}">{{ page.doi }}</a>
+			<div class="bigspacer"></div>
+			{% endif %}
+			{% if page.github != "NA" && page.github %}
+			<h6>
+				<i class="fa fa-github-alt fa-fw"></i> GitHub
+			</h6>
+			<a class="off" href="{{ page.github }}">{{ page.github | remove: 'http://github.com/' | remove:
+				'https://github.com/' }}</a>
+
+			<div class="bigspacer"></div>
+			{% endif %}
+		</div>
+	</div>
+	<div class="col-md-8 col-sm-9 col-xs-12">
+		<div class="post">
+			{{ content }}
+		</div>
+	</div>
+</div>
