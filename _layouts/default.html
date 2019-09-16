@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>{{ page.title }}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- RSS feed -->
+	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
+	<!-- Customized Bootstrap + Font Awesome + Solarized -->
+	<link href="/css/style.css" rel="stylesheet" media="screen">
+
+	{% include favicons.html %}
+	{% include scripts.html %}
+	{% include ga.html %}
+</head>
+
+<body>
+	<div id="header">
+		<nav class="navbar navbar-default navbar-static-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-element"
+					 aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/">
+						<img class="logo navbar-brand" src="/images/logo-plex-white.svg" type="image/svg+xml">
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-collapse-element">
+					<ul class="nav navbar-nav navbar-right">
+						{% if page.categories.first == 'news' %}
+						<li class="active">
+							{% else %}
+						<li>
+							{% endif %}
+							<a href="/news/">News</a>
+						</li>
+						{% if page.categories.first == 'papers' %}
+						<li class="active">
+							{% else %}
+						<li>
+							{% endif %}
+							<a href="/papers/">Publications</a>
+						</li>
+						{% if page.categories.first == 'team' %}
+						<li class="active">
+							{% else %}
+						<li>
+							{% endif %}
+							<a href="/team/">Team</a>
+						</li>
+						<li>
+							<a href="https://sites.google.com/view/caneparesearch/home" target="_blank">Intranet</a>
+						</li>
+						<li>
+							<a href="https://github.com/caneparesearch" target="_blank"><i class="fa fa-github"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<div class="container main">
+
+		{{ content }}
+
+		<div class="row mt60">
+			<!-- <div class="col-md-12 col-xs-12">
+			<h4>Useful links</h4>
+		</div> -->
+			<div class="col-md-12 col-xs-12">
+				<div>
+					<ul class="list-inline footernav">
+						{% for page in site.categories.misc %}
+						<li>
+							<i class="fa fa-caret-right"></i> <a class="off" href="{{ page.url }}">{{ page.title }}</a>
+						</li>
+						{% endfor %}
+						<li>
+							<i class="fa fa-caret-right"></i> <a class="off" href="https://www.eng.nus.edu.sg/mse/">MSE</a>
+						</li>
+						<li>
+							<i class="fa fa-caret-right"></i> <a class="off" href="http://www.nus.edu.sg">NUS</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/Piero_Canepa"><i class="fa fa-twitter"></i></a>
+						</li>
+						<li>
+							<a href="https://github.com/caneparesearch"><i class="fa fa-github"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<footer class="row footer">
+			<div class="col-lg-12 col-xs-12">
+				<p class="colophon">&copy; Pieremanuele 2018 -
+					Proudly running on <a class="off" href="https://jekyllrb.com" rel="noopener">Jekyll</a>
+					and based on <a class="off" href="https://github.com/trvrb" target="_blank" rel="noopener">bedford.io</a> theme.
+					<a class="off" href="https://albertocanepa.me/" target="_blank" rel="noopener">Canepa web design Ltd</a> is
+					aknowledged.
+				</p>
+			</div>
+		</footer>
+		<script>
+			jQuery(function () {
+				jQuery('.equalCard').matchHeight({ property: 'height' });
+			});
+		</script>
+</body>
+
+</html>
