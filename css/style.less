@@ -1,0 +1,293 @@
+// Main Less
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,600,700");
+@import "/css/bootstrap/bootstrap";
+@import "/css/font-awesome/font-awesome";
+//@import "/css/solarized";
+//@import "/css/katex";
+@import "/css/variables";
+@import "/css/typography";
+@import "/css/navigation";
+@import "/css/media";
+@import "/css/footer";
+
+.main {
+  margin-top: @gap * 5px;
+}
+
+// 20px gutter
+.reduced-gutter.row {
+  margin-right: -10px;
+  margin-left: -10px;
+}
+.reduced-gutter {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/* General */
+
+.container {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.center {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-gray {
+  color: @gray-light;
+}
+
+.text-dark-gray {
+  color: @gray;
+}
+
+/* other */
+
+.hugespacer {
+  height: 50px;
+}
+
+.bigspacer {
+  height: 20px;
+}
+
+.spacer {
+  height: 10px;
+}
+
+.smallspacer {
+  height: 5px;
+}
+
+a.off {
+  color: inherit;
+}
+
+pre {
+  overflow-x: auto;
+  code {
+    overflow-wrap: normal;
+    white-space: pre;
+  }
+}
+
+table {
+  .table;
+  .table-striped;
+}
+
+img {
+  .img-responsive;
+}
+
+img.offset {
+  float: right;
+  margin: 0 0 10px 15px;
+}
+
+img.avatar {
+  width: 20px;
+}
+
+.col-img {
+  max-height: 257px;
+  overflow: hidden;
+  margin-bottom: @gap * 2rem;
+}
+
+.post img {
+  float: none;
+  margin: auto 10px;
+}
+
+.post iframe {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.post-list {
+  margin-top: @gap * 3px;
+}
+
+blockquote {
+  .text-gray;
+  p {
+    font-size: (@font-size-base * 1);
+  }
+}
+
+.breadcrumb {
+  padding: 0;
+  background-color: @body-bg;
+  > li {
+    & + li:before {
+      padding: 0;
+      content: "\00a0@{breadcrumb-separator}\00a0";
+    }
+    & + li:after {
+      padding: 0;
+    }
+  }
+}
+
+.feedbox-container {
+  margin-top: @gap * 4px;
+  margin-bottom: @gap * 3px;
+}
+
+.feedbox {
+  height: 320px;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    left 85%,
+    left bottom,
+    from(rgba(0, 0, 0, 1)),
+    to(rgba(0, 0, 0, 0))
+  );
+  margin-bottom: @gap;
+  /*	-webkit-box-shadow: inset 0 -30px 10px -10px white; */
+  /*	   -moz-box-shadow: inset 0 -30px 10px -10px white; */
+  /*	        box-shadow: inset 0 -30px 10px -10px white; */
+}
+
+.square (@value) {
+  width: @value;
+  height: @value;
+}
+
+.postbox {
+  min-height: 80px;
+}
+
+.paperbox {
+  min-height: 140px;
+}
+
+.page-title-paper {
+  margin-bottom: @gap * 2px;
+}
+
+.paper-img {
+  .square(175px);
+}
+
+.post {
+  margin-top: @gap * 1px;
+}
+
+// .paper-img {
+//   margin-bottom: @gap * 2px;
+// }
+
+.projectbox {
+  min-height: 120px;
+}
+
+.talkbox {
+  min-height: 100px;
+}
+
+.titlebox {
+  min-width: 300px;
+}
+
+.page-title {
+  margin-bottom: @gap * 3px;
+}
+
+.handlebox {
+  height: 20px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.pad-right {
+  padding-right: 10px;
+}
+
+.pad-left {
+  padding-left: 10px;
+}
+
+.centered-pills {
+  text-align: center;
+  ul.nav-pills {
+    display: inline;
+  }
+  li {
+    display: inline;
+  }
+  a {
+    float: left;
+  }
+}
+
+.glyphbox {
+  border-top: 2px solid @brand-primary;
+  margin-top: @gap * 2px;
+  padding-top: 39px;
+  a {
+    .type-size(0.75);
+  }
+}
+
+/* Infinite scroll */
+
+.infinite-spinner {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #333;
+  margin: 60px auto;
+  -webkit-animation: scaleout 1s infinite ease-in-out;
+  animation: scaleout 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes scaleout {
+  0% {
+    -webkit-transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes scaleout {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+// list
+
+ul,
+ol {
+  padding-left: 17px;
+  margin-bottom: 0 !important;
+  li {
+    padding-left: 10px;
+  }
+}
+
+.mt30 {
+  margin-top: @gap * 2px;
+}
+.mt60 {
+  margin-top: @gap * 4px;
+}

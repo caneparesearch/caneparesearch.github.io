@@ -15,6 +15,9 @@ redcarpet:
    - superscript
    - strikethrough
 
+plugins:
+   - jekyll-sitemap
+
 exclude:
   - "*.class"
   - "*.cpp"
@@ -46,8 +49,5 @@ exclude:
   - "Gemfile"
   - "Gemfile.lock"
 
-gems:
-  - jekyll-sitemap
 
-sitemap-force-include:
-   - "/pdfs/papers/*.pdf"
+projects:
