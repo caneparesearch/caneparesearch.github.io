@@ -4,6 +4,7 @@
 read -p "Enter text for commit: " tcommit
 
 cd ../webpage_CaRe/
+git pull
 bundle exec jekyll build 
 cd ../caneparesearch.github.io
 cp -r  ../webpage_CaRe/_site/* .
