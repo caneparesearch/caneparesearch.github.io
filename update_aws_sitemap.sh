@@ -2,6 +2,7 @@
 
 rm ./sitemap_papers.json 
 rm ./sitemap_papers.xml 
+ls -lrt sitemap_papers.*
 aws s3api list-objects --bucket carepapers  > sitemap_papers.json
 
 

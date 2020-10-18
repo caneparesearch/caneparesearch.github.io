@@ -661,10 +661,10 @@
             }
         },
         {
-            "Key": "sitemap.xml",
-            "LastModified": "2020-10-18T04:02:56.000Z",
-            "ETag": "\"a7b7cfc8565f69e533be19daab2c4223\"",
-            "Size": 12596,
+            "Key": "robots.txt",
+            "LastModified": "2020-10-18T04:29:25.000Z",
+            "ETag": "\"5fc253bc64c1da7f8ff841468fc72cf6\"",
+            "Size": 77,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
@@ -672,10 +672,10 @@
             }
         },
         {
-            "Key": "sitemap_papers.xml",
-            "LastModified": "2020-10-18T04:01:46.000Z",
-            "ETag": "\"a7b7cfc8565f69e533be19daab2c4223\"",
-            "Size": 12596,
+            "Key": "sitemapapers.xml",
+            "LastModified": "2020-10-18T04:32:22.000Z",
+            "ETag": "\"eae0d3cfe60f7f173b316479fa7ac715\"",
+            "Size": 12203,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
