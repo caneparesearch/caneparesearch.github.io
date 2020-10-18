@@ -648,6 +648,28 @@
                 "DisplayName": "caneparesearch",
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
             }
+        },
+        {
+            "Key": "google001d90d96eac85e6.html",
+            "LastModified": "2020-10-18T03:39:21.000Z",
+            "ETag": "\"cc4c9ad4df8f2294923a0ebe66f4c4aa\"",
+            "Size": 53,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
+            "Key": "sitemap_papers.xml",
+            "LastModified": "2020-10-18T03:40:05.000Z",
+            "ETag": "\"7851e9500b517826d76cf68870dfbcb2\"",
+            "Size": 10156,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
         }
     ]
 }
