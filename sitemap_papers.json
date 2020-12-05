@@ -716,10 +716,10 @@
             }
         },
         {
-            "Key": "sitemap.xml",
-            "LastModified": "2020-10-21T03:57:47+00:00",
-            "ETag": "\"cfd2c5aea561dcc66466c6f3a7062909\"",
-            "Size": 13124,
+            "Key": "sitemap_papers.xml",
+            "LastModified": "2020-11-24T14:50:06+00:00",
+            "ETag": "\"ac2605045e8faf78f3ac871685c367b0\"",
+            "Size": 13534,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
