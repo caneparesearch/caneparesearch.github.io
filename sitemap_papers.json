@@ -738,10 +738,10 @@
             }
         },
         {
-            "Key": "sitemap_papers.xml",
-            "LastModified": "2020-11-24T14:50:06+00:00",
-            "ETag": "\"ac2605045e8faf78f3ac871685c367b0\"",
-            "Size": 13534,
+            "Key": "test.xml",
+            "LastModified": "2021-01-30T07:45:10+00:00",
+            "ETag": "\"9e758daa6484ff7d6114035c36280609\"",
+            "Size": 13931,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
