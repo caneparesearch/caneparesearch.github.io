@@ -2,409 +2,415 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2011%2F</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2011%2Fcanepa-2011-hematite_PCCP.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2011%2Fcanepa-2011-jice_JAC.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2011%2Fcanepa-hpa-PCCP.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2012%2F</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2012%2Fcanepa-2012-pbo_JPCC.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2012%2Fnijem-2012-tuning_JACS.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2012%2Fnijem-ir-JPCM.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2012%2Ftan-2012-water_ChemMater.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2013%2F</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2013%2Fcanepa-2013-mof-HT_JMatChemA.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2013%2Fcanepa-2013-mof-magnetism_PRB.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2013%2Fcanepa-2013-mof-transport_PRL.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2013%2Flopez-2013-mof-NMR_JCP.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2013%2Fnijem-2013-mof-water_JACS.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2013%2Ftan-2013-so2_ChemMater.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2014%2F</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2014%2Ftan-2014-mof-water_ChemMater.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2014%2Fzuluaga-MOF-JPCM.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2015%2F</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2015%2Fcanepa-2015-MACC_ChemMater.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2015%2Fcanepa-2015-MACC_EES.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2015%2Fcanepa-2015-MOF_JMCA.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2015%2Fliu-2015-spinels_EES.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2015%2Frong-2015-design_ChemMater.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2015%2Fsai-2015-V2O5pd_ChemMater.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2015%2Fsai-2015-barriers_ChemMater.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2016%2F</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2016%2Fberto-2016-Nacomplex_PCCP.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2016%2Fliu-2016-Sspinels_EES.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2016%2Frong-2016-NEB-JCP.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2016%2Fsai-2016-xerogel_NanoLett.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2017%2F</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2017%2FIhm-2017-continuum-JPCC.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2017%2Fcanepa-2017-multivalent-odyssey_ChemRev.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2017%2Fcanepa-MgSE-NatComm.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2017%2Fcanepa-defects-ChemMater.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2017%2Fgautam-inversion-ChemMater.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2017%2Fhannah-postspinel-ChemComm.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2017%2Ftan-2017-no2_ChemMater.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2018%2F</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2018%2Fcanepa-llzo-ChemMater.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2018%2Fcmeutzner-comp-PSR.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2018%2Fdawson-GB-JACS.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2018%2Fhannah-voltage-AEM.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2019%2F</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2019%2F2019-01-30-10.3389_fchem.2019.00024.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2019%2Fbutler-2019-npj-energy-materials-rev_npj-comp-mater.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2019%2Fcanepa-metalfree-ChemSci.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2019%2Fdawson-na3ps4-ChemMater.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2019%2Ffamprikis-se-NatureMater.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2019%2Fsai-2019-RSBook_Mg-batteries-chapeter_9781788016407-00079.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2019%2Ftina-2019.acs.chemmater.9b0269.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2020%2F</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2020%2Fbayliss-2019.acs.chemmater.9b02450.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2020%2Fdeng-2020.acs.inorgchem.9b03214.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2020%2Fdeng.acs.chemmater.0c02695.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2020%2Ffamprikis.jacs.0c06668.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2020%2Fforero.ees.D0EE02347G.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2020%2Fsingh.jmca.d0ta10688g.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2021%2F</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+ </url>
+ <url>
+  <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2021%2FPhysRevMaterials.5.024605.pdf</loc>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2021%2Fsymington.jmca.d0ta11539.pdf</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/google001d90d96eac85e6.html</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/map.xml</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/misc%2F</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/misc%2Fflowcode.png</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/robots.txt</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
  <url>
   <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/test.xml</loc>
-  <lastmod>2021-02-21</lastmod>
+  <lastmod>2021-02-23</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
  </url>
