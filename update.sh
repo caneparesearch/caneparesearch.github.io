@@ -9,11 +9,11 @@ bundle exec jekyll build
 cd ../caneparesearch.github.io
 cp -r  ../webpage_CaRe/_site/* .
 
-
-#update papers xml 
-
-./update_aws_sitemap.sh
+#update website
 
 git add *
 git commit -m "$tcommit"
 git push 
+
+#update papers xml 
+./update_aws_sitemap.sh
