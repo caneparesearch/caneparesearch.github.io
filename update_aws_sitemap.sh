@@ -13,5 +13,7 @@ echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'  >> map.xml
 cat sitemap_papers.json | jq -r '.Contents[] | " <url>\n  <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/\(.Key | @uri)</loc>\n  <lastmod>'${data}'</lastmod>\n  <changefreq>monthly</changefreq>\n  <priority>0.8</priority>\n </url>"'  >> map.xml
 echo "</urlset>" >> map.xml  
 
+cat sitemap_papers.json | jq -r
+
 
 aws s3 cp map.xml  s3://carepapers/map.xml 
