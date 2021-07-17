@@ -1,7 +1,13 @@
 #!/bin/bash 
 
-rm ./sitemap_papers.json 
-rm ./map.xml 
+
+cd ../caneparesearch.github.io
+
+if [ -f sitemap_papers.json ] || [ -f map.xml ] ; then
+ rm ./sitemap_papers.json 
+ rm ./map.xml 
+ echo "Old site maps found and removed!"
+fi
 
 
 aws s3api list-objects --bucket carepapers  > sitemap_papers.json

@@ -3,7 +3,7 @@
 
 read -p "Enter text for commit: " tcommit
 
-cd ../source-care-website/
+#cd ../source-care-website/
 git pull
 bundle exec jekyll build 
 cd ../caneparesearch.github.io
@@ -16,4 +16,4 @@ git commit -m "$tcommit"
 git push 
 
 #update papers xml 
-./update_aws_sitemap.sh
+../source-care-website/update_aws_sitemap.sh

@@ -4766,7 +4766,7 @@ small, .font_small { font-size: 0.9375rem; }
 
 .custom-toggler .navbar-toggler-icon:hover { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(0, 155, 245)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); }
 
-.custom-toggler.navbar-toggler:hover { border-color: #009bf5; background-color: white; }
+.custom-toggler.navbar-toggler:hover { border-color: #009bf5; background-color: #fff; }
 
 @media (max-width: 991px) { .navbar-default, .navbar-custom { height: 65px; } .navbar-default .navbar-nav > li > a, .navbar-brand { line-height: 145%; } }
 
@@ -4837,6 +4837,7 @@ pre { overflow-x: auto; }
 
 pre code { overflow-wrap: normal; white-space: pre; }
 
+/* table { $include table(); $include table-striped(); } img { $include img-responsive; } */
 img.offset { float: right; margin: 0 0 10px 15px; }
 
 img.avatar { width: 20px; }
@@ -4861,7 +4862,7 @@ blockquote p { font-size: 100%; }
 
 .feedbox { height: 320px; overflow: hidden; -webkit-mask-image: -webkit-gradient(linear, left 85%, left bottom, from(black), to(rgba(0, 0, 0, 0))); margin-bottom: 15px; -webkit-box-shadow: inset 0 -30px 10px -10px white; -moz-box-shadow: inset 0 -30px 10px -10px white; box-shadow: inset 0 -30px 10px -10px white; }
 
-.feedboxblog { height: 180px; overflow: hidden; -webkit-mask-image: -webkit-gradient(linear, left 85%, left bottom, from(black), to(rgba(0, 0, 0, 0))); margin-bottom: 15px; /*	-webkit-box-shadow: inset 0 -30px 10px -10px white; */ /*	   -moz-box-shadow: inset 0 -30px 10px -10px white; */ /*	        box-shadow: inset 0 -30px 10px -10px white; */ }
+.feedboxblog { height: 180px; overflow: hidden; -webkit-mask-image: -webkit-gradient(linear, left 85%, left bottom, from(black), to(rgba(0, 0, 0, 0))); margin-bottom: 15px; /*	-webkit-box-shadow: inset 0 -30px 10px -10px white;  -moz-box-shadow: inset 0 -30px 10px -10px white;  box-shadow: inset 0 -30px 10px -10px white; */ }
 
 .postbox { min-height: 80px; }
 
