@@ -13,7 +13,7 @@ aws s3api list-objects --bucket carepapers  > sitemap_papers.json
 # These lines put together the content of the xml file
 data=`echo $(date '+%Y-%m-%d')`
 echo '<?xml version="1.0" encoding="UTF-8"?>' >> map.xml
-echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'  >> map.xml
+echo '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'  >> map.xml
 
 # Extract important data from JSON and remove undesired caracthers
 
@@ -21,7 +21,7 @@ echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'  >> map.xml
 variables=`cat  sitemap_papers.json |  jq -r  '.Contents[] |  (.Key | @uri)'  | sed -r 's/%2F/\//g' | sed '/\/$/d' | sed '/\.xml$/d' |  sed '/\.html$/d' | sed '/\.png$/d' | sed '/\.txt$/d'`
 
 for i in $variables; do
-    echo -e "\t<url>\n\t\t<loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/${i}</loc>\n\t\t<lastmod>${data}</lastmod>\n\t\t<changefreq>monthly</changefreq>\n\t\t<priority>0.8</priority>\n\t</url>"  >> map.xml
+    echo -e "<url>\n<loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/${i}</loc>\n<lastmod>${data}</lastmod>\n<changefreq>monthly</changefreq>\n</url>"  >> map.xml
 done
 echo "</urlset>" >> map.xml
 

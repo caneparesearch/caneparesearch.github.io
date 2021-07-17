@@ -18,4 +18,4 @@ git commit -m "$tcommit"
 git push 
 
 #update papers xml 
-#../source-care-website/update_aws_sitemap.sh
+../source-care-website/update_aws_sitemap.sh
