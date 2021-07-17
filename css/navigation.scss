@@ -92,19 +92,10 @@
     padding: 0px;
 }
 
-.navbar-text {
-    @include type-size(1);
-    font-weight: 400;
-}
-
+.navbar-tex,
 .navbar-nav {
     @include type-size(1);
     font-weight: 400;
-}
-
-.navbar-toggler {
-    margin-top: 0px;
-    margin-bottom: 45px;
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -115,36 +106,35 @@
     border-color: $brand-primary;
 }
 
+.custom-toggler .navbar-toggler-icon:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(0, 155, 245)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler:hover {
+    border-color: $link-color-navlink;
+    background-color: white;
+}
+
 // prevent brand-logo to go below line
 
 @media (max-width: 991px) {
-    .navbar-default {
+    .navbar-default,
+    .navbar-custom {
         height: 65px;
     }
     .navbar-default .navbar-nav > li > a,
     .navbar-brand {
-        margin-top: 5px;
-        padding-top: 0px;
-        padding-bottom: 25px;
         line-height: 145%;
-    }
-    .navbar-toggler {
-        margin-top: 5px;
     }
 }
 
 @media (max-width: 481px) {
-    .navbar-default {
+    .navbar-default,
+    .navbar-custom {
         height: 65px;
     }
     .navbar-default .navbar-nav > li > a,
     .navbar-brand {
-        margin-top: 5px;
-        padding-top: 0px;
-        padding-bottom: 25px;
         line-height: 145%;
-    }
-    .navbar-toggler {
-        margin-top: 5px;
     }
 }
