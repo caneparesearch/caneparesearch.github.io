@@ -7,6 +7,8 @@ read -p "Enter text for commit: " tcommit
 git pull
 bundle exec jekyll build 
 cd ../caneparesearch.github.io
+
+echo $PWD "This is the folder"
 cp -r  ../source-care-website/_site/* .
 
 #update website
