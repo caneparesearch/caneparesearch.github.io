@@ -3,11 +3,11 @@
 
 read -p "Enter text for commit: " tcommit
 
-cd ../webpage_CaRe/
+cd ../source-care-website/
 git pull
 bundle exec jekyll build 
 cd ../caneparesearch.github.io
-cp -r  ../webpage_CaRe/_site/* .
+cp -r  ../source-care-website/_site/* .
 
 #update website
 
