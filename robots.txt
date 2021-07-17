@@ -1,2 +1,4 @@
+User-agent: Googlebot
+Allow: /
 Sitemap: http://caneparesearch.org/sitemap.xml
 Sitemap: https://carepapers.s3.ap-southeast-1.amazonaws.com/map.xml
