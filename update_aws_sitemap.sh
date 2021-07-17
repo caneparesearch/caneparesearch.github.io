@@ -21,7 +21,7 @@ echo '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLo
 variables=`cat  sitemap_papers.json |  jq -r  '.Contents[] |  (.Key | @uri)'  | sed -r 's/%2F/\//g' | sed '/\/$/d' | sed '/\.xml$/d' |  sed '/\.html$/d' | sed '/\.png$/d' | sed '/\.txt$/d'`
 
 for i in $variables; do
-    echo -e "<url>\n<loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/${i}</loc>\n<lastmod>${data}</lastmod>\n<changefreq>monthly</changefreq>\n</url>"  >> map.xml
+    echo -e "<url>\n<loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/${i}</loc>\n<lastmod>${data}</lastmod>\n</url>"  >> map.xml
 done
 echo "</urlset>" >> map.xml
 
