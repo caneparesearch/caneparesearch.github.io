@@ -728,9 +728,9 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2021-07-17T21:58:19+00:00",
-            "ETag": "\"0635dbf3040118c705aa583265a1cc28\"",
-            "Size": 11106,
+            "LastModified": "2021-07-17T21:58:55+00:00",
+            "ETag": "\"640569561f7ca9e11bbfdc0c9b31c4c3\"",
+            "Size": 11322,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
@@ -761,9 +761,9 @@
         },
         {
             "Key": "robots.txt",
-            "LastModified": "2020-10-21T04:17:27+00:00",
-            "ETag": "\"8c361446a12c331d1f5c21a3156bf94f\"",
-            "Size": 31,
+            "LastModified": "2021-07-17T22:04:18+00:00",
+            "ETag": "\"ed3be169a0e2f5e2a06ab8f4ae2890d8\"",
+            "Size": 146,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
