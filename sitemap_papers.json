@@ -728,9 +728,9 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2021-07-17T13:39:42+00:00",
-            "ETag": "\"3fb1edd9a5f7c5069256571b268754e0\"",
-            "Size": 14361,
+            "LastModified": "2021-07-17T21:58:19+00:00",
+            "ETag": "\"0635dbf3040118c705aa583265a1cc28\"",
+            "Size": 11106,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
