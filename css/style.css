@@ -4748,7 +4748,7 @@ small, .font_small { font-size: 0.9375rem; }
 
 .nav-pills { padding: 0px; margin: 0px; background-color: transparent; border-radius: 0px; height: 100%; }
 
-.nav-pills .nav-link.active { background-color: #003c5e; /* rgba(79, 195, 247,0.4); */ border-radius: 0px; border-bottom: 2px solid #009bf5; }
+.nav-pills .nav-link.active { background-color: #003c5e; /* rgba(79, 195, 247,0.4); */ border-radius: 0px; }
 
 .nav-pills > li { margin: 0px; padding: 0px; border: 0px; padding-bottom: 20px; padding-top: 20px; }
 
@@ -4774,7 +4774,7 @@ small, .font_small { font-size: 0.9375rem; }
 
 .media { margin: 0 0 45px 0; }
 
-.media .media-heading { font-size: 1rem; line-height: 1.45em; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; }
+.media .media-heading { font-size: 1.05rem; line-height: 1.45em; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; font-weight: 300; }
 
 .media .media-heading h2 { margin-top: 0.85rem; }
 
