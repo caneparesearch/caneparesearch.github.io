@@ -694,6 +694,17 @@
             }
         },
         {
+            "Key": "2021/acs.chemmater.1c01431.pdf",
+            "LastModified": "2021-07-29T21:35:14+00:00",
+            "ETag": "\"488a2f82650e4e9434ba33f450133c01\"",
+            "Size": 4853230,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2021/acs.chemmater.1c01992.pdf",
             "LastModified": "2021-07-16T23:53:14+00:00",
             "ETag": "\"d7e9eab47e635ecd6ff16410dfd44af1\"",
@@ -728,7 +739,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2021-07-21T18:56:07+00:00",
+            "LastModified": "2021-07-21T19:18:28+00:00",
             "ETag": "\"f5278837f6d2558a75eda35e0bc7c4d2\"",
             "Size": 7825,
             "StorageClass": "STANDARD",
