@@ -728,9 +728,9 @@
         },
         {
             "Key": "2021/d1ta09249a.pdf",
-            "LastModified": "2021-12-02T23:37:42+00:00",
-            "ETag": "\"9719aea030ad046c525e5d583132450c\"",
-            "Size": 1758972,
+            "LastModified": "2021-12-09T00:30:06+00:00",
+            "ETag": "\"c730360c3f764a6d7e9eaeaf5406ce5b\"",
+            "Size": 970172,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
@@ -761,9 +761,9 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2021-11-12T00:15:22+00:00",
-            "ETag": "\"c59c821d10ff303163d8dd2fe267f636\"",
-            "Size": 8097,
+            "LastModified": "2021-12-02T23:43:25+00:00",
+            "ETag": "\"87955f54ada70060a168d5cf39c57222\"",
+            "Size": 8222,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
