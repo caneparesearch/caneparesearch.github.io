@@ -772,9 +772,9 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2021-12-10T10:53:17+00:00",
-            "ETag": "\"92217e7e95403ac17c06470921ab1a34\"",
-            "Size": 8222,
+            "LastModified": "2021-12-21T15:02:10+00:00",
+            "ETag": "\"aa3025f65d4b2f7a6ad589f1c3110c9d\"",
+            "Size": 8347,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
