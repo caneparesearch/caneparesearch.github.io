@@ -771,6 +771,28 @@
             }
         },
         {
+            "Key": "2022/",
+            "LastModified": "2022-01-20T18:20:41+00:00",
+            "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
+            "Size": 0,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
+            "Key": "2022/d1ta10228a.pdf",
+            "LastModified": "2022-01-20T18:21:45+00:00",
+            "ETag": "\"6ac2e573446f9039f7c16e621b4758d2\"",
+            "Size": 14508752,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "google001d90d96eac85e6.html",
             "LastModified": "2020-10-18T03:39:21+00:00",
             "ETag": "\"cc4c9ad4df8f2294923a0ebe66f4c4aa\"",
@@ -783,7 +805,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2022-01-05T10:17:46+00:00",
+            "LastModified": "2022-01-05T13:03:25+00:00",
             "ETag": "\"9605b5cef7f553e48cd448863e8e415b\"",
             "Size": 8483,
             "StorageClass": "STANDARD",
