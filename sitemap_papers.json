@@ -782,6 +782,17 @@
             }
         },
         {
+            "Key": "2022/acs.chemmater.1c03770.pdf",
+            "LastModified": "2022-01-25T14:43:08+00:00",
+            "ETag": "\"27de7945b8216579694157a687844c4c\"",
+            "Size": 646615,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2022/d1ta10228a.pdf",
             "LastModified": "2022-01-20T18:21:45+00:00",
             "ETag": "\"6ac2e573446f9039f7c16e621b4758d2\"",
@@ -805,7 +816,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2022-01-24T08:50:08+00:00",
+            "LastModified": "2022-01-24T11:57:11+00:00",
             "ETag": "\"b02ce035fb1250b377b6dc85159c2d50\"",
             "Size": 8608,
             "StorageClass": "STANDARD",
