@@ -805,8 +805,8 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2022-01-20T18:27:30+00:00",
-            "ETag": "\"912a112401d70111494721bb30fdc3c4\"",
+            "LastModified": "2022-01-24T08:50:08+00:00",
+            "ETag": "\"b02ce035fb1250b377b6dc85159c2d50\"",
             "Size": 8608,
             "StorageClass": "STANDARD",
             "Owner": {
