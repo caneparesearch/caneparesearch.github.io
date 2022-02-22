@@ -794,9 +794,9 @@
         },
         {
             "Key": "2022/d1ta10228a.pdf",
-            "LastModified": "2022-01-20T18:21:45+00:00",
-            "ETag": "\"6ac2e573446f9039f7c16e621b4758d2\"",
-            "Size": 14508752,
+            "LastModified": "2022-02-12T02:14:33+00:00",
+            "ETag": "\"5e5b75f914e387eb9c03a6ed0b3a9c49\"",
+            "Size": 1318028,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
@@ -816,7 +816,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2022-01-25T14:45:42+00:00",
+            "LastModified": "2022-01-25T14:49:35+00:00",
             "ETag": "\"be078bf2a87490b76d9daa20769d9405\"",
             "Size": 8744,
             "StorageClass": "STANDARD",
