@@ -727,6 +727,17 @@
             }
         },
         {
+            "Key": "2021/d1ta09249a.pdf",
+            "LastModified": "2021-12-09T00:30:06+00:00",
+            "ETag": "\"c730360c3f764a6d7e9eaeaf5406ce5b\"",
+            "Size": 970172,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2021/symington.jmca.d0ta11539.pdf",
             "LastModified": "2021-02-18T13:09:16+00:00",
             "ETag": "\"35b78d20811114aed25c198e4ef0a6a5\"",
@@ -750,9 +761,9 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2021-11-11T23:06:49+00:00",
-            "ETag": "\"c59c821d10ff303163d8dd2fe267f636\"",
-            "Size": 8097,
+            "LastModified": "2021-12-09T00:55:39+00:00",
+            "ETag": "\"16ff367c67e6757fc541f33ca2427c33\"",
+            "Size": 8222,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
