@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<<<<<<< HEAD
 <url>
 <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2011/canepa-2011-hematite_PCCP.pdf</loc>
 <lastmod>2022-02-22</lastmod>
@@ -244,4 +245,6 @@
 <loc>https://carepapers.s3-ap-southeast-1.amazonaws.com/2022/d1ta10228a.pdf</loc>
 <lastmod>2022-02-22</lastmod>
 </url>
+=======
+>>>>>>> bd1a0cb9893e0ed743b5c034d440c274b6869b2b
 </urlset>
