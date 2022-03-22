@@ -793,6 +793,17 @@
             }
         },
         {
+            "Key": "2022/acsenergylett.1c02815.pdf",
+            "LastModified": "2022-03-22T18:26:29+00:00",
+            "ETag": "\"722907720444cd081f488cf309600a3f\"",
+            "Size": 3609141,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2022/d1ta10228a.pdf",
             "LastModified": "2022-02-12T02:14:33+00:00",
             "ETag": "\"5e5b75f914e387eb9c03a6ed0b3a9c49\"",
@@ -816,7 +827,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2022-03-22T18:22:55+00:00",
+            "LastModified": "2022-03-22T18:25:08+00:00",
             "ETag": "\"b53b20d74929f3a18b332843333f9ad4\"",
             "Size": 8744,
             "StorageClass": "STANDARD",
