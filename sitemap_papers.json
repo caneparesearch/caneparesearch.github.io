@@ -793,6 +793,17 @@
             }
         },
         {
+            "Key": "2022/acs.chemmater.2c00230.pdf",
+            "LastModified": "2022-03-30T02:14:26+00:00",
+            "ETag": "\"e58ea3afeb2bf73d68bc216516027cca\"",
+            "Size": 1943385,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2022/acsenergylett.1c02815.pdf",
             "LastModified": "2022-03-22T18:26:29+00:00",
             "ETag": "\"722907720444cd081f488cf309600a3f\"",
@@ -838,8 +849,8 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2022-03-25T00:42:29+00:00",
-            "ETag": "\"d0e828c3ad1f1f24cbb290c267619344\"",
+            "LastModified": "2022-03-28T21:16:18+00:00",
+            "ETag": "\"5f4b2f7c838a51c76950adaf70dd33a1\"",
             "Size": 9007,
             "StorageClass": "STANDARD",
             "Owner": {
