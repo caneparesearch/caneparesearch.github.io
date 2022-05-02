@@ -815,6 +815,17 @@
             }
         },
         {
+            "Key": "2022/annurev-matsci-081420-041617.pdf",
+            "LastModified": "2022-04-11T12:47:24+00:00",
+            "ETag": "\"2ceccadc0c897d3a65d8fa38aa98fdbe\"",
+            "Size": 2855964,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2022/d1ta10228a.pdf",
             "LastModified": "2022-02-12T02:14:33+00:00",
             "ETag": "\"5e5b75f914e387eb9c03a6ed0b3a9c49\"",
@@ -849,8 +860,8 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2022-04-09T10:48:32+00:00",
-            "ETag": "\"a00c05f1978bd544d12aefd5128c1321\"",
+            "LastModified": "2022-04-11T06:30:37+00:00",
+            "ETag": "\"ac8032aa2f8134ce4b754e5aa1657e72\"",
             "Size": 9143,
             "StorageClass": "STANDARD",
             "Owner": {
