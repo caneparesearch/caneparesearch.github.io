@@ -837,6 +837,17 @@
             }
         },
         {
+            "Key": "2022/d2ta02202h.pdf",
+            "LastModified": "2022-06-07T15:53:42+00:00",
+            "ETag": "\"96b9aec31b848b37f9615708fce6222d\"",
+            "Size": 13943291,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2022/jacs.1c11335.pdf",
             "LastModified": "2022-03-25T00:40:07+00:00",
             "ETag": "\"5bbea338c0aa555702c2584348af1496\"",
@@ -860,7 +871,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2022-06-07T15:46:52+00:00",
+            "LastModified": "2022-06-07T15:48:40+00:00",
             "ETag": "\"34b23454a47c315436b0a85a74f7b0e0\"",
             "Size": 9286,
             "StorageClass": "STANDARD",
