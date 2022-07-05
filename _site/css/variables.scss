@@ -1,0 +1,39 @@
+// == VARIABLES
+
+//Color palette
+$brand-primary:rgb(255, 83, 13);
+$brand-secondary:rgb(0, 39, 61);
+//$brand-secondary: rgba(0, 39, 61, 0.88);
+
+$link-color: rgb(0, 111, 212);
+$link-color-navlink: rgb(0, 155, 245);
+$text-color-dark: #333;
+
+$cold-grey: #586e75;
+$light-grey: #ddd;
+$lighter-grey: #f8f8f8;
+$lightest-grey: #f1f1f1;
+
+$code-color: $cold-grey;
+$pre-color: $cold-grey;
+
+$well-bg: $lightest-grey;
+$code-bg: $lightest-grey;
+
+$pre-bg: $lighter-grey;
+$navbar-padding-y: 0px;
+$navbar-padding-y: 0.0rem;
+$nav-pills-border-radius: 0px;
+$navbar-brand-padding-y: 0.0rem;
+
+
+$gap: 15px;
+
+//Typography set
+$ratio-type: 1.25; //golden ratio
+$line-height-base: 1.45;
+$font-size-base: 100%; //1em, 16px, 12pt, 100%
+
+$fa-font-path: "font";
+
+
