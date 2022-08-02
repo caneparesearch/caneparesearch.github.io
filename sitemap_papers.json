@@ -804,6 +804,17 @@
             }
         },
         {
+            "Key": "2022/2022-07-22-devi-npjcompmater.pdf",
+            "LastModified": "2022-07-22T17:32:32+00:00",
+            "ETag": "\"7a063487b11beb19d836350229a9cd0c\"",
+            "Size": 2988070,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2022/acs.chemmater.1c03770.pdf",
             "LastModified": "2022-01-25T14:43:08+00:00",
             "ETag": "\"27de7945b8216579694157a687844c4c\"",
@@ -893,7 +904,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2022-07-22T17:27:12+00:00",
+            "LastModified": "2022-07-22T17:30:12+00:00",
             "ETag": "\"fffce258c16bea951f1213f754f0e09c\"",
             "Size": 9685,
             "StorageClass": "STANDARD",
