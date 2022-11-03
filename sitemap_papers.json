@@ -870,6 +870,17 @@
             }
         },
         {
+            "Key": "2022/acsmaterialsau.2c00057.pdf",
+            "LastModified": "2022-10-29T05:22:57+00:00",
+            "ETag": "\"96e0fc3cbfb63d38d4801b48c67c3b00\"",
+            "Size": 3640122,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2022/annurev-matsci-081420-041617.pdf",
             "LastModified": "2022-07-06T01:12:46+00:00",
             "ETag": "\"413539bc88fbb30d111d4d375766d94b\"",
@@ -959,8 +970,8 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2022-10-07T15:54:14+00:00",
-            "ETag": "\"f7985d80cfbe47469f0aa2634fbcd7a6\"",
+            "LastModified": "2022-10-18T13:50:46+00:00",
+            "ETag": "\"8343118d7e8ba930db8b48fc0171f8b8\"",
             "Size": 10361,
             "StorageClass": "STANDARD",
             "Owner": {
