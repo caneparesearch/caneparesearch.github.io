@@ -859,6 +859,17 @@
             }
         },
         {
+            "Key": "2022/acs.chemmater.2c02841.pdf",
+            "LastModified": "2022-11-12T04:20:56+00:00",
+            "ETag": "\"580aa085253d03f3fb86d21ff606d42f\"",
+            "Size": 3630526,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2022/acsenergylett.1c02815.pdf",
             "LastModified": "2022-03-22T18:26:29+00:00",
             "ETag": "\"722907720444cd081f488cf309600a3f\"",
@@ -936,6 +947,17 @@
             }
         },
         {
+            "Key": "2022/sciadv.ade1473.pdf",
+            "LastModified": "2022-11-03T05:57:54+00:00",
+            "ETag": "\"425b7dabb39f898682afc1912998a95d\"",
+            "Size": 2082112,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "CV/",
             "LastModified": "2022-08-19T05:27:22+00:00",
             "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
@@ -970,8 +992,8 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2022-10-29T05:29:33+00:00",
-            "ETag": "\"8863d126929b3345a83250e4102dc16f\"",
+            "LastModified": "2022-11-03T05:55:11+00:00",
+            "ETag": "\"9052313e619a165f410908f3cfebd954\"",
             "Size": 10498,
             "StorageClass": "STANDARD",
             "Owner": {

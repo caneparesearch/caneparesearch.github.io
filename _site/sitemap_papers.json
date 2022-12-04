@@ -474,6 +474,17 @@
             }
         },
         {
+            "Key": "2018/dawson-GB-JACS-errata.pdf",
+            "LastModified": "2022-07-03T03:21:46+00:00",
+            "ETag": "\"2239f90f530fd38ceb387fe59f6297ac\"",
+            "Size": 264369,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2018/dawson-GB-JACS.pdf",
             "LastModified": "2020-10-18T03:10:15+00:00",
             "ETag": "\"faade3956e7495b8e730f1d2f27e2882\"",
@@ -771,10 +782,54 @@
             }
         },
         {
+            "Key": "2022-07-22-devi-npjcompmater.pdf",
+            "LastModified": "2022-07-22T17:18:57+00:00",
+            "ETag": "\"7a063487b11beb19d836350229a9cd0c\"",
+            "Size": 2988070,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2022/",
             "LastModified": "2022-01-20T18:20:41+00:00",
             "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
             "Size": 0,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
+            "Key": "2022/2022-07-22-devi-npjcompmater.pdf",
+            "LastModified": "2022-07-22T17:32:32+00:00",
+            "ETag": "\"7a063487b11beb19d836350229a9cd0c\"",
+            "Size": 2988070,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
+            "Key": "2022/2022-08-04-liu-angew-chem.pdf",
+            "LastModified": "2022-09-22T04:16:47+00:00",
+            "ETag": "\"db8d6dd61fe46747363b07ca967b1c89\"",
+            "Size": 1085181,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
+            "Key": "2022/PRXEnergy.1.023004.pdf",
+            "LastModified": "2022-08-04T23:06:32+00:00",
+            "ETag": "\"0d0ca15c0b71ca8d0c5be6b7b07869f6\"",
+            "Size": 3454539,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
@@ -804,6 +859,17 @@
             }
         },
         {
+            "Key": "2022/acs.chemmater.2c02841.pdf",
+            "LastModified": "2022-11-12T04:20:56+00:00",
+            "ETag": "\"580aa085253d03f3fb86d21ff606d42f\"",
+            "Size": 3630526,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2022/acsenergylett.1c02815.pdf",
             "LastModified": "2022-03-22T18:26:29+00:00",
             "ETag": "\"722907720444cd081f488cf309600a3f\"",
@@ -815,10 +881,21 @@
             }
         },
         {
+            "Key": "2022/acsmaterialsau.2c00057.pdf",
+            "LastModified": "2022-10-29T05:22:57+00:00",
+            "ETag": "\"96e0fc3cbfb63d38d4801b48c67c3b00\"",
+            "Size": 3640122,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2022/annurev-matsci-081420-041617.pdf",
-            "LastModified": "2022-04-11T12:47:24+00:00",
-            "ETag": "\"2ceccadc0c897d3a65d8fa38aa98fdbe\"",
-            "Size": 2855964,
+            "LastModified": "2022-07-06T01:12:46+00:00",
+            "ETag": "\"413539bc88fbb30d111d4d375766d94b\"",
+            "Size": 2939327,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
@@ -859,6 +936,50 @@
             }
         },
         {
+            "Key": "2022/s41467-022-32190-7.pdf",
+            "LastModified": "2022-10-17T05:17:29+00:00",
+            "ETag": "\"dd4a7289355a11583022f527dd4d5b2d\"",
+            "Size": 2316298,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
+            "Key": "2022/sciadv.ade1473.pdf",
+            "LastModified": "2022-11-03T05:57:54+00:00",
+            "ETag": "\"425b7dabb39f898682afc1912998a95d\"",
+            "Size": 2082112,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
+            "Key": "CV/",
+            "LastModified": "2022-08-19T05:27:22+00:00",
+            "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
+            "Size": 0,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
+            "Key": "CV/PCanepa_resume.pdf",
+            "LastModified": "2022-08-19T05:28:14+00:00",
+            "ETag": "\"61572175ba99ddb780c1d157a37e03dd\"",
+            "Size": 207180,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "google001d90d96eac85e6.html",
             "LastModified": "2020-10-18T03:39:21+00:00",
             "ETag": "\"cc4c9ad4df8f2294923a0ebe66f4c4aa\"",
@@ -871,9 +992,9 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2022-06-25T20:47:44+00:00",
-            "ETag": "\"e71684a5a67a250eeb5584e18879ea0b\"",
-            "Size": 9411,
+            "LastModified": "2022-11-03T05:55:11+00:00",
+            "ETag": "\"9052313e619a165f410908f3cfebd954\"",
+            "Size": 10498,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
