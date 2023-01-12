@@ -958,6 +958,28 @@
             }
         },
         {
+            "Key": "2023/",
+            "LastModified": "2023-01-11T13:55:11+00:00",
+            "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
+            "Size": 0,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
+            "Key": "2023/2023-01-05-sun-angew-chem.pdf",
+            "LastModified": "2023-01-11T13:55:29+00:00",
+            "ETag": "\"e6096257b040270895e8bad451eddb8d\"",
+            "Size": 1833226,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "CV/",
             "LastModified": "2022-08-19T05:27:22+00:00",
             "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
@@ -992,7 +1014,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2023-01-09T15:10:18+00:00",
+            "LastModified": "2023-01-09T15:16:16+00:00",
             "ETag": "\"01ddd23586eed743bb4466c7b405e8be\"",
             "Size": 10763,
             "StorageClass": "STANDARD",
