@@ -981,9 +981,9 @@
         },
         {
             "Key": "2023/2023-01-21-wang-mater_future.pdf",
-            "LastModified": "2023-01-21T05:25:49+00:00",
-            "ETag": "\"550b919cb871c1abb4d8683d683ab6e7\"",
-            "Size": 1614268,
+            "LastModified": "2023-02-10T23:53:42+00:00",
+            "ETag": "\"a1106c1b2d0237f56acfa9c388aefe44\"",
+            "Size": 3124208,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
@@ -1025,8 +1025,8 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2023-01-21T05:32:54+00:00",
-            "ETag": "\"a51ed928ba4ed697d40b936b1bf8f529\"",
+            "LastModified": "2023-01-24T11:28:01+00:00",
+            "ETag": "\"198ca7910d4ea1d179130d3cdad334b6\"",
             "Size": 11046,
             "StorageClass": "STANDARD",
             "Owner": {
