@@ -882,9 +882,9 @@
         },
         {
             "Key": "2022/acsmaterialsau.2c00057.pdf",
-            "LastModified": "2022-10-29T05:22:57+00:00",
-            "ETag": "\"96e0fc3cbfb63d38d4801b48c67c3b00\"",
-            "Size": 3640122,
+            "LastModified": "2023-03-19T10:40:50+00:00",
+            "ETag": "\"ee8d988e785eb4d8a5794e1753b7cd16\"",
+            "Size": 3573706,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
@@ -1036,9 +1036,9 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2023-02-10T23:59:31+00:00",
-            "ETag": "\"34af1d7115678c0690a9f2320930d88f\"",
-            "Size": 11046,
+            "LastModified": "2023-03-17T14:01:57+00:00",
+            "ETag": "\"1247e24e4950c91ce005bcf37cef8097\"",
+            "Size": 11182,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
