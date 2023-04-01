@@ -991,6 +991,17 @@
             }
         },
         {
+            "Key": "2023/2023-01-22-deng-kmcpy.pdf",
+            "LastModified": "2023-03-17T13:55:12+00:00",
+            "ETag": "\"5b793a5886e1222df312077b05e20d28\"",
+            "Size": 2034039,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "CV/",
             "LastModified": "2022-08-19T05:27:22+00:00",
             "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
@@ -1025,8 +1036,8 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2023-01-24T11:28:01+00:00",
-            "ETag": "\"198ca7910d4ea1d179130d3cdad334b6\"",
+            "LastModified": "2023-02-10T23:59:31+00:00",
+            "ETag": "\"34af1d7115678c0690a9f2320930d88f\"",
             "Size": 11046,
             "StorageClass": "STANDARD",
             "Owner": {
