@@ -1002,6 +1002,17 @@
             }
         },
         {
+            "Key": "2023/2023-04-06-chen-chemater.pdf",
+            "LastModified": "2023-04-07T04:35:55+00:00",
+            "ETag": "\"9ec7b1965dae0060ffc0b9b79c3830a6\"",
+            "Size": 13548845,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "CV/",
             "LastModified": "2022-08-19T05:27:22+00:00",
             "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
@@ -1036,7 +1047,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2023-04-01T13:24:28+00:00",
+            "LastModified": "2023-04-01T13:33:01+00:00",
             "ETag": "\"ed9f3bbd180b2ed0884d59011cd35512\"",
             "Size": 11182,
             "StorageClass": "STANDARD",
