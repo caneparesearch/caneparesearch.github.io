@@ -1013,6 +1013,17 @@
             }
         },
         {
+            "Key": "2023/2023-04-18-vincent-chemmater.pdf",
+            "LastModified": "2023-04-19T01:31:52+00:00",
+            "ETag": "\"07884fa813806d5be85e943f36c0987e\"",
+            "Size": 10277932,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "CV/",
             "LastModified": "2022-08-19T05:27:22+00:00",
             "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
@@ -1047,7 +1058,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2023-04-18T02:06:49+00:00",
+            "LastModified": "2023-04-18T02:08:18+00:00",
             "ETag": "\"2f3a65b3fc50a425c14f3b7238aa24cf\"",
             "Size": 11321,
             "StorageClass": "STANDARD",
