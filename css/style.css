@@ -4729,7 +4729,7 @@ small, .font_small { font-size: 0.9375rem; }
 /* logo */
 .logo { width: 110px; margin-top: 0px; }
 
-.biglogo { min-width: 100px; padding: 0px; max-width: 100%; }
+.biglogo { padding: 0px; max-width: 100%; }
 
 .logobox { display: table-cell; vertical-align: middle; }
 
