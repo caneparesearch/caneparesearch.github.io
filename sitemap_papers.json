@@ -1091,9 +1091,9 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2023-05-18T07:35:19+00:00",
-            "ETag": "\"261938e9dba092fccced34484140236f\"",
-            "Size": 11739,
+            "LastModified": "2023-05-27T14:24:57+00:00",
+            "ETag": "\"e5f89b3c7db7d4210899dc564d3829e4\"",
+            "Size": 11874,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
