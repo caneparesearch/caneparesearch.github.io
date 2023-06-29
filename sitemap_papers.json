@@ -782,17 +782,6 @@
             }
         },
         {
-            "Key": "2022-07-22-devi-npjcompmater.pdf",
-            "LastModified": "2022-07-22T17:18:57+00:00",
-            "ETag": "\"7a063487b11beb19d836350229a9cd0c\"",
-            "Size": 2988070,
-            "StorageClass": "STANDARD",
-            "Owner": {
-                "DisplayName": "caneparesearch",
-                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
-            }
-        },
-        {
             "Key": "2022/",
             "LastModified": "2022-01-20T18:20:41+00:00",
             "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
@@ -805,8 +794,11 @@
         },
         {
             "Key": "2022/2022-07-22-devi-npjcompmater.pdf",
-            "LastModified": "2022-07-22T17:32:32+00:00",
+            "LastModified": "2023-06-29T13:41:34+00:00",
             "ETag": "\"7a063487b11beb19d836350229a9cd0c\"",
+            "ChecksumAlgorithm": [
+                "SHA256"
+            ],
             "Size": 2988070,
             "StorageClass": "STANDARD",
             "Owner": {
@@ -1057,6 +1049,17 @@
             }
         },
         {
+            "Key": "2023/2023-06-29-vanderlubbe_chemater.pdf",
+            "LastModified": "2023-06-29T13:42:05+00:00",
+            "ETag": "\"6b9e4cd3128a165419c474aa1a8d74d9\"",
+            "Size": 4060239,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "CV/",
             "LastModified": "2022-08-19T05:27:22+00:00",
             "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
@@ -1091,7 +1094,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2023-06-06T15:06:26+00:00",
+            "LastModified": "2023-06-06T15:12:06+00:00",
             "ETag": "\"e8a0c85ebe4a5d2a925af6d83e9a17a7\"",
             "Size": 11874,
             "StorageClass": "STANDARD",
