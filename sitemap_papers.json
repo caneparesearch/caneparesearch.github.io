@@ -1105,8 +1105,8 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2023-07-08T00:06:37+00:00",
-            "ETag": "\"9012f7b84cd5a2d2b30d03c0c38cb6a0\"",
+            "LastModified": "2023-07-17T21:41:06+00:00",
+            "ETag": "\"c6cd57573adba52a27c19ad7e62b4aad\"",
             "Size": 12021,
             "StorageClass": "STANDARD",
             "Owner": {
