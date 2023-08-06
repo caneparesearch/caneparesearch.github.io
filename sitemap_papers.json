@@ -983,17 +983,6 @@
             }
         },
         {
-            "Key": "2023/2023-01-22-deng-kmcpy.pdf",
-            "LastModified": "2023-03-17T13:55:12+00:00",
-            "ETag": "\"5b793a5886e1222df312077b05e20d28\"",
-            "Size": 2034039,
-            "StorageClass": "STANDARD",
-            "Owner": {
-                "DisplayName": "caneparesearch",
-                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
-            }
-        },
-        {
             "Key": "2023/2023-04-06-chen-chemater.pdf",
             "LastModified": "2023-04-07T04:35:55+00:00",
             "ETag": "\"9ec7b1965dae0060ffc0b9b79c3830a6\"",
@@ -1071,6 +1060,17 @@
             }
         },
         {
+            "Key": "2023/2023-08-05-deng-kmcpy.pdf",
+            "LastModified": "2023-08-06T08:42:12+00:00",
+            "ETag": "\"1ce536afa021b0b4f9591f08bbd7b1aa\"",
+            "Size": 1425652,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "CV/",
             "LastModified": "2022-08-19T05:27:22+00:00",
             "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
@@ -1105,7 +1105,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2023-07-17T22:00:36+00:00",
+            "LastModified": "2023-07-17T22:02:26+00:00",
             "ETag": "\"c6cd57573adba52a27c19ad7e62b4aad\"",
             "Size": 12021,
             "StorageClass": "STANDARD",
