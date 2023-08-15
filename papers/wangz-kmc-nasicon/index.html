@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>kMCpy&#58 A Python Package to Simulate Transport Properties in Solids with Kinetic Monte Carlo</title>
+	<title>Kinetic Monte Carlo Simulations of Sodium Ion Transport in NaSICON Electrodes</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- RSS feed -->
 	<link rel="alternate" type="application/rss+xml" title="Canepa Research Lab" href="https://caneparesearch.org/feed.xml">
@@ -121,16 +121,16 @@
 		<div class="row">
 			<div class="col-sm-3 col-xs-12">
 				
-				<img src="/images/papers/2023-08-05-deng-kmcpy.png" class="paper-img">
+				<img src="/images/papers/2023-08-14-wangz-kmc-nasicon.png" class="paper-img">
 				
 			</div>
 			<div class="col-sm-9 col-xs-12">
 				<h2 class="page-title-paper">
-					kMCpy&#58 A Python Package to Simulate Transport Properties in Solids with Kinetic Monte Carlo
+					Kinetic Monte Carlo Simulations of Sodium Ion Transport in NaSICON Electrodes
 				</h2>
 				<p>
-					Deng Z., Mishra T., Xie W., Saeed D., Gautam G. S.,  and <b>Canepa P.</b>;
-					Comput. Mater. Sci., 229, 112394 (2023).
+					Wang Z., Mishra T., Xie W.,  Gautam G. S., Cheetham A.  and <b>Canepa P.</b>;
+					ACS Materials Lett., 229, 2499 (2023).
 				</p>
 			</div>
 		</div>
@@ -146,7 +146,7 @@
 			</div>
 			<div class="pad-left-20 note">
 				<div class="smallspacer"></div>
-				<a class="off" href="https://carepapers.s3-ap-southeast-1.amazonaws.com/2023/2023-08-05-deng-kmcpy.pdf">2023-08-05-deng-kmcpy.pdf</a>
+				<a class="off" href="https://carepapers.s3-ap-southeast-1.amazonaws.com/2023/2023-08-14-wangz-kmc-nasicon.pdf">2023-08-14-wangz-kmc-nasicon.pdf</a>
 			</div>
 			<div class="bigspacer"></div>
 			
@@ -157,28 +157,17 @@
 			</div>
 			<div class="pad-left-20 note">
 				<div class="smallspacer"></div>
-				<a class="off" href="http://dx.doi.org/10.1016/j.commatsci.2023.112394">10.1016/j.commatsci.2023.112394</a>
+				<a class="off" href="http://dx.doi.org/10.1021/acsmaterialslett.3c00610">10.1021/acsmaterialslett.3c00610</a>
 			</div>
 
 			
-			
-			<div class="smallhead">
-				<i class="fa fa-github"> GitHub</i>
-			</div>
-			<div class="pad-left-20 note">
-				<div class="smallspacer"></div>
-				<a class="off" href="https://github.com/caneparesearch/kMCpy">kMCpy</a>
-			</div>
-
-
-
 			
 			<div class="bigspacer"></div>
-			<div data-badge-details="right" data-badge-type="donut" data-doi="10.1016/j.commatsci.2023.112394" data-condensed="true"
+			<div data-badge-details="right" data-badge-type="donut" data-doi="10.1021/acsmaterialslett.3c00610" data-condensed="true"
 				data-hide-no-mentions="true" class="altmetric-embed"></div>
 
 			<div class="bigspacer"></div>
-			<span class="__dimensions_badge_embed__" data-doi="10.1016/j.commatsci.2023.112394" data-hide-zero-citations="true"
+			<span class="__dimensions_badge_embed__" data-doi="10.1021/acsmaterialslett.3c00610" data-hide-zero-citations="true"
 				data-legend="always" data-style="small_circle"></span>
 			<script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 		</div>
@@ -186,7 +175,7 @@
 	<div class="col-md-8">
 		<div class="post">
 			<h2 id="abstract">Abstract</h2>
-<p>Understanding ion transport in functional materials is crucial to unravel complex chemical reactions, improving the rate performance of materials for energy storage and conversion, and optimizing catalysts. To model ion transport, atomistic simulations, including molecular dynamics (MD) and kinetic Monte Carlo (kMC) have been developed and applied. However, kMC simulations are utilized to a lower extent than MDs due to a lack of systematic workflows to construct models for predicting transition rates. Here, we present kMCpy, a lightweight, customizable, and modular python package to compute the ionic transport properties in crystalline materials using kMC. kMCpy is remarkably versatile and user-friendly, making it a powerful code for studying materials kinetics in crystalline systems. kMCpy can be combined with (local) cluster expansion Hamiltonians derived from first-principles calculations. kMCpy is versatile with respect to any type of crystalline material, bearing any dimensionality, i.e., 1D, 2D, and 3D. kMCpy provides (i) a comprehensive workflow to enumerate all possible migration events in crystalline systems, (ii) to derive transition rates efficiently and at the accuracy of first-principles calculations, and (iii) a robust kMC solver to study kinetic phenomena in materials. The workflow implemented in kMCpy provides a systematic way to compute highly accurate kinetic properties. Hence, kMCpy can be used in high-throughput simulations for the discovery and optimization of novel functional materials.</p>
+<p>The development of high-performance sodium (Na) ion batteries requires improved electrode materials. The energy and power densities of Na superionic conductor (NaSICON) electrode materials are promising for large-scale energy storage applications. However, several practical issues limit the full utilization of the theoretical energy densities of the NaSICON electrodes. A pressing challenge lies in the limited sodium extraction in low Na content NaSICONs, e.g., Na<sub>1</sub><sup>VI</sup>V<sup>VI</sup>V(PO<sub>4</sub>)<sub>3</sub> ↔ V<sup>V</sup>V<sup>IV</sup>(PO<sub>4</sub>)<sub>3</sub> + e<sup>–</sup> + Na<sup>+</sup>. Therefore, it is important to quantify the Na-ion mobility in a broad range of NaSICON electrodes. Using a kinetic Monte Carlo approach bearing the accuracy of first-principles calculations, we elucidate the variability of Na-ion transport vs Na content in three important NaSICON electrode materials, Na<sub>x</sub>Ti<sub>2</sub>(PO<sub>4</sub>)<sub>3</sub>, Na<sub>x</sub>V<sub>2</sub>(PO<sub>4</sub>)<sub>3</sub>, and Na<sub>x</sub>Cr<sub>2</sub>(PO<sub>4</sub>)<sub>3</sub>. We show Na<sup>+</sup> transport in NaSICON electrode materials is almost entirely determined by the local electrostatic and chemical environment set by the transition metals and the polyanionic scaffold. The competition with the ordering-disordering phenomena of Na vacancies also plays a role in influencing Na transport. We identify the Na content providing the highest room-temperature diffusivities in these electrodes, i.e., Na<sub>2.7</sub>Ti<sub>2</sub>(PO<sub>4</sub>)<sub>3</sub>, Na<sub>2.9</sub>V<sub>2</sub>(PO<sub>4</sub>)<sub>3</sub>, and Na<sub>2.6</sub>Cr<sub>2</sub>(PO<sub>4</sub>)<sub>3</sub>. We link the variations in the Na<sup>+</sup> kinetic properties by analyzing the competition of ligand field stabilization transition metal ions and their ionic radii. We interpret the limited Na extraction at x = 1 observed experimentally by gaining insights into the local Na vacancy interplay. Targeted chemical substitutions of transition metals disrupting local charge arrangements will be critical to reducing the occurrence of strong Na<sup>+</sup>-vacancy orderings at low Na concentrations, thus expanding the accessible capacities of these electrode materials.</p>
 
 		</div>
 	</div>
