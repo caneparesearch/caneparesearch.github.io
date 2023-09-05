@@ -1,0 +1,25 @@
+//== Footer
+
+footer {
+    margin-top: $gap * 2;
+    margin-bottom: $gap * 2;
+    p {
+        margin-bottom: 0;
+    }
+    .colophon {
+        padding-top: $gap * 2;
+        border-top: 1px solid $light-grey;
+        margin-top: 10px;
+        font-size: 0.85rem;
+        line-height: $line-height-base * 0.75rem;
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+.footernav {
+    li {
+        margin-right: $gap * 1;
+    }
+}
