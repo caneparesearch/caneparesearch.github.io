@@ -1082,6 +1082,17 @@
             }
         },
         {
+            "Key": "2023/2023-09-26-vanderlubbe_npj.pdf",
+            "LastModified": "2023-09-27T03:57:31.000Z",
+            "ETag": "\"21e433ccf43de7300e958c0ef123fbce\"",
+            "Size": 1171619,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "CV/",
             "LastModified": "2022-08-19T05:27:22.000Z",
             "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
@@ -1116,7 +1127,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2023-09-05T18:27:24.000Z",
+            "LastModified": "2023-09-05T18:30:26.000Z",
             "ETag": "\"18ce501e0c554ece3c7906732a8bcb5f\"",
             "Size": 12164,
             "StorageClass": "STANDARD",
