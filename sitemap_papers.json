@@ -1104,6 +1104,17 @@
             }
         },
         {
+            "Key": "2023/2023-10-10-boger_ACSEMat.pdf",
+            "LastModified": "2023-10-11T10:28:54.000Z",
+            "ETag": "\"fb5525d36a1d88f848f6a41a3c2e4219\"",
+            "Size": 2179640,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "CV/",
             "LastModified": "2022-08-19T05:27:22.000Z",
             "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
@@ -1138,7 +1149,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2023-09-30T02:11:39.000Z",
+            "LastModified": "2023-09-30T02:13:56.000Z",
             "ETag": "\"a2a72c6b9470dbea00219f9f0fd7a740\"",
             "Size": 12441,
             "StorageClass": "STANDARD",
