@@ -1115,6 +1115,17 @@
             }
         },
         {
+            "Key": "2023/2023-10-18-kang_jmca.pdf",
+            "LastModified": "2023-10-18T21:24:43.000Z",
+            "ETag": "\"b20b25088b0cf816db58517b6cf6eb25\"",
+            "Size": 2051732,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "CV/",
             "LastModified": "2022-08-19T05:27:22.000Z",
             "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
@@ -1149,9 +1160,9 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2023-09-30T02:13:56.000Z",
-            "ETag": "\"a2a72c6b9470dbea00219f9f0fd7a740\"",
-            "Size": 12441,
+            "LastModified": "2023-10-11T10:45:21.000Z",
+            "ETag": "\"4af94005edc5344c5fe466dae3f559a3\"",
+            "Size": 12580,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
