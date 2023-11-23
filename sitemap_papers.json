@@ -1116,9 +1116,20 @@
         },
         {
             "Key": "2023/2023-10-18-kang_jmca.pdf",
-            "LastModified": "2023-10-18T21:24:43.000Z",
-            "ETag": "\"b20b25088b0cf816db58517b6cf6eb25\"",
-            "Size": 2051732,
+            "LastModified": "2023-10-24T15:46:01.000Z",
+            "ETag": "\"433af9dda850b4da1f005e302c6e517b\"",
+            "Size": 1117394,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
+            "Key": "2023/2023-11-22-liu-angew-chem.pdf",
+            "LastModified": "2023-11-23T19:18:59.000Z",
+            "ETag": "\"b07aa070f547a26bfb1038577ff2c237\"",
+            "Size": 1516432,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
@@ -1160,7 +1171,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2023-10-19T03:09:35.000Z",
+            "LastModified": "2023-10-19T03:11:37.000Z",
             "ETag": "\"a4f46d0bf40ecf63a6093b32f32dbfeb\"",
             "Size": 12715,
             "StorageClass": "STANDARD",
