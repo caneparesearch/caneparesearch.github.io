@@ -1137,28 +1137,6 @@
             }
         },
         {
-            "Key": "CV/",
-            "LastModified": "2022-08-19T05:27:22.000Z",
-            "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
-            "Size": 0,
-            "StorageClass": "STANDARD",
-            "Owner": {
-                "DisplayName": "caneparesearch",
-                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
-            }
-        },
-        {
-            "Key": "CV/PCanepa_resume.pdf",
-            "LastModified": "2022-08-19T05:28:14.000Z",
-            "ETag": "\"61572175ba99ddb780c1d157a37e03dd\"",
-            "Size": 207180,
-            "StorageClass": "STANDARD",
-            "Owner": {
-                "DisplayName": "caneparesearch",
-                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
-            }
-        },
-        {
             "Key": "google001d90d96eac85e6.html",
             "LastModified": "2020-10-18T03:39:21.000Z",
             "ETag": "\"cc4c9ad4df8f2294923a0ebe66f4c4aa\"",
@@ -1171,9 +1149,9 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2023-10-19T03:11:37.000Z",
-            "ETag": "\"a4f46d0bf40ecf63a6093b32f32dbfeb\"",
-            "Size": 12715,
+            "LastModified": "2023-11-23T19:28:52.000Z",
+            "ETag": "\"acf3d7a32da31656fac38c6c536e37d3\"",
+            "Size": 12855,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
