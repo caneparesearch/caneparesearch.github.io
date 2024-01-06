@@ -1028,9 +1028,9 @@
         },
         {
             "Key": "2023/2023-05-19-li-advmat.pdf",
-            "LastModified": "2023-05-27T14:22:43.000Z",
-            "ETag": "\"3a7f75b1590a126548491610515069a9\"",
-            "Size": 955506,
+            "LastModified": "2024-01-06T21:24:51.000Z",
+            "ETag": "\"1f3c774145f34cc27378a53fefc1b8e3\"",
+            "Size": 3379266,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
@@ -1149,7 +1149,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2024-01-06T21:18:31.000Z",
+            "LastModified": "2024-01-06T21:20:45.000Z",
             "ETag": "\"1dd83f4b7ae62efba80e62905ebda0e1\"",
             "Size": 12729,
             "StorageClass": "STANDARD",
