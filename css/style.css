@@ -14806,7 +14806,7 @@ blockquote p {
 }
 
 .glyphbox {
-  border-top: 2px solid rgb(255, 83, 13);
+  /* border-top: 2px solid $brand-primary; */
   margin-top: 30px;
   padding-top: 39px;
 }
