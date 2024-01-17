@@ -1137,6 +1137,28 @@
             }
         },
         {
+            "Key": "2024/",
+            "LastModified": "2024-01-17T15:33:19+00:00",
+            "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
+            "Size": 0,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
+            "Key": "2024/2024-01-03-xie-adv-energy-mater.pdf",
+            "LastModified": "2024-01-17T15:33:46+00:00",
+            "ETag": "\"6b3980651fa6b628afc362736f09a043\"",
+            "Size": 2688093,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "google001d90d96eac85e6.html",
             "LastModified": "2020-10-18T03:39:21+00:00",
             "ETag": "\"cc4c9ad4df8f2294923a0ebe66f4c4aa\"",
@@ -1149,8 +1171,8 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2024-01-11T04:35:03+00:00",
-            "ETag": "\"e40cf4eab5d46ac452b41174ec4be5c8\"",
+            "LastModified": "2024-01-16T16:25:43+00:00",
+            "ETag": "\"88f118084648d16a76a8166a47619219\"",
             "Size": 12729,
             "StorageClass": "STANDARD",
             "Owner": {
