@@ -1159,6 +1159,17 @@
             }
         },
         {
+            "Key": "2024/2024-01-05-li-sci-data.pdf",
+            "LastModified": "2024-01-22T16:32:48+00:00",
+            "ETag": "\"af3e83bec5681ae60d99dd904e125400\"",
+            "Size": 2175917,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2024/si.pdf",
             "LastModified": "2024-01-17T15:51:48+00:00",
             "ETag": "\"df0d90b14fd0bc2905c461f26e05e300\"",
@@ -1182,7 +1193,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2024-01-21T00:42:33+00:00",
+            "LastModified": "2024-01-21T01:06:48+00:00",
             "ETag": "\"c5edf2e583afed3bcf75245ba5fc8adb\"",
             "Size": 12992,
             "StorageClass": "STANDARD",
