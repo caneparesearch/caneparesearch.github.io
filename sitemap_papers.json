@@ -1170,6 +1170,17 @@
             }
         },
         {
+            "Key": "2024/2024-02-19-helm-acsaemat.pdf",
+            "LastModified": "2024-03-01T03:06:37+00:00",
+            "ETag": "\"3601e0c2ade19db8dbe16cc4ef923ead\"",
+            "Size": 6603555,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "2024/si.pdf",
             "LastModified": "2024-01-17T15:51:48+00:00",
             "ETag": "\"df0d90b14fd0bc2905c461f26e05e300\"",
@@ -1193,7 +1204,7 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2024-01-22T16:42:28+00:00",
+            "LastModified": "2024-01-22T16:43:20+00:00",
             "ETag": "\"185d3ae54b59d7b2a36a35bf8aa1b78d\"",
             "Size": 13129,
             "StorageClass": "STANDARD",
@@ -1235,6 +1246,5 @@
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
             }
         }
-    ],
-    "RequestCharged": null
+    ]
 }
