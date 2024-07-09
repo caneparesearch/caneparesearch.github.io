@@ -9,7 +9,7 @@ To build the website locally, clone the repo with:
 ```
 git clone git@github.com:caneparesearch/source-care-website.git
 ```
-In order to access this repository you need an invitation. Please e-mail [me](mailto:pcanepa@nus.edu.sg).
+In order to access this repository you need an invitation. Please e-mail [me](mailto:pcanepa@uh.edu).
 
 Then install necessary Ruby dependencies by running `bundle install` from within the `blotter` directory.  After this, the site can be be built with:
 
@@ -20,12 +20,6 @@ bundle exec jekyll build
 (If you are getting errors at this stage, it may be due to your version of `bundle`. Try `gem uninstall bundler` + `gem install bundler -v 1.13.1`.)
 
 To view the site, run `bundle exec jekyll serve` and point a browser to `http://127.0.0.1:4000/`.  More information on Jekyll can be found [here](http://jekyllrb.com/).
-
-To include projects, preprocessing scripts are necessary to clone project repos and update Jekyll metadata. This can be accomplished with:
-
-```
-ruby _scripts/update-and-preprocess.rb
-```
 
 Then `jekyll build` works as normal.
 
