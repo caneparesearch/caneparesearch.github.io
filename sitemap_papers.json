@@ -1280,6 +1280,17 @@
             }
         },
         {
+            "Key": "2024/2024-11-21-panchal-halides-acsenergylett.pdf",
+            "LastModified": "2024-11-21T21:15:35+00:00",
+            "ETag": "\"510ef17c4527af4c9eaf99638453e11a\"",
+            "Size": 2401726,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
             "Key": "google001d90d96eac85e6.html",
             "LastModified": "2020-10-18T03:39:21+00:00",
             "ETag": "\"cc4c9ad4df8f2294923a0ebe66f4c4aa\"",
@@ -1292,9 +1303,9 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2024-10-23T17:00:02+00:00",
-            "ETag": "\"f783820c298011560e0034e8db66bbe9\"",
-            "Size": 285,
+            "LastModified": "2024-11-14T14:55:44+00:00",
+            "ETag": "\"ff910703a1398211a282efcd2c281c67\"",
+            "Size": 14451,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
@@ -1335,5 +1346,6 @@
             }
         }
     ],
-    "RequestCharged": null
+    "RequestCharged": null,
+    "Prefix": ""
 }
