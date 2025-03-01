@@ -1328,9 +1328,9 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2025-02-07T16:25:09+00:00",
-            "ETag": "\"7d25598b575bb2771d5aafb1a1686d93\"",
-            "Size": 14606,
+            "LastModified": "2025-02-12T16:02:42+00:00",
+            "ETag": "\"1e1e54c899b33e6c7d10cfe20345a3f7\"",
+            "Size": 14751,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
@@ -1353,6 +1353,20 @@
             "LastModified": "2020-11-19T20:16:37+00:00",
             "ETag": "\"595afd0708ca7bf709b76b87a0604686\"",
             "Size": 135375,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "caneparesearch",
+                "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
+            }
+        },
+        {
+            "Key": "misc/science.adw8627.pdf",
+            "LastModified": "2025-03-01T13:34:03+00:00",
+            "ETag": "\"97e92ccb3054a77e8b3e512dd71cbbd5\"",
+            "ChecksumAlgorithm": [
+                "CRC64NVME"
+            ],
+            "Size": 953119,
             "StorageClass": "STANDARD",
             "Owner": {
                 "DisplayName": "caneparesearch",
