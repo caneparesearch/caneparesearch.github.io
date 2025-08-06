@@ -7,7 +7,6 @@
             "Size": 0,
             "StorageClass": "STANDARD",
             "Owner": {
-                "DisplayName": "caneparesearch",
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
             }
         },
@@ -62,7 +61,6 @@
             "Size": 2382322,
             "StorageClass": "STANDARD",
             "Owner": {
-                "DisplayName": "caneparesearch",
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
             }
         },
@@ -227,7 +225,6 @@
             "Size": 2719306,
             "StorageClass": "STANDARD",
             "Owner": {
-                "DisplayName": "caneparesearch",
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
             }
         },
@@ -238,7 +235,6 @@
             "Size": 3208174,
             "StorageClass": "STANDARD",
             "Owner": {
-                "DisplayName": "caneparesearch",
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
             }
         },
@@ -326,7 +322,6 @@
             "Size": 3143675,
             "StorageClass": "STANDARD",
             "Owner": {
-                "DisplayName": "caneparesearch",
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
             }
         },
@@ -348,7 +343,6 @@
             "Size": 1255612,
             "StorageClass": "STANDARD",
             "Owner": {
-                "DisplayName": "caneparesearch",
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
             }
         },
@@ -568,7 +562,6 @@
             "Size": 2769238,
             "StorageClass": "STANDARD",
             "Owner": {
-                "DisplayName": "caneparesearch",
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
             }
         },
@@ -634,7 +627,6 @@
             "Size": 5291366,
             "StorageClass": "STANDARD",
             "Owner": {
-                "DisplayName": "caneparesearch",
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
             }
         },
@@ -946,7 +938,6 @@
             "Size": 2082112,
             "StorageClass": "STANDARD",
             "Owner": {
-                "DisplayName": "caneparesearch",
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
             }
         },
@@ -1210,7 +1201,6 @@
             "Size": 5156700,
             "StorageClass": "STANDARD",
             "Owner": {
-                "DisplayName": "caneparesearch",
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
             }
         },
@@ -1265,7 +1255,6 @@
             "Size": 5332486,
             "StorageClass": "STANDARD",
             "Owner": {
-                "DisplayName": "caneparesearch",
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
             }
         },
@@ -1354,14 +1343,13 @@
             "Size": 53,
             "StorageClass": "STANDARD",
             "Owner": {
-                "DisplayName": "caneparesearch",
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
             }
         },
         {
             "Key": "map.xml",
-            "LastModified": "2025-07-01T21:01:41+00:00",
-            "ETag": "\"0697e002e1ed33fada5cafeacfad49d0\"",
+            "LastModified": "2025-07-21T10:24:58+00:00",
+            "ETag": "\"88df334707ff37a8b5d2dda98175c453\"",
             "ChecksumAlgorithm": [
                 "CRC64NVME"
             ],
@@ -1417,7 +1405,6 @@
             "Size": 146,
             "StorageClass": "STANDARD",
             "Owner": {
-                "DisplayName": "caneparesearch",
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
             }
         }
