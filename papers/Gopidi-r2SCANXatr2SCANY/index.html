@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Reducing Self-Interaction Error in Transition-Metal Oxides with Different Exact-Exchange Fractions for Energy and Density</title>
+	<title>Reducing self-interaction error in transition-metal oxides with different exact-exchange fractions for energy and density</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- RSS feed -->
 	<link rel="alternate" type="application/rss+xml" title="Canepa Research Lab" href="https://caneparesearch.org/feed.xml">
@@ -131,11 +131,11 @@
 			</div>
 			<div class="col-sm-9 col-xs-12">
 				<h2 class="page-title-paper">
-					Reducing Self-Interaction Error in Transition-Metal Oxides with Different Exact-Exchange Fractions for Energy and Density
+					Reducing self-interaction error in transition-metal oxides with different exact-exchange fractions for energy and density
 				</h2>
 				<p>
 					Gopidi H. R., Zhang R., Wang Y., Patra A., Sun J., Ruzsinszky A., Perdew J. P., and  <b>Canepa P.</b>;
-					ArXiV (2025).
+					Phys. Rev. B, 00, 005100 (2026).
 				</p>
 			</div>
 		</div>
@@ -162,7 +162,7 @@
 			</div>
 			<div class="pad-left-20 note">
 				<div class="smallspacer"></div>
-				<a class="off" href="http://dx.doi.org/10.48550/arXiv.2506.20635">10.48550/arXiv.2506.20635</a>
+				<a class="off" href="http://dx.doi.org/10.1103/myd5-l4f4">10.1103/myd5-l4f4</a>
 			</div>
 
 			
@@ -179,11 +179,11 @@
 
 			
 			<div class="bigspacer"></div>
-			<div data-badge-details="right" data-badge-type="donut" data-doi="10.48550/arXiv.2506.20635" data-condensed="true"
+			<div data-badge-details="right" data-badge-type="donut" data-doi="10.1103/myd5-l4f4" data-condensed="true"
 				data-hide-no-mentions="true" class="altmetric-embed"></div>
 
 			<div class="bigspacer"></div>
-			<span class="__dimensions_badge_embed__" data-doi="10.48550/arXiv.2506.20635" data-hide-zero-citations="true"
+			<span class="__dimensions_badge_embed__" data-doi="10.1103/myd5-l4f4" data-hide-zero-citations="true"
 				data-legend="always" data-style="small_circle"></span>
 			<script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 		</div>
@@ -191,7 +191,29 @@
 	<div class="col-md-8">
 		<div class="post">
 			<h2 id="abstract">Abstract</h2>
-<p>As the workhorse of electronic structure methods, density functional theory (DFT) has become essential for molecule and materials discovery, deploying databases covering vast chemical and composition spaces, predicting chemical and electrochemical reactions, and developing machine learning potentials. The extensive application of DFT in chemistry and materials science requires predictions achieving “chemical accuracy,” a goal hindered by the unknown functional form for the exact exchange and correlation (XC) energy. A recent meta-generalized gradient approximation, the restored-regularized strongly constrained and appropriately normed (r<sup>2</sup>SCAN) XC functional, fulfils 17 exact constraints of the XC energy, and has significantly boosted the accuracy of predictions for molecules and materials. However, r<sup>2</sup>SCAN still appears inadequate at predicting material properties of open d and f transition-metal strongly correlated compounds, including band gaps, magnetic moments, and oxidation energies. Prediction inaccuracies of r<sup>2</sup>SCAN arise from functional and density-driven errors, mainly resulting from the DFT self-interaction error. Here, we propose a novel method termed r<sup>2</sup>SCANY@r<sup>2</sup>SCANX to mitigate the pernicious self-interaction error of XC functionals for the accurate simulations of electronic, magnetic, and thermochemical properties of transition metal oxides. r<sup>2</sup>SCANY@r<sup>2</sup>SCANX utilizes different fractions of exact Hartree-Fock exchange: X to define the electronic density, and Y to set the density functional approximation for the energy. We show that r<sup>2</sup>SCANY@r<sup>2</sup>SCANX simultaneously addresses functional-driven and density-driven inaccuracies, mitigating the self-interaction error in DFT. Building just on 1 (or maximum 2) universal parameters, we demonstrate that r<sup>2</sup>SCANY@r<sup>2</sup>SCANX improves upon the r<sup>2</sup>SCAN predictions for 18 highly correlated oxides and even outperforms the highly parameterized DFT(r<sup>2</sup>SCAN)+<i>U</i> method –the state-of-the-art approach to predict strongly correlated materials. We demonstrate that the typical O<sub>2</sub> overbinding inaccuracies of the local density and the gradient XC approximations, with errors ranging between –2.2 and –1.0 eV/O<sub>2</sub>, reduce to –0.3 eV/O<sub>2</sub> for r<sup>2</sup>SCAN, and further reduce to less than∼0.03 eV/O<sub>2</sub> using any combination of X in r<sup>2</sup>SCAN10@r<sup>2</sup>SCANX, including X=0. Prediction uncertainties for oxidation energies and magnetic moments of transition metal oxides are significantly reduced by r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN50 and band gaps with r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN. r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN50 diminishes the density-driven error present in r<sup>2</sup>SCAN and r<sup>2</sup>SCAN10. We demonstrate that the computationally efficient r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN is nearly as accurate as the global hybrid r<sup>2</sup>SCAN10 for oxidation energies. This suggests that accurate energy differences can be achieved through rate-limiting self-consistent iterations and geometry optimizations using the efficient r<sup>2</sup>SCAN. Subsequently, a more expensive nonlocal functional, such as a hybrid or self-interaction correction, can be applied in a fast-to-execute single post-self-consistent calculation, as in r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN. Compared to computationally demanding r<sup>2</sup>SCAN10, r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN appears to be 12 to 165 times faster for the iron oxides in our test set.</p>
+<p>Density functional theory (DFT) in chemistry and materials science aims for “chemical accuracy,” but this goal
+is challenged by the need to approximate the exact exchange-correlation (XC) energy functional. The restored-
+regularized strongly constrained and appropriately normed (r<sup>2</sup>SCAN), meta-generalized gradient approximation
+to the XC functional fulfills 17 exact constraints of the XC energy, and has significantly boosted prediction
+accuracy for molecules and materials. However, r<sup>2</sup>SCAN remains inadequate at predicting the properties of
+open d and f transition-metal strongly correlated compounds, such as band gaps, magnetic moments, and
+oxidation energies. Prediction inaccuracies of r<sup>2</sup>SCAN energies arise from functional- and density-driven errors,
+mainly resulting from the DFT self-interaction error. Here, we propose a method termed r<sup>2</sup>SCANY@r<sup>2</sup>SCANX
+to mitigate the self-interaction error of XC functionals for the accurate simulations of electronic, magnetic,
+and thermochemical properties of transition-metal oxides. r<sup>2</sup>SCANY@r<sup>2</sup>SCANX uses different fractions of
+exact Hartree-Fock exchange, X for the electronic density and Y for the density functional approximation of
+the total energy, thereby simultaneously addressing functional-driven and density-driven inaccuracies. Building
+on just one (or maximum two) parameters that apply unchanged to <i>s-p</i>-bonded systems, we demonstrate that
+r<sup>2</sup>SCANY@r<sup>2</sup>SCANX improves upon the r<sup>2</sup>SCAN predictions for 20 highly correlated oxides and even out-
+performs the highly parametrized DFT(r<sup>2</sup>SCAN)+<i>U</i> method—the state-of-the-art approach to predict strongly
+correlated materials. Prediction uncertainties for oxidation energies and magnetic moments of transition-
+metal oxides are significantly reduced by r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN50 and band gaps with r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN.
+r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN50 diminishes the density-driven error of the energy in r<sup>2</sup>SCAN and r<sup>2</sup>SCAN10. We
+demonstrate that the computationally efficient r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN is nearly as accurate as the global hybrid
+r<sup>2</sup>SCAN10 for oxidation energies. This indicates that accurate energy differences can be obtained through
+rate-limiting self-consistent iterations and geometry optimizations with the efficient r<sup>2</sup>SCAN. Subsequently,
+a more expensive nonlocal functional, such as a hybrid or self-interaction correction, can be applied in a fast,
+single post-self-consistent calculation, as in r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN.</p>
 
 		</div>
 	</div>
