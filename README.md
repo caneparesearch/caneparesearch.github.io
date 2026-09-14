@@ -9,7 +9,7 @@ To build the website locally, clone the repo with:
 ```
 git clone git@github.com:caneparesearch/source-care-website.git
 ```
-In order to access this repository you need an invitation. Please e-mail [me](mailto:pcanepa@nus.edu.sg).
+In order to access this repository you need an invitation. Please e-mail [me](mailto:canepa@purdue.edu).
 
 Then install necessary Ruby dependencies by running `bundle install` from within the `blotter` directory.  After this, the site can be be built with:
 
