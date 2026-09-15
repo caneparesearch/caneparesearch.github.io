@@ -1378,13 +1378,13 @@
         },
         {
             "Key": "map.xml",
-            "LastModified": "2025-08-25T23:07:43+00:00",
-            "ETag": "\"daa36eb10d31ca3f221e179be424c641\"",
+            "LastModified": "2026-09-14T16:43:30+00:00",
+            "ETag": "\"c46e4b636decbdd551cd48fc27348a1d\"",
             "ChecksumAlgorithm": [
                 "CRC64NVME"
             ],
             "ChecksumType": "FULL_OBJECT",
-            "Size": 15462,
+            "Size": 16469,
             "StorageClass": "STANDARD",
             "Owner": {
                 "ID": "e4291abdb50b8367ffe6ec973c647b6a914c9c12c79113241596fd1442f6504e"
