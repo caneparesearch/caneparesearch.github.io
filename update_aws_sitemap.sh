@@ -9,7 +9,6 @@ if [ -f sitemap_papers.json ] || [ -f map.xml ] ; then
 fi
 
 aws s3api list-objects --bucket carepapers  > sitemap_papers.json
-exit
 
 # These lines put together the content of the xml file
 data=`echo $(date '+%Y-%m-%d')`
