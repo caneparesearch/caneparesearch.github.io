@@ -1,7 +1,6 @@
-//== Nagivagion
+//== Navigation
 
-.header {
-}
+.header {}
 
 /* logo */
 .logo {
@@ -22,8 +21,8 @@
 
 /* navbar */
 .bg-navbar {
-    background-color: $brand-secondary;
-    //border-bottom: 2px solid $brand-primary;
+    background-color: $secondary;
+    //border-bottom: 2px solid $primary;
 }
 
 // remove any gap in navbar
@@ -38,18 +37,18 @@
 }
 
 .nav-link a {
-    color: $brand-primary;
+    color: $primary;
     border-radius: 0px;
     //background-color: transparent;
 }
 
-.nav-link > a:hover {
+.nav-link>a:hover {
     color: $link-color-navlink;
     text-decoration: none;
     //background-color: transparent;
 }
 
-.navbar-nav > .active > a {
+.navbar-nav>.active>a {
     color: $link-color-navlink;
 }
 
@@ -68,7 +67,7 @@
     //border-bottom: 2px solid $link-color-navlink;
 }
 
-.nav-pills > li {
+.nav-pills>li {
     margin: 0px;
     padding: 0px;
     border: 0px;
@@ -76,11 +75,11 @@
     padding-top: 20px;
 }
 
-.navbar > .container .navbar-brand {
+.navbar>.container .navbar-brand {
     margin-left: 0px;
 }
 
-.navbar-nav > li > a {
+.navbar-nav>li>a {
     margin: 0px;
     padding: 0px 6px;
     padding-top: 0px;
@@ -105,7 +104,7 @@
 }
 
 .custom-toggler.navbar-toggler {
-    border-color: $brand-primary;
+    border-color: $primary;
 }
 
 .custom-toggler .navbar-toggler-icon:hover {
@@ -120,22 +119,22 @@
 // prevent brand-logo to go below line
 
 @media (max-width: 991px) {
-    .navbar-default,
     .navbar-custom {
         height: 65px;
     }
-    .navbar-default .navbar-nav > li > a,
+
+    .navbar-custom .navbar-nav>li>a,
     .navbar-brand {
         line-height: 145%;
     }
 }
 
 @media (max-width: 481px) {
-    .navbar-default,
     .navbar-custom {
         height: 65px;
     }
-    .navbar-default .navbar-nav > li > a,
+
+    .navbar-custom .navbar-nav>li>a,
     .navbar-brand {
         line-height: 145%;
     }

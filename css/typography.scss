@@ -1,17 +1,8 @@
 // == TYPOGRAPHY
-
 html {
     font-size: $font-size-base;
 }
 
-body {
-    background-color: white;
-    color: $text-color-dark;
-    font-family: "IBM Plex Sans", Helvetica, Arial, serif;
-    font-size: $font-size-base;
-    font-weight: 400;
-    line-height: 1.55rem;
-}
 
 p {
     font-size: 1rem;
@@ -26,11 +17,8 @@ a:hover,
 a:visited,
 a:active {
     color: $link-color;
+    text-decoration: none;
     //background-color: transparent;
-}
-
-@mixin type-size($value: 1) {
-    font-size: $ratio-type * $value * 1rem;
 }
 
 h1,
@@ -39,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: $brand-secondary;
+    color: $secondary;
     font-weight: inherit;
     margin: $ratio-type * 1rem 0 $ratio-type * 5rem;
     line-height: $line-height-base * 1em;
@@ -81,9 +69,6 @@ h6 {
 small,
 .font_small {
     @include type-size(0.75);
-}
-
-.subhead {
 }
 
 /* Typekit */
@@ -145,6 +130,8 @@ small,
     min-height: 144px;
 }
 
+
+
 .note {
     @include type-size(1);
     margin-top: 0px;
@@ -167,4 +154,9 @@ small,
     line-height: $line-height-base * 0.75rem;
     margin-left: 0px;
     //line-height: $line-height-base * 75rem;
+}
+
+:is(.row) a:is(:hover, :active) {
+    text-decoration: underline;
+    //color: $link-color;
 }

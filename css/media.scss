@@ -1,6 +1,6 @@
 // == Media
 
-.media {
+.media-block {
   margin: 0 0 $gap * 3 0;
 
   .media-heading {
@@ -10,12 +10,15 @@
     margin-bottom: 0px;
     margin-left: 0px;
     font-weight: 300;
+
     h2 {
       margin-top: 0.85rem;
     }
-    h2 + h4 {
+
+    h2+h4 {
       margin-top: 0px;
     }
+
     h4 {
       margin-top: 0.85rem;
     }
@@ -24,13 +27,15 @@
 
 .picture-link {
   border-radius: 50%;
-  background-color: $brand-secondary;
+  background-color: $secondary;
 }
 
 .profile-picture {
   border-radius: 50%;
+
   &.team-gallery-pic {
     mix-blend-mode: luminosity;
+
     &:hover {
       mix-blend-mode: normal;
     }
