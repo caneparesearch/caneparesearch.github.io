@@ -1,26 +1,16 @@
-// == Variables and mixins
+// == Variables
 
 @mixin type-size($value: 1) {
   font-size: $ratio-type * $value * 1rem;
 }
 
-@mixin square($value) {
-  width: $value;
-  height: $value;
-}
-
-@mixin fade-bottom {
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
-}
-
 // Bootstrap 5 theme colors
-$primary: #ff530d;
-$secondary: #00273d;
-$secondary-active: #003c5e;
+$primary: rgb(255, 83, 13);
+$secondary: rgb(0, 39, 61);
+$secondary-active: rgb(0, 60, 94);
 
-$link-color: #006fd4;
-$link-color-navlink: #009bf5;
+$link-color: rgb(0, 111, 212);
+$link-color-navlink: rgb(0, 155, 245);
 $text-color-dark: #333;
 
 $body-color: $text-color-dark;
