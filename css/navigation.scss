@@ -37,12 +37,12 @@
   border-radius: 0;
 }
 
-.nav-link>a:hover {
+.nav-link > a:hover {
   color: $link-color-navlink;
   text-decoration: none;
 }
 
-.navbar-nav>.active>a {
+.navbar-nav > .active > a {
   color: $link-color-navlink;
 }
 
@@ -59,17 +59,17 @@
   border-radius: 0;
 }
 
-.nav-pills>li {
+.nav-pills > li {
   margin: 0;
   padding: 20px 0;
   border: 0;
 }
 
-.navbar>.container .navbar-brand {
+.navbar > .container .navbar-brand {
   margin-left: 0;
 }
 
-.navbar-nav>li>a {
+.navbar-nav > li > a {
   margin: 0;
   padding: 0 6px;
   line-height: 145%;
@@ -110,7 +110,7 @@
     height: 65px;
   }
 
-  .navbar-custom .navbar-nav>li>a,
+  .navbar-custom .navbar-nav > li > a,
   .navbar-brand {
     line-height: 145%;
   }
