@@ -1,15 +1,13 @@
-// == VARIABLES
+// == Variables
+
 @mixin type-size($value: 1) {
-    font-size: $ratio-type * $value * 1rem;
+  font-size: $ratio-type * $value * 1rem;
 }
 
 // Bootstrap 5 theme colors
 $primary: rgb(255, 83, 13);
 $secondary: rgb(0, 39, 61);
-
-// Backward-compatible aliases for legacy Bootstrap 3 naming used across the project
-$brand-primary: $primary;
-$brand-secondary: $secondary;
+$secondary-active: rgb(0, 60, 94);
 
 $link-color: rgb(0, 111, 212);
 $link-color-navlink: rgb(0, 155, 245);
@@ -26,13 +24,12 @@ $lightest-grey: #f1f1f1;
 $code-color: $cold-grey;
 $pre-color: $cold-grey;
 
-$well-bg: $lightest-grey;
 $code-bg: $lightest-grey;
-
 $pre-bg: $lighter-grey;
-$navbar-padding-y: 0.0rem;
-$nav-pills-border-radius: 0px;
-$navbar-brand-padding-y: 0.0rem;
+
+$navbar-padding-y: 0;
+$nav-pills-border-radius: 0;
+$navbar-brand-padding-y: 0;
 
 $gap: 15px;
 

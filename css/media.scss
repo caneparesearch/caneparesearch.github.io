@@ -6,9 +6,9 @@
   .media-heading {
     font-size: 1.05rem;
     line-height: $line-height-base * 1em;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
     font-weight: 300;
 
     h2 {
@@ -16,7 +16,7 @@
     }
 
     h2+h4 {
-      margin-top: 0px;
+      margin-top: 0;
     }
 
     h4 {
