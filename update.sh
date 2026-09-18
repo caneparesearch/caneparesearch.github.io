@@ -13,7 +13,7 @@ cd ../caneparesearch.github.io
 git pull
 
 echo "$PWD" "This is the folder"
-rsync -a --delete --exclude='.git' ../source-care-website/_site/ .
+rsync -a --delete --exclude='.git' --exclude='*.sh' ../source-care-website/_site/ .
 
 #update website
 git config pull.rebase false
