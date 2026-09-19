@@ -11,6 +11,22 @@
   max-width: 100%;
 }
 
+// the navy parts of the day logo disappear on a dark page, so night mode
+// uses the orange-only logo instead
+.biglogo-night {
+  display: none;
+}
+
+[data-bs-theme="dark"] {
+  .biglogo-day {
+    display: none;
+  }
+
+  .biglogo-night {
+    display: inline;
+  }
+}
+
 .logobox {
   display: table-cell;
   vertical-align: middle;

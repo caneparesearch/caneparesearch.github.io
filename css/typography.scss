@@ -134,6 +134,21 @@ small,
   font-weight: 500;
 }
 
+// A link in the intro reads as plain heading text until it is hovered (or
+// keyboard-focused); it never takes on a separate "active" colour.
+.intro-text a,
+.intro-text a:link,
+.intro-text a:visited,
+.intro-text a:active {
+  color: inherit;
+  transition: color 0.15s ease-in-out;
+}
+
+.intro-text a:hover,
+.intro-text a:focus-visible {
+  color: var(--site-link);
+}
+
 .note-container {
   display: block;
   min-height: 144px;
