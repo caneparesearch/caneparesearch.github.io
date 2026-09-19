@@ -7,6 +7,17 @@
 		<atom:link href="https://caneparesearch.org/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Big news! The Canepa Research Group is moving to Purdue University</title>
+				<description>&lt;p&gt;We are thrilled to announce that on November 2&lt;sup&gt;nd&lt;/sup&gt;, 2026, the Canepa Research Group will move from the &lt;a href=&quot;https://uh.edu&quot;&gt;University of Houston&lt;/a&gt; to &lt;a href=&quot;https://www.purdue.edu&quot;&gt;Purdue University&lt;/a&gt;, joining the &lt;a href=&quot;https://engineering.purdue.edu/ME&quot;&gt;School of Mechanical Engineering&lt;/a&gt;! This is an exciting new chapter for the group, and we can’t wait to continue exploring and designing functional materials in our new home.&lt;/p&gt;
+
+&lt;p&gt;Interested in joining us? Potential graduate students and research fellows are invited to visit our &lt;a href=&quot;/misc/join/&quot;&gt;Join our Group&lt;/a&gt; page. All inquiries and applications should be routed to Prof. Canepa at &lt;span class=&quot;email-link&quot; data-user=&quot;canepa&quot; data-domain=&quot;purdue.edu&quot;&gt;canepa [at] purdue [dot] edu&lt;/span&gt;.&lt;/p&gt;
+</description>
+				<pubDate>Sat, 19 Sep 2026 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/news/Purdue-Move/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/news/Purdue-Move/</guid>
+			</item>
+		
+			<item>
 				<title>The Research Corporation For Science Advancement awarded our group with research funding</title>
 				<description>&lt;p&gt;Our group received support from &lt;a href=&quot;https://rescorp.org&quot;&gt;Research Corporation For Science Advancement&lt;/a&gt; for a research project titled “Autonomous Discovery of Single-phase High-Entropy Transition Metal Chalcogenides”. This works is in collaboration with &lt;a href=&quot;https://www.me.washington.edu/facultyfinder/shijing-sun&quot;&gt;Shijing Sun&lt;/a&gt; at the &lt;a href=&quot;https://www.washington.edu&quot;&gt;University of Washington&lt;/a&gt; and &lt;a href=&quot;https://mse.berkeley.edu/people_new/al-balushi/&quot;&gt;Zak Al Balushi&lt;/a&gt; at &lt;a href=&quot;https://www.berkeley.edu&quot;&gt;UC Berkeley&lt;/a&gt;. We consider this is a significant achievement, particularly during these uncertain times for federal funding.&lt;/p&gt;
 
@@ -292,15 +303,6 @@ More details can be found &lt;a href=&quot;https://www.a-star.edu.sg/imre/Events
 				<pubDate>Fri, 30 Nov 2018 00:00:00 -0600</pubDate>
 				<link>https://caneparesearch.org/news/nscc/</link>
 				<guid isPermaLink="true">https://caneparesearch.org/news/nscc/</guid>
-			</item>
-		
-			<item>
-				<title>Advanced Job Management II @ A*STAR</title>
-				<description>&lt;p&gt;Today, Dr. Pieremanuele Canepa attended a short class on the managment of simulations on the National Supercomputing Centre &lt;a href=&quot;https://www.nscc.sg&quot;&gt;NSCC&lt;/a&gt; High performance computer Aspire-1. This class was very useful to identify engineers @NSCC to engage in the future.&lt;/p&gt;
-</description>
-				<pubDate>Wed, 31 Oct 2018 00:00:00 -0500</pubDate>
-				<link>https://caneparesearch.org/news/astar_nscc/</link>
-				<guid isPermaLink="true">https://caneparesearch.org/news/astar_nscc/</guid>
 			</item>
 		
 	</channel>
