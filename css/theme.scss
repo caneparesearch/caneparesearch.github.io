@@ -38,6 +38,21 @@
     border-radius: 3px;
   }
 
+  // Publication figures are usually drawn on white, which glares against the
+  // dark page: dim them a little, and show them at full brightness when the
+  // reader hovers or focuses one to look closely.
+  .paper-img,
+  img.ms-3 {
+    filter: brightness(0.85);
+    transition: filter 0.2s ease-in-out;
+  }
+
+  a:hover > img.ms-3,
+  a:focus-visible > img.ms-3,
+  .paper-img:hover {
+    filter: none;
+  }
+
   // Third-party citation badges are also drawn for a white page, and they
   // inherit the page text colour, so pin it to dark on their white card.
   .altmetric-embed,
