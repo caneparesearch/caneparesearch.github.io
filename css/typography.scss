@@ -30,6 +30,7 @@ h6 {
   font-weight: inherit;
   margin: $ratio-type * 1rem 0 $ratio-type * 5rem;
   line-height: $line-height-base * 1em;
+  overflow-wrap: break-word;
 }
 
 h1 {
@@ -37,6 +38,10 @@ h1 {
   font-size: $ratio-type * 2.5em;
   line-height: $line-height-base * 0.75em;
   font-weight: 600;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $ratio-type * 2.25em;
+  }
 }
 
 h2 {
