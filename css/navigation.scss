@@ -115,3 +115,35 @@
     line-height: 145%;
   }
 }
+
+// day / night toggle: styled like the other navbar icons; the moon is shown
+// in day mode and the sun in night mode
+.theme-toggle {
+  background: none;
+  border: 0;
+  padding: 0 6px;
+  margin: 0;
+  color: $primary;
+  font: inherit;
+  line-height: 145%;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    color: $link-color-navlink;
+  }
+}
+
+.theme-icon-sun {
+  display: none;
+}
+
+[data-bs-theme="dark"] {
+  .theme-icon-moon {
+    display: none;
+  }
+
+  .theme-icon-sun {
+    display: inline-block;
+  }
+}

@@ -5,6 +5,60 @@
 	<meta charset="utf-8" />
 	<title>Revisiting the Structure–Property Relationships in NaSICON Electrode</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Day / night theme: choose the theme before first paint (no flash), then wire up the navbar toggle.
+     Order of preference: the visitor's saved choice, then the OS setting. -->
+<script>
+	(function () {
+		var root = document.documentElement;
+		var KEY = 'theme';
+		var query = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+		function saved() {
+			try {
+				var value = localStorage.getItem(KEY);
+				return value === 'light' || value === 'dark' ? value : null;
+			} catch (e) {
+				return null;
+			}
+		}
+
+		function system() {
+			return query && query.matches ? 'dark' : 'light';
+		}
+
+		function apply(theme) {
+			root.setAttribute('data-bs-theme', theme);
+			var button = document.getElementById('theme-toggle');
+			if (button) {
+				var label = theme === 'dark' ? 'Switch to day mode' : 'Switch to night mode';
+				button.setAttribute('aria-label', label);
+				button.setAttribute('title', label);
+			}
+		}
+
+		apply(saved() || system());
+
+		document.addEventListener('DOMContentLoaded', function () {
+			apply(root.getAttribute('data-bs-theme'));
+			var button = document.getElementById('theme-toggle');
+			if (!button) return;
+			button.addEventListener('click', function () {
+				var next = root.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+				apply(next);
+				try {
+					localStorage.setItem(KEY, next);
+				} catch (e) { /* storage unavailable: the choice just lasts for this page */ }
+			});
+		});
+
+		if (query && query.addEventListener) {
+			query.addEventListener('change', function () {
+				if (!saved()) apply(system());
+			});
+		}
+	})();
+</script>
+
 	<!-- RSS feed -->
 	<link rel="alternate" type="application/rss+xml" title="Canepa Research Lab" href="https://caneparesearch.org/feed.xml">
 	<!-- Google Fonts -->
@@ -115,6 +169,13 @@
 						<li class="nav-link">
 							<a class="mx-1" href="https://sites.google.com/view/caneparesearch/home" target="_blank"><i
 									class="fa fa-sign-in fa-lg"></i></a>
+						</li>
+						<li class="nav-link">
+							<button type="button" id="theme-toggle" class="theme-toggle mx-1" aria-label="Switch to night mode"
+								title="Switch to night mode">
+								<i class="fa fa-moon-o fa-lg theme-icon-moon" aria-hidden="true"></i>
+								<i class="fa fa-sun-o fa-lg theme-icon-sun" aria-hidden="true"></i>
+							</button>
 						</li>
 					</ul>
 				</div>
