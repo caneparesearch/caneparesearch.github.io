@@ -242,6 +242,20 @@
 			<div class="bigspacer"></div>
 			<span class="__dimensions_badge_embed__" data-doi="10.1021/jacs.4c12034" data-hide-zero-citations="true"
 				data-legend="always" data-style="small_circle"></span>
+			<!-- Night mode (css/theme.scss) paints the black score digit of the Altmetric donut in the
+			     text colour with this filter, and leaves the ring's colours alone. -->
+			<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+				<filter id="altmetric-dark-digit" color-interpolation-filters="sRGB">
+					<!-- opaque only where a pixel is black, i.e. the digit -->
+					<feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -20 -20 -20 1 0" result="digitMask" />
+					<feFlood flood-color="currentColor" result="ink" />
+					<feComposite in="ink" in2="digitMask" operator="in" result="digit" />
+					<feMerge>
+						<feMergeNode in="SourceGraphic" />
+						<feMergeNode in="digit" />
+					</feMerge>
+				</filter>
+			</svg>
 			<!-- third-party citation badges: only loaded on paper pages -->
 			<script src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
 			<script async src="https://badge.dimensions.ai/badge.js"></script>
