@@ -3,6 +3,9 @@
 
 <head>
 	<meta charset="utf-8" />
+	<!-- upgrade-insecure-requests is production-only: it would make a browser
+	     retry every link over HTTPS, which breaks `jekyll serve`'s plain-HTTP
+	     local server. -->
 	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; base-uri 'self'; object-src 'none'; form-action 'self'">
 	<meta name="referrer" content="strict-origin-when-cross-origin">
 	<title>Computational Investigation of the Structural and Electrolyte Properties of the Extended Family of Lithium (Thio)Boracite Materials&#58; Li<sub>4</sub>B<sub>7</sub>O<sub>12</sub>Cl and Beyond</title>

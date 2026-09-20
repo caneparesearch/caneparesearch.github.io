@@ -3,6 +3,9 @@
 
 <head>
 	<meta charset="utf-8" />
+	<!-- upgrade-insecure-requests is production-only: it would make a browser
+	     retry every link over HTTPS, which breaks `jekyll serve`'s plain-HTTP
+	     local server. -->
 	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; base-uri 'self'; object-src 'none'; form-action 'self'">
 	<meta name="referrer" content="strict-origin-when-cross-origin">
 	<title>Study of van der Waals bonding and interactions in metal organic framework materials</title>
