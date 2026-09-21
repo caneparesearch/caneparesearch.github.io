@@ -21,7 +21,7 @@
   }
 
   function abbreviated(k) {
-    var text = names.slice(0, k).join(', ') + ' et al.';
+    var text = names.slice(0, k).join(', ') + ' <i>et al.</i>';
     if (canepa >= k) {
       text += ', ' + names[canepa];
       if (canepa < names.length - 1) text += ', ...';
