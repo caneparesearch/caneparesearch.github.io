@@ -1,1 +1,5 @@
+User-agent: *
+Disallow:
+
 Sitemap: https://caneparesearch.org/sitemap.xml
+Sitemap: https://caneparesearch.org/map.xml
