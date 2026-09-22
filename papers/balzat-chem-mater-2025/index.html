@@ -72,7 +72,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1790117449" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=1790117736" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -95,15 +95,18 @@
 <meta name="theme-color" content="#ffffff">
 
 	<!-- jQuery -->
-<script src="/js/jquery.min.js?v=1790117449" defer></script>
+<script src="/js/jquery.min.js?v=1790117736" defer></script>
 
 <!-- matchheight -->
-<script src="/js/jquery.matchHeight-min.js?v=1790117449" defer></script>
+<script src="/js/jquery.matchHeight-min.js?v=1790117736" defer></script>
 <!-- Bootstrap -->
-<script src="/js/bootstrap.bundle.min.js?v=1790117449" defer></script>
+<script src="/js/bootstrap.bundle.min.js?v=1790117736" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1790117449" defer></script>
+<script src="/js/email-links.js?v=1790117736" defer></script>
+
+<!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
+<script src="/js/back-to-top.js?v=1790117736" defer></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2MGVFYKFQX"></script>
@@ -118,6 +121,10 @@
 </head>
 
 <body>
+	<button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+		<i class="fa-solid fa-chevron-up fa-fw" aria-hidden="true"></i>
+	</button>
+
 	<div id="header">
 		<nav class="navbar navbar-expand-md navbar-light bg-navbar">
 			<div class="container">
@@ -229,7 +236,7 @@
 					<span class="cite-authors">Balzat L., Li Y., Dums S., Moudrakovski I., Gjorgjevikj K., Schulz A., Li Y., Krause S., <b>Canepa P.</b>, and Lotsch B.</span>;
 					<i>Chem. Mater.</i> 37, 6127–6139 (2025).
 				</p>
-				<script src="/js/citation-fit.js?v=1790117449" defer></script>
+				<script src="/js/citation-fit.js?v=1790117736" defer></script>
 			</div>
 		</div>
 	</div>
@@ -299,9 +306,9 @@
 
 
 		<div class="row mt60">
-			<div class="col-md-12 col-12 d-flex justify-content-between align-items-center flex-wrap">
+			<div class="col-md-12 col-12">
 				<div>
-					<ul class="list-inline mb-0">
+					<ul class="list-inline">
 						
 						<li class="footernav list-inline-item">
 							<a class="off" href="/misc/join/">Join</a>
@@ -328,7 +335,6 @@
 						</li>
 					</ul>
 				</div>
-				
 			</div>
 		</div>
 
