@@ -1,11 +1,11 @@
-(function() {
-
-  var postURLs,
-      isFetchingPosts = false,
-      shouldFetchPosts = true,
-      postList,
-      postsToLoad,
-      loadNewPostsThreshold = 3000;
+// Reveals more posts as the visitor scrolls near the bottom of the page.
+// The listing page itself renders every post (see e.g. news/index.html), marking
+// all but the first batch `hidden`; this just removes that attribute in batches,
+// so a revealed post is byte-for-byte the same markup as the ones shown up front
+// (no separate fetch, no risk of it looking different).
+(function () {
+  var BATCH_SIZE = 8;
+  var SCROLL_THRESHOLD = 600;
 
   function ready(fn) {
     if (document.readyState === 'loading') {
@@ -15,87 +15,44 @@
     }
   }
 
-  ready(function() {
-    postList = document.querySelector('.post-list');
-    if (!postList) return;
+  ready(function () {
+    var postList = document.querySelector('.post-list');
+    var spinner = document.querySelector('.infinite-spinner');
+    if (!postList || !spinner) return;
 
-    postsToLoad = postList.children.length;
+    function hiddenPosts() {
+      return postList.querySelectorAll('.blog-post[hidden]');
+    }
 
-    // If there's no spinner, it's not a page where posts should be fetched
-    if (!document.querySelector('.infinite-spinner')) {
-      shouldFetchPosts = false;
+    function hideSpinner() {
+      window.removeEventListener('scroll', maybeReveal);
+      spinner.style.transition = 'opacity 400ms';
+      spinner.style.opacity = '0';
+      setTimeout(function () { spinner.style.display = 'none'; }, 400);
+    }
+
+    function revealNextBatch() {
+      var hidden = hiddenPosts();
+      for (var i = 0; i < BATCH_SIZE && i < hidden.length; i++) {
+        hidden[i].removeAttribute('hidden');
+      }
+      if (hiddenPosts().length === 0) hideSpinner();
+    }
+
+    function maybeReveal() {
+      var bottomScrollPosition = window.innerHeight + window.scrollY;
+      var documentHeight = document.documentElement.scrollHeight;
+      if (documentHeight - SCROLL_THRESHOLD < bottomScrollPosition) {
+        revealNextBatch();
+      }
+    }
+
+    if (hiddenPosts().length === 0) {
+      hideSpinner();
       return;
     }
 
-    fetch('/all-posts.json')
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        postURLs = data['posts'];
-        console.log(postsToLoad);
-        // If there aren't any more posts available than already visible, disable fetching
-        if (postURLs.length <= postsToLoad) disableFetching();
-      });
-
-    window.addEventListener('scroll', maybeFetch);
-    window.addEventListener('load', maybeFetch);
+    window.addEventListener('scroll', maybeReveal, { passive: true });
+    window.addEventListener('load', maybeReveal);
   });
-
-  function maybeFetch() {
-    if (!shouldFetchPosts || isFetchingPosts) return;
-    var bottomScrollPosition = window.innerHeight + window.scrollY;
-    var documentHeight = document.documentElement.scrollHeight;
-    if ((documentHeight - loadNewPostsThreshold) < bottomScrollPosition) {
-      fetchPosts();
-    }
-  }
-
-  function fetchPosts() {
-    if (!postURLs) return;
-    isFetchingPosts = true;
-
-    var loadedPosts = 0;
-    var postCount = postList.children.length;
-    var callback = function() {
-      loadedPosts++;
-      var postIndex = postCount + loadedPosts;
-
-      if (postIndex > postURLs.length - 1) {
-        disableFetching();
-        return;
-      }
-
-      if (loadedPosts < postsToLoad) {
-        fetchPostWithIndex(postIndex, callback);
-      } else {
-        isFetchingPosts = false;
-      }
-    };
-
-    fetchPostWithIndex(postCount + loadedPosts, callback);
-  }
-
-  function fetchPostWithIndex(index, callback) {
-    var postURL = postURLs[index];
-    fetch(postURL)
-      .then(function(r) { return r.text(); })
-      .then(function(html) {
-        var doc = new DOMParser().parseFromString(html, 'text/html');
-        var post = doc.querySelector('.blog-post');
-        if (post) postList.appendChild(post);
-        console.log(postURL);
-        console.log(postList.children.length);
-        callback();
-      });
-  }
-
-  function disableFetching() {
-    shouldFetchPosts = false;
-    isFetchingPosts = false;
-    var spinner = document.querySelector('.infinite-spinner');
-    if (!spinner) return;
-    spinner.style.transition = 'opacity 400ms';
-    spinner.style.opacity = '0';
-    setTimeout(function() { spinner.style.display = 'none'; }, 400);
-  }
-
 })();
