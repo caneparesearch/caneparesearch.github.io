@@ -6,19 +6,22 @@
 (function () {
   var BATCH_SIZE = 8;
   var SCROLL_THRESHOLD = 600;
+  var initialized = false;
 
-  function ready(fn) {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', fn);
-    } else {
-      fn();
-    }
-  }
-
-  ready(function () {
+  // Checking document.readyState and then conditionally adding a
+  // DOMContentLoaded listener has a real race in Safari: readyState can
+  // still read 'loading' after the event has already fired, so the
+  // listener is registered for an event that will never come and this
+  // script's setup silently never runs. Try immediately - safe even before
+  // the DOM is ready, since querySelector on missing elements just returns
+  // null - and retry on DOMContentLoaded as a fallback; the initialized
+  // flag keeps the real setup from running twice if both attempts succeed.
+  function tryInit() {
+    if (initialized) return;
     var postList = document.querySelector('.post-list');
     var spinner = document.querySelector('.infinite-spinner');
     if (!postList || !spinner) return;
+    initialized = true;
 
     function hiddenPosts() {
       return postList.querySelectorAll('.blog-post[hidden]');
@@ -54,5 +57,8 @@
 
     window.addEventListener('scroll', maybeReveal, { passive: true });
     window.addEventListener('load', maybeReveal);
-  });
+  }
+
+  tryInit();
+  document.addEventListener('DOMContentLoaded', tryInit);
 })();

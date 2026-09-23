@@ -1,6 +1,11 @@
 // Turns <span class="email-link" data-user data-domain> (see _includes/email-link.html) into a link that
 // reveals its mailto address only while a visitor hovers, focuses or taps it. The address is kept in this
 // script's memory, so neither the page source nor the page after it has loaded contains it.
+//
+// No DOMContentLoaded/readyState guard: this script is loaded with `defer`, which by
+// spec only ever runs after the document (including <body>, which the MutationObserver
+// below needs) is fully parsed. See js/back-to-top.js for why an earlier readyState
+// check was removed - it has a real race in Safari that can skip the setup entirely.
 (function () {
   function arm(link, address) {
     function reveal() { link.setAttribute('href', 'mailto:' + address); }
@@ -35,15 +40,7 @@
     }
   }
 
-  function start() {
-    decode();
-    // posts added later by infinite scroll
-    new MutationObserver(decode).observe(document.body, { childList: true, subtree: true });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', start);
-  } else {
-    start();
-  }
+  decode();
+  // posts added later by infinite scroll
+  new MutationObserver(decode).observe(document.body, { childList: true, subtree: true });
 })();
