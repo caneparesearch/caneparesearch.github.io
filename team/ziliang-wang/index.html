@@ -9,6 +9,8 @@
 	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; base-uri 'self'; object-src 'none'; form-action 'self'">
 	<meta name="referrer" content="strict-origin-when-cross-origin">
 	<title>Ziliang Wang</title>
+	<!-- a page's own description, else a post's first paragraph, else the site's tagline -->
+	<meta name="description" content="I am now a research scientist at CATL in the Hong Kong office. Previously, I was a postdoctoral research fellow in the group of Prof. Chris Wolverton at Nort...">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Day / night theme: choose the theme before first paint (no flash), then wire up the navbar toggle.
      Order of preference: the visitor's saved choice, then the OS setting. -->
@@ -72,7 +74,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1790180203" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=1790190136" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -95,18 +97,18 @@
 <meta name="theme-color" content="#ffffff">
 
 	<!-- jQuery -->
-<script src="/js/jquery.min.js?v=1790180203" defer></script>
+<script src="/js/jquery.min.js?v=1790190136" defer></script>
 
 <!-- matchheight -->
-<script src="/js/jquery.matchHeight-min.js?v=1790180203" defer></script>
+<script src="/js/jquery.matchHeight-min.js?v=1790190136" defer></script>
 <!-- Bootstrap -->
-<script src="/js/bootstrap.bundle.min.js?v=1790180203" defer></script>
+<script src="/js/bootstrap.bundle.min.js?v=1790190136" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1790180203" defer></script>
+<script src="/js/email-links.js?v=1790190136" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1790180203" defer></script>
+<script src="/js/back-to-top.js?v=1790190136" defer></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2MGVFYKFQX"></script>
@@ -176,8 +178,8 @@
 						</li> 
 -->
 						<li class="nav-link">
-							<a href="https://github.com/caneparesearch" target="_blank" rel="noopener noreferrer"><i
-									class="fa-brands fa-github fa-lg"></i></a>
+							<a href="https://github.com/caneparesearch" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i
+									class="fa-brands fa-github fa-lg" aria-hidden="true"></i></a>
 						</li>
 						<li class="nav-link">
 							<a href="https://sites.google.com/view/caneparesearch/home" target="_blank" rel="noopener noreferrer" aria-label="Members area (sign-in required)" title="Members area (sign-in required)"><i
@@ -200,7 +202,7 @@
 		</nav>
 	</div>
 
-	<div class="container main">
+	<main class="container main">
 
 		
 
@@ -600,7 +602,7 @@
 						</li>
 						-->
 						<li class="footernav list-inline-item">
-							<a class="off" href="https://x.com/Piero_Canepa" aria-label="X (formerly Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+							<a class="off" href="https://x.com/Piero_Canepa" aria-label="X (formerly Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
 						</li>
 					</ul>
 				</div>
@@ -623,7 +625,7 @@
 				jQuery('.equalCard').matchHeight({ property: 'height' });
 			});
 		</script>
-	</div>
+	</main>
 </body>
 
 </html>
