@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<!-- upgrade-insecure-requests is production-only: it would make a browser
+	     retry every link over HTTPS, which breaks `jekyll serve`'s plain-HTTP
+	     local server. -->
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; base-uri 'self'; object-src 'none'; form-action 'self'">
+	<meta name="referrer" content="strict-origin-when-cross-origin">
+	<title>About</title>
+	<!-- a page's own description, else a post's first paragraph, else the site's tagline -->
+	<meta name="description" content="How the Canepa Research Lab website is built, published and maintained.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Day / night theme: choose the theme before first paint (no flash), then wire up the navbar toggle.
+     Order of preference: the visitor's saved choice, then the OS setting. -->
+<script>
+	(function () {
+		var root = document.documentElement;
+		var KEY = 'theme';
+		var query = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+		function saved() {
+			try {
+				var value = localStorage.getItem(KEY);
+				return value === 'light' || value === 'dark' ? value : null;
+			} catch (e) {
+				return null;
+			}
+		}
+
+		function system() {
+			return query && query.matches ? 'dark' : 'light';
+		}
+
+		function apply(theme) {
+			root.setAttribute('data-bs-theme', theme);
+			var button = document.getElementById('theme-toggle');
+			if (button) {
+				var label = theme === 'dark' ? 'Switch to day mode' : 'Switch to night mode';
+				button.setAttribute('aria-label', label);
+				button.setAttribute('title', label);
+			}
+		}
+
+		apply(saved() || system());
+
+		document.addEventListener('DOMContentLoaded', function () {
+			apply(root.getAttribute('data-bs-theme'));
+			var button = document.getElementById('theme-toggle');
+			if (!button) return;
+			button.addEventListener('click', function () {
+				var next = root.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+				apply(next);
+				try {
+					localStorage.setItem(KEY, next);
+				} catch (e) { /* storage unavailable: the choice just lasts for this page */ }
+			});
+		});
+
+		if (query && query.addEventListener) {
+			query.addEventListener('change', function () {
+				if (!saved()) apply(system());
+			});
+		}
+	})();
+</script>
+
+	<!-- RSS feed -->
+	<link rel="alternate" type="application/rss+xml" title="Canepa Research Lab" href="https://caneparesearch.org/feed.xml">
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
+	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
+	<link href="/css/style.css?v=1790253060" rel="stylesheet" media="screen">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+	<!-- jQuery -->
+<script src="/js/jquery.min.js?v=1790253060" defer></script>
+
+<!-- matchheight -->
+<script src="/js/jquery.matchHeight-min.js?v=1790253060" defer></script>
+<!-- Bootstrap -->
+<script src="/js/bootstrap.bundle.min.js?v=1790253060" defer></script>
+
+<!-- Spam-protected e-mail links -->
+<script src="/js/email-links.js?v=1790253060" defer></script>
+
+<!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
+<script src="/js/back-to-top.js?v=1790253060" defer></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2MGVFYKFQX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2MGVFYKFQX');
+</script>
+
+</head>
+
+<body>
+	<button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+		<i class="fa-solid fa-chevron-up fa-fw" aria-hidden="true"></i>
+	</button>
+
+	<div id="header">
+		<nav class="navbar navbar-expand-md navbar-light bg-navbar">
+			<div class="container">
+
+				<!--<div class="navbar-header"> -->
+
+				<a class="navbar-brand" href="/">
+					<img class="logo navbar-brand align-top ms-0 me-1" src="/images/logo-plex-color.svg"
+						width="110" height="65" alt="Canepa Research Lab">
+				</a>
+				<button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- </div> -->
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<hr style="height:2px;border:none;color:rgb(255, 83, 13);background-color:rgb(255, 83, 13)" />
+					<ul class="navbar-nav nav-pills ms-auto">
+						<!-- <ul class="nav navbar-nav navbar-right"> -->
+						
+						<li class="nav-link">
+							
+							<a href="/news/">News</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/papers/">Papers</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/research/">Research</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/team/">Team</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/misc/sponsors">Sponsors</a>
+						</li>
+<!-- 						
+						
+						<li class="nav-link">
+							
+							<a href="/videos/"><i class="fa-brands fa-youtube fa-lg"></i></a>
+						</li> 
+-->
+						<li class="nav-link">
+							<a href="https://github.com/caneparesearch" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i
+									class="fa-brands fa-github fa-lg" aria-hidden="true"></i></a>
+						</li>
+						<li class="nav-link">
+							<a href="https://sites.google.com/view/caneparesearch/home" target="_blank" rel="noopener noreferrer" aria-label="Members area (sign-in required)" title="Members area (sign-in required)"><i
+									class="fa-solid fa-lock fa-lg" aria-hidden="true"></i></a>
+						</li>
+						<li class="nav-link">
+							<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to night mode"
+								title="Switch to night mode">
+								<i class="fa-regular fa-moon fa-lg theme-icon-moon" aria-hidden="true"></i>
+								<!-- drawn as an SVG: Font Awesome's sun icon is a spiky burst that looks like a cog -->
+								<svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+									<circle cx="12" cy="12" r="5" />
+									<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+								</svg>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<main class="container main">
+
+		<div class="row">
+ <div class="col-md-12 title-box">
+  <h1 class="page-title">About</h1>
+ </div>
+</div>
+
+<div class="about-text">
+
+  <p>Source of the website of the Canepa Research Group, <a href="https://caneparesearch.org">caneparesearch.org</a>. The site is built with <a href="https://jekyllrb.com/">Jekyll</a> and published through GitHub Pages from the separate repository <code class="language-plaintext highlighter-rouge">caneparesearch/caneparesearch.github.io</code>.</p>
+
+  <h2 id="build-the-site-locally">Build the site locally</h2>
+
+  <p>The repository is private: ask Prof. Canepa for access, then clone it and install the dependencies (Ruby 3 and Bundler; the Jekyll version is pinned in the <code class="language-plaintext highlighter-rouge">Gemfile</code>):</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:caneparesearch/source-care-website.git
+<span class="nb">cd </span>source-care-website
+bundle <span class="nb">install</span>
+</code></pre></div>  </div>
+
+  <p>Build the site into <code class="language-plaintext highlighter-rouge">_site/</code> with <code class="language-plaintext highlighter-rouge">bundle exec jekyll build</code>, or preview it with <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> and open <code class="language-plaintext highlighter-rouge">http://127.0.0.1:4000/</code>.</p>
+
+  <p>A local preview runs in Jekyll’s default “development” environment, which leaves out the <code class="language-plaintext highlighter-rouge">upgrade-insecure-requests</code> Content-Security-Policy directive that the real, always-HTTPS site sends (<code class="language-plaintext highlighter-rouge">update.sh</code> builds with <code class="language-plaintext highlighter-rouge">JEKYLL_ENV=production</code> to turn it back on). If a local preview omits it, that is expected, not a bug — sending it locally would make the browser retry every link over HTTPS against a plain-HTTP server and fail.</p>
+
+  <h2 id="publish">Publish</h2>
+
+  <p><code class="language-plaintext highlighter-rouge">publish.sh</code> commits, pushes and publishes in one step:</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./publish.sh <span class="s2">"short description of the change"</span> <span class="o">[</span>new-file ...]
+</code></pre></div>  </div>
+
+  <p>It commits the changes to tracked files (brand-new files are only included if you name them, and <code class="language-plaintext highlighter-rouge">.jekyll-cache/</code> never is), pushes the current branch, then runs <code class="language-plaintext highlighter-rouge">update.sh</code> with the same message. Add <code class="language-plaintext highlighter-rouge">-n</code> for a dry run that shows what it would do, or <code class="language-plaintext highlighter-rouge">-y</code> to skip the confirmation. It stops before committing if the remote has commits you do not have.</p>
+
+  <p>To publish without committing anything, run <code class="language-plaintext highlighter-rouge">update.sh</code> yourself. It needs <code class="language-plaintext highlighter-rouge">caneparesearch.github.io</code> checked out next to this repository, the <code class="language-plaintext highlighter-rouge">aws</code> CLI with access to the <code class="language-plaintext highlighter-rouge">carepapers</code> bucket, and <code class="language-plaintext highlighter-rouge">jq</code>:</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./update.sh <span class="s2">"short description of the change"</span>
+</code></pre></div>  </div>
+
+  <p>It pulls this repository, regenerates the sitemap of the papers in the bucket (<code class="language-plaintext highlighter-rouge">update_aws_sitemap.sh</code>), builds the site, dates every URL in <code class="language-plaintext highlighter-rouge">sitemap.xml</code> by its last real edit in git (<code class="language-plaintext highlighter-rouge">_scripts/generate-sitemap.rb</code>; the plugin only knows the post date or the build date, and commits that touch more than 30 files are ignored as repo-wide sweeps), copies <code class="language-plaintext highlighter-rouge">_site/</code> into <code class="language-plaintext highlighter-rouge">caneparesearch.github.io</code>, then commits and pushes there. It does not push this repository, so push your commits separately. It copies files over and never deletes, so remove a page from <code class="language-plaintext highlighter-rouge">caneparesearch.github.io</code> by hand if it should disappear from the site.</p>
+
+  <h2 id="content">Content</h2>
+
+  <p>Every page is a Markdown file with a short YAML header. The date at the start of a post’s file name is its post date.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Section</th>
+        <th>Location</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>News</td>
+        <td><code class="language-plaintext highlighter-rouge">news/_posts/YYYY-MM-DD-Topic.md</code></td>
+        <td><code class="language-plaintext highlighter-rouge">layout: post</code>, <code class="language-plaintext highlighter-rouge">category: news</code>, <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">author</code> (first name of a team member), optional <code class="language-plaintext highlighter-rouge">image</code></td>
+      </tr>
+      <tr>
+        <td>Team</td>
+        <td><code class="language-plaintext highlighter-rouge">team/_posts/</code></td>
+        <td><code class="language-plaintext highlighter-rouge">layout: member</code>, <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">position</code>, <code class="language-plaintext highlighter-rouge">image</code>, and optional <code class="language-plaintext highlighter-rouge">email</code>, <code class="language-plaintext highlighter-rouge">github</code>, <code class="language-plaintext highlighter-rouge">scholar</code>, <code class="language-plaintext highlighter-rouge">orcid</code>, <code class="language-plaintext highlighter-rouge">twitter</code>, <code class="language-plaintext highlighter-rouge">cv</code>, <code class="language-plaintext highlighter-rouge">calendar</code>; <code class="language-plaintext highlighter-rouge">alumni: true</code> for former members</td>
+      </tr>
+      <tr>
+        <td>Research</td>
+        <td><code class="language-plaintext highlighter-rouge">research/_posts/</code></td>
+        <td><code class="language-plaintext highlighter-rouge">layout: post</code>, <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">image</code></td>
+      </tr>
+      <tr>
+        <td>Papers</td>
+        <td><code class="language-plaintext highlighter-rouge">papers/_posts/</code></td>
+        <td><code class="language-plaintext highlighter-rouge">layout: paper</code>, <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">authors</code>, <code class="language-plaintext highlighter-rouge">journal</code>, <code class="language-plaintext highlighter-rouge">year</code>, <code class="language-plaintext highlighter-rouge">doi</code>, <code class="language-plaintext highlighter-rouge">image</code>, and optionally <code class="language-plaintext highlighter-rouge">pdf</code> and <code class="language-plaintext highlighter-rouge">github</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Photos and figures live in <code class="language-plaintext highlighter-rouge">images/</code>, in a folder named after the section.</p>
+
+  <p>Every page gets a <code class="language-plaintext highlighter-rouge">&lt;meta name="description"&gt;</code> for search results: the page’s own <code class="language-plaintext highlighter-rouge">description</code> field if it has one, otherwise a post’s first paragraph, otherwise the site tagline in <code class="language-plaintext highlighter-rouge">_config.yml</code>, cut to 160 characters. The home page sets its own in <code class="language-plaintext highlighter-rouge">index.html</code>; add a <code class="language-plaintext highlighter-rouge">description</code> to any other page whose first paragraph makes a poor summary.</p>
+
+  <h3 id="papers">Papers</h3>
+
+  <p>Name a paper and its files <code class="language-plaintext highlighter-rouge">&lt;date&gt;-&lt;first-author&gt;-&lt;journal&gt;-&lt;year&gt;</code>, all lowercase, where the journal is the ISO 4 abbreviation with hyphens, for example <code class="language-plaintext highlighter-rouge">2025-01-30-park-nat-mater-2025.md</code>. If the same first author has two papers in the same journal and year, add <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code> after the year. The address of a paper is built from this name, so it must be unique.</p>
+
+  <ul>
+    <li>The image is <code class="language-plaintext highlighter-rouge">images/papers/&lt;name&gt;.png</code>, referred to in the <code class="language-plaintext highlighter-rouge">image</code> field.</li>
+    <li>The PDF is stored in the <code class="language-plaintext highlighter-rouge">carepapers</code> S3 bucket as <code class="language-plaintext highlighter-rouge">&lt;year&gt;/&lt;name&gt;.pdf</code> and is public. Set <code class="language-plaintext highlighter-rouge">pdf: &lt;year&gt;/&lt;name&gt;.pdf</code>; the site builds the download link from it.</li>
+    <li>The <code class="language-plaintext highlighter-rouge">doi</code> field of a preprint on arXiv (<code class="language-plaintext highlighter-rouge">10.48550/arXiv.…</code>) shows the arXiv icon and the label “arXiv”, and one on ChemRxiv (<code class="language-plaintext highlighter-rouge">10.26434/chemrxiv.…</code>) a flask icon and the label “ChemRxiv” (Academicons has no ChemRxiv logo), instead of the DOI icon.</li>
+    <li>The line under a paper’s title is made from <code class="language-plaintext highlighter-rouge">authors</code> and <code class="language-plaintext highlighter-rouge">journal</code>. Write authors as <code class="language-plaintext highlighter-rouge">Surname I. I.</code>, comma-separated, with “and” before the last one (also after a comma when there are three or more) and your own name in <code class="language-plaintext highlighter-rouge">&lt;b&gt;</code>: <code class="language-plaintext highlighter-rouge">Xie W., Deng Z., and &lt;b&gt;Canepa P.&lt;/b&gt;</code>. Write <code class="language-plaintext highlighter-rouge">journal</code> in ISO 4 abbreviations as <code class="language-plaintext highlighter-rouge">Journal volume, pages (year)</code> (no comma after the journal name), with the journal name in <code class="language-plaintext highlighter-rouge">&lt;i&gt;</code> and an en dash in page ranges and no issue number: <code class="language-plaintext highlighter-rouge">&lt;i&gt;Chem. Mater.&lt;/i&gt; 33, 5652–5667 (2021)</code>. Use <code class="language-plaintext highlighter-rouge">Journal (year)</code> while volume and pages are not known, and <code class="language-plaintext highlighter-rouge">arXiv (year)</code> or <code class="language-plaintext highlighter-rouge">ChemRxiv (year)</code> for preprints. The short reference in the lists on the home and Papers pages (<code class="language-plaintext highlighter-rouge">First A. et al., &lt;i&gt;Journal&lt;/i&gt;</code>) is built from the same two fields by <code class="language-plaintext highlighter-rouge">_includes/paper-ref.html</code>, so the old <code class="language-plaintext highlighter-rouge">ref</code> field is no longer used. When the line under the title would wrap onto a second line, <code class="language-plaintext highlighter-rouge">js/citation-fit.js</code> shortens the authors to the first ones that fit plus “et al.”, always keeping <code class="language-plaintext highlighter-rouge">Canepa P.</code>; the full list stays in the tooltip.</li>
+    <li>If you rename a paper, list its old address under <code class="language-plaintext highlighter-rouge">redirect_from:</code> in the header (for example <code class="language-plaintext highlighter-rouge">- /papers/old-name/</code>) so old links keep working. <code class="language-plaintext highlighter-rouge">_plugins/redirect-from.rb</code> writes the redirects.</li>
+  </ul>
+
+  <h3 id="team">Team</h3>
+
+  <p>Name a team post and its image <code class="language-plaintext highlighter-rouge">&lt;date&gt;-&lt;name&gt;</code>, all lowercase, matching the person’s <code class="language-plaintext highlighter-rouge">title</code>, for example <code class="language-plaintext highlighter-rouge">2020-10-25-aaron-tieu.md</code> and <code class="language-plaintext highlighter-rouge">images/team/2020-10-25-aaron-tieu.jpg</code>. The address of a member’s page is built from this name, so it must be unique; sidebar links (E-mail, GitHub, Google Scholar, ORCiD, etc.) are shown alphabetically by label regardless of the order fields appear in the header.</p>
+
+  <p>Write a bio in the first person. When a member leaves, set <code class="language-plaintext highlighter-rouge">alumni: true</code>, open the bio with a line saying where they are now (“I am now a research scientist at …”), and put finished student or postdoc periods in the past tense; hobbies and current interests stay in the present. On the Team page, current members are listed in reverse chronological order (most recently added first) and alumni alphabetically by name.</p>
+
+  <p>If you rename a team page, list its old address under <code class="language-plaintext highlighter-rouge">redirect_from:</code> as for papers above — except when the old and new names differ only by letter case (for example fixing capitalization), since that can’t reliably redirect on a case-insensitive filesystem such as macOS’s default disk; leave <code class="language-plaintext highlighter-rouge">redirect_from:</code> out in that case.</p>
+
+  <h3 id="e-mail-addresses">E-mail addresses</h3>
+
+  <p>Never write an e-mail address in a page. Use the include instead, which prints “name [at] example.org” and lets <code class="language-plaintext highlighter-rouge">js/email-links.js</code> build the mailto link only while a visitor hovers, focuses or taps it, so the address is not in the page source or in the page as loaded:</p>
+
+  <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>email-link.html<span class="w"> </span><span class="na">address</span><span class="o">=</span><span class="s2">"name@example.org"</span><span class="w"> </span><span class="cp">%}</span>
+</code></pre></div>  </div>
+
+  <p>The member layout does this for the <code class="language-plaintext highlighter-rouge">email</code> field of a team page.</p>
+
+  <h2 id="design">Design</h2>
+
+  <ul>
+    <li>Colours are CSS variables defined in <code class="language-plaintext highlighter-rouge">css/theme.scss</code>. The site follows the visitor’s light or dark setting, and the moon/sun button in the navigation bar switches and remembers the choice.</li>
+    <li>All text meets WCAG AA contrast (4.5:1) in both themes. Keep it that way when you change a colour; the navigation bar’s hover and active text uses <code class="language-plaintext highlighter-rouge">$link-color-navlink-on-dark</code> in <code class="language-plaintext highlighter-rouge">css/variables.scss</code> for this reason. Links in running text are not underlined, since their colour already sets them apart; the exceptions are links drawn in the same colour as the surrounding text (the intro sentence on the home page, the author and DOI links in <code class="language-plaintext highlighter-rouge">.smallnote</code>, and the footer credits), which get a faint underline so they are not told apart by colour alone (WCAG 1.4.1). Keep that underline on any new link of this kind. Every page’s content sits in a <code class="language-plaintext highlighter-rouge">&lt;main&gt;</code> element, and icon-only links carry an <code class="language-plaintext highlighter-rouge">aria-label</code> (with <code class="language-plaintext highlighter-rouge">aria-hidden="true"</code> on the icon) so screen readers can name them.</li>
+    <li>Supported browsers are current Chrome, Edge, Firefox, Safari and Opera. Internet Explorer is not supported (the theme relies on CSS custom properties, and Bootstrap 5 dropped it).</li>
+    <li>Photos and figures rendered through <code class="language-plaintext highlighter-rouge">_includes/responsive-image.html</code> (paper graphical abstracts, research/news pictures, team photos) are served as WebP with the original PNG/JPEG kept as a <code class="language-plaintext highlighter-rouge">&lt;picture&gt;</code> fallback for the rare browser or tool that cannot decode WebP; source images are never deleted, only the smaller WebP copy is added alongside. A handful of oversized news photos also get a 640px-wide WebP variant for phones, listed in <code class="language-plaintext highlighter-rouge">_data/responsive_images.yml</code>. Every image currently referenced this way has a WebP sibling; add one (<code class="language-plaintext highlighter-rouge">cwebp original.png -o original.webp</code>) whenever you add a new photo of this kind. <code class="language-plaintext highlighter-rouge">_data/image_sizes.yml</code> separately records each image’s pixel width/height so the include can set <code class="language-plaintext highlighter-rouge">width</code>/<code class="language-plaintext highlighter-rouge">height</code> and avoid a layout shift while it loads; regenerate an entry with <code class="language-plaintext highlighter-rouge">sips -g pixelWidth -g pixelHeight path/to/image</code>. Thumbnails on the listing pages (news, research, papers, team) pass <code class="language-plaintext highlighter-rouge">loading="lazy"</code> to the include, so browsers only fetch them once they scroll into view.</li>
+    <li>The news archive grid and papers listing cap each card’s title to a fixed height and fade a title that runs longer than that instead of stretching the grid row (<code class="language-plaintext highlighter-rouge">.archive-card</code>, <code class="language-plaintext highlighter-rouge">.paper-card-text</code>, both built on the <code class="language-plaintext highlighter-rouge">fade-box</code> mixin in <code class="language-plaintext highlighter-rouge">css/style.scss</code>, the same idiom the homepage’s <code class="language-plaintext highlighter-rouge">.feedbox</code>/<code class="language-plaintext highlighter-rouge">.feedboxblog</code> already used).</li>
+    <li>A floating “back to top” button (<code class="language-plaintext highlighter-rouge">js/back-to-top.js</code>, styled as <code class="language-plaintext highlighter-rouge">.back-to-top</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>) fades in once a page is scrolled past 600px and smooth-scrolls to the top on click (instantly if the visitor has requested reduced motion). It is added once, in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>’s <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code>, so it applies to every page automatically; there is no per-page opt-in.</li>
+    <li><code class="language-plaintext highlighter-rouge">images/favicon/favicon.ico</code> (and the copy at the repository root) is a multi-resolution icon (16/32/48/64px); if you replace the source artwork, regenerate it with all four sizes embedded; a single-resolution <code class="language-plaintext highlighter-rouge">.ico</code> renders blurry on high-DPI displays and in Windows shortcuts. <code class="language-plaintext highlighter-rouge">images/favicon/browserconfig.xml</code> (Windows tile icons) needs an explicit entry in <code class="language-plaintext highlighter-rouge">_config.yml</code>’s <code class="language-plaintext highlighter-rouge">include:</code> list to ship at all, since <code class="language-plaintext highlighter-rouge">exclude: "*.xml"</code> would otherwise drop it.</li>
+    <li>The site is checked against the <a href="https://validator.w3.org/nu/">W3C Nu Html Checker</a> and the <a href="https://jigsaw.w3.org/css-validator/">W3C CSS Validator</a> from time to time (most recently in September 2026, across one representative page per layout and the compiled stylesheet), and issues they find are fixed — the CSS validator’s remaining messages are informational only (vendor-prefixed selectors, and CSS custom properties, which it cannot evaluate statically). This is a manual check, not part of the build or CI; there is no script for it in this repository.</li>
+    <li>Icons are <a href="https://fontawesome.com/">Font Awesome Free</a> 6.7.2 (<code class="language-plaintext highlighter-rouge">fa-solid</code>, <code class="language-plaintext highlighter-rouge">fa-regular</code> and <code class="language-plaintext highlighter-rouge">fa-brands</code> classes, for example <code class="language-plaintext highlighter-rouge">fa-brands fa-x-twitter</code>) and <a href="https://jpswalsh.github.io/academicons/">Academicons</a> 1.9.5 (<code class="language-plaintext highlighter-rouge">ai ai-doi</code>), both self-hosted: the SCSS is in <code class="language-plaintext highlighter-rouge">css/fontawesome/</code> and <code class="language-plaintext highlighter-rouge">css/academicons.scss</code>, the fonts in <code class="language-plaintext highlighter-rouge">css/webfonts/</code> and <code class="language-plaintext highlighter-rouge">css/fonts/</code>. The one exception is the sun of the light/dark button, a hand-drawn inline SVG in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>, because Font Awesome’s sun looks like a cog. Font Awesome is trimmed to the icons the site uses: <code class="language-plaintext highlighter-rouge">css/icons.scss</code> lists them and emits only their classes, and <code class="language-plaintext highlighter-rouge">css/webfonts/</code> holds fonts cut down to those glyphs (about 5 KB instead of 300 KB). <strong>To use a new icon, add its name to <code class="language-plaintext highlighter-rouge">$fa-used-icons</code> in <code class="language-plaintext highlighter-rouge">css/icons.scss</code> and run <code class="language-plaintext highlighter-rouge">python3 _scripts/subset-fontawesome.py</code></strong> (needs <code class="language-plaintext highlighter-rouge">pip install fonttools brotli</code>); an icon that is not listed shows as a blank square. The full fonts it cuts from are in <code class="language-plaintext highlighter-rouge">_fontawesome-webfonts/</code>, which Jekyll does not publish. To upgrade Font Awesome, replace <code class="language-plaintext highlighter-rouge">css/fontawesome/</code> with the new release’s <code class="language-plaintext highlighter-rouge">scss/</code> and <code class="language-plaintext highlighter-rouge">_fontawesome-webfonts/</code> with its <code class="language-plaintext highlighter-rouge">webfonts/</code> (the <code class="language-plaintext highlighter-rouge">.woff2</code> files), then run the script.</li>
+    <li>The <code class="language-plaintext highlighter-rouge">twitter</code> field in a team page’s header holds the X handle; the links point at x.com.</li>
+    <li>Styles are SCSS partials in <code class="language-plaintext highlighter-rouge">css/</code>, compiled into <code class="language-plaintext highlighter-rouge">css/style.css</code>. Layouts are in <code class="language-plaintext highlighter-rouge">_layouts/</code> and shared snippets in <code class="language-plaintext highlighter-rouge">_includes/</code>.</li>
+    <li><code class="language-plaintext highlighter-rouge">robots.txt</code> lists the two sitemaps: <code class="language-plaintext highlighter-rouge">sitemap.xml</code> (the pages, written by <code class="language-plaintext highlighter-rouge">jekyll-sitemap</code> and re-dated by <code class="language-plaintext highlighter-rouge">update.sh</code>) and <code class="language-plaintext highlighter-rouge">map.xml</code> (the paper PDFs in the S3 bucket). Edit it in this repository, not in <code class="language-plaintext highlighter-rouge">caneparesearch.github.io</code>, whose copy is overwritten on every publish.</li>
+    <li>The page <code class="language-plaintext highlighter-rouge">/guide/format/</code> describes the metadata format in more detail.</li>
+  </ul>
+
+  <h2 id="security">Security</h2>
+
+  <ul>
+    <li><strong>HTTPS everywhere.</strong> The custom domain (<code class="language-plaintext highlighter-rouge">CNAME</code>, <code class="language-plaintext highlighter-rouge">caneparesearch.org</code>) is served over HTTPS by GitHub Pages, with <a href="https://cloudflare.com">Cloudflare</a> in front as a CDN/cache (the cache-busting <code class="language-plaintext highlighter-rouge">?v=</code> on <code class="language-plaintext highlighter-rouge">css/style.css</code> and the JS files in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code> exists so a publish is never held back by a stale Cloudflare or browser cache). In production, the page’s Content-Security-Policy sends <code class="language-plaintext highlighter-rouge">upgrade-insecure-requests</code>, so a browser retries any accidentally plain-<code class="language-plaintext highlighter-rouge">http://</code> link over HTTPS instead of loading it insecurely (see “Build the site locally” above for why a local preview leaves this out). Paper PDFs in the <code class="language-plaintext highlighter-rouge">carepapers</code> S3 bucket are likewise only linked over <code class="language-plaintext highlighter-rouge">https://</code>. Cloudflare’s own SSL/TLS mode and GitHub Pages’ “Enforce HTTPS” setting are account/dashboard configuration, not files in this repository, so they aren’t documented here beyond that they’re on.</li>
+    <li><strong>Content-Security-Policy and Referrer-Policy</strong>, sent as <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> tags in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>: <code class="language-plaintext highlighter-rouge">base-uri 'self'</code> and <code class="language-plaintext highlighter-rouge">form-action 'self'</code> stop an injected script from changing the page’s base URL or submitting a form somewhere else; <code class="language-plaintext highlighter-rouge">object-src 'none'</code> blocks <code class="language-plaintext highlighter-rouge">&lt;object&gt;</code>/<code class="language-plaintext highlighter-rouge">&lt;embed&gt;</code> plugin content entirely; <code class="language-plaintext highlighter-rouge">Referrer-Policy: strict-origin-when-cross-origin</code> sends the full page URL as a referrer only to the same site, and just the origin (no path) to other sites.</li>
+    <li><strong>No e-mail address ever appears in a page.</strong> See “E-mail addresses” under Content above — <code class="language-plaintext highlighter-rouge">email-link.html</code> prints an obfuscated “name [at] example.org” and <code class="language-plaintext highlighter-rouge">js/email-links.js</code> builds the real <code class="language-plaintext highlighter-rouge">mailto:</code> link only once a visitor hovers, focuses or taps it.</li>
+    <li><strong>The members area is not an authentication system in this repository.</strong> The padlock icon in the navigation bar is an outbound link to a separate Google Sites page that itself requires a Google sign-in; this codebase has no login, sessions or credentials of its own.</li>
+    <li><strong><code class="language-plaintext highlighter-rouge">robots.txt</code> allows every crawler</strong> (<code class="language-plaintext highlighter-rouge">Disallow:</code> is empty) and lists both sitemaps, so nothing on the site is meant to be hidden from search engines.</li>
+  </ul>
+
+  <h2 id="file-conventions">File conventions</h2>
+
+  <p><code class="language-plaintext highlighter-rouge">.gitattributes</code> and <code class="language-plaintext highlighter-rouge">.editorconfig</code> keep every text file in LF line endings, UTF-8 and ending with a newline, as POSIX defines a text file. Let your editor honour them, and do not save files with CRLF endings or without a final newline. The one exception is <code class="language-plaintext highlighter-rouge">google736838dc293297e8.html</code>, the Google Search Console verification file, which must stay exactly as Google issued it.</p>
+
+  <h2 id="license">License</h2>
+
+  <p>All source code in this repository, consisting of files with extensions <code class="language-plaintext highlighter-rouge">.html</code>, <code class="language-plaintext highlighter-rouge">.css</code>, <code class="language-plaintext highlighter-rouge">.scss</code>, <code class="language-plaintext highlighter-rouge">.rb</code> or <code class="language-plaintext highlighter-rouge">.js</code>, is freely available under an MIT license, unless otherwise noted within a file. You’re welcome to borrow / repurpose code to build your own site.</p>
+
+  <p><strong>The MIT License (MIT)</strong></p>
+
+  <p>Copyright (c) 2018-present Pieremanuele Canepa with the help of <a href="http://bedford.io">Bedford</a></p>
+
+  <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+  <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+  <p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+</div>
+
+
+		<div class="row mt60">
+			<div class="col-md-12 col-12">
+				<div>
+					<ul class="list-inline">
+						
+						
+						<li class="footernav list-inline-item">
+							<a class="off" href="/misc/about/">About</a>
+						</li>
+						
+						<li class="footernav list-inline-item">
+							<a class="off" href="/misc/contact/">Contact us</a>
+						</li>
+						
+						<li class="footernav list-inline-item">
+							<a class="off" href="/misc/join/">Join</a>
+						</li>
+						
+						<li class="footernav list-inline-item">
+							<a class="off" href="/misc/sponsors/">Sponsors</a>
+						</li>
+						
+						<!--
+						<li class="footernav list-inline-item">
+							<i class="fa"></i> <a class="off" href="https://www.eng.nus.edu.sg/mse/">MSE</a>
+						</li>
+						<li class="footernav list-inline-item">
+							<i class="fa"></i> <a class="off" href="https://www.nus.edu.sg">NUS</a>
+						</li>
+						-->
+						<li class="footernav list-inline-item">
+							<a class="off" href="https://x.com/Piero_Canepa" aria-label="X (formerly Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<footer class="row footer">
+			<div class="col-lg-12 col-12">
+				<p class="colophon">&copy; 2018–2026 Pieremanuele Canepa -
+					Proudly running on <a class="off" href="https://jekyllrb.com" rel="noopener">Jekyll</a>
+					and based on <a class="off" href="https://github.com/trvrb" target="_blank"
+						rel="noopener">bedford.io</a> theme.
+					<a class="off" href="https://albertocanepa.me/" target="_blank" rel="noopener">CWD</a> is
+					acknowledged.
+				</p>
+			</div>
+		</footer>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				jQuery('.equalCard').matchHeight({ property: 'height' });
+			});
+		</script>
+	</main>
+</body>
+
+</html>
