@@ -73,7 +73,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1790342694" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=1790343585" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -96,21 +96,21 @@
 <meta name="theme-color" content="#ffffff">
 
 	<!-- jQuery -->
-<script src="/js/jquery.min.js?v=1790342694" defer></script>
+<script src="/js/jquery.min.js?v=1790343585" defer></script>
 
 <!-- matchheight -->
-<script src="/js/jquery.matchHeight-min.js?v=1790342694" defer></script>
+<script src="/js/jquery.matchHeight-min.js?v=1790343585" defer></script>
 <!-- Bootstrap -->
-<script src="/js/bootstrap.bundle.min.js?v=1790342694" defer></script>
+<script src="/js/bootstrap.bundle.min.js?v=1790343585" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1790342694" defer></script>
+<script src="/js/email-links.js?v=1790343585" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1790342694" defer></script>
+<script src="/js/back-to-top.js?v=1790343585" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=1790342694" defer></script>
+<script src="/js/analytics.js?v=1790343585" defer></script>
 
 </head>
 
@@ -294,6 +294,8 @@ bundle <span class="nb">install</span>
 
   <p>If you rename a team page, list its old address under <code class="language-plaintext highlighter-rouge">redirect_from:</code> as for papers above — except when the old and new names differ only by letter case (for example fixing capitalization), since that can’t reliably redirect on a case-insensitive filesystem such as macOS’s default disk; leave <code class="language-plaintext highlighter-rouge">redirect_from:</code> out in that case.</p>
 
+  <p>The <code class="language-plaintext highlighter-rouge">twitter</code> field in a team page’s header holds the X handle; the links point at x.com.</p>
+
   <h3 id="e-mail-addresses">E-mail addresses</h3>
 
   <p>Never write an e-mail address in a page. Use the include instead, which prints “name [at] example.org” and lets <code class="language-plaintext highlighter-rouge">js/email-links.js</code> build the mailto link only while a visitor hovers, focuses or taps it, so the address is not in the page source or in the page as loaded:</p>
@@ -305,21 +307,71 @@ bundle <span class="nb">install</span>
 
   <h2 id="design">Design</h2>
 
+  <h3 id="styles-and-layout">Styles and layout</h3>
+
+  <ul>
+    <li>Styles are SCSS partials in <code class="language-plaintext highlighter-rouge">css/</code>, compiled into <code class="language-plaintext highlighter-rouge">css/style.css</code>. Layouts are in <code class="language-plaintext highlighter-rouge">_layouts/</code> and shared snippets in <code class="language-plaintext highlighter-rouge">_includes/</code>.</li>
+    <li>Only the Bootstrap 5 parts the site uses are compiled in: the list of <code class="language-plaintext highlighter-rouge">@import</code>s at the top of <code class="language-plaintext highlighter-rouge">css/style.scss</code> (grid, containers, type, nav, navbar, collapse transitions, breadcrumb, helpers and utilities) replaces the full <code class="language-plaintext highlighter-rouge">bootstrap/bootstrap.scss</code>, which roughly halves the stylesheet. Components such as cards, buttons, forms, dropdowns and modals are left out, so a new page that uses one of them will look unstyled until its import is added there, in the same order as <code class="language-plaintext highlighter-rouge">bootstrap.scss</code>.</li>
+    <li>The news archive grid and papers listing cap each card’s title to a fixed height and fade a title that runs longer than that instead of stretching the grid row (<code class="language-plaintext highlighter-rouge">.archive-card</code>, <code class="language-plaintext highlighter-rouge">.paper-card-text</code>, both built on the <code class="language-plaintext highlighter-rouge">fade-box</code> mixin in <code class="language-plaintext highlighter-rouge">css/style.scss</code>, the same idiom the homepage’s <code class="language-plaintext highlighter-rouge">.feedbox</code>/<code class="language-plaintext highlighter-rouge">.feedboxblog</code> already used).</li>
+    <li>A floating “back to top” button (<code class="language-plaintext highlighter-rouge">js/back-to-top.js</code>, styled as <code class="language-plaintext highlighter-rouge">.back-to-top</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>) fades in once a page is scrolled past 600px and smooth-scrolls to the top on click (instantly if the visitor has requested reduced motion). It is added once, in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>’s <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code>, so it applies to every page automatically; there is no per-page opt-in.</li>
+    <li>Markdown tables on the About page are styled under <code class="language-plaintext highlighter-rouge">.about-text</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>, since Bootstrap’s table styles are not compiled in: padded, top-aligned cells with a line between rows, and on phones each row stacks into a block (its first cell in bold, then the others) so the columns do not run into each other.</li>
+  </ul>
+
+  <h3 id="colours-and-accessibility">Colours and accessibility</h3>
+
   <ul>
     <li>Colours are CSS variables defined in <code class="language-plaintext highlighter-rouge">css/theme.scss</code>. The site follows the visitor’s light or dark setting, and the moon/sun button in the navigation bar switches and remembers the choice.</li>
     <li>All text meets WCAG AA contrast (4.5:1) in both themes. Keep it that way when you change a colour; the navigation bar’s hover and active text uses <code class="language-plaintext highlighter-rouge">$link-color-navlink-on-dark</code> in <code class="language-plaintext highlighter-rouge">css/variables.scss</code> for this reason. Links in running text are not underlined, since their colour already sets them apart; the exceptions are links drawn in the same colour as the surrounding text (the intro sentence on the home page, the author and DOI links in <code class="language-plaintext highlighter-rouge">.smallnote</code>, and the footer credits), which get a faint underline so they are not told apart by colour alone (WCAG 1.4.1). Keep that underline on any new link of this kind. Every page’s content sits in a <code class="language-plaintext highlighter-rouge">&lt;main&gt;</code> element, and icon-only links carry an <code class="language-plaintext highlighter-rouge">aria-label</code> (with <code class="language-plaintext highlighter-rouge">aria-hidden="true"</code> on the icon) so screen readers can name them.</li>
-    <li>Supported browsers are current Chrome, Edge, Firefox, Safari and Opera. Internet Explorer is not supported (the theme relies on CSS custom properties, and Bootstrap 5 dropped it).</li>
-    <li>Photos and figures rendered through <code class="language-plaintext highlighter-rouge">_includes/responsive-image.html</code> (paper graphical abstracts, research/news pictures, team photos) are served as WebP with the original PNG/JPEG kept as a <code class="language-plaintext highlighter-rouge">&lt;picture&gt;</code> fallback for the rare browser or tool that cannot decode WebP; source images are never deleted, only the smaller WebP copy is added alongside. A handful of oversized news photos also get a 640px-wide WebP variant for phones, listed in <code class="language-plaintext highlighter-rouge">_data/responsive_images.yml</code>. Every image currently referenced this way has a WebP sibling; add one (<code class="language-plaintext highlighter-rouge">cwebp original.png -o original.webp</code>) whenever you add a new photo of this kind. <code class="language-plaintext highlighter-rouge">_data/image_sizes.yml</code> separately records each image’s pixel width/height so the include can set <code class="language-plaintext highlighter-rouge">width</code>/<code class="language-plaintext highlighter-rouge">height</code> and avoid a layout shift while it loads; regenerate an entry with <code class="language-plaintext highlighter-rouge">sips -g pixelWidth -g pixelHeight path/to/image</code>. Thumbnails on the listing pages (news, research, papers, team) pass <code class="language-plaintext highlighter-rouge">loading="lazy"</code> to the include, so browsers only fetch them once they scroll into view.</li>
-    <li>The news archive grid and papers listing cap each card’s title to a fixed height and fade a title that runs longer than that instead of stretching the grid row (<code class="language-plaintext highlighter-rouge">.archive-card</code>, <code class="language-plaintext highlighter-rouge">.paper-card-text</code>, both built on the <code class="language-plaintext highlighter-rouge">fade-box</code> mixin in <code class="language-plaintext highlighter-rouge">css/style.scss</code>, the same idiom the homepage’s <code class="language-plaintext highlighter-rouge">.feedbox</code>/<code class="language-plaintext highlighter-rouge">.feedboxblog</code> already used).</li>
-    <li>A floating “back to top” button (<code class="language-plaintext highlighter-rouge">js/back-to-top.js</code>, styled as <code class="language-plaintext highlighter-rouge">.back-to-top</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>) fades in once a page is scrolled past 600px and smooth-scrolls to the top on click (instantly if the visitor has requested reduced motion). It is added once, in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>’s <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code>, so it applies to every page automatically; there is no per-page opt-in.</li>
-    <li><code class="language-plaintext highlighter-rouge">images/favicon/favicon.ico</code> (and the copy at the repository root) is a multi-resolution icon (16/32/48/64px); if you replace the source artwork, regenerate it with all four sizes embedded; a single-resolution <code class="language-plaintext highlighter-rouge">.ico</code> renders blurry on high-DPI displays and in Windows shortcuts. <code class="language-plaintext highlighter-rouge">images/favicon/browserconfig.xml</code> (Windows tile icons) needs an explicit entry in <code class="language-plaintext highlighter-rouge">_config.yml</code>’s <code class="language-plaintext highlighter-rouge">include:</code> list to ship at all, since <code class="language-plaintext highlighter-rouge">exclude: "*.xml"</code> would otherwise drop it.</li>
-    <li>The site is checked against the <a href="https://validator.w3.org/nu/">W3C Nu Html Checker</a> and the <a href="https://jigsaw.w3.org/css-validator/">W3C CSS Validator</a> from time to time (most recently in September 2026, across one representative page per layout and the compiled stylesheet), and issues they find are fixed — the CSS validator’s remaining messages are informational only (vendor-prefixed selectors, and CSS custom properties, which it cannot evaluate statically). This is a manual check, not part of the build or CI; there is no script for it in this repository.</li>
+  </ul>
+
+  <h3 id="fonts">Fonts</h3>
+
+  <ul>
     <li>Text is set in <a href="https://github.com/IBM/plex">IBM Plex Sans</a>, self-hosted in <code class="language-plaintext highlighter-rouge">css/fonts/ibm-plex-sans/</code> with its <code class="language-plaintext highlighter-rouge">@font-face</code> rules in <code class="language-plaintext highlighter-rouge">css/plex-sans.scss</code>: the same variable-font files and unicode-range subsets Google Fonts serves, so pages no longer wait on two connections to Google before their text can render. <code class="language-plaintext highlighter-rouge">_layouts/default.html</code> preloads <code class="language-plaintext highlighter-rouge">normal-latin.woff2</code>, the one file every page needs.</li>
-    <li>Only the Bootstrap 5 parts the site uses are compiled in: the list of <code class="language-plaintext highlighter-rouge">@import</code>s at the top of <code class="language-plaintext highlighter-rouge">css/style.scss</code> (grid, containers, type, nav, navbar, collapse transitions, breadcrumb, helpers and utilities) replaces the full <code class="language-plaintext highlighter-rouge">bootstrap/bootstrap.scss</code>, which roughly halves the stylesheet. Components such as cards, buttons, forms, dropdowns and modals are left out, so a new page that uses one of them will look unstyled until its import is added there, in the same order as <code class="language-plaintext highlighter-rouge">bootstrap.scss</code>.</li>
-    <li>Google Analytics lives in <code class="language-plaintext highlighter-rouge">js/analytics.js</code> (loaded by <code class="language-plaintext highlighter-rouge">_includes/ga.html</code>), not inline in the page, because the Cloudflare Content-Security-Policy allows inline scripts only by hash (see Security below). It queues the page view immediately but only downloads the ~150 KB gtag.js library after the page has finished loading, so it does not slow the first paint on phones. A visitor who leaves before the page finishes loading is not counted.</li>
+  </ul>
+
+  <h3 id="icons">Icons</h3>
+
+  <ul>
     <li>Icons are <a href="https://fontawesome.com/">Font Awesome Free</a> 6.7.2 (<code class="language-plaintext highlighter-rouge">fa-solid</code>, <code class="language-plaintext highlighter-rouge">fa-regular</code> and <code class="language-plaintext highlighter-rouge">fa-brands</code> classes, for example <code class="language-plaintext highlighter-rouge">fa-brands fa-x-twitter</code>) and <a href="https://jpswalsh.github.io/academicons/">Academicons</a> 1.9.5 (<code class="language-plaintext highlighter-rouge">ai ai-doi</code>), both self-hosted: the SCSS is in <code class="language-plaintext highlighter-rouge">css/fontawesome/</code> and <code class="language-plaintext highlighter-rouge">css/academicons.scss</code>, the fonts in <code class="language-plaintext highlighter-rouge">css/webfonts/</code> and <code class="language-plaintext highlighter-rouge">css/fonts/</code>. The one exception is the sun of the light/dark button, a hand-drawn inline SVG in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>, because Font Awesome’s sun looks like a cog. Font Awesome is trimmed to the icons the site uses: <code class="language-plaintext highlighter-rouge">css/icons.scss</code> lists them and emits only their classes, and <code class="language-plaintext highlighter-rouge">css/webfonts/</code> holds fonts cut down to those glyphs (about 5 KB instead of 300 KB). <strong>To use a new icon, add its name to <code class="language-plaintext highlighter-rouge">$fa-used-icons</code> in <code class="language-plaintext highlighter-rouge">css/icons.scss</code> and run <code class="language-plaintext highlighter-rouge">python3 _scripts/subset-fontawesome.py</code></strong> (needs <code class="language-plaintext highlighter-rouge">pip install fonttools brotli</code>); an icon that is not listed shows as a blank square. The script also updates the fingerprint in <code class="language-plaintext highlighter-rouge">css/icons-version.scss</code> that is added to the fonts’ addresses; commit that file with the fonts. The full fonts it cuts from are in <code class="language-plaintext highlighter-rouge">_fontawesome-webfonts/</code>, which Jekyll does not publish. To upgrade Font Awesome, replace <code class="language-plaintext highlighter-rouge">css/fontawesome/</code> with the new release’s <code class="language-plaintext highlighter-rouge">scss/</code> and <code class="language-plaintext highlighter-rouge">_fontawesome-webfonts/</code> with its <code class="language-plaintext highlighter-rouge">webfonts/</code> (the <code class="language-plaintext highlighter-rouge">.woff2</code> files), then run the script.</li>
-    <li>The <code class="language-plaintext highlighter-rouge">twitter</code> field in a team page’s header holds the X handle; the links point at x.com.</li>
-    <li>Styles are SCSS partials in <code class="language-plaintext highlighter-rouge">css/</code>, compiled into <code class="language-plaintext highlighter-rouge">css/style.css</code>. Layouts are in <code class="language-plaintext highlighter-rouge">_layouts/</code> and shared snippets in <code class="language-plaintext highlighter-rouge">_includes/</code>.</li>
+    <li><code class="language-plaintext highlighter-rouge">images/favicon/favicon.ico</code> (and the copy at the repository root) is a multi-resolution icon (16/32/48/64px); if you replace the source artwork, regenerate it with all four sizes embedded; a single-resolution <code class="language-plaintext highlighter-rouge">.ico</code> renders blurry on high-DPI displays and in Windows shortcuts. <code class="language-plaintext highlighter-rouge">images/favicon/browserconfig.xml</code> (Windows tile icons) needs an explicit entry in <code class="language-plaintext highlighter-rouge">_config.yml</code>’s <code class="language-plaintext highlighter-rouge">include:</code> list to ship at all, since <code class="language-plaintext highlighter-rouge">exclude: "*.xml"</code> would otherwise drop it.</li>
+  </ul>
+
+  <h3 id="images">Images</h3>
+
+  <ul>
+    <li>Photos and figures rendered through <code class="language-plaintext highlighter-rouge">_includes/responsive-image.html</code> (paper graphical abstracts, research/news pictures, team photos) are served as WebP with the original PNG/JPEG kept as a <code class="language-plaintext highlighter-rouge">&lt;picture&gt;</code> fallback for the rare browser or tool that cannot decode WebP; source images are never deleted, only the smaller WebP copy is added alongside. A handful of oversized news photos also get a 640px-wide WebP variant for phones, listed in <code class="language-plaintext highlighter-rouge">_data/responsive_images.yml</code>. Every image currently referenced this way has a WebP sibling; add one (<code class="language-plaintext highlighter-rouge">cwebp original.png -o original.webp</code>) whenever you add a new photo of this kind. <code class="language-plaintext highlighter-rouge">_data/image_sizes.yml</code> separately records each image’s pixel width/height so the include can set <code class="language-plaintext highlighter-rouge">width</code>/<code class="language-plaintext highlighter-rouge">height</code> and avoid a layout shift while it loads; regenerate an entry with <code class="language-plaintext highlighter-rouge">sips -g pixelWidth -g pixelHeight path/to/image</code>. Thumbnails on the listing pages (news, research, papers, team) pass <code class="language-plaintext highlighter-rouge">loading="lazy"</code> to the include, so browsers only fetch them once they scroll into view.</li>
+  </ul>
+
+  <h3 id="analytics">Analytics</h3>
+
+  <ul>
+    <li>Google Analytics lives in <code class="language-plaintext highlighter-rouge">js/analytics.js</code> (loaded by <code class="language-plaintext highlighter-rouge">_includes/ga.html</code>), not inline in the page, because the Cloudflare Content-Security-Policy allows inline scripts only by hash (see Security below). It queues the page view immediately but only downloads the ~150 KB gtag.js library after the page has finished loading, so it does not slow the first paint on phones. A visitor who leaves before the page finishes loading is not counted.</li>
+  </ul>
+
+  <h3 id="browsers-and-standards">Browsers and standards</h3>
+
+  <ul>
+    <li>Supported browsers are current Chrome, Edge, Firefox, Safari and Opera. Internet Explorer is not supported (the theme relies on CSS custom properties, and Bootstrap 5 dropped it).</li>
+    <li>The site is checked against the <a href="https://validator.w3.org/nu/">W3C Nu Html Checker</a> and the <a href="https://jigsaw.w3.org/css-validator/">W3C CSS Validator</a> from time to time (most recently in September 2026, across one representative page per layout and the compiled stylesheet), and issues they find are fixed — the CSS validator’s remaining messages are informational only (vendor-prefixed selectors, and CSS custom properties, which it cannot evaluate statically). This is a manual check, not part of the build or CI; there is no script for it in this repository.</li>
+  </ul>
+
+  <div class="standards-badges">
+ <a class="off standards-badge" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fcaneparesearch.org%2Fmisc%2Fabout%2F" title="Check this page with the W3C Nu Html Checker">
+  <img src="/images/misc/logo_html5.svg" width="40" height="40" alt="" />
+  <span>Valid HTML<br /><small>W3C Nu Html Checker</small></span>
+ </a>
+ <a class="off standards-badge" href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcaneparesearch.org%2Fcss%2Fstyle.css&amp;profile=css3svg" title="Check the stylesheet with the W3C CSS Validator">
+  <img src="/images/misc/logo_css.svg" width="40" height="40" alt="" />
+  <span>Valid CSS<br /><small>W3C CSS Validator</small></span>
+ </a>
+</div>
+
+  <p class="standards-credit">Each badge runs the live site through the validator. HTML5 logo by the <a href="https://www.w3.org/html/logo/">W3C</a> (CC BY 3.0); CSS logo by the <a href="https://github.com/CSS-Next/logo.css">CSS-Next Community Group</a> (CC0).</p>
+
+  <h3 id="search-engines">Search engines</h3>
+
+  <ul>
     <li><code class="language-plaintext highlighter-rouge">robots.txt</code> lists the two sitemaps: <code class="language-plaintext highlighter-rouge">sitemap.xml</code> (the pages, written by <code class="language-plaintext highlighter-rouge">jekyll-sitemap</code> and re-dated by <code class="language-plaintext highlighter-rouge">update.sh</code>) and <code class="language-plaintext highlighter-rouge">map.xml</code> (the paper PDFs in the S3 bucket). Edit it in this repository, not in <code class="language-plaintext highlighter-rouge">caneparesearch.github.io</code>, whose copy is overwritten on every publish.</li>
   </ul>
 
