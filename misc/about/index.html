@@ -73,7 +73,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1790343585" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=1790344211" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -96,21 +96,21 @@
 <meta name="theme-color" content="#ffffff">
 
 	<!-- jQuery -->
-<script src="/js/jquery.min.js?v=1790343585" defer></script>
+<script src="/js/jquery.min.js?v=1790344211" defer></script>
 
 <!-- matchheight -->
-<script src="/js/jquery.matchHeight-min.js?v=1790343585" defer></script>
+<script src="/js/jquery.matchHeight-min.js?v=1790344211" defer></script>
 <!-- Bootstrap -->
-<script src="/js/bootstrap.bundle.min.js?v=1790343585" defer></script>
+<script src="/js/bootstrap.bundle.min.js?v=1790344211" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1790343585" defer></script>
+<script src="/js/email-links.js?v=1790344211" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1790343585" defer></script>
+<script src="/js/back-to-top.js?v=1790344211" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=1790343585" defer></script>
+<script src="/js/analytics.js?v=1790344211" defer></script>
 
 </head>
 
@@ -312,7 +312,7 @@ bundle <span class="nb">install</span>
   <ul>
     <li>Styles are SCSS partials in <code class="language-plaintext highlighter-rouge">css/</code>, compiled into <code class="language-plaintext highlighter-rouge">css/style.css</code>. Layouts are in <code class="language-plaintext highlighter-rouge">_layouts/</code> and shared snippets in <code class="language-plaintext highlighter-rouge">_includes/</code>.</li>
     <li>Only the Bootstrap 5 parts the site uses are compiled in: the list of <code class="language-plaintext highlighter-rouge">@import</code>s at the top of <code class="language-plaintext highlighter-rouge">css/style.scss</code> (grid, containers, type, nav, navbar, collapse transitions, breadcrumb, helpers and utilities) replaces the full <code class="language-plaintext highlighter-rouge">bootstrap/bootstrap.scss</code>, which roughly halves the stylesheet. Components such as cards, buttons, forms, dropdowns and modals are left out, so a new page that uses one of them will look unstyled until its import is added there, in the same order as <code class="language-plaintext highlighter-rouge">bootstrap.scss</code>.</li>
-    <li>The news archive grid and papers listing cap each card’s title to a fixed height and fade a title that runs longer than that instead of stretching the grid row (<code class="language-plaintext highlighter-rouge">.archive-card</code>, <code class="language-plaintext highlighter-rouge">.paper-card-text</code>, both built on the <code class="language-plaintext highlighter-rouge">fade-box</code> mixin in <code class="language-plaintext highlighter-rouge">css/style.scss</code>, the same idiom the homepage’s <code class="language-plaintext highlighter-rouge">.feedbox</code>/<code class="language-plaintext highlighter-rouge">.feedboxblog</code> already used).</li>
+    <li>The news archive grid and papers listing cap each card’s title to a fixed height and fade a title that runs longer than that instead of stretching the grid row (<code class="language-plaintext highlighter-rouge">.archive-card</code>, <code class="language-plaintext highlighter-rouge">.paper-card-text</code>, both built on the <code class="language-plaintext highlighter-rouge">fade-box</code> mixin in <code class="language-plaintext highlighter-rouge">css/style.scss</code>, the same idiom as the news list’s <code class="language-plaintext highlighter-rouge">.feedbox</code> and the research page’s <code class="language-plaintext highlighter-rouge">.feedboxblog</code>). The home page’s Recent News and Recent papers show their two newest items in full instead..</li>
     <li>A floating “back to top” button (<code class="language-plaintext highlighter-rouge">js/back-to-top.js</code>, styled as <code class="language-plaintext highlighter-rouge">.back-to-top</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>) fades in once a page is scrolled past 600px and smooth-scrolls to the top on click (instantly if the visitor has requested reduced motion). It is added once, in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>’s <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code>, so it applies to every page automatically; there is no per-page opt-in.</li>
     <li>Markdown tables on the About page are styled under <code class="language-plaintext highlighter-rouge">.about-text</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>, since Bootstrap’s table styles are not compiled in: padded, top-aligned cells with a line between rows, and on phones each row stacks into a block (its first cell in bold, then the others) so the columns do not run into each other.</li>
   </ul>
