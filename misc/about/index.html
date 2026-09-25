@@ -73,7 +73,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1790280134" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=1790342694" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -96,21 +96,21 @@
 <meta name="theme-color" content="#ffffff">
 
 	<!-- jQuery -->
-<script src="/js/jquery.min.js?v=1790280134" defer></script>
+<script src="/js/jquery.min.js?v=1790342694" defer></script>
 
 <!-- matchheight -->
-<script src="/js/jquery.matchHeight-min.js?v=1790280134" defer></script>
+<script src="/js/jquery.matchHeight-min.js?v=1790342694" defer></script>
 <!-- Bootstrap -->
-<script src="/js/bootstrap.bundle.min.js?v=1790280134" defer></script>
+<script src="/js/bootstrap.bundle.min.js?v=1790342694" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1790280134" defer></script>
+<script src="/js/email-links.js?v=1790342694" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1790280134" defer></script>
+<script src="/js/back-to-top.js?v=1790342694" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=1790280134" defer></script>
+<script src="/js/analytics.js?v=1790342694" defer></script>
 
 </head>
 
@@ -283,6 +283,7 @@ bundle <span class="nb">install</span>
     <li>The <code class="language-plaintext highlighter-rouge">doi</code> field of a preprint on arXiv (<code class="language-plaintext highlighter-rouge">10.48550/arXiv.…</code>) shows the arXiv icon and the label “arXiv”, and one on ChemRxiv (<code class="language-plaintext highlighter-rouge">10.26434/chemrxiv.…</code>) a flask icon and the label “ChemRxiv” (Academicons has no ChemRxiv logo), instead of the DOI icon.</li>
     <li>The line under a paper’s title is made from <code class="language-plaintext highlighter-rouge">authors</code> and <code class="language-plaintext highlighter-rouge">journal</code>. Write authors as <code class="language-plaintext highlighter-rouge">Surname I. I.</code>, comma-separated, with “and” before the last one (also after a comma when there are three or more) and your own name in <code class="language-plaintext highlighter-rouge">&lt;b&gt;</code>: <code class="language-plaintext highlighter-rouge">Xie W., Deng Z., and &lt;b&gt;Canepa P.&lt;/b&gt;</code>. Write <code class="language-plaintext highlighter-rouge">journal</code> in ISO 4 abbreviations as <code class="language-plaintext highlighter-rouge">Journal volume, pages (year)</code> (no comma after the journal name), with the journal name in <code class="language-plaintext highlighter-rouge">&lt;i&gt;</code> and an en dash in page ranges and no issue number: <code class="language-plaintext highlighter-rouge">&lt;i&gt;Chem. Mater.&lt;/i&gt; 33, 5652–5667 (2021)</code>. Use <code class="language-plaintext highlighter-rouge">Journal (year)</code> while volume and pages are not known, and <code class="language-plaintext highlighter-rouge">arXiv (year)</code> or <code class="language-plaintext highlighter-rouge">ChemRxiv (year)</code> for preprints. The short reference in the lists on the home and Papers pages (<code class="language-plaintext highlighter-rouge">First A. et al., &lt;i&gt;Journal&lt;/i&gt;</code>) is built from the same two fields by <code class="language-plaintext highlighter-rouge">_includes/paper-ref.html</code>, so the old <code class="language-plaintext highlighter-rouge">ref</code> field is no longer used. When the line under the title would wrap onto a second line, <code class="language-plaintext highlighter-rouge">js/citation-fit.js</code> shortens the authors to the first ones that fit plus “et al.”, always keeping <code class="language-plaintext highlighter-rouge">Canepa P.</code>; the full list stays in the tooltip.</li>
     <li>If you rename a paper, list its old address under <code class="language-plaintext highlighter-rouge">redirect_from:</code> in the header (for example <code class="language-plaintext highlighter-rouge">- /papers/old-name/</code>) so old links keep working. <code class="language-plaintext highlighter-rouge">_plugins/redirect-from.rb</code> writes the redirects.</li>
+    <li>The search box on the Papers page (<code class="language-plaintext highlighter-rouge">js/paper-filter.js</code>) matches every word typed against each paper’s title, authors, journal, year, DOI and abstract, and keeps the query in the address (<code class="language-plaintext highlighter-rouge">/papers/?q=sodium</code>) so a filtered list can be shared. The abstracts come from <code class="language-plaintext highlighter-rouge">papers/search.json</code>, which Jekyll builds from the <code class="language-plaintext highlighter-rouge">## Abstract</code> section of every paper and the page downloads only once the box is used, so a new paper is searchable without any extra step.</li>
   </ul>
 
   <h3 id="team">Team</h3>
