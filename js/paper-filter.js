@@ -11,7 +11,10 @@
 // Authors are stored as "Surname I. I.", so a full name is matched against that form:
 // "Gerbrand Ceder" finds "Ceder G.", and "Shyue Ping Ong" finds "Ong S. P.". A query
 // word that is not in the text still counts when it could be the given name of one of
-// the paper's authors whose surname is also in the query. Words in double quotes must
+// the paper's authors whose surname is also in the query. Team members are also found
+// by their full name or another name alone ("Pieremanuele", "Jerry"): the page lists
+// them in data-team, and each member's names are added to the text of every paper on
+// which they appear as "Surname I.". Words in double quotes must
 // appear together, in that order: "Chemistry of Materials" (with the quotes) leaves out
 // papers whose abstract merely contains those three words.
 //
@@ -45,10 +48,32 @@
     }).filter(function (author) { return author.initials.length; });
   }
 
-  // Normalize each card's text and author list once, rather than on every keystroke.
+  // Team members as [name, other names...]; the first is the team page's title.
+  var team = [];
+  try { team = JSON.parse(box.getAttribute('data-team') || '[]'); } catch (e) {}
+
+  // Whether a member ("Piero Canepa", or surname first as in "Wang Lu") is one of the
+  // card's authors: one word of the name is an author's surname and another word starts
+  // with that author's first initial.
+  function isAuthor(card, name) {
+    var tokens = normalize(name).replace(/\./g, '').split(' ').filter(Boolean);
+    return tokens.some(function (surname, i) {
+      if (surname.length < 2) return false;
+      var given = tokens.filter(function (t, j) { return j !== i; })[0];
+      return given && card.authors.some(function (author) {
+        return author.initials[0] === given.charAt(0) && author.surnames.indexOf(surname) !== -1;
+      });
+    });
+  }
+
+  // Normalize each card's text and author list once, rather than on every keystroke,
+  // and add the names of the team members who wrote it.
   cards.forEach(function (card) {
     card.searchText = normalize(card.getAttribute('data-search'));
     card.authors = parseAuthors(card.getAttribute('data-authors'));
+    team.forEach(function (names) {
+      if (isAuthor(card, names[0])) card.searchText += ' ' + normalize(names.join(' '));
+    });
   });
 
   // Whether `word` can be read as the given name of an author of this card whose
