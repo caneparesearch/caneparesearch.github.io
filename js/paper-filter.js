@@ -72,14 +72,26 @@
   }
 
   // Keep ?q= in step with the box without adding a history entry per keystroke.
-  function saveQuery(query) {
+  function saveQueryNow() {
+    clearTimeout(saveTimer);
+    var query = input.value.trim();
     var url = new URL(window.location.href);
-    if (query.trim()) {
-      url.searchParams.set('q', query.trim());
+    if (query) {
+      url.searchParams.set('q', query);
     } else {
       url.searchParams.delete('q');
     }
-    history.replaceState(null, '', url);
+    if (url.href !== window.location.href) history.replaceState(null, '', url);
+  }
+
+  // Safari throws once a page calls replaceState too often (holding Backspace can get
+  // there), so the address is updated once typing pauses rather than on every key; it
+  // is also updated straight away when the box loses focus or the page is left, so
+  // following a paper link and coming back keeps the filtered list.
+  var saveTimer;
+  function saveQuerySoon() {
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(saveQueryNow, 300);
   }
 
   input.addEventListener('focus', loadAbstracts);
@@ -87,16 +99,19 @@
   input.addEventListener('input', function () {
     loadAbstracts();
     apply(input.value);
-    saveQuery(input.value);
+    saveQuerySoon();
   });
 
   input.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && input.value) {
       input.value = '';
       apply('');
-      saveQuery('');
+      saveQueryNow();
     }
   });
+
+  input.addEventListener('blur', saveQueryNow);
+  window.addEventListener('pagehide', saveQueryNow);
 
   box.hidden = false;
   var initial = new URLSearchParams(window.location.search).get('q');

@@ -1,6 +1,6 @@
 // On a paper page, keeps the line under the title (authors; journal) to a single line where it can: if it
 // wraps and lists three or more authors, the list is cut to the first authors that fit followed by "et al.",
-// and "Canepa P." is always shown, followed by "..." when authors come after her. The full list stays in the tooltip. Without JavaScript the full list shows.
+// and "Canepa P." is always shown, followed by "..." when authors come after him. The full list stays in the tooltip. Without JavaScript the full list shows.
 (function () {
   var cite = document.querySelector('.paper-cite');
   var box = cite && cite.querySelector('.cite-authors');
@@ -40,8 +40,14 @@
     }
   }
 
+  // Only a change of width can change the wrapping. Phones fire resize whenever the
+  // address bar slides in or out while scrolling, which changes only the height, so
+  // those are skipped rather than re-measuring the line once per author each time.
   var timer;
+  var lastWidth = window.innerWidth;
   window.addEventListener('resize', function () {
+    if (window.innerWidth === lastWidth) return;
+    lastWidth = window.innerWidth;
     clearTimeout(timer);
     timer = setTimeout(fit, 150);
   });

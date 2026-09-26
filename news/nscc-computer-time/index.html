@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<!-- upgrade-insecure-requests is production-only: it would make a browser
+	     retry every link over HTTPS, which breaks `jekyll serve`'s plain-HTTP
+	     local server. -->
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; base-uri 'self'; object-src 'none'; form-action 'self'">
+	<meta name="referrer" content="strict-origin-when-cross-origin">
+	<title>Awarded computer time on the ASPIRE 1 @ NSCC Singapore</title>
+	<!-- a page's own description, else a post's first paragraph, else the site's tagline -->
+	<meta name="description" content="Today, we were awarded 10M CPU hours on the ASPIRE 1 HPCx located at the National Supercomputing Centre NSCC. We hope to deliver the promised science.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Day / night theme: choose the theme before first paint (no flash), then wire up the navbar toggle.
+     Order of preference: the visitor's saved choice, then the OS setting. -->
+<script>
+	(function () {
+		var root = document.documentElement;
+		var KEY = 'theme';
+		var query = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+		function saved() {
+			try {
+				var value = localStorage.getItem(KEY);
+				return value === 'light' || value === 'dark' ? value : null;
+			} catch (e) {
+				return null;
+			}
+		}
+
+		function system() {
+			return query && query.matches ? 'dark' : 'light';
+		}
+
+		function apply(theme) {
+			root.setAttribute('data-bs-theme', theme);
+			var button = document.getElementById('theme-toggle');
+			if (button) {
+				var label = theme === 'dark' ? 'Switch to day mode' : 'Switch to night mode';
+				button.setAttribute('aria-label', label);
+				button.setAttribute('title', label);
+			}
+		}
+
+		apply(saved() || system());
+
+		document.addEventListener('DOMContentLoaded', function () {
+			apply(root.getAttribute('data-bs-theme'));
+			var button = document.getElementById('theme-toggle');
+			if (!button) return;
+			button.addEventListener('click', function () {
+				var next = root.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+				apply(next);
+				try {
+					localStorage.setItem(KEY, next);
+				} catch (e) { /* storage unavailable: the choice just lasts for this page */ }
+			});
+		});
+
+		if (query && query.addEventListener) {
+			query.addEventListener('change', function () {
+				if (!saved()) apply(system());
+			});
+		}
+	})();
+</script>
+
+	<!-- RSS feed -->
+	<link rel="alternate" type="application/rss+xml" title="Canepa Research Lab" href="https://caneparesearch.org/feed.xml">
+	<!-- IBM Plex Sans is self-hosted (css/plex-sans.scss). Preloading the one file every page needs
+	     starts its download with the stylesheet's, instead of after the stylesheet has been parsed. -->
+	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
+	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
+	<link href="/css/style.css?v=1790427028" rel="stylesheet" media="screen">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+	<!-- Bootstrap (its JavaScript, for the mobile menu, needs no jQuery) -->
+<script src="/js/bootstrap.bundle.min.js?v=1790427028" defer></script>
+
+<!-- Spam-protected e-mail links -->
+<script src="/js/email-links.js?v=1790427028" defer></script>
+
+<!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
+<script src="/js/back-to-top.js?v=1790427028" defer></script>
+
+	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
+<script src="/js/analytics.js?v=1790427028" defer></script>
+
+</head>
+
+<body>
+	<button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+		<i class="fa-solid fa-chevron-up fa-fw" aria-hidden="true"></i>
+	</button>
+
+	<div id="header">
+		<nav class="navbar navbar-expand-md navbar-light bg-navbar">
+			<div class="container">
+
+				<!--<div class="navbar-header"> -->
+
+				<a class="navbar-brand" href="/">
+					<img class="logo navbar-brand align-top ms-0 me-1" src="/images/logo-plex-color.svg"
+						width="110" height="65" alt="Canepa Research Lab">
+				</a>
+				<button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- </div> -->
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<hr style="height:2px;border:none;color:rgb(255, 83, 13);background-color:rgb(255, 83, 13)" />
+					<ul class="navbar-nav nav-pills ms-auto">
+						<!-- <ul class="nav navbar-nav navbar-right"> -->
+						
+						<li class="nav-link active">
+							
+							<a href="/news/">News</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/papers/">Papers</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/research/">Research</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/team/">Team</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/misc/sponsors">Sponsors</a>
+						</li>
+<!-- 						
+						
+						<li class="nav-link">
+							
+							<a href="/videos/"><i class="fa-brands fa-youtube fa-lg"></i></a>
+						</li> 
+-->
+						<li class="nav-link">
+							<a href="https://sites.google.com/view/caneparesearch/home" target="_blank" rel="noopener noreferrer" aria-label="Members area (sign-in required)" title="Members area (sign-in required)"><i
+									class="fa-solid fa-lock fa-lg" aria-hidden="true"></i></a>
+						</li>
+						<li class="nav-link">
+							<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to night mode"
+								title="Switch to night mode">
+								<i class="fa-regular fa-moon fa-lg theme-icon-moon" aria-hidden="true"></i>
+								<!-- drawn as an SVG: Font Awesome's sun icon is a spiky burst that looks like a cog -->
+								<svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+									<circle cx="12" cy="12" r="5" />
+									<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+								</svg>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<main class="container main">
+
+		<div class="blog-post">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="page-title">Awarded computer time on the ASPIRE 1 @ NSCC Singapore</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			
+			<p class="news-author">
+				30 Nov 2018
+				
+				by <a class="off" href="/team/piero-canepa/">Piero</a>
+				
+				
+			</p>
+			
+		</div>
+	</div>
+	<!-- <div class="col-md-1"></div> -->
+
+	<div class="bigspacer"></div>
+
+	<div class="row">
+		<!-- <div class="col-md-1"></div> -->
+		<div class="col-sm-12 col-12">
+			
+			
+			
+			
+
+
+
+
+
+
+
+
+
+
+<picture>
+	
+	<source type="image/webp" srcset="/images/news/2018-11-30-nscc-computer-time.webp">
+	
+	<img src="/images/news/2018-11-30-nscc-computer-time.png" class="offset offset-news" width="352" height="466" alt="">
+</picture>
+
+
+			
+			
+			<div class="post news-text">
+				<p>Today, we were awarded 10M CPU hours on the <a href="https://www.nscc.sg/about-nscc/our-facilityaspire-1/">ASPIRE 1</a> HPCx located at the National Supercomputing Centre <a href="https://www.nscc.sg">NSCC</a>. We hope to deliver the promised science.</p>
+
+			</div>
+		</div>
+		<!--  <div class="col-md-1"></div> -->
+	</div>
+
+	<div class="bigspacer"></div>
+	<div class="spacer"></div>
+
+</div>
+
+
+		<div class="row mt60">
+			<div class="col-md-12 col-12">
+				<div>
+					<ul class="list-inline">
+						
+						
+						
+						<li class="footernav list-inline-item">
+							<a class="off" href="/misc/about/">About</a>
+						</li>
+						
+						
+						<li class="footernav list-inline-item">
+							<a class="off" href="/misc/contact/">Contact us</a>
+						</li>
+						
+						
+						<li class="footernav list-inline-item">
+							<a class="off" href="/misc/join/">Join</a>
+						</li>
+						
+						
+						<!--
+						<li class="footernav list-inline-item">
+							<i class="fa"></i> <a class="off" href="https://www.eng.nus.edu.sg/mse/">MSE</a>
+						</li>
+						<li class="footernav list-inline-item">
+							<i class="fa"></i> <a class="off" href="https://www.nus.edu.sg">NUS</a>
+						</li>
+						-->
+						<!-- social links -->
+						<li class="footernav list-inline-item">
+							<a class="off" href="https://github.com/caneparesearch" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+						</li>
+						<li class="footernav list-inline-item">
+							<a class="off" href="https://x.com/Piero_Canepa" aria-label="X (formerly Twitter)" title="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<footer class="row footer">
+			<div class="col-lg-12 col-12">
+				<p class="colophon">&copy; 2018–2026 Pieremanuele Canepa -
+					Proudly running on <a class="off" href="https://jekyllrb.com" rel="noopener">Jekyll</a>
+					and based on <a class="off" href="https://github.com/trvrb" target="_blank"
+						rel="noopener">bedford.io</a> theme.
+					<a class="off" href="https://albertocanepa.me/" target="_blank" rel="noopener">CWD</a> is
+					acknowledged.
+				</p>
+			</div>
+		</footer>
+	</main>
+</body>
+
+</html>
