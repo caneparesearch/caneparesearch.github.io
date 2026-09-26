@@ -9,7 +9,7 @@
 // Escape clears it.
 //
 // Authors are stored as "Surname I. I.", so a full name is matched against that form:
-// "Gerbrand Ceder" finds "Ceder G.", and "Shyue Ping Ong" finds "Ong S. P.". A query
+// "Jean-Noël Chotard" finds "Chotard J.-N.", and "Shyue Ping Ong" finds "Ong S. P.". A query
 // word that is not in the text still counts when it could be the given name of one of
 // the paper's authors whose surname is also in the query. Team members are also found
 // by their full name or another name alone ("Pieremanuele", "Jerry"): the page lists
