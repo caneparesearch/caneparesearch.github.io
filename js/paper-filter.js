@@ -69,10 +69,6 @@
     } else {
       status.textContent = shown + ' of ' + cards.length + (cards.length === 1 ? ' paper' : ' papers');
     }
-
-    // Cards in a row are made the same height (see _layouts/default.html); which cards
-    // share a row has just changed, so measure them again.
-    if (window.jQuery && jQuery.fn.matchHeight) jQuery.fn.matchHeight._update();
   }
 
   // Keep ?q= in step with the box without adding a history entry per keystroke.

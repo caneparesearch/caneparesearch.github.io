@@ -73,7 +73,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1790358337" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=1790425828" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -95,22 +95,17 @@
 <meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-	<!-- jQuery -->
-<script src="/js/jquery.min.js?v=1790358337" defer></script>
-
-<!-- matchheight -->
-<script src="/js/jquery.matchHeight-min.js?v=1790358337" defer></script>
-<!-- Bootstrap -->
-<script src="/js/bootstrap.bundle.min.js?v=1790358337" defer></script>
+	<!-- Bootstrap (its JavaScript, for the mobile menu, needs no jQuery) -->
+<script src="/js/bootstrap.bundle.min.js?v=1790425828" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1790358337" defer></script>
+<script src="/js/email-links.js?v=1790425828" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1790358337" defer></script>
+<script src="/js/back-to-top.js?v=1790425828" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=1790358337" defer></script>
+<script src="/js/analytics.js?v=1790425828" defer></script>
 
 </head>
 
@@ -382,7 +377,7 @@ bundle <span class="nb">install</span>
     <li><strong>Content-Security-Policy and Referrer-Policy</strong>, sent as <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> tags in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>: <code class="language-plaintext highlighter-rouge">base-uri 'self'</code> and <code class="language-plaintext highlighter-rouge">form-action 'self'</code> stop an injected script from changing the page’s base URL or submitting a form somewhere else; <code class="language-plaintext highlighter-rouge">object-src 'none'</code> blocks <code class="language-plaintext highlighter-rouge">&lt;object&gt;</code>/<code class="language-plaintext highlighter-rouge">&lt;embed&gt;</code> plugin content entirely; <code class="language-plaintext highlighter-rouge">Referrer-Policy: strict-origin-when-cross-origin</code> sends the full page URL as a referrer only to the same site, and just the origin (no path) to other sites.</li>
     <li><strong>Cloudflare settings</strong> (dashboard configuration, recorded here because they are not in any file):
       <ul>
-        <li><em>Rules → Transform Rules</em>, rule “CSP and permissions” (all requests) sets three response headers. <strong><code class="language-plaintext highlighter-rouge">Content-Security-Policy</code></strong> is stricter than the <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> one: <code class="language-plaintext highlighter-rouge">default-src 'self'</code>, and <code class="language-plaintext highlighter-rouge">script-src</code> allows the site’s own files, a few named hosts (Google Tag Manager, Altmetric, Dimensions) and <strong>inline scripts only by their exact SHA-256 hash</strong> (the theme script in <code class="language-plaintext highlighter-rouge">_includes/theme.html</code> and the matchHeight call at the end of <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>). Editing either inline script, or adding a new one, silently blocks it in browsers until its new hash is added to the rule, so put new JavaScript in a file under <code class="language-plaintext highlighter-rouge">js/</code> instead, as <code class="language-plaintext highlighter-rouge">js/analytics.js</code> does. A new third-party script, stylesheet, image or API host must also be added to the matching directive. The rule also sets <code class="language-plaintext highlighter-rouge">Permissions-Policy</code> (camera, microphone, geolocation, payment and USB off) and <code class="language-plaintext highlighter-rouge">Cross-Origin-Opener-Policy: same-origin</code>.</li>
+        <li><em>Rules → Transform Rules</em>, rule “CSP and permissions” (all requests) sets three response headers. <strong><code class="language-plaintext highlighter-rouge">Content-Security-Policy</code></strong> is stricter than the <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> one: <code class="language-plaintext highlighter-rouge">default-src 'self'</code>, and <code class="language-plaintext highlighter-rouge">script-src</code> allows the site’s own files, a few named hosts (Google Tag Manager, Altmetric, Dimensions) and <strong>inline scripts only by their exact SHA-256 hash</strong> (the theme script in <code class="language-plaintext highlighter-rouge">_includes/theme.html</code> is now the only one; the rule still lists a second hash, for the jQuery matchHeight call removed in September 2026, which can be deleted). Editing that inline script, or adding a new one, silently blocks it in browsers until its new hash is added to the rule, so put new JavaScript in a file under <code class="language-plaintext highlighter-rouge">js/</code> instead, as <code class="language-plaintext highlighter-rouge">js/analytics.js</code> does. A new third-party script, stylesheet, image or API host must also be added to the matching directive. The rule also sets <code class="language-plaintext highlighter-rouge">Permissions-Policy</code> (camera, microphone, geolocation, payment and USB off) and <code class="language-plaintext highlighter-rouge">Cross-Origin-Opener-Policy: same-origin</code>.</li>
         <li><em>SSL/TLS → Edge Certificates</em>: HSTS on for 12 months with <code class="language-plaintext highlighter-rouge">includeSubDomains</code> (every subdomain must serve HTTPS; today only <code class="language-plaintext highlighter-rouge">www</code>, which redirects to the main site), preload off; <code class="language-plaintext highlighter-rouge">X-Content-Type-Options: nosniff</code> on.</li>
         <li><em>Caching → Cache Rules</em>: “Versioned CSS and JS, 1 year” (<code class="language-plaintext highlighter-rouge">/css/style.css</code> and <code class="language-plaintext highlighter-rouge">/js/*</code>, at Cloudflare and in browsers; safe because every publish changes their <code class="language-plaintext highlighter-rouge">?v=</code>), and “Fonts and images, 30 days” (<code class="language-plaintext highlighter-rouge">/css/fonts/</code>, <code class="language-plaintext highlighter-rouge">/css/webfonts/</code>, <code class="language-plaintext highlighter-rouge">/images/</code>: 31 days in browsers, Cloudflare’s own copy follows the 10-minute origin setting). Pages keep GitHub Pages’ 10 minutes. Images keep their address when they change, so a returning visitor can see an old image for up to a month: give a replaced image a new file name. The icon fonts do not have this problem, because <code class="language-plaintext highlighter-rouge">_scripts/subset-fontawesome.py</code> adds a fingerprint of them to their addresses (<code class="language-plaintext highlighter-rouge">?v=</code>, stored in <code class="language-plaintext highlighter-rouge">css/icons-version.scss</code>), so a changed icon set gets new addresses.</li>
       </ul>
@@ -466,11 +461,6 @@ bundle <span class="nb">install</span>
 				</p>
 			</div>
 		</footer>
-		<script>
-			document.addEventListener('DOMContentLoaded', function () {
-				jQuery('.equalCard').matchHeight({ property: 'height' });
-			});
-		</script>
 	</main>
 </body>
 

@@ -73,7 +73,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1790358337" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=1790425828" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -95,22 +95,17 @@
 <meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-	<!-- jQuery -->
-<script src="/js/jquery.min.js?v=1790358337" defer></script>
-
-<!-- matchheight -->
-<script src="/js/jquery.matchHeight-min.js?v=1790358337" defer></script>
-<!-- Bootstrap -->
-<script src="/js/bootstrap.bundle.min.js?v=1790358337" defer></script>
+	<!-- Bootstrap (its JavaScript, for the mobile menu, needs no jQuery) -->
+<script src="/js/bootstrap.bundle.min.js?v=1790425828" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1790358337" defer></script>
+<script src="/js/email-links.js?v=1790425828" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1790358337" defer></script>
+<script src="/js/back-to-top.js?v=1790425828" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=1790358337" defer></script>
+<script src="/js/analytics.js?v=1790425828" defer></script>
 
 </head>
 
@@ -214,7 +209,7 @@
 
 
 <div class="col-md-4 col-12 paperbox">	
-	<div class="media equalCard">
+	<div class="media">
 		<a class="media-body" href="/videos/canepa_ECS_Chicago/">
 				<img class="media-object" src="https://img.youtube.com/vi/LePR_RabWRk/1.jpg" alt="" loading="lazy">
 		</a>
@@ -230,7 +225,7 @@
 
 
 <div class="col-md-4 col-12 paperbox">	
-	<div class="media equalCard">
+	<div class="media">
 		<a class="media-body" href="/videos/canepa_MRS_Seattle/">
 				<img class="media-object" src="https://img.youtube.com/vi/mX32BUIKmqY/1.jpg" alt="" loading="lazy">
 		</a>
@@ -246,7 +241,7 @@
 
 
 <div class="col-md-4 col-12 paperbox">	
-	<div class="media equalCard">
+	<div class="media">
 		<a class="media-body" href="/videos/canepa-ecs-prime/">
 				<img class="media-object" src="https://img.youtube.com/vi/haAb-ez0CZc/1.jpg" alt="" loading="lazy">
 		</a>
@@ -262,7 +257,7 @@
 
 
 <div class="col-md-4 col-12 paperbox">	
-	<div class="media equalCard">
+	<div class="media">
 		<a class="media-body" href="/videos/deng-ecs-prime/">
 				<img class="media-object" src="https://img.youtube.com/vi/BG6CR7wex_U/1.jpg" alt="" loading="lazy">
 		</a>
@@ -278,7 +273,7 @@
 
 
 <div class="col-md-4 col-12 paperbox">	
-	<div class="media equalCard">
+	<div class="media">
 		<a class="media-body" href="/videos/canepa-INREP/">
 				<img class="media-object" src="https://img.youtube.com/vi/7XpUu_UoVGQ/1.jpg" alt="" loading="lazy">
 		</a>
@@ -297,7 +292,7 @@
 <div class="row">
 
 <div class="col-md-4 col-12 paperbox">
-	<div class="media equalCard">
+	<div class="media">
 		<a class="pull-right" href="">
 			<img width=100 class="media-object" src="">
 		</a>
@@ -312,7 +307,7 @@
 
 
 <div class="col-md-4 col-12 paperbox">
-	<div class="media equalCard">
+	<div class="media">
 		<a class="pull-right" href="">
 			<img width=100 class="media-object" src="">
 		</a>
@@ -327,7 +322,7 @@
 
 
 <div class="col-md-4 col-12 paperbox">
-	<div class="media equalCard">
+	<div class="media">
 		<a class="pull-right" href="">
 			<img width=100 class="media-object" src="">
 		</a>
@@ -342,7 +337,7 @@
 <div class="row">
 
 <div class="col-md-4 col-12 paperbox">
-	<div class="media equalCard">
+	<div class="media">
 		<a class="pull-right" href="">
 			<img width=100 class="media-object" src="">
 		</a>
@@ -357,7 +352,7 @@
 
 
 <div class="col-md-4 col-12 paperbox">
-	<div class="media equalCard">
+	<div class="media">
 		<a class="pull-right" href="">
 			<img width=100 class="media-object" src="">
 		</a>
@@ -426,11 +421,6 @@
 				</p>
 			</div>
 		</footer>
-		<script>
-			document.addEventListener('DOMContentLoaded', function () {
-				jQuery('.equalCard').matchHeight({ property: 'height' });
-			});
-		</script>
 	</main>
 </body>
 
