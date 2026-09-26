@@ -1,11 +1,19 @@
 // Search box for the papers list (papers/index.html). As the visitor types, it hides
 // the paper cards whose text does not contain every word of the query, hides the years
 // left with no papers, and says how many papers match. A card's text is its data-search
-// attribute (title, authors, journal, year, DOI) plus the paper's abstract, which comes
+// attribute (title, authors, journal and its full name, year, DOI) plus the paper's
+// abstract, which comes
 // from papers/search.json: that file is fetched the first time the box is used (or at
 // once, for a ?q= address), and until it arrives the search covers the rest. The query
 // is kept in the address (?q=...) so a filtered list can be shared or bookmarked, and
 // Escape clears it.
+//
+// Authors are stored as "Surname I. I.", so a full name is matched against that form:
+// "Gerbrand Ceder" finds "Ceder G.", and "Shyue Ping Ong" finds "Ong S. P.". A query
+// word that is not in the text still counts when it could be the given name of one of
+// the paper's authors whose surname is also in the query. Words in double quotes must
+// appear together, in that order: "Chemistry of Materials" (with the quotes) leaves out
+// papers whose abstract merely contains those three words.
 //
 // Loaded with `defer`, so the page is fully parsed when this runs (see js/back-to-top.js).
 (function () {
@@ -17,15 +25,42 @@
   var cards = Array.prototype.slice.call(document.querySelectorAll('.paperbox[data-search]'));
   var years = Array.prototype.slice.call(document.querySelectorAll('.paper-year'));
 
-  // Lower case without accents, so "lopez" finds "López".
+  // Lower case without accents and with single spaces, so "lopez" finds "López" and a
+  // quoted phrase is not missed over a double space.
   function normalize(text) {
-    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ');
   }
 
-  // Normalize each card's text once, rather than on every keystroke.
+  // "Ong S. P." -> { surnames: ['ong'], initials: ['s', 'p'] }. A compound surname
+  // ("Gomez-Bombarelli R.") also answers to each of its parts.
+  function parseAuthors(list) {
+    return normalize(list || '').split(/,\s*(?:and\s+)?|\s+and\s+/).map(function (name) {
+      var tokens = name.trim().split(/\s+/).filter(Boolean);
+      var initials = [];
+      while (tokens.length > 1 && /^([a-z]\.-?)+$/.test(tokens[tokens.length - 1])) {
+        initials = tokens.pop().replace(/[.-]/g, '').split('').concat(initials);
+      }
+      var surname = tokens.join(' ');
+      return { surnames: [surname].concat(surname.split(/[\s-]+/)), initials: initials };
+    }).filter(function (author) { return author.initials.length; });
+  }
+
+  // Normalize each card's text and author list once, rather than on every keystroke.
   cards.forEach(function (card) {
     card.searchText = normalize(card.getAttribute('data-search'));
+    card.authors = parseAuthors(card.getAttribute('data-authors'));
   });
+
+  // Whether `word` can be read as the given name of an author of this card whose
+  // surname is another word of the query.
+  function givenName(card, word, words) {
+    if (!/^[a-z][a-z-]+$/.test(word)) return false;
+    return card.authors.some(function (author) {
+      return author.initials.indexOf(word.charAt(0)) !== -1 && words.some(function (other) {
+        return other !== word && author.surnames.indexOf(other) !== -1;
+      });
+    });
+  }
 
   // Fetch the abstracts once, add each to its card's text, and search again with them.
   // If the fetch fails, the search simply keeps working without them.
@@ -49,11 +84,21 @@
   }
 
   function apply(query) {
-    var words = normalize(query).split(/\s+/).filter(Boolean);
+    // "…" phrases (straight or curly quotes) first, then the remaining single words
+    var phrases = [];
+    var rest = normalize(query).replace(/["“”]([^"“”]+)["“”]?/g, function (all, phrase) {
+      if (phrase.trim()) phrases.push(phrase.trim());
+      return ' ';
+    });
+    var words = rest.replace(/["“”]/g, ' ').split(/\s+/).filter(Boolean); // lone quotes
     var shown = 0;
 
     cards.forEach(function (card) {
-      var match = words.every(function (word) { return card.searchText.indexOf(word) !== -1; });
+      var match = phrases.every(function (phrase) {
+        return card.searchText.indexOf(phrase) !== -1;
+      }) && words.every(function (word) {
+        return card.searchText.indexOf(word) !== -1 || givenName(card, word, words);
+      });
       card.hidden = !match;
       if (match) shown++;
     });
@@ -62,7 +107,7 @@
       year.hidden = !year.querySelector('.paperbox:not([hidden])');
     });
 
-    if (!words.length) {
+    if (!words.length && !phrases.length) {
       status.textContent = '';
     } else if (shown === 0) {
       status.textContent = 'No papers match “' + query.trim() + '”.';
