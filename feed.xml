@@ -18,6 +18,21 @@
 			</item>
 		
 			<item>
+				<title>Our perspective on machine learning interatomic potentials for solid-state batteries appears in Chem. Mater.</title>
+				<description>&lt;p&gt;Our perspective “Machine Learning Interatomic Potentials for Modeling Solid-State Batteries” has been published in &lt;a href=&quot;https://pubs.acs.org/journal/cmatex&quot;&gt;Chemistry of Materials&lt;/a&gt;, &lt;a href=&quot;https://doi.org/10.1021/acs.chemmater.6c01051&quot;&gt;DOI: 10.1021/acs.chemmater.6c01051&lt;/a&gt;. The work was led by Mgcini Keith Phuthi and Shyue Ping Ong, and brings together researchers from UC San Diego, UC Berkeley, MIT, Lawrence Berkeley National Laboratory, Argonne National Laboratory, the National University of Singapore, the University of Houston, and Purdue University.&lt;/p&gt;
+
+&lt;p&gt;This work is part of the &lt;a href=&quot;https://energystoragera.org&quot;&gt;Energy Storage Research Alliance (ESRA)&lt;/a&gt;, an Energy Innovation Hub funded by the U.S. Department of Energy, Office of Science, Basic Energy Sciences.&lt;/p&gt;
+
+&lt;p&gt;Machine learning interatomic potentials (MLIPs) model the potential energy surface of a material at near-first-principles accuracy for a fraction of the cost of density functional theory, which opens up length and time scales that ab initio methods cannot reach. The perspective discusses how MLIPs, and foundation potentials in particular, can predict the key properties of battery materials, from phase stability, ionic conductivity and voltage to mechanical and thermal properties; how they can model interfaces, interphases and reactions; and how they can speed up high-throughput screening and materials discovery. It closes with what the next generation of MLIPs will need, including charge-aware models, long-range interactions and better training data.&lt;/p&gt;
+
+&lt;p&gt;The paper can be found &lt;a href=&quot;/papers/phuthi-chem-mater-2026/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+				<pubDate>Fri, 18 Sep 2026 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/news/mlip-perspective-chem-mater/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/news/mlip-perspective-chem-mater/</guid>
+			</item>
+		
+			<item>
 				<title>The Research Corporation for Science Advancement awarded our group with research funding</title>
 				<description>&lt;p&gt;Our group received support from &lt;a href=&quot;https://rescorp.org&quot;&gt;Research Corporation For Science Advancement&lt;/a&gt; for a research project titled “Autonomous Discovery of Single-phase High-Entropy Transition Metal Chalcogenides”. This works is in collaboration with &lt;a href=&quot;https://www.me.washington.edu/facultyfinder/shijing-sun&quot;&gt;Shijing Sun&lt;/a&gt; at the &lt;a href=&quot;https://www.washington.edu&quot;&gt;University of Washington&lt;/a&gt; and &lt;a href=&quot;https://mse.berkeley.edu/people_new/al-balushi/&quot;&gt;Zak Al Balushi&lt;/a&gt; at &lt;a href=&quot;https://www.berkeley.edu&quot;&gt;UC Berkeley&lt;/a&gt;. We consider this is a significant achievement, particularly during these uncertain times for federal funding.&lt;/p&gt;
 
@@ -294,15 +309,6 @@ More details can be found &lt;a href=&quot;https://www.a-star.edu.sg/imre/Events
 				<pubDate>Fri, 04 Jan 2019 00:00:00 -0600</pubDate>
 				<link>https://caneparesearch.org/news/new-fileserver/</link>
 				<guid isPermaLink="true">https://caneparesearch.org/news/new-fileserver/</guid>
-			</item>
-		
-			<item>
-				<title>Awarded computer time on the ASPIRE 1 @ NSCC Singapore</title>
-				<description>&lt;p&gt;Today, we were awarded 10M CPU hours on the &lt;a href=&quot;https://www.nscc.sg/about-nscc/our-facilityaspire-1/&quot;&gt;ASPIRE 1&lt;/a&gt; HPCx located at the National Supercomputing Centre &lt;a href=&quot;https://www.nscc.sg&quot;&gt;NSCC&lt;/a&gt;. We hope to deliver the promised science.&lt;/p&gt;
-</description>
-				<pubDate>Fri, 30 Nov 2018 00:00:00 -0600</pubDate>
-				<link>https://caneparesearch.org/news/nscc-computer-time/</link>
-				<guid isPermaLink="true">https://caneparesearch.org/news/nscc-computer-time/</guid>
 			</item>
 		
 	</channel>
