@@ -73,7 +73,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1790642360" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=1790695932" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -96,20 +96,22 @@
 <meta name="theme-color" content="#ffffff">
 
 	<!-- Bootstrap (its JavaScript, for the mobile menu, needs no jQuery) -->
-<script src="/js/bootstrap.bundle.min.js?v=1790642360" defer></script>
+<script src="/js/bootstrap.bundle.min.js?v=1790695932" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1790642360" defer></script>
+<script src="/js/email-links.js?v=1790695932" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1790642360" defer></script>
+<script src="/js/back-to-top.js?v=1790695932" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=1790642360" defer></script>
+<script src="/js/analytics.js?v=1790695932" defer></script>
 
 </head>
 
 <body>
+	<!-- first stop for keyboard and screen-reader users: hidden until focused (Tab), then jumps past the navbar -->
+	<a class="skip-link visually-hidden-focusable" href="#main">Skip to main content</a>
 	<button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
 		<i class="fa-solid fa-chevron-up fa-fw" aria-hidden="true"></i>
 	</button>
@@ -185,7 +187,7 @@
 		</nav>
 	</div>
 
-	<main class="container main">
+	<main id="main" tabindex="-1" class="container main">
 
 		<div class="row">
 	<div class="col-12">
@@ -221,7 +223,7 @@
 					<span class="cite-authors">Liu M., Jain A., Rong Z., Qu X., <b>Canepa P.</b>, Malik R., Ceder G., and Persson K.</span>;
 					<i>Energy Environ. Sci.</i> 9, 3201–3209 (2016).
 				</p>
-				<script src="/js/citation-fit.js?v=1790642360" defer></script>
+				<script src="/js/citation-fit.js?v=1790695932" defer></script>
 			</div>
 		</div>
 	</div>
