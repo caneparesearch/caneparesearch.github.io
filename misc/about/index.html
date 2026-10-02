@@ -73,7 +73,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1790969032" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=1790969657" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -96,16 +96,16 @@
 <meta name="theme-color" content="#ffffff">
 
 	<!-- Bootstrap (its JavaScript, for the mobile menu, needs no jQuery) -->
-<script src="/js/bootstrap.bundle.min.js?v=1790969032" defer></script>
+<script src="/js/bootstrap.bundle.min.js?v=1790969657" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1790969032" defer></script>
+<script src="/js/email-links.js?v=1790969657" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1790969032" defer></script>
+<script src="/js/back-to-top.js?v=1790969657" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=1790969032" defer></script>
+<script src="/js/analytics.js?v=1790969657" defer></script>
 
 </head>
 
@@ -311,8 +311,8 @@ bundle <span class="nb">install</span>
   <ul>
     <li>Styles are SCSS partials in <code class="language-plaintext highlighter-rouge">css/</code>, compiled into <code class="language-plaintext highlighter-rouge">css/style.css</code>. Layouts are in <code class="language-plaintext highlighter-rouge">_layouts/</code> and shared snippets in <code class="language-plaintext highlighter-rouge">_includes/</code>.</li>
     <li>Only the Bootstrap 5 parts the site uses are compiled in: the list of <code class="language-plaintext highlighter-rouge">@import</code>s at the top of <code class="language-plaintext highlighter-rouge">css/style.scss</code> (grid, containers, type, nav, navbar, collapse transitions, breadcrumb, helpers and utilities) replaces the full <code class="language-plaintext highlighter-rouge">bootstrap/bootstrap.scss</code>, which roughly halves the stylesheet. Components such as cards, buttons, forms, dropdowns and modals are left out, so a new page that uses one of them will look unstyled until its import is added there, in the same order as <code class="language-plaintext highlighter-rouge">bootstrap.scss</code>.</li>
-    <li>Long titles fade out instead of stretching their row: the News page cuts a title after two lines, the news archive (the News page’s Index view) after four and the Papers page after five, with the top of the next line fading to show that it goes on, while the date and author, or the authors and journal, below a title always show in full. All three use the <code class="language-plaintext highlighter-rouge">fade-lines</code> mixin in <code class="language-plaintext highlighter-rouge">css/variables.scss</code>, which leaves titles whole on phones. The preview text in the news list (<code class="language-plaintext highlighter-rouge">.feedbox</code>) and on the Research page (<code class="language-plaintext highlighter-rouge">.feedboxblog</code>) still fades at a fixed height (<code class="language-plaintext highlighter-rouge">fade-box</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>). The home page’s Recent News and Recent papers show their two newest items in full instead.</li>
-    <li>The Papers page shows one paper a row on phones, two on tablets and small laptops (up to 1199px wide) and three from 1200px. From tablets up the cards are 64px apart (<code class="language-plaintext highlighter-rouge">.paper-row</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>), so each title sits clearly closer to its own picture than to the next card’s. The Team page and the News page’s Index view use the same one, two and three cards a row, so names, positions and news titles are not squeezed into narrow columns on small laptops.</li>
+    <li>Long titles fade out instead of stretching their row: the News page cuts a title after two lines, and the news archive (the News page’s Index view) after four, with the top of the next line fading to show that it goes on, while the date and author below a title always show in full. Both use the <code class="language-plaintext highlighter-rouge">fade-lines</code> mixin in <code class="language-plaintext highlighter-rouge">css/variables.scss</code>, which leaves titles whole on phones. On the Papers page a card’s title and the authors and journal line below it are never taller than the card’s picture: <code class="language-plaintext highlighter-rouge">js/paper-titles.js</code> measures each card and fades a longer title on its last line that fits (<code class="language-plaintext highlighter-rouge">.is-cut</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>), and phones keep titles whole. Without JavaScript the titles fade after five lines. The preview text in the news list (<code class="language-plaintext highlighter-rouge">.feedbox</code>) and on the Research page (<code class="language-plaintext highlighter-rouge">.feedboxblog</code>) still fades at a fixed height (<code class="language-plaintext highlighter-rouge">fade-box</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>). The home page’s Recent News and Recent papers show their two newest items in full instead.</li>
+    <li>The Papers page shows one paper a row below 992px, two up to 1399px and three from 1400px, so the text beside each picture is never narrower than about 245px. With several cards a row they are 64px apart (<code class="language-plaintext highlighter-rouge">.paper-row</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>), so each title sits clearly closer to its own picture than to the next card’s. The Team page and the News page’s Index view show one card a row on phones, two up to 1199px and three from 1200px, so names, positions and news titles are not squeezed into narrow columns on small laptops.</li>
     <li>A floating “back to top” button (<code class="language-plaintext highlighter-rouge">js/back-to-top.js</code>, styled as <code class="language-plaintext highlighter-rouge">.back-to-top</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>) fades in once a page is scrolled past 600px and smooth-scrolls to the top on click (instantly if the visitor has requested reduced motion). It is added once, in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>’s <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code>, so it applies to every page automatically; there is no per-page opt-in.</li>
     <li>Markdown tables on the About page are styled under <code class="language-plaintext highlighter-rouge">.about-text</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>, since Bootstrap’s table styles are not compiled in: padded, top-aligned cells with a line between rows, and on phones each row stacks into a block (its first cell in bold, then the others) so the columns do not run into each other.</li>
   </ul>
