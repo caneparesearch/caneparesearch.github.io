@@ -20,174 +20,174 @@
 //
 // Loaded with `defer`, so the page is fully parsed when this runs (see js/back-to-top.js).
 (function () {
-  var box = document.querySelector('.paper-search');
-  var input = document.getElementById('paper-search-input');
-  var status = document.querySelector('.paper-search-status');
-  if (!box || !input || !status) return;
+  const box = document.querySelector('.paper-search')
+  const input = document.getElementById('paper-search-input')
+  const status = document.querySelector('.paper-search-status')
+  if (!box || !input || !status) return
 
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.paperbox[data-search]'));
-  var years = Array.prototype.slice.call(document.querySelectorAll('.paper-year'));
+  const cards = Array.prototype.slice.call(document.querySelectorAll('.paperbox[data-search]'))
+  const years = Array.prototype.slice.call(document.querySelectorAll('.paper-year'))
 
   // Lower case without accents and with single spaces, so "lopez" finds "López" and a
   // quoted phrase is not missed over a double space.
-  function normalize(text) {
-    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ');
+  function normalize (text) {
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ')
   }
 
   // "Ong S. P." -> { surnames: ['ong'], initials: ['s', 'p'] }. A compound surname
   // ("Gomez-Bombarelli R.") also answers to each of its parts.
-  function parseAuthors(list) {
+  function parseAuthors (list) {
     return normalize(list || '').split(/,\s*(?:and\s+)?|\s+and\s+/).map(function (name) {
-      var tokens = name.trim().split(/\s+/).filter(Boolean);
-      var initials = [];
+      const tokens = name.trim().split(/\s+/).filter(Boolean)
+      let initials = []
       while (tokens.length > 1 && /^([a-z]\.-?)+$/.test(tokens[tokens.length - 1])) {
-        initials = tokens.pop().replace(/[.-]/g, '').split('').concat(initials);
+        initials = tokens.pop().replace(/[.-]/g, '').split('').concat(initials)
       }
-      var surname = tokens.join(' ');
-      return { surnames: [surname].concat(surname.split(/[\s-]+/)), initials: initials };
-    }).filter(function (author) { return author.initials.length; });
+      const surname = tokens.join(' ')
+      return { surnames: [surname].concat(surname.split(/[\s-]+/)), initials }
+    }).filter(function (author) { return author.initials.length })
   }
 
   // Team members as [name, other names...]; the first is the team page's title.
-  var team = [];
-  try { team = JSON.parse(box.getAttribute('data-team') || '[]'); } catch (e) {}
+  let team = []
+  try { team = JSON.parse(box.getAttribute('data-team') || '[]') } catch (e) {}
 
   // Whether a member ("Piero Canepa", or surname first as in "Wang Lu") is one of the
   // card's authors: one word of the name is an author's surname and another word starts
   // with that author's first initial.
-  function isAuthor(card, name) {
-    var tokens = normalize(name).replace(/\./g, '').split(' ').filter(Boolean);
+  function isAuthor (card, name) {
+    const tokens = normalize(name).replace(/\./g, '').split(' ').filter(Boolean)
     return tokens.some(function (surname, i) {
-      if (surname.length < 2) return false;
-      var given = tokens.filter(function (t, j) { return j !== i; })[0];
+      if (surname.length < 2) return false
+      const given = tokens.filter(function (t, j) { return j !== i })[0]
       return given && card.authors.some(function (author) {
-        return author.initials[0] === given.charAt(0) && author.surnames.indexOf(surname) !== -1;
-      });
-    });
+        return author.initials[0] === given.charAt(0) && author.surnames.indexOf(surname) !== -1
+      })
+    })
   }
 
   // Normalize each card's text and author list once, rather than on every keystroke,
   // and add the names of the team members who wrote it.
   cards.forEach(function (card) {
-    card.searchText = normalize(card.getAttribute('data-search'));
-    card.authors = parseAuthors(card.getAttribute('data-authors'));
+    card.searchText = normalize(card.getAttribute('data-search'))
+    card.authors = parseAuthors(card.getAttribute('data-authors'))
     team.forEach(function (names) {
-      if (isAuthor(card, names[0])) card.searchText += ' ' + normalize(names.join(' '));
-    });
-  });
+      if (isAuthor(card, names[0])) card.searchText += ' ' + normalize(names.join(' '))
+    })
+  })
 
   // Whether `word` can be read as the given name of an author of this card whose
   // surname is another word of the query.
-  function givenName(card, word, words) {
-    if (!/^[a-z][a-z-]+$/.test(word)) return false;
+  function givenName (card, word, words) {
+    if (!/^[a-z][a-z-]+$/.test(word)) return false
     return card.authors.some(function (author) {
       return author.initials.indexOf(word.charAt(0)) !== -1 && words.some(function (other) {
-        return other !== word && author.surnames.indexOf(other) !== -1;
-      });
-    });
+        return other !== word && author.surnames.indexOf(other) !== -1
+      })
+    })
   }
 
   // Fetch the abstracts once, add each to its card's text, and search again with them.
   // If the fetch fails, the search simply keeps working without them.
-  var abstractsRequested = false;
-  function loadAbstracts() {
-    if (abstractsRequested || !window.fetch) return;
-    abstractsRequested = true;
+  let abstractsRequested = false
+  function loadAbstracts () {
+    if (abstractsRequested || !window.fetch) return
+    abstractsRequested = true
     fetch(box.getAttribute('data-abstracts'))
       .then(function (response) {
-        if (!response.ok) throw new Error(response.status);
-        return response.json();
+        if (!response.ok) throw new Error(response.status)
+        return response.json()
       })
       .then(function (abstracts) {
         cards.forEach(function (card) {
-          var abstract = abstracts[card.getAttribute('data-url')];
-          if (abstract) card.searchText += ' ' + normalize(abstract);
-        });
-        if (input.value) apply(input.value);
+          const abstract = abstracts[card.getAttribute('data-url')]
+          if (abstract) card.searchText += ' ' + normalize(abstract)
+        })
+        if (input.value) apply(input.value)
       })
-      .catch(function () {});
+      .catch(function () {})
   }
 
-  function apply(query) {
+  function apply (query) {
     // "…" phrases (straight or curly quotes) first, then the remaining single words
-    var phrases = [];
-    var rest = normalize(query).replace(/["“”]([^"“”]+)["“”]?/g, function (all, phrase) {
-      if (phrase.trim()) phrases.push(phrase.trim());
-      return ' ';
-    });
-    var words = rest.replace(/["“”]/g, ' ').split(/\s+/).filter(Boolean); // lone quotes
-    var shown = 0;
+    const phrases = []
+    const rest = normalize(query).replace(/["“”]([^"“”]+)["“”]?/g, function (all, phrase) {
+      if (phrase.trim()) phrases.push(phrase.trim())
+      return ' '
+    })
+    const words = rest.replace(/["“”]/g, ' ').split(/\s+/).filter(Boolean) // lone quotes
+    let shown = 0
 
     cards.forEach(function (card) {
-      var match = phrases.every(function (phrase) {
-        return card.searchText.indexOf(phrase) !== -1;
+      const match = phrases.every(function (phrase) {
+        return card.searchText.indexOf(phrase) !== -1
       }) && words.every(function (word) {
-        return card.searchText.indexOf(word) !== -1 || givenName(card, word, words);
-      });
-      card.hidden = !match;
-      if (match) shown++;
-    });
+        return card.searchText.indexOf(word) !== -1 || givenName(card, word, words)
+      })
+      card.hidden = !match
+      if (match) shown++
+    })
 
     years.forEach(function (year) {
-      year.hidden = !year.querySelector('.paperbox:not([hidden])');
-    });
+      year.hidden = !year.querySelector('.paperbox:not([hidden])')
+    })
 
     if (!words.length && !phrases.length) {
-      status.textContent = '';
+      status.textContent = ''
     } else if (shown === 0) {
-      status.textContent = 'No papers match “' + query.trim() + '”.';
+      status.textContent = 'No papers match “' + query.trim() + '”.'
     } else {
-      status.textContent = shown + ' of ' + cards.length + (cards.length === 1 ? ' paper' : ' papers');
+      status.textContent = shown + ' of ' + cards.length + (cards.length === 1 ? ' paper' : ' papers')
     }
   }
 
   // Keep ?q= in step with the box without adding a history entry per keystroke.
-  function saveQueryNow() {
-    clearTimeout(saveTimer);
-    var query = input.value.trim();
-    var url = new URL(window.location.href);
+  function saveQueryNow () {
+    clearTimeout(saveTimer)
+    const query = input.value.trim()
+    const url = new URL(window.location.href)
     if (query) {
-      url.searchParams.set('q', query);
+      url.searchParams.set('q', query)
     } else {
-      url.searchParams.delete('q');
+      url.searchParams.delete('q')
     }
-    if (url.href !== window.location.href) history.replaceState(null, '', url);
+    if (url.href !== window.location.href) history.replaceState(null, '', url)
   }
 
   // Safari throws once a page calls replaceState too often (holding Backspace can get
   // there), so the address is updated once typing pauses rather than on every key; it
   // is also updated straight away when the box loses focus or the page is left, so
   // following a paper link and coming back keeps the filtered list.
-  var saveTimer;
-  function saveQuerySoon() {
-    clearTimeout(saveTimer);
-    saveTimer = setTimeout(saveQueryNow, 300);
+  let saveTimer
+  function saveQuerySoon () {
+    clearTimeout(saveTimer)
+    saveTimer = setTimeout(saveQueryNow, 300)
   }
 
-  input.addEventListener('focus', loadAbstracts);
+  input.addEventListener('focus', loadAbstracts)
 
   input.addEventListener('input', function () {
-    loadAbstracts();
-    apply(input.value);
-    saveQuerySoon();
-  });
+    loadAbstracts()
+    apply(input.value)
+    saveQuerySoon()
+  })
 
   input.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && input.value) {
-      input.value = '';
-      apply('');
-      saveQueryNow();
+      input.value = ''
+      apply('')
+      saveQueryNow()
     }
-  });
+  })
 
-  input.addEventListener('blur', saveQueryNow);
-  window.addEventListener('pagehide', saveQueryNow);
+  input.addEventListener('blur', saveQueryNow)
+  window.addEventListener('pagehide', saveQueryNow)
 
-  box.hidden = false;
-  var initial = new URLSearchParams(window.location.search).get('q');
+  box.hidden = false
+  const initial = new URLSearchParams(window.location.search).get('q')
   if (initial) {
-    input.value = initial;
-    apply(initial);
-    loadAbstracts();
+    input.value = initial
+    apply(initial)
+    loadAbstracts()
   }
-})();
+})()

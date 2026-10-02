@@ -4,9 +4,9 @@
 // so a revealed post is byte-for-byte the same markup as the ones shown up front
 // (no separate fetch, no risk of it looking different).
 (function () {
-  var BATCH_SIZE = 8;
-  var SCROLL_THRESHOLD = 600;
-  var initialized = false;
+  const BATCH_SIZE = 8
+  const SCROLL_THRESHOLD = 600
+  let initialized = false
 
   // Checking document.readyState and then conditionally adding a
   // DOMContentLoaded listener has a real race in Safari: readyState can
@@ -16,49 +16,49 @@
   // the DOM is ready, since querySelector on missing elements just returns
   // null - and retry on DOMContentLoaded as a fallback; the initialized
   // flag keeps the real setup from running twice if both attempts succeed.
-  function tryInit() {
-    if (initialized) return;
-    var postList = document.querySelector('.post-list');
-    var spinner = document.querySelector('.infinite-spinner');
-    if (!postList || !spinner) return;
-    initialized = true;
+  function tryInit () {
+    if (initialized) return
+    const postList = document.querySelector('.post-list')
+    const spinner = document.querySelector('.infinite-spinner')
+    if (!postList || !spinner) return
+    initialized = true
 
-    function hiddenPosts() {
-      return postList.querySelectorAll('.blog-post[hidden]');
+    function hiddenPosts () {
+      return postList.querySelectorAll('.blog-post[hidden]')
     }
 
-    function hideSpinner() {
-      window.removeEventListener('scroll', maybeReveal);
-      spinner.style.transition = 'opacity 400ms';
-      spinner.style.opacity = '0';
-      setTimeout(function () { spinner.style.display = 'none'; }, 400);
+    function hideSpinner () {
+      window.removeEventListener('scroll', maybeReveal)
+      spinner.style.transition = 'opacity 400ms'
+      spinner.style.opacity = '0'
+      setTimeout(function () { spinner.style.display = 'none' }, 400)
     }
 
-    function revealNextBatch() {
-      var hidden = hiddenPosts();
-      for (var i = 0; i < BATCH_SIZE && i < hidden.length; i++) {
-        hidden[i].removeAttribute('hidden');
+    function revealNextBatch () {
+      const hidden = hiddenPosts()
+      for (let i = 0; i < BATCH_SIZE && i < hidden.length; i++) {
+        hidden[i].removeAttribute('hidden')
       }
-      if (hiddenPosts().length === 0) hideSpinner();
+      if (hiddenPosts().length === 0) hideSpinner()
     }
 
-    function maybeReveal() {
-      var bottomScrollPosition = window.innerHeight + window.scrollY;
-      var documentHeight = document.documentElement.scrollHeight;
+    function maybeReveal () {
+      const bottomScrollPosition = window.innerHeight + window.scrollY
+      const documentHeight = document.documentElement.scrollHeight
       if (documentHeight - SCROLL_THRESHOLD < bottomScrollPosition) {
-        revealNextBatch();
+        revealNextBatch()
       }
     }
 
     if (hiddenPosts().length === 0) {
-      hideSpinner();
-      return;
+      hideSpinner()
+      return
     }
 
-    window.addEventListener('scroll', maybeReveal, { passive: true });
-    window.addEventListener('load', maybeReveal);
+    window.addEventListener('scroll', maybeReveal, { passive: true })
+    window.addEventListener('load', maybeReveal)
   }
 
-  tryInit();
-  document.addEventListener('DOMContentLoaded', tryInit);
-})();
+  tryInit()
+  document.addEventListener('DOMContentLoaded', tryInit)
+})()

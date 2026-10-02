@@ -2,56 +2,56 @@
 // wraps and lists three or more authors, the list is cut to the first authors that fit followed by "et al.",
 // and "Canepa P." is always shown, followed by "..." when authors come after him. The full list stays in the tooltip. Without JavaScript the full list shows.
 (function () {
-  var cite = document.querySelector('.paper-cite');
-  var box = cite && cite.querySelector('.cite-authors');
-  if (!box) return;
+  const cite = document.querySelector('.paper-cite')
+  const box = cite && cite.querySelector('.cite-authors')
+  if (!box) return
 
-  var full = box.innerHTML.trim();
-  var names = full.split(/,\s+(?:and\s+)?|\s+and\s+/).map(function (n) { return n.trim(); }).filter(Boolean);
-  if (names.length < 3) return;
+  const full = box.innerHTML.trim()
+  const names = full.split(/,\s+(?:and\s+)?|\s+and\s+/).map(function (n) { return n.trim() }).filter(Boolean)
+  if (names.length < 3) return
 
-  var canepa = -1;
-  names.forEach(function (n, i) { if (canepa < 0 && /Canepa P\./.test(n)) canepa = i; });
-  var fullText = box.textContent.trim();
+  let canepa = -1
+  names.forEach(function (n, i) { if (canepa < 0 && /Canepa P\./.test(n)) canepa = i })
+  const fullText = box.textContent.trim()
 
-  function wraps() {
-    var cs = getComputedStyle(cite);
-    var line = parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.5;
-    return cite.getBoundingClientRect().height > line * 1.5;
+  function wraps () {
+    const cs = getComputedStyle(cite)
+    const line = parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.5
+    return cite.getBoundingClientRect().height > line * 1.5
   }
 
-  function abbreviated(k) {
-    var text = names.slice(0, k).join(', ') + ' <i>et al.</i>';
+  function abbreviated (k) {
+    let text = names.slice(0, k).join(', ') + ' <i>et al.</i>'
     if (canepa >= k) {
-      text += ', ' + names[canepa];
-      if (canepa < names.length - 1) text += ', ...';
+      text += ', ' + names[canepa]
+      if (canepa < names.length - 1) text += ', ...'
     }
-    return text;
+    return text
   }
 
-  function fit() {
-    box.innerHTML = full;
-    box.removeAttribute('title');
-    if (!wraps()) return;
-    box.title = fullText;
-    for (var k = names.length - 1; k >= 1; k--) {
-      box.innerHTML = abbreviated(k);
-      if (!wraps()) return;
+  function fit () {
+    box.innerHTML = full
+    box.removeAttribute('title')
+    if (!wraps()) return
+    box.title = fullText
+    for (let k = names.length - 1; k >= 1; k--) {
+      box.innerHTML = abbreviated(k)
+      if (!wraps()) return
     }
   }
 
   // Only a change of width can change the wrapping. Phones fire resize whenever the
   // address bar slides in or out while scrolling, which changes only the height, so
   // those are skipped rather than re-measuring the line once per author each time.
-  var timer;
-  var lastWidth = window.innerWidth;
+  let timer
+  let lastWidth = window.innerWidth
   window.addEventListener('resize', function () {
-    if (window.innerWidth === lastWidth) return;
-    lastWidth = window.innerWidth;
-    clearTimeout(timer);
-    timer = setTimeout(fit, 150);
-  });
-  window.addEventListener('load', fit);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
-  fit();
-})();
+    if (window.innerWidth === lastWidth) return
+    lastWidth = window.innerWidth
+    clearTimeout(timer)
+    timer = setTimeout(fit, 150)
+  })
+  window.addEventListener('load', fit)
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit)
+  fit()
+})()
