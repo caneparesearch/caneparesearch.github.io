@@ -7,40 +7,40 @@
 // below needs) is fully parsed. See js/back-to-top.js for why an earlier readyState
 // check was removed - it has a real race in Safari that can skip the setup entirely.
 (function () {
-  function arm(link, address) {
-    function reveal() { link.setAttribute('href', 'mailto:' + address); }
-    function hide() { link.setAttribute('href', '#'); }
+  function arm (link, address) {
+    function reveal () { link.setAttribute('href', 'mailto:' + address) }
+    function hide () { link.setAttribute('href', '#') }
 
-    link.addEventListener('pointerenter', reveal);
-    link.addEventListener('focus', reveal);
-    link.addEventListener('touchstart', reveal, { passive: true });
-    link.addEventListener('pointerleave', hide);
-    link.addEventListener('blur', hide);
+    link.addEventListener('pointerenter', reveal)
+    link.addEventListener('focus', reveal)
+    link.addEventListener('touchstart', reveal, { passive: true })
+    link.addEventListener('pointerleave', hide)
+    link.addEventListener('blur', hide)
     link.addEventListener('click', function (event) {
       if (link.getAttribute('href') === '#') {
-        event.preventDefault();
-        reveal();
-        window.location.href = link.getAttribute('href');
+        event.preventDefault()
+        reveal()
+        window.location.href = link.getAttribute('href')
       }
-    });
+    })
   }
 
-  function decode() {
-    var spans = document.querySelectorAll('span.email-link[data-user]');
-    for (var i = 0; i < spans.length; i++) {
-      var span = spans[i];
-      var address = span.getAttribute('data-user') + '@' + span.getAttribute('data-domain');
-      var link = document.createElement('a');
-      link.setAttribute('href', '#');
-      link.textContent = span.textContent;
-      var classes = span.className.replace(/\bemail-link\b/, '').trim();
-      if (classes) link.className = classes;
-      arm(link, address);
-      span.parentNode.replaceChild(link, span);
+  function decode () {
+    const spans = document.querySelectorAll('span.email-link[data-user]')
+    for (let i = 0; i < spans.length; i++) {
+      const span = spans[i]
+      const address = span.getAttribute('data-user') + '@' + span.getAttribute('data-domain')
+      const link = document.createElement('a')
+      link.setAttribute('href', '#')
+      link.textContent = span.textContent
+      const classes = span.className.replace(/\bemail-link\b/, '').trim()
+      if (classes) link.className = classes
+      arm(link, address)
+      span.parentNode.replaceChild(link, span)
     }
   }
 
-  decode();
+  decode()
   // posts added later by infinite scroll
-  new MutationObserver(decode).observe(document.body, { childList: true, subtree: true });
-})();
+  new MutationObserver(decode).observe(document.body, { childList: true, subtree: true })
+})()

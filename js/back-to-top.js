@@ -10,21 +10,21 @@
 // works. See js/infinite-scroll.js, loaded with `async`, for the pattern
 // that's actually needed when the DOM-ready guarantee doesn't hold.)
 (function () {
-  var THRESHOLD = 600;
-  var VISIBLE_CLASS = 'is-visible';
+  const THRESHOLD = 600
+  const VISIBLE_CLASS = 'is-visible'
 
-  var button = document.getElementById('back-to-top');
-  if (!button) return;
+  const button = document.getElementById('back-to-top')
+  if (!button) return
 
-  function update() {
-    button.classList.toggle(VISIBLE_CLASS, window.scrollY > THRESHOLD);
+  function update () {
+    button.classList.toggle(VISIBLE_CLASS, window.scrollY > THRESHOLD)
   }
 
-  window.addEventListener('scroll', update, { passive: true });
-  update();
+  window.addEventListener('scroll', update, { passive: true })
+  update()
 
   button.addEventListener('click', function () {
-    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
-  });
-})();
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' })
+  })
+})()
