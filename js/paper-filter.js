@@ -23,6 +23,7 @@
   const box = document.querySelector('.paper-search')
   const input = document.getElementById('paper-search-input')
   const status = document.querySelector('.paper-search-status')
+  const siteLink = document.querySelector('.paper-search-site a')
   if (!box || !input || !status) return
 
   const cards = Array.prototype.slice.call(document.querySelectorAll('.paperbox[data-search]'))
@@ -127,6 +128,9 @@
       card.hidden = !match
       if (match) shown++
     })
+
+    // the "Search the whole site" link takes the query with it
+    if (siteLink) siteLink.href = '/search/' + (query.trim() ? '?q=' + encodeURIComponent(query.trim()) : '')
 
     years.forEach(function (year) {
       year.hidden = !year.querySelector('.paperbox:not([hidden])')

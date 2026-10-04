@@ -190,8 +190,10 @@
   input.addEventListener('blur', saveQueryNow)
   window.addEventListener('pagehide', saveQueryNow)
 
+  // Coming here is asking to search, so the box is ready to type in.
   const initial = new URLSearchParams(window.location.search).get('q')
   if (initial) input.value = initial
+  input.focus()
   apply(input.value)
 
   fetch(form.getAttribute('data-index'))
