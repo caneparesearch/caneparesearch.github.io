@@ -73,7 +73,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1791076100" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=1791223724" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -95,17 +95,17 @@
 <meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-	<!-- Bootstrap (its JavaScript, for the mobile menu, needs no jQuery) -->
-<script src="/js/bootstrap.bundle.min.js?v=1791076100" defer></script>
+	<!-- Opens and closes the mobile menu (in place of Bootstrap's JavaScript bundle) -->
+<script src="/js/nav-toggle.js?v=1791223724" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1791076100" defer></script>
+<script src="/js/email-links.js?v=1791223724" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1791076100" defer></script>
+<script src="/js/back-to-top.js?v=1791223724" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=1791076100" defer></script>
+<script src="/js/analytics.js?v=1791223724" defer></script>
 
 </head>
 
@@ -347,6 +347,7 @@ bundle <span class="nb">install</span>
       <p>The Papers page switches later than the others because each paper’s text sits beside a 120px picture: this way the text is never narrower than about 245px. Its wider gap (<code class="language-plaintext highlighter-rouge">.paper-row</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>) keeps each title clearly closer to its own picture than to the next card’s.</p>
     </li>
     <li>A floating “back to top” button (<code class="language-plaintext highlighter-rouge">js/back-to-top.js</code>, styled as <code class="language-plaintext highlighter-rouge">.back-to-top</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>) fades in once a page is scrolled past 600px and smooth-scrolls to the top on click (instantly if the visitor has requested reduced motion). It is added once, in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>’s <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code>, so it applies to every page automatically; there is no per-page opt-in.</li>
+    <li>The mobile menu (the navbar’s button below the <code class="language-plaintext highlighter-rouge">lg</code> width) is opened and closed by <code class="language-plaintext highlighter-rouge">js/nav-toggle.js</code>, a small script that uses Bootstrap’s <code class="language-plaintext highlighter-rouge">collapse</code>, <code class="language-plaintext highlighter-rouge">collapsing</code> and <code class="language-plaintext highlighter-rouge">show</code> classes. The site does not load Bootstrap’s JavaScript bundle, which it needed only for this; Bootstrap’s CSS is unchanged.</li>
     <li>Markdown tables on the About page are styled under <code class="language-plaintext highlighter-rouge">.about-text</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>, since Bootstrap’s table styles are not compiled in: padded, top-aligned cells with a line between rows, and on phones each row stacks into a block (its first cell in bold, then the others) so the columns do not run into each other.</li>
   </ul>
 
@@ -387,7 +388,7 @@ bundle <span class="nb">install</span>
   <ul>
     <li>Supported browsers are current Chrome, Edge, Firefox, Safari and Opera. Internet Explorer is not supported (the theme relies on CSS custom properties, and Bootstrap 5 dropped it).</li>
     <li>The site is checked against the <a href="https://validator.w3.org/nu/">W3C Nu Html Checker</a> and the <a href="https://jigsaw.w3.org/css-validator/">W3C CSS Validator</a> from time to time (most recently in September 2026, across one representative page per layout and the compiled stylesheet), and issues they find are fixed — the CSS validator’s remaining messages are informational only (vendor-prefixed selectors, and CSS custom properties, which it cannot evaluate statically). This is a manual check, not part of the build or CI; there is no script for it in this repository.</li>
-    <li>The scripts in <code class="language-plaintext highlighter-rouge">js/</code> follow <a href="https://standardjs.com/">JavaScript Standard Style</a>: no semicolons, two-space indentation, <code class="language-plaintext highlighter-rouge">const</code> and <code class="language-plaintext highlighter-rouge">let</code> rather than <code class="language-plaintext highlighter-rouge">var</code>, and a space before a function’s parentheses. With <a href="https://nodejs.org/">Node.js</a> installed, <code class="language-plaintext highlighter-rouge">npx standard --env browser js/</code> checks them (it skips Bootstrap’s minified <code class="language-plaintext highlighter-rouge">bootstrap.bundle.min.js</code>) and <code class="language-plaintext highlighter-rouge">npx standard --env browser --fix js/</code> corrects most problems itself; neither adds files to the repository. Like the W3C checks, this is run by hand when the scripts change. The one inline script, the theme switcher in <code class="language-plaintext highlighter-rouge">_includes/theme.html</code>, keeps its own formatting: any edit to it changes its SHA-256 hash, which the Cloudflare Content-Security-Policy must match (see Security below). Write new JavaScript as a file in <code class="language-plaintext highlighter-rouge">js/</code> rather than inline, for the same reason.</li>
+    <li>The scripts in <code class="language-plaintext highlighter-rouge">js/</code> follow <a href="https://standardjs.com/">JavaScript Standard Style</a>: no semicolons, two-space indentation, <code class="language-plaintext highlighter-rouge">const</code> and <code class="language-plaintext highlighter-rouge">let</code> rather than <code class="language-plaintext highlighter-rouge">var</code>, and a space before a function’s parentheses. With <a href="https://nodejs.org/">Node.js</a> installed, <code class="language-plaintext highlighter-rouge">npx standard --env browser js/</code> checks them and <code class="language-plaintext highlighter-rouge">npx standard --env browser --fix js/</code> corrects most problems itself; neither adds files to the repository. Like the W3C checks, this is run by hand when the scripts change. The one inline script, the theme switcher in <code class="language-plaintext highlighter-rouge">_includes/theme.html</code>, keeps its own formatting: any edit to it changes its SHA-256 hash, which the Cloudflare Content-Security-Policy must match (see Security below). Write new JavaScript as a file in <code class="language-plaintext highlighter-rouge">js/</code> rather than inline, for the same reason.</li>
   </ul>
 
   <div class="standards-badges">
