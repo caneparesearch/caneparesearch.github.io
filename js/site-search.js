@@ -1,4 +1,4 @@
-// Site search (search/index.html). Downloads search/index.json, the text of every news
+// Site search (search/index.html). Downloads search/index.json: the section pages (Team, Papers...) and the text of every news
 // post, paper, research page, team member, video and page under misc/, and as the visitor
 // types lists the pages that contain every word of the query, each with its section, date
 // and a passage of its text around the first match. Words in double quotes must appear
