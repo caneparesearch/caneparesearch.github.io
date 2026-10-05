@@ -73,7 +73,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1791228297" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=1791229060" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -96,16 +96,16 @@
 <meta name="theme-color" content="#ffffff">
 
 	<!-- Opens and closes the mobile menu (in place of Bootstrap's JavaScript bundle) -->
-<script src="/js/nav-toggle.js?v=1791228297" defer></script>
+<script src="/js/nav-toggle.js?v=1791229060" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1791228297" defer></script>
+<script src="/js/email-links.js?v=1791229060" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1791228297" defer></script>
+<script src="/js/back-to-top.js?v=1791229060" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=1791228297" defer></script>
+<script src="/js/analytics.js?v=1791229060" defer></script>
 
 </head>
 
@@ -201,24 +201,23 @@
  </div>
 </div>
 
+<!-- one icon per line, all the same width (fa-fw) and the same gap (me-2) from their text -->
 <div class="row">
-		<div class="col-md-4">
-		<i class="fa-solid fa-location-arrow fa-1x" aria-hidden="true"></i> Purdue University
-		<p>&nbsp; &nbsp; School of Mechanical Engineering<br />
-	 	&nbsp; &nbsp; 585 Purdue Mall West-Lafayette, IN 47907<br />
-		&nbsp; &nbsp;  USA<br />
-		<i class="fa-solid fa-building-columns fa-1x" aria-hidden="true"></i>&nbsp; <a href="https://engineering.purdue.edu/ME/People/ptProfile?resource_id=344518">Faculty profile</a></p>
-	 	</div>
-		<div class="col-md-4">
-	
-	 	</div>
-</div>
-<div class="row">
-	<div class="col-md-4">
-		<!-- <i class="fa-solid fa-phone fa-1x" aria-hidden="true"></i>&nbsp; &nbsp;<a href="tel:+6566015064">+65 6601-5064</a> <br> -->
-		<i class="fa-solid fa-envelope fa-1x" aria-hidden="true"></i>&nbsp; &nbsp;<span class="email-link" data-user="canepa" data-domain="purdue.edu">canepa [at] purdue.edu</span><br />
-		<i class="fa-brands fa-x-twitter fa-1x" aria-hidden="true"></i>&nbsp; &nbsp;<a href="https://x.com/Piero_Canepa">@Piero_Canepa</a><br />
-		<i class="fa-brands fa-github fa-1x" aria-hidden="true"></i>&nbsp; &nbsp;<a href="https://github.com/caneparesearch">caneparesearch</a>
+	<div class="col-md-6">
+		<ul class="list-unstyled mb-4">
+			<li class="d-flex align-items-baseline"><i class="fa-solid fa-location-arrow fa-fw me-2 flex-shrink-0" aria-hidden="true"></i><span>Purdue University<br />
+				School of Mechanical Engineering<br />
+				585 Purdue Mall<br />
+				West Lafayette, IN 47907<br />
+				USA</span></li>
+			<li class="d-flex align-items-baseline"><i class="fa-solid fa-building-columns fa-fw me-2 flex-shrink-0" aria-hidden="true"></i><a href="https://engineering.purdue.edu/ME/People/ptProfile?resource_id=344518">Faculty profile</a></li>
+		</ul>
+		<ul class="list-unstyled">
+			<!-- <li class="d-flex align-items-baseline"><i class="fa-solid fa-phone fa-fw me-2 flex-shrink-0" aria-hidden="true"></i><a href="tel:+6566015064">+65 6601-5064</a></li> -->
+			<li class="d-flex align-items-baseline"><i class="fa-solid fa-envelope fa-fw me-2 flex-shrink-0" aria-hidden="true"></i><span class="email-link" data-user="canepa" data-domain="purdue.edu">canepa [at] purdue.edu</span></li>
+			<li class="d-flex align-items-baseline"><i class="fa-brands fa-x-twitter fa-fw me-2 flex-shrink-0" aria-hidden="true"></i><a href="https://x.com/Piero_Canepa">@Piero_Canepa</a></li>
+			<li class="d-flex align-items-baseline"><i class="fa-brands fa-github fa-fw me-2 flex-shrink-0" aria-hidden="true"></i><a href="https://github.com/caneparesearch">caneparesearch</a></li>
+		</ul>
 	</div>
 </div>
 <p><br /></p>
