@@ -8,7 +8,9 @@
 	     local server. -->
 	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; base-uri 'self'; object-src 'none'; form-action 'self'">
 	<meta name="referrer" content="strict-origin-when-cross-origin">
-	<title>Sponsors</title>
+	<!-- "Papers · Canepa Research Lab": the page first, as tabs and search results cut long titles;
+	     the home page is just the lab's name -->
+	<title>Sponsors · Canepa Research Lab</title>
 	<!-- a page's own description, else a post's first paragraph, else the site's tagline -->
 	<meta name="description" content="Sponsors">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,7 +75,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1791229060" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=1791296982" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -96,16 +98,16 @@
 <meta name="theme-color" content="#ffffff">
 
 	<!-- Opens and closes the mobile menu (in place of Bootstrap's JavaScript bundle) -->
-<script src="/js/nav-toggle.js?v=1791229060" defer></script>
+<script src="/js/nav-toggle.js?v=1791296982" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1791229060" defer></script>
+<script src="/js/email-links.js?v=1791296982" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1791229060" defer></script>
+<script src="/js/back-to-top.js?v=1791296982" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=1791229060" defer></script>
+<script src="/js/analytics.js?v=1791296982" defer></script>
 
 </head>
 
@@ -153,6 +155,11 @@
 						<li class="nav-link">
 							
 							<a href="/team/">Team</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/software/">Software</a>
 						</li>
 						
 						<li class="nav-link active">
