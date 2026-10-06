@@ -2,9 +2,12 @@
 // search overlay (js/search-dialog.js), so both always find the same pages in the same order.
 // It downloads search/index.json (the text of every page; see that file) once per page view,
 // and finds the pages that contain every word of a query. Words in double quotes must appear
-// together, in that order, as on the papers list (js/paper-filter.js). Pages whose title has
-// the words come first, then those whose authors, journal or other names have them, then the
-// rest, keeping the index order (section pages first, then newest first in each section).
+// together, in that order, as on the papers list (js/paper-filter.js). The results come in
+// three groups: first the pages without a date (section pages, codes, team members...) whose
+// title or names have the words; then the news and papers, newest first; then the other
+// undated pages, which only mention the words in their text. Within a group, and between
+// news and papers of the same day, pages with the words in their title come first, then those
+// with them in their names (authors, journal...), then the index order.
 //
 // Loaded with `defer` before the scripts that use it. The search page loads it too, ahead of
 // its own script, so it may run twice on that page; the second run keeps the first.
@@ -72,9 +75,16 @@ window.siteSearch = window.siteSearch || (function () {
       if (!found.every(function (term) { return all.indexOf(term) !== -1 })) return
       const inTitle = found.every(function (term) { return page.foldedTitle.indexOf(term) !== -1 })
       const inNames = found.every(function (term) { return (page.foldedTitle + ' ' + page.foldedExtra).indexOf(term) !== -1 })
-      matches.push({ page, rank: inTitle ? 0 : (inNames ? 1 : 2), order })
+      const rank = inTitle ? 0 : (inNames ? 1 : 2)
+      const group = page.time ? 1 : (rank < 2 ? 0 : 2)
+      matches.push({ page, rank, group, order })
     })
-    matches.sort(function (a, b) { return a.rank - b.rank || a.order - b.order })
+    matches.sort(function (a, b) {
+      if (a.group !== b.group) return a.group - b.group
+      // newest first; "YYYY-MM-DD" strings compare in date order
+      if (a.page.time !== b.page.time) return a.page.time < b.page.time ? 1 : -1
+      return a.rank - b.rank || a.order - b.order
+    })
     return matches.map(function (match) { return match.page })
   }
 
