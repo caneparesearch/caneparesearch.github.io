@@ -1,77 +1,21 @@
-// Site search (search/index.html). Downloads search/index.json: the section pages (Team, Papers...) and the text of every news
-// post, paper, research page, team member, video and page under misc/, and as the visitor
-// types lists the pages that contain every word of the query, each with its section, date
-// and a passage of its text around the first match. Words in double quotes must appear
-// together, in that order, as on the papers list (js/paper-filter.js). Pages whose title
-// has the words come first, then those whose authors, journal or other names have them,
-// then the rest, keeping the index order (newest first in each section) within each.
-// The query is kept in the address (?q=...), which is how the "page not found" page
-// (404.html) sends visitors here; Escape clears it.
+// Site search (search/index.html). As the visitor types, lists the pages that contain every
+// word of the query, each with its section, date and a passage of its text around the first
+// match. The matching and ordering are in js/search-core.js, shared with the navbar's search
+// overlay (js/search-dialog.js), which sends Enter here.
+// The query is kept in the address (?q=...), which is how the overlay and the "page not
+// found" page (404.html) send visitors here; Escape clears it.
 //
-// Loaded with `defer`, so the page is fully parsed when this runs (see js/back-to-top.js).
+// Loaded with `defer`, after js/search-core.js, so the page is fully parsed when this runs
+// (see js/back-to-top.js).
 (function () {
   const form = document.querySelector('.site-search')
   const input = document.getElementById('site-search-input')
   const status = document.querySelector('.paper-search-status')
   const list = document.querySelector('.site-search-results')
-  if (!form || !input || !status || !list || !window.fetch) return
-
-  // Lower case without accents, one character for one character, so a position found
-  // in the folded text is the same position in the original (for the passage shown).
-  function fold (text) {
-    return text.split('').map(function (ch) {
-      const plain = ch.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
-      return plain.length === 1 ? plain : ch.toLowerCase().charAt(0) || ch
-    }).join('')
-  }
-
-  // "…" phrases (straight or curly quotes) and the remaining single words
-  function terms (query) {
-    const phrases = []
-    const rest = fold(query.replace(/\s+/g, ' ')).replace(/["“”]([^"“”]+)["“”]?/g, function (all, phrase) {
-      if (phrase.trim()) phrases.push(phrase.trim())
-      return ' '
-    })
-    return phrases.concat(rest.replace(/["“”]/g, ' ').split(' ').filter(Boolean))
-  }
+  const core = window.siteSearch
+  if (!form || !input || !status || !list || !core || !window.fetch) return
 
   let pages = null
-
-  // The index holds text without markup, but strip_html leaves entities (&lt;, &nbsp;...);
-  // a <textarea> decodes them without running or loading anything.
-  const decoder = document.createElement('textarea')
-  function decode (text) {
-    decoder.innerHTML = text || ''
-    return decoder.value.replace(/\u00a0/g, ' ')
-  }
-
-  // Appends text[start..end) to `parent`, with every term found in it (in the folded
-  // copy, `folded`) wrapped in <mark>.
-  function appendMarked (parent, text, folded, start, end, found) {
-    const part = folded.slice(start, end)
-    let i = 0
-    while (i < part.length) {
-      // the earliest term from here, and the longest one if two start together
-      let next = -1
-      let length = 0
-      found.forEach(function (term) {
-        const j = part.indexOf(term, i)
-        if (j !== -1 && (next === -1 || j < next || (j === next && term.length > length))) {
-          next = j
-          length = term.length
-        }
-      })
-      if (next === -1) {
-        parent.appendChild(document.createTextNode(text.slice(start + i, end)))
-        break
-      }
-      if (next > i) parent.appendChild(document.createTextNode(text.slice(start + i, start + next)))
-      const mark = document.createElement('mark')
-      mark.textContent = text.slice(start + next, start + next + length)
-      parent.appendChild(mark)
-      i = next + length
-    }
-  }
 
   // The passage of `text` around the first of the terms it contains, about 220
   // characters, cut at spaces, with every term in it marked.
@@ -95,7 +39,7 @@
     const p = document.createElement('p')
     p.className = 'site-search-passage'
     if (start > 0) p.appendChild(document.createTextNode('… '))
-    appendMarked(p, text, folded, start, end, found)
+    core.appendMarked(p, text, folded, start, end, found)
     if (end < text.length) p.appendChild(document.createTextNode(' …'))
     return p
   }
@@ -104,7 +48,7 @@
     const item = document.createElement('li')
     const link = document.createElement('a')
     link.href = page.url
-    appendMarked(link, page.title, page.foldedTitle, 0, page.title.length, found)
+    core.appendMarked(link, page.title, page.foldedTitle, 0, page.title.length, found)
     const title = document.createElement('h2')
     title.className = 'site-search-title'
     title.appendChild(link)
@@ -119,7 +63,7 @@
 
   function apply (query) {
     list.textContent = ''
-    const found = terms(query)
+    const found = core.terms(query)
     if (!found.length) {
       status.textContent = ''
       return
@@ -129,23 +73,14 @@
       return
     }
 
-    const matches = []
-    pages.forEach(function (page, order) {
-      const all = page.foldedTitle + ' ' + page.foldedExtra + ' ' + page.foldedText
-      if (!found.every(function (term) { return all.indexOf(term) !== -1 })) return
-      const rank = found.every(function (term) { return page.foldedTitle.indexOf(term) !== -1 }) ? 0
-        : found.every(function (term) { return (page.foldedTitle + ' ' + page.foldedExtra).indexOf(term) !== -1 }) ? 1 : 2
-      matches.push({ page, rank, order })
-    })
-    matches.sort(function (a, b) { return a.rank - b.rank || a.order - b.order })
-
+    const matches = core.search(pages, found)
     if (!matches.length) {
       status.textContent = 'Nothing on the site matches “' + query.trim() + '”.'
       return
     }
     status.textContent = matches.length + (matches.length === 1 ? ' page' : ' pages')
     const items = document.createDocumentFragment()
-    matches.forEach(function (match) { items.appendChild(result(match.page, found)) })
+    matches.forEach(function (page) { items.appendChild(result(page, found)) })
     list.appendChild(items)
   }
 
@@ -196,21 +131,9 @@
   input.focus()
   apply(input.value)
 
-  fetch(form.getAttribute('data-index'))
-    .then(function (response) {
-      if (!response.ok) throw new Error(response.status)
-      return response.json()
-    })
+  core.load(form.getAttribute('data-index'))
     .then(function (index) {
-      pages = index.map(function (page) {
-        page.title = decode(page.title)
-        page.extra = decode(page.extra)
-        page.text = decode(page.text)
-        page.foldedTitle = fold(page.title)
-        page.foldedExtra = fold(page.extra)
-        page.foldedText = fold(page.text)
-        return page
-      })
+      pages = index
       apply(input.value)
     })
     .catch(function () {

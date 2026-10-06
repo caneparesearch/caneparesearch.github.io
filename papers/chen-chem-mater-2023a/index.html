@@ -99,7 +99,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1791303618" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=1791304126" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -122,19 +122,20 @@
 <meta name="theme-color" content="#ffffff">
 
 	<!-- Opens and closes the mobile menu (in place of Bootstrap's JavaScript bundle) -->
-<script src="/js/nav-toggle.js?v=1791303618" defer></script>
+<script src="/js/nav-toggle.js?v=1791304126" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1791303618" defer></script>
+<script src="/js/email-links.js?v=1791304126" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1791303618" defer></script>
+<script src="/js/back-to-top.js?v=1791304126" defer></script>
 
-<!-- Search overlay opened by the navbar's magnifying glass -->
-<script src="/js/search-dialog.js?v=1791303618" defer></script>
+<!-- Search overlay opened by the navbar's magnifying glass, with the search page's matching -->
+<script src="/js/search-core.js?v=1791304126" defer></script>
+<script src="/js/search-dialog.js?v=1791304126" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=1791303618" defer></script>
+<script src="/js/analytics.js?v=1791304126" defer></script>
 
 </head>
 
@@ -151,11 +152,13 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=1791304126">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
-		<p class="search-dialog-hint">News, papers, research and team members. Press Enter to search.</p>
+		<p class="search-dialog-hint" aria-live="polite">News, papers, research and team members</p>
+		<ul class="search-dialog-results"></ul>
+		<a class="search-dialog-more" href="/search/" hidden>See all results →</a>
 	</form>
 </dialog>
 
@@ -294,8 +297,8 @@
 	</div>
 </details>
 
-				<script src="/js/citation-fit.js?v=1791303618" defer></script>
-				<script src="/js/bibtex-copy.js?v=1791303618" defer></script>
+				<script src="/js/citation-fit.js?v=1791304126" defer></script>
+				<script src="/js/bibtex-copy.js?v=1791304126" defer></script>
 			</div>
 		</div>
 	</div>

@@ -75,7 +75,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1791303618" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=1791304126" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -98,19 +98,20 @@
 <meta name="theme-color" content="#ffffff">
 
 	<!-- Opens and closes the mobile menu (in place of Bootstrap's JavaScript bundle) -->
-<script src="/js/nav-toggle.js?v=1791303618" defer></script>
+<script src="/js/nav-toggle.js?v=1791304126" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1791303618" defer></script>
+<script src="/js/email-links.js?v=1791304126" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1791303618" defer></script>
+<script src="/js/back-to-top.js?v=1791304126" defer></script>
 
-<!-- Search overlay opened by the navbar's magnifying glass -->
-<script src="/js/search-dialog.js?v=1791303618" defer></script>
+<!-- Search overlay opened by the navbar's magnifying glass, with the search page's matching -->
+<script src="/js/search-core.js?v=1791304126" defer></script>
+<script src="/js/search-dialog.js?v=1791304126" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=1791303618" defer></script>
+<script src="/js/analytics.js?v=1791304126" defer></script>
 
 </head>
 
@@ -127,11 +128,13 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=1791304126">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
-		<p class="search-dialog-hint">News, papers, research and team members. Press Enter to search.</p>
+		<p class="search-dialog-hint" aria-live="polite">News, papers, research and team members</p>
+		<ul class="search-dialog-results"></ul>
+		<a class="search-dialog-more" href="/search/" hidden>See all results →</a>
 	</form>
 </dialog>
 
@@ -378,7 +381,7 @@ bundle <span class="nb">install</span>
     </li>
     <li>A floating “back to top” button (<code class="language-plaintext highlighter-rouge">js/back-to-top.js</code>, styled as <code class="language-plaintext highlighter-rouge">.back-to-top</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>) fades in once a page is scrolled past 600px and smooth-scrolls to the top on click (instantly if the visitor has requested reduced motion). It is added once, in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>’s <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code>, so it applies to every page automatically; there is no per-page opt-in.</li>
     <li>The mobile menu (the navbar’s button below the <code class="language-plaintext highlighter-rouge">lg</code> width) is opened and closed by <code class="language-plaintext highlighter-rouge">js/nav-toggle.js</code>, a small script that uses Bootstrap’s <code class="language-plaintext highlighter-rouge">collapse</code>, <code class="language-plaintext highlighter-rouge">collapsing</code> and <code class="language-plaintext highlighter-rouge">show</code> classes. The site does not load Bootstrap’s JavaScript bundle, which it needed only for this; Bootstrap’s CSS is unchanged.</li>
-    <li>The navbar’s magnifying glass opens a search overlay (<code class="language-plaintext highlighter-rouge">_includes/search-dialog.html</code>, <code class="language-plaintext highlighter-rouge">js/search-dialog.js</code>, styled as <code class="language-plaintext highlighter-rouge">.search-dialog</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>): the logo and one large field across the top of the page. Enter opens <code class="language-plaintext highlighter-rouge">/search/?q=...</code> with the results; Escape, the close button or a click outside closes it. On the search page the icon focuses that page’s own field, and without JavaScript it is a plain link to <code class="language-plaintext highlighter-rouge">/search/</code>.</li>
+    <li>The navbar’s magnifying glass opens a search overlay (<code class="language-plaintext highlighter-rouge">_includes/search-dialog.html</code>, <code class="language-plaintext highlighter-rouge">js/search-dialog.js</code>, styled as <code class="language-plaintext highlighter-rouge">.search-dialog</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>): the logo and one large field across the top of the page, with the six best matches listed under it as you type and a “See all” link when there are more. Enter opens <code class="language-plaintext highlighter-rouge">/search/?q=...</code> with every result; Escape, the close button or a click outside closes it. The overlay and the search page share their matching (<code class="language-plaintext highlighter-rouge">js/search-core.js</code>), so they always find the same pages in the same order; the overlay downloads the search index the first time it is opened on a page. On the search page the icon focuses that page’s own field, and without JavaScript it is a plain link to <code class="language-plaintext highlighter-rouge">/search/</code>.</li>
     <li>Markdown tables on the About page are styled under <code class="language-plaintext highlighter-rouge">.about-text</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>, since Bootstrap’s table styles are not compiled in: padded, top-aligned cells with a line between rows, and on phones each row stacks into a block (its first cell in bold, then the others) so the columns do not run into each other.</li>
   </ul>
 
