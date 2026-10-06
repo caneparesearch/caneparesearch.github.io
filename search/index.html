@@ -12,7 +12,7 @@
 	     the home page is just the lab's name -->
 	<title>Search · Canepa Research Lab</title>
 	<!-- a page's own description, else a post's first paragraph, else the site's tagline -->
-	<meta name="description" content="Search the news, papers, research, team, software and other pages of the Canepa Research Lab website.">
+	<meta name="description" content="Search the news, papers, research, team, software, sponsors and other pages of the Canepa Research Lab website.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Day / night theme: choose the theme before first paint (no flash), then wire up the navbar toggle.
      Order of preference: the visitor's saved choice, then the OS setting. -->
@@ -75,7 +75,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1791309265" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=1791309718" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -98,20 +98,20 @@
 <meta name="theme-color" content="#ffffff">
 
 	<!-- Opens and closes the mobile menu (in place of Bootstrap's JavaScript bundle) -->
-<script src="/js/nav-toggle.js?v=1791309265" defer></script>
+<script src="/js/nav-toggle.js?v=1791309718" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1791309265" defer></script>
+<script src="/js/email-links.js?v=1791309718" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1791309265" defer></script>
+<script src="/js/back-to-top.js?v=1791309718" defer></script>
 
 <!-- Search overlay opened by the navbar's magnifying glass, with the search page's matching -->
-<script src="/js/search-core.js?v=1791309265" defer></script>
-<script src="/js/search-dialog.js?v=1791309265" defer></script>
+<script src="/js/search-core.js?v=1791309718" defer></script>
+<script src="/js/search-dialog.js?v=1791309718" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=1791309265" defer></script>
+<script src="/js/analytics.js?v=1791309718" defer></script>
 
 </head>
 
@@ -128,11 +128,11 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=1791309265">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=1791309718">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
-		<p class="search-dialog-hint" aria-live="polite">News, papers, research, team members and software</p>
+		<p class="search-dialog-hint" aria-live="polite">News, papers, research, team members, software and sponsors</p>
 		<ul class="search-dialog-results"></ul>
 		<a class="search-dialog-more" href="/search/" hidden>See all results →</a>
 	</form>
@@ -230,19 +230,19 @@
 </div>
 
 <div class="row">
-	<div class="col-md-12"><form class="site-search" action="/search/" method="get" role="search" data-index="/search/index.json?v=1791309265">
+	<div class="col-md-12"><form class="site-search" action="/search/" method="get" role="search" data-index="/search/index.json?v=1791309718">
 			<label for="site-search-input" class="visually-hidden">Search the site</label>
 			<input type="search" id="site-search-input" name="q" class="paper-search-input"
 				placeholder="Search news, papers, research, team members and software" autocomplete="off" spellcheck="false">
 			<p class="paper-search-status" aria-live="polite"></p>
 		</form>
-		<noscript><p>The search needs JavaScript. You can still browse the <a href="/news/">news</a>, <a href="/papers/">papers</a>, <a href="/research/">research</a>, <a href="/team/">team</a> and <a href="/software/">software</a>.</p></noscript>
+		<noscript><p>The search needs JavaScript. You can still browse the <a href="/news/">news</a>, <a href="/papers/">papers</a>, <a href="/research/">research</a>, <a href="/team/">team</a>, <a href="/software/">software</a> and <a href="/misc/sponsors/">sponsors</a>.</p></noscript>
 		<ol class="site-search-results"></ol>
 	</div>
 </div>
 
-<script src="/js/search-core.js?v=1791309265" defer></script>
-<script src="/js/site-search.js?v=1791309265" defer></script>
+<script src="/js/search-core.js?v=1791309718" defer></script>
+<script src="/js/site-search.js?v=1791309718" defer></script>
 
 
 		<div class="row mt60">
