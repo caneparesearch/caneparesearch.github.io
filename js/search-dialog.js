@@ -72,6 +72,10 @@
   }
 
   function open () {
+    // On a phone the icon is inside the navbar's menu: close the menu, so it is not
+    // still open when the overlay closes (js/nav-toggle.js animates it shut)
+    const toggler = document.querySelector('.navbar-toggler[aria-expanded="true"]')
+    if (toggler) toggler.click()
     input.value = ''
     render()
     dialog.showModal()
