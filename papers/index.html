@@ -70,12 +70,12 @@
 
 	<!-- RSS feed -->
 	<link rel="alternate" type="application/rss+xml" title="Canepa Research Lab" href="https://caneparesearch.org/feed.xml">
-	<!-- IBM Plex Sans is self-hosted (css/plex-sans.scss). Preloading the one file every page needs
+	<!-- IBM Plex Sans is self-hosted (css/_plex-sans.scss). Preloading the one file every page needs
 	     starts its download with the stylesheet's, instead of after the stylesheet has been parsed. -->
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1791333604" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=64566ba2e9" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -98,20 +98,20 @@
 <meta name="theme-color" content="#ffffff">
 
 	<!-- Opens and closes the mobile menu (in place of Bootstrap's JavaScript bundle) -->
-<script src="/js/nav-toggle.js?v=1791333604" defer></script>
+<script src="/js/nav-toggle.js?v=8da5aef213" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1791333604" defer></script>
+<script src="/js/email-links.js?v=5f0ad451d1" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1791333604" defer></script>
+<script src="/js/back-to-top.js?v=25086beb14" defer></script>
 
 <!-- Search overlay opened by the navbar's magnifying glass, with the search page's matching -->
-<script src="/js/search-core.js?v=1791333604" defer></script>
-<script src="/js/search-dialog.js?v=1791333604" defer></script>
+<script src="/js/search-core.js?v=8a9fc095aa" defer></script>
+<script src="/js/search-dialog.js?v=92e0b2b68f" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=1791333604" defer></script>
+<script src="/js/analytics.js?v=5118609518" defer></script>
 
 </head>
 
@@ -128,7 +128,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=1791333604">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=3a5766deb5">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -242,7 +242,7 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<!-- Filled in and shown by js/paper-filter.js; without JavaScript the full list is shown as before. --><div class="paper-search" role="search" data-team='[["Michael Ho"],["Folasade Adegoju"],["Zhengyu Liu"],["Zhang Ziyi"],["Tang Lian"],["Zhang Kaixin"],["Wang Yuxiang"],["Chen Chuyang"],["Zhang Jiayu"],["Han Yunlu"],["Niloy Faiyaz"],["Preston Lim"],["Damien Khai Jie Lee"],["Yao Kuan"],["Timothy D. Pook"],["Ziyi Hu"],["Wang Lu"],["Vishakha Kapoor"],["Sumaira Rani"],["Nafiseh Amiri"],["Monal Bhatt"],["Harshan Reddy Gopidi"],["Aaron J. K. Tieu"],["Siddharth Krishnakumar"],["Shidong Yu"],["Weihang Xie"],["Pengfei Cai"],["Abhishek A. Panchal"],["Hengning Chen"],["Tara P. Mishra"],["Ziliang Wang"],["Najmeh Honari"],["Yan Li"],["Stephanie van der Lubbe"],["Juefan Wang"],["Yuheng Li"],["Baltej Singh"],["Zeyu Deng","Jerry Deng"],["Yunyeong Choi"],["Huu Duc Luong"],["Lingyi Liu"],["Piero Canepa","Pieremanuele Canepa"]]' data-abstracts="/papers/search.json?v=1791333604" hidden>
+		<!-- Filled in and shown by js/paper-filter.js; without JavaScript the full list is shown as before. --><div class="paper-search" role="search" data-team='[["Michael Ho"],["Folasade Adegoju"],["Zhengyu Liu"],["Zhang Ziyi"],["Tang Lian"],["Zhang Kaixin"],["Wang Yuxiang"],["Chen Chuyang"],["Zhang Jiayu"],["Han Yunlu"],["Niloy Faiyaz"],["Preston Lim"],["Damien Khai Jie Lee"],["Yao Kuan"],["Timothy D. Pook"],["Ziyi Hu"],["Wang Lu"],["Vishakha Kapoor"],["Sumaira Rani"],["Nafiseh Amiri"],["Monal Bhatt"],["Harshan Reddy Gopidi"],["Aaron J. K. Tieu"],["Siddharth Krishnakumar"],["Shidong Yu"],["Weihang Xie"],["Pengfei Cai"],["Abhishek A. Panchal"],["Hengning Chen"],["Tara P. Mishra"],["Ziliang Wang"],["Najmeh Honari"],["Yan Li"],["Stephanie van der Lubbe"],["Juefan Wang"],["Yuheng Li"],["Baltej Singh"],["Zeyu Deng","Jerry Deng"],["Yunyeong Choi"],["Huu Duc Luong"],["Lingyi Liu"],["Piero Canepa","Pieremanuele Canepa"]]' data-abstracts="/papers/search.json?v=dd11ce20d3" hidden>
 			<label for="paper-search-input" class="visually-hidden">Search papers</label>
 			<input type="search" id="paper-search-input" class="paper-search-input"
 				placeholder="Search titles, authors, abstracts, journals, years or DOIs" autocomplete="off" spellcheck="false">
@@ -4784,8 +4784,8 @@
 	</div>
 </section>
 
-<script src="/js/paper-filter.js?v=1791333604" defer></script>
-<script src="/js/paper-titles.js?v=1791333604" defer></script>
+<script src="/js/paper-filter.js?v=67a2c6c9dd" defer></script>
+<script src="/js/paper-titles.js?v=4d01174bad" defer></script>
 
 
 		<div class="row mt60">

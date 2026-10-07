@@ -89,12 +89,12 @@
 
 	<!-- RSS feed -->
 	<link rel="alternate" type="application/rss+xml" title="Canepa Research Lab" href="https://caneparesearch.org/feed.xml">
-	<!-- IBM Plex Sans is self-hosted (css/plex-sans.scss). Preloading the one file every page needs
+	<!-- IBM Plex Sans is self-hosted (css/_plex-sans.scss). Preloading the one file every page needs
 	     starts its download with the stylesheet's, instead of after the stylesheet has been parsed. -->
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1791333604" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=64566ba2e9" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -117,20 +117,20 @@
 <meta name="theme-color" content="#ffffff">
 
 	<!-- Opens and closes the mobile menu (in place of Bootstrap's JavaScript bundle) -->
-<script src="/js/nav-toggle.js?v=1791333604" defer></script>
+<script src="/js/nav-toggle.js?v=8da5aef213" defer></script>
 
 <!-- Spam-protected e-mail links -->
-<script src="/js/email-links.js?v=1791333604" defer></script>
+<script src="/js/email-links.js?v=5f0ad451d1" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
-<script src="/js/back-to-top.js?v=1791333604" defer></script>
+<script src="/js/back-to-top.js?v=25086beb14" defer></script>
 
 <!-- Search overlay opened by the navbar's magnifying glass, with the search page's matching -->
-<script src="/js/search-core.js?v=1791333604" defer></script>
-<script src="/js/search-dialog.js?v=1791333604" defer></script>
+<script src="/js/search-core.js?v=8a9fc095aa" defer></script>
+<script src="/js/search-dialog.js?v=92e0b2b68f" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=1791333604" defer></script>
+<script src="/js/analytics.js?v=5118609518" defer></script>
 
 </head>
 
@@ -147,7 +147,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=1791333604">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=3a5766deb5">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -292,8 +292,8 @@
 	</div>
 </details>
 
-				<script src="/js/citation-fit.js?v=1791333604" defer></script>
-				<script src="/js/bibtex-copy.js?v=1791333604" defer></script>
+				<script src="/js/citation-fit.js?v=676cfdcfc7" defer></script>
+				<script src="/js/bibtex-copy.js?v=24621d64c5" defer></script>
 			</div>
 		</div>
 	</div>
@@ -332,7 +332,7 @@
 			<div class="bigspacer"></div>
 			<span class="__dimensions_badge_embed__" data-doi="10.1039/c9sc03378e" data-hide-zero-citations="true"
 				data-legend="always" data-style="small_circle"></span>
-			<!-- Night mode (css/theme.scss) paints the black score digit of the Altmetric donut in the
+			<!-- Night mode (css/_theme.scss) paints the black score digit of the Altmetric donut in the
 			     text colour with this filter, and leaves the ring's colours alone. -->
 			<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
 				<filter id="altmetric-dark-digit" color-interpolation-filters="sRGB">
