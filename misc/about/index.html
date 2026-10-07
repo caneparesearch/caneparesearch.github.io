@@ -110,8 +110,8 @@
 <script src="/js/search-core.js?v=8a9fc095aa" defer></script>
 <script src="/js/search-dialog.js?v=92e0b2b68f" defer></script>
 
-<!-- The footer's "loaded in … s", from the browser's own timing of the page -->
-<script src="/js/load-time.js?v=e2dad575fb" defer></script>
+<!-- The footer's "Loaded in … s", from the browser's own timing of the page -->
+<script src="/js/load-time.js?v=8a464f19cf" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
 <script src="/js/analytics.js?v=5118609518" defer></script>
@@ -131,7 +131,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=a486978a22">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=2967b73d77">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -383,7 +383,7 @@ bundle <span class="nb">install</span>
       <p>The Papers page switches later than the others because each paper’s text sits beside a 120px picture: this way the text is never narrower than about 245px. Its wider gap (<code class="language-plaintext highlighter-rouge">.paper-row</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>) keeps each title clearly closer to its own picture than to the next card’s.</p>
     </li>
     <li>A floating “back to top” button (<code class="language-plaintext highlighter-rouge">js/back-to-top.js</code>, styled as <code class="language-plaintext highlighter-rouge">.back-to-top</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>) fades in once a page is scrolled past 600px and smooth-scrolls to the top on click (instantly if the visitor has requested reduced motion). It is added once, in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>’s <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code>, so it applies to every page automatically; there is no per-page opt-in.</li>
-    <li>The footer shows, at its right edge, how long the page took to load (“loaded in 0.42 s”): <code class="language-plaintext highlighter-rouge">js/load-time.js</code> reads it from the browser’s Navigation Timing API, from the start of the request to the end of the load event, so it is the visitor’s own load time, network included. It is hidden when JavaScript is off or the browser does not report the timing; on phones it wraps below the copyright.</li>
+    <li>The footer shows, at its right edge, how long the page took to load (“Loaded in 0.42 s”): <code class="language-plaintext highlighter-rouge">js/load-time.js</code> reads it from the browser’s Navigation Timing API, from the start of the request to the end of the load event, so it is the visitor’s own load time, network included. It is hidden when JavaScript is off or the browser does not report the timing; on phones it wraps below the copyright.</li>
     <li>The mobile menu (the navbar’s button below the <code class="language-plaintext highlighter-rouge">lg</code> width) is opened and closed by <code class="language-plaintext highlighter-rouge">js/nav-toggle.js</code>, a small script that uses Bootstrap’s <code class="language-plaintext highlighter-rouge">collapse</code>, <code class="language-plaintext highlighter-rouge">collapsing</code> and <code class="language-plaintext highlighter-rouge">show</code> classes. The site does not load Bootstrap’s JavaScript bundle, which it needed only for this; Bootstrap’s CSS is unchanged.</li>
     <li>The navbar’s magnifying glass opens a search overlay (<code class="language-plaintext highlighter-rouge">_includes/search-dialog.html</code>, <code class="language-plaintext highlighter-rouge">js/search-dialog.js</code>, styled as <code class="language-plaintext highlighter-rouge">.search-dialog</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>): the logo and one large field across the top of the page, with the six best matches listed under it as you type and a “See all” link when there are more. Enter opens <code class="language-plaintext highlighter-rouge">/search/?q=...</code> with every result; Escape, the close button or a click outside closes it. The overlay and the search page share their matching (<code class="language-plaintext highlighter-rouge">js/search-core.js</code>), so they always find the same pages in the same order; the overlay downloads the search index the first time it is opened on a page. On the search page the icon focuses that page’s own field, and without JavaScript it is a plain link to <code class="language-plaintext highlighter-rouge">/search/</code>.</li>
     <li>Markdown tables on the About page are styled under <code class="language-plaintext highlighter-rouge">.about-text</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>, since Bootstrap’s table styles are not compiled in: padded, top-aligned cells with a line between rows, and on phones each row stacks into a block (its first cell in bold, then the others) so the columns do not run into each other.</li>

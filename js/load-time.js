@@ -14,7 +14,7 @@
     const nav = performance.getEntriesByType('navigation')[0]
     if (!nav || !nav.loadEventEnd) return
     const seconds = (nav.loadEventEnd - nav.startTime) / 1000
-    note.textContent = 'loaded in ' + seconds.toFixed(2) + ' s'
+    note.textContent = 'Loaded in ' + seconds.toFixed(2) + ' s'
     note.hidden = false
   }
 
