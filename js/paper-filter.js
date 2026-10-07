@@ -6,7 +6,8 @@
 // from papers/search.json: that file is fetched the first time the box is used (or at
 // once, for a ?q= address), and until it arrives the search covers the rest. The query
 // is kept in the address (?q=...) so a filtered list can be shared or bookmarked, and
-// Escape clears it.
+// Escape clears it. Next to the count, a link searches the whole site for the same words,
+// for a visitor who was looking for a news item or a team member rather than a paper.
 //
 // Authors are stored as "Surname I. I.", so a full name is matched against that form:
 // "Jean-Noël Chotard" finds "Chotard J.-N.", and "Shyue Ping Ong" finds "Ong S. P.". A query
@@ -22,8 +23,8 @@
 (function () {
   const box = document.querySelector('.paper-search')
   const input = document.getElementById('paper-search-input')
-  const status = document.querySelector('.paper-search-status')
-  const siteLink = document.querySelector('.paper-search-site a')
+  const status = document.querySelector('.paper-search-count')
+  const siteLink = document.querySelector('.paper-search-site')
   if (!box || !input || !status) return
 
   const cards = Array.prototype.slice.call(document.querySelectorAll('.paperbox[data-search]'))
@@ -129,8 +130,11 @@
       if (match) shown++
     })
 
-    // the "Search the whole site" link takes the query with it
-    if (siteLink) siteLink.href = '/search/' + (query.trim() ? '?q=' + encodeURIComponent(query.trim()) : '')
+    // "Search the whole site", with the query, once there is one
+    if (siteLink) {
+      siteLink.href = '/search/' + (query.trim() ? '?q=' + encodeURIComponent(query.trim()) : '')
+      siteLink.hidden = !words.length && !phrases.length
+    }
 
     years.forEach(function (year) {
       year.hidden = !year.querySelector('.paperbox:not([hidden])')
@@ -139,7 +143,7 @@
     if (!words.length && !phrases.length) {
       status.textContent = ''
     } else if (shown === 0) {
-      status.textContent = 'No papers match “' + query.trim() + '”.'
+      status.textContent = 'No papers match “' + query.trim() + '”'
     } else {
       status.textContent = shown + ' of ' + cards.length + (cards.length === 1 ? ' paper' : ' papers')
     }
