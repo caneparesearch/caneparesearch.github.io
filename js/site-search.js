@@ -1,6 +1,6 @@
 // Site search (search/index.html). As the visitor types, lists the pages that contain every
 // word of the query, each with its section, date and a passage of its text around the first
-// match. The matching and ordering are in js/search-core.js, shared with the navbar's search
+// match, under the headings of their groups (Top matches, News and papers, Also mentioned in). The matching and ordering are in js/search-core.js, shared with the navbar's search
 // overlay (js/search-dialog.js), which sends Enter here.
 // The query is kept in the address (?q=...), which is how the overlay and the "page not
 // found" page (404.html) send visitors here; Escape clears it.
@@ -39,7 +39,7 @@
     const p = document.createElement('p')
     p.className = 'site-search-passage'
     if (start > 0) p.appendChild(document.createTextNode('… '))
-    core.appendMarked(p, text, folded, start, end, found)
+    core.appendMarked(p, text, folded, start, end, found, page.textScripts)
     if (end < text.length) p.appendChild(document.createTextNode(' …'))
     return p
   }
@@ -48,8 +48,8 @@
     const item = document.createElement('li')
     const link = document.createElement('a')
     link.href = page.url
-    core.appendMarked(link, page.title, page.foldedTitle, 0, page.title.length, found)
-    const title = document.createElement('h2')
+    core.appendMarked(link, page.title, page.foldedTitle, 0, page.title.length, found, page.titleScripts)
+    const title = document.createElement('h3')
     title.className = 'site-search-title'
     title.appendChild(link)
     const meta = document.createElement('p')
@@ -74,16 +74,33 @@
     }
 
     const start = performance.now()
-    const matches = core.search(pages, found)
+    const groups = core.groups(pages, found)
     const ms = performance.now() - start
-    if (!matches.length) {
+    if (!groups.length) {
       status.textContent = 'Nothing on the site matches “' + query.trim() + '”.'
       return
     }
-    status.textContent = core.summary(matches.length, ms)
-    const items = document.createDocumentFragment()
-    matches.forEach(function (page) { items.appendChild(result(page, found)) })
-    list.appendChild(items)
+    const count = groups.reduce(function (sum, group) { return sum + group.pages.length }, 0)
+    status.textContent = core.summary(count, ms)
+
+    // each group under its heading ("News and papers 12"), in its own list
+    const sections = document.createDocumentFragment()
+    groups.forEach(function (group) {
+      const section = document.createElement('section')
+      const heading = document.createElement('h2')
+      heading.className = 'site-search-group'
+      heading.appendChild(document.createTextNode(group.label + ' '))
+      const number = document.createElement('span')
+      number.className = 'site-search-group-count'
+      number.textContent = group.pages.length
+      heading.appendChild(number)
+      const items = document.createElement('ol')
+      group.pages.forEach(function (page) { items.appendChild(result(page, found)) })
+      section.appendChild(heading)
+      section.appendChild(items)
+      sections.appendChild(section)
+    })
+    list.appendChild(sections)
   }
 
   // Keep ?q= in step with the box without adding a history entry per keystroke, once

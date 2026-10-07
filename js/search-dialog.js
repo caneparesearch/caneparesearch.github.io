@@ -55,7 +55,7 @@
       link.href = page.url
       const title = document.createElement('span')
       title.className = 'search-dialog-result-title'
-      core.appendMarked(title, page.title, page.foldedTitle, 0, page.title.length, found)
+      core.appendMarked(title, page.title, page.foldedTitle, 0, page.title.length, found, page.titleScripts)
       const meta = document.createElement('span')
       meta.className = 'search-dialog-result-meta'
       meta.textContent = page.date ? page.section + ' · ' + page.date : page.section
@@ -113,11 +113,13 @@
 
   input.addEventListener('input', render)
 
-  // Down from the field goes to the first result, then down the list; up goes back
+  // Down from the field goes to "See all n results" (above the list) when it shows, then
+  // down the results, in the order they are on screen; up goes back
   dialog.addEventListener('keydown', function (event) {
     if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return
-    const targets = [input].concat(Array.prototype.slice.call(list.querySelectorAll('a')))
+    const targets = [input]
     if (!more.hidden) targets.push(more)
+    targets.push.apply(targets, list.querySelectorAll('a'))
     const at = targets.indexOf(document.activeElement)
     if (at === -1) return
     const next = at + (event.key === 'ArrowDown' ? 1 : -1)
