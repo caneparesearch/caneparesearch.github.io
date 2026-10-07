@@ -39,12 +39,14 @@
       return
     }
 
+    const start = performance.now()
     const matches = core.search(pages, found)
+    const ms = performance.now() - start
     if (!matches.length) {
       hint.textContent = 'Nothing on the site matches “' + query.trim() + '”.'
       return
     }
-    hint.textContent = matches.length + (matches.length === 1 ? ' page' : ' pages')
+    hint.textContent = core.summary(matches.length, ms)
 
     const items = document.createDocumentFragment()
     matches.slice(0, SHOWN).forEach(function (page) {

@@ -73,12 +73,14 @@
       return
     }
 
+    const start = performance.now()
     const matches = core.search(pages, found)
+    const ms = performance.now() - start
     if (!matches.length) {
       status.textContent = 'Nothing on the site matches “' + query.trim() + '”.'
       return
     }
-    status.textContent = matches.length + (matches.length === 1 ? ' page' : ' pages')
+    status.textContent = core.summary(matches.length, ms)
     const items = document.createDocumentFragment()
     matches.forEach(function (page) { items.appendChild(result(page, found)) })
     list.appendChild(items)

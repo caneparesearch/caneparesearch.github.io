@@ -80,7 +80,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=dd103e1a44" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=24a9b35ace" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -112,8 +112,8 @@
 <script src="/js/back-to-top.js?v=fdddfbc7ff" defer></script>
 
 <!-- Search overlay opened by the navbar's magnifying glass, with the search page's matching -->
-<script src="/js/search-core.js?v=8a9fc095aa" defer></script>
-<script src="/js/search-dialog.js?v=92e0b2b68f" defer></script>
+<script src="/js/search-core.js?v=3cd3dc28e5" defer></script>
+<script src="/js/search-dialog.js?v=266ade3cb9" defer></script>
 
 <!-- The footer's "Loaded in … s", from the browser's own timing of the page -->
 <script src="/js/load-time.js?v=8a464f19cf" defer></script>
@@ -136,7 +136,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=b13862bafa">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=c3aa7e6535">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -398,7 +398,8 @@ bundle <span class="nb">install</span>
       </ul>
     </li>
     <li>The mobile menu (the navbar’s button below the <code class="language-plaintext highlighter-rouge">lg</code> width) is opened and closed by <code class="language-plaintext highlighter-rouge">js/nav-toggle.js</code>, a small script that uses Bootstrap’s <code class="language-plaintext highlighter-rouge">collapse</code>, <code class="language-plaintext highlighter-rouge">collapsing</code> and <code class="language-plaintext highlighter-rouge">show</code> classes. The site does not load Bootstrap’s JavaScript bundle, which it needed only for this; Bootstrap’s CSS is unchanged.</li>
-    <li>The navbar’s magnifying glass opens a search overlay (<code class="language-plaintext highlighter-rouge">_includes/search-dialog.html</code>, <code class="language-plaintext highlighter-rouge">js/search-dialog.js</code>, styled as <code class="language-plaintext highlighter-rouge">.search-dialog</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>): the logo and one large field across the top of the page, with the six best matches listed under it as you type and a “See all” link when there are more. Enter opens <code class="language-plaintext highlighter-rouge">/search/?q=...</code> with every result; Escape, the close button or a click outside closes it. The overlay and the search page share their matching (<code class="language-plaintext highlighter-rouge">js/search-core.js</code>), so they always find the same pages in the same order; the overlay downloads the search index the first time it is opened on a page. On the search page the icon focuses that page’s own field, and without JavaScript it is a plain link to <code class="language-plaintext highlighter-rouge">/search/</code>.</li>
+    <li>The navbar’s magnifying glass opens a search overlay (<code class="language-plaintext highlighter-rouge">_includes/search-dialog.html</code>, <code class="language-plaintext highlighter-rouge">js/search-dialog.js</code>, styled as <code class="language-plaintext highlighter-rouge">.search-dialog</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>): the logo and one large field across the top of the page, with the six best matches listed under it as you type and a “See all” link when there are more. Enter opens <code class="language-plaintext highlighter-rouge">/search/?q=...</code> with every result; Escape, the close button or a click outside closes it. The overlay and the search page share their matching (<code class="language-plaintext highlighter-rouge">js/search-core.js</code>), so they always find the same pages in the same order, and both give the time the search took next to the number of pages found (“7 pages in 0.4 ms”; “under 1 ms” when it is quicker than the browser’s clock can tell); the overlay downloads the search index the first time it is opened on a page. On the search page the icon focuses that page’s own field, and without JavaScript it is a plain link to <code class="language-plaintext highlighter-rouge">/search/</code>.</li>
+    <li>The X that Chrome, Edge and Safari show in a search field with text in it (which clears the field) is restyled in <code class="language-plaintext highlighter-rouge">css/style.scss</code> as the thin X of the overlay’s close button, in the same accent colour, instead of their grey disc. Firefox shows none.</li>
     <li>Markdown tables on the About page are styled under <code class="language-plaintext highlighter-rouge">.about-text</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>, since Bootstrap’s table styles are not compiled in: padded, top-aligned cells with a line between rows, and on phones each row stacks into a block (its first cell in bold, then the others) so the columns do not run into each other.</li>
   </ul>
 
