@@ -16,12 +16,19 @@
   const button = document.getElementById('back-to-top')
   if (!button) return
 
-  function update () {
-    button.classList.toggle(VISIBLE_CLASS, window.scrollY > THRESHOLD)
-  }
+  // The button shows once a 1px marker THRESHOLD px down the page has scrolled out
+  // of view above the window. An IntersectionObserver reports that without the page
+  // being measured; reading window.scrollY at start-up instead forced the browser to
+  // lay out the whole page early (Lighthouse's "forced reflow", about 150 ms).
+  const marker = document.createElement('div')
+  marker.setAttribute('aria-hidden', 'true')
+  marker.style.cssText = 'position:absolute;top:' + THRESHOLD + 'px;left:0;width:1px;height:1px;pointer-events:none;visibility:hidden'
+  document.body.appendChild(marker)
 
-  window.addEventListener('scroll', update, { passive: true })
-  update()
+  new IntersectionObserver(function (entries) {
+    const entry = entries[entries.length - 1]
+    button.classList.toggle(VISIBLE_CLASS, !entry.isIntersecting && entry.boundingClientRect.top < 0)
+  }).observe(marker)
 
   button.addEventListener('click', function () {
     const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
