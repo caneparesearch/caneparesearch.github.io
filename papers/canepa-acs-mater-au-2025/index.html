@@ -88,7 +88,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=64566ba2e9" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=8595e7a50b" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -123,6 +123,9 @@
 <script src="/js/search-core.js?v=8a9fc095aa" defer></script>
 <script src="/js/search-dialog.js?v=92e0b2b68f" defer></script>
 
+<!-- The footer's "Page loaded in … s", from the browser's own timing of the page -->
+<script src="/js/load-time.js?v=7d29dd1e28" defer></script>
+
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
 <script src="/js/analytics.js?v=5118609518" defer></script>
 
@@ -141,7 +144,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=3a5766deb5">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=0fa2a51c55">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -403,13 +406,17 @@
 
 		<footer class="row footer">
 			<div class="col-lg-12 col-12">
-				<p class="colophon">&copy; 2018–2026 Pieremanuele Canepa —
-					Proudly running on <a class="off" href="https://jekyllrb.com" rel="noopener">Jekyll</a>
-					and based on <a class="off" href="https://github.com/trvrb" target="_blank"
-						rel="noopener">bedford.io</a> theme.
-					<a class="off" href="https://albertocanepa.me/" target="_blank" rel="noopener">CWD</a> is
-					acknowledged.
-				</p>
+				<div class="colophon">
+					<p>&copy; 2018–2026 Pieremanuele Canepa —
+						Proudly running on <a class="off" href="https://jekyllrb.com" rel="noopener">Jekyll</a>
+						and based on <a class="off" href="https://github.com/trvrb" target="_blank"
+							rel="noopener">bedford.io</a> theme.
+						<a class="off" href="https://albertocanepa.me/" target="_blank" rel="noopener">CWD</a> is
+						acknowledged.
+					</p>
+					<!-- Filled in by js/load-time.js once the page has loaded -->
+					<p id="load-time" class="load-time" hidden></p>
+				</div>
 			</div>
 		</footer>
 	</main>
