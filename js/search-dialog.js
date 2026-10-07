@@ -46,7 +46,8 @@
       hint.textContent = 'Nothing on the site matches “' + query.trim() + '”.'
       return
     }
-    hint.textContent = core.summary(matches.length, ms)
+    // what Enter does, since nothing on screen says so (a result opens its own page)
+    hint.textContent = core.summary(matches.length, ms) + ' · press Enter to see them all'
 
     const items = document.createDocumentFragment()
     matches.slice(0, SHOWN).forEach(function (page) {
