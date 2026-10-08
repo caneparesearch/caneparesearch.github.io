@@ -1,6 +1,6 @@
 // On a paper page, keeps the line under the title (authors; journal) to a single line where it can: if it
 // wraps and lists three or more authors, the list is cut to the first authors that fit followed by "et al.",
-// and "Canepa P." is always shown, followed by "..." when authors come after him. The full list stays in the tooltip. Without JavaScript the full list shows.
+// and "P. Canepa" is always shown, followed by "..." when authors come after him. The full list stays in the tooltip. Without JavaScript the full list shows.
 (function () {
   const cite = document.querySelector('.paper-cite')
   const box = cite && cite.querySelector('.cite-authors')
@@ -11,7 +11,7 @@
   if (names.length < 3) return
 
   let canepa = -1
-  names.forEach(function (n, i) { if (canepa < 0 && /Canepa P\./.test(n)) canepa = i })
+  names.forEach(function (n, i) { if (canepa < 0 && /P\. Canepa/.test(n)) canepa = i })
   const fullText = box.textContent.trim()
 
   function wraps () {
