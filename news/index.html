@@ -92,7 +92,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=b86c1d744d" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=05710fd0cc" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -148,7 +148,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=9d19ef996d">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=5b8d51fa93">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -177,10 +177,11 @@
 					<hr style="height:2px;border:none;color:rgb(255, 83, 13);background-color:rgb(255, 83, 13)">
 					<ul class="navbar-nav nav-pills ms-auto">
 						<!-- <ul class="nav navbar-nav navbar-right"> -->
+						<!-- what the lab does, its output, its people, then news; Join for prospective members (Sponsors is in the footer) -->
 						
-						<li class="nav-link active">
+						<li class="nav-link">
 							
-							<a href="/news/">News</a>
+							<a href="/research/">Research</a>
 						</li>
 						
 						<li class="nav-link">
@@ -190,7 +191,7 @@
 						
 						<li class="nav-link">
 							
-							<a href="/research/">Research</a>
+							<a href="/software/">Software</a>
 						</li>
 						
 						<li class="nav-link">
@@ -198,14 +199,14 @@
 							<a href="/team/">Team</a>
 						</li>
 						
-						<li class="nav-link">
+						<li class="nav-link active">
 							
-							<a href="/software/">Software</a>
+							<a href="/news/">News</a>
 						</li>
 						
 						<li class="nav-link">
 							
-							<a href="/misc/sponsors/">Sponsors</a>
+							<a href="/misc/join/">Join</a>
 						</li>
 <!-- 						
 						
@@ -246,14 +247,14 @@
     <div class="col-sm-6 col-12">
         <div class="centered-pills float-sm-end">
             <ul class="centered-pills">
-                <li class="">
-                    <a class="off" href="/news/archive/">
-                        <i class="fa-solid fa-list fa-fw"></i>Index
-                    </a>
-                </li>
                 <li class="active">
                     <a class="off" href="/news/">
-                        <i class="fa-solid fa-rotate fa-fw"></i>Timeline
+                        <i class="fa-regular fa-file-lines fa-fw" aria-hidden="true"></i>Timeline
+                    </a>
+                </li>
+                <li class="">
+                    <a class="off" href="/news/archive/">
+                        <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i>Index
                     </a>
                 </li>
             </ul>
@@ -274,7 +275,7 @@
 				<h2>
 					<a href="/news/moving-to-purdue/">Big news! The Canepa Research Group is moving to Purdue University</a>
 				</h2>
-				<p class="news-author">19 Sep 2026
+				<p class="news-author">Sept. 19, 2026
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -331,7 +332,7 @@
 				<h2>
 					<a href="/news/mlip-perspective-chem-mater/">Our perspective on machine learning interatomic potentials for solid-state batteries appears in Chem. Mater.</a>
 				</h2>
-				<p class="news-author">11 Sep 2026
+				<p class="news-author">Sept. 11, 2026
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -382,7 +383,7 @@
 				<h2>
 					<a href="/news/research-corporation-grant/">The Research Corporation for Science Advancement awarded our group with research funding</a>
 				</h2>
-				<p class="news-author">27 May 2025
+				<p class="news-author">May 27, 2025
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -433,7 +434,7 @@
 				<h2>
 					<a href="/news/welch-foundation-grant/">The Welch Foundation awarded our group with research funding</a>
 				</h2>
-				<p class="news-author">12 May 2025
+				<p class="news-author">May 12, 2025
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -490,7 +491,7 @@
 				<h2>
 					<a href="/news/sodium-batteries-science-news/">Sodium batteries could one day power a green economy!</a>
 				</h2>
-				<p class="news-author">1 Mar 2025
+				<p class="news-author">March 1, 2025
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -548,7 +549,7 @@
 				<h2>
 					<a href="/news/piero-acs-rising-star/">Piero named as ACS Materials Au Rising Star in materials science!</a>
 				</h2>
-				<p class="news-author">21 Dec 2022
+				<p class="news-author">Dec. 21, 2022
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -606,7 +607,7 @@
 				<h2>
 					<a href="/news/eshaan-caltech-visit/">Eshaan from Caltech visits our laboratory</a>
 				</h2>
-				<p class="news-author">5 Dec 2022
+				<p class="news-author">Dec. 5, 2022
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -663,7 +664,7 @@
 				<h2>
 					<a href="/news/cav2o4-realized/">Predicted CaV<sub>2</sub>O<sub>4</sub> as an oxide for electrodes in calcium batteries realized in practice!</a>
 				</h2>
-				<p class="news-author">28 Feb 2022
+				<p class="news-author">Feb. 28, 2022
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -720,7 +721,7 @@
 				<h2>
 					<a href="/news/unsw-indium-alloys-paper/">Our collaborative work with UNSW (Australia) on the stability of indium/lithium and indium/tin alloys with solid electrolytes appears in Chem. Mater.</a>
 				</h2>
-				<p class="news-author">30 Jul 2021
+				<p class="news-author">July 30, 2021
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -777,7 +778,7 @@
 				<h2>
 					<a href="/news/ziliang-wang-second-qualifier/">Congratulations to Mr. Ziliang Wang, who has successfully passed his 2<sup>nd</sup> oral exam towards his PhD degree!</a>
 				</h2>
-				<p class="news-author">15 Jul 2021
+				<p class="news-author">July 15, 2021
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -834,7 +835,7 @@
 				<h2>
 					<a href="/news/tara-mishra-paper-press/">Tara’s most recent manuscript gets some great press in a number of outlets!</a>
 				</h2>
-				<p class="news-author">12 Apr 2021
+				<p class="news-author">April 12, 2021
 					
 					by <a class="off" href="/team/tara-mishra/">Tara</a>
 					
@@ -891,7 +892,7 @@
 				<h2>
 					<a href="/news/tara-mishra-first-paper/">Congratulations to Mr. Tara P. Mishra, who has published his first paper in the Physical Review Materials!</a>
 				</h2>
-				<p class="news-author">5 Feb 2021
+				<p class="news-author">Feb. 5, 2021
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -948,7 +949,7 @@
 				<h2>
 					<a href="/news/ziliang-wang-first-qualifier/">Congratulations to Mr. Ziliang Wang, who has successfully passed his 1<sup>st</sup> oral qualifier exam!</a>
 				</h2>
-				<p class="news-author">10 Dec 2020
+				<p class="news-author">Dec. 10, 2020
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1005,7 +1006,7 @@
 				<h2>
 					<a href="/news/jerry-deng-nasicon-paper/">Dr. Zeyu (Jerry) Deng publishes his work on NaSICON electrolytes and electrodes in Chemistry of Materials</a>
 				</h2>
-				<p class="news-author">14 Sep 2020
+				<p class="news-author">Sept. 14, 2020
 					
 					by <a class="off" href="/team/jerry-deng/">Jerry</a>
 					
@@ -1062,7 +1063,7 @@
 				<h2>
 					<a href="/news/piero-nus-innovator/">Piero nominated as NUS innovator</a>
 				</h2>
-				<p class="news-author">27 Jul 2020
+				<p class="news-author">July 27, 2020
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1119,7 +1120,7 @@
 				<h2>
 					<a href="/news/piero-outstanding-reviewer/">Piero nominated as one of the outstanding reviewers for the RSC Journal of Materials Chemistry A</a>
 				</h2>
-				<p class="news-author">10 May 2020
+				<p class="news-author">May 10, 2020
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1177,7 +1178,7 @@
 				<h2>
 					<a href="/news/hengning-chen-joins/">We are thrilled that Hengning Chen will be joining our group in August.</a>
 				</h2>
-				<p class="news-author">7 May 2020
+				<p class="news-author">May 7, 2020
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1234,7 +1235,7 @@
 				<h2>
 					<a href="/news/nrf-fellowship/">Dr. Canepa is awarded the National Research Fellowship Class 2020</a>
 				</h2>
-				<p class="news-author">13 Dec 2019
+				<p class="news-author">Dec. 13, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1291,7 +1292,7 @@
 				<h2>
 					<a href="/news/nature-materials-cover/">Our cover is selected for the December issue of Nature Materials</a>
 				</h2>
-				<p class="news-author">22 Nov 2019
+				<p class="news-author">Nov. 22, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1348,7 +1349,7 @@
 				<h2>
 					<a href="/news/nrf-anr-grant/">Dr. Canepa is awarded the 5<sup>th</sup> NRF-ANR Joint Grant Call together with LRCS, Amiens, France</a>
 				</h2>
-				<p class="news-author">22 Oct 2019
+				<p class="news-author">Oct. 22, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1405,7 +1406,7 @@
 				<h2>
 					<a href="/news/nature-materials-paper/">Dr. Canepa published his battery work in Nature Materials</a>
 				</h2>
-				<p class="news-author">19 Aug 2019
+				<p class="news-author">Aug. 19, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1462,7 +1463,7 @@
 				<h2>
 					<a href="/news/emrs-invited-talk/">Dr. Canepa to give an invited talk at E-MRS Spring Meeting Nice</a>
 				</h2>
-				<p class="news-author">30 May 2019
+				<p class="news-author">May 30, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1521,7 +1522,7 @@ More details can be found <a href="https://www.european-mrs.com/computations-mat
 				<h2>
 					<a href="/news/jerry-deng-joins/">Dr. Jerry Deng joins our group from the University of Cambridge</a>
 				</h2>
-				<p class="news-author">13 Feb 2019
+				<p class="news-author">Feb. 13, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1578,7 +1579,7 @@ More details can be found <a href="https://www.european-mrs.com/computations-mat
 				<h2>
 					<a href="/news/astar-invited-talk/">Dr. Canepa to give an invited talk to A*STAR</a>
 				</h2>
-				<p class="news-author">16 Jan 2019
+				<p class="news-author">Jan. 16, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1636,7 +1637,7 @@ More details can be found <a href="https://www.a-star.edu.sg/imre/Events/ctl/Det
 				<h2>
 					<a href="/news/new-fileserver/">Our new Supermicro fileserver has arrived</a>
 				</h2>
-				<p class="news-author">4 Jan 2019
+				<p class="news-author">Jan. 4, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1693,7 +1694,7 @@ More details can be found <a href="https://www.a-star.edu.sg/imre/Events/ctl/Det
 				<h2>
 					<a href="/news/nscc-computer-time/">Awarded computer time on the ASPIRE 1 @ NSCC Singapore</a>
 				</h2>
-				<p class="news-author">30 Nov 2018
+				<p class="news-author">Nov. 30, 2018
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1750,7 +1751,7 @@ More details can be found <a href="https://www.a-star.edu.sg/imre/Events/ctl/Det
 				<h2>
 					<a href="/news/astar-job-management-talk/">Advanced Job Management II @ A*STAR</a>
 				</h2>
-				<p class="news-author">31 Oct 2018
+				<p class="news-author">Oct. 31, 2018
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1807,7 +1808,7 @@ More details can be found <a href="https://www.a-star.edu.sg/imre/Events/ctl/Det
 				<h2>
 					<a href="/news/welcome/">Welcome</a>
 				</h2>
-				<p class="news-author">29 Oct 2018
+				<p class="news-author">Oct. 29, 2018
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1854,10 +1855,10 @@ More details can be found <a href="https://www.a-star.edu.sg/imre/Events/ctl/Det
 						</li>
 						
 						
-						<li class="footernav footernav-text list-inline-item">
-							<a class="off" href="/misc/join/">Join our Team</a>
-						</li>
 						
+						<li class="footernav footernav-text list-inline-item">
+							<a class="off" href="/misc/sponsors/">Sponsors</a>
+						</li>
 						
 						<!--
 						<li class="footernav list-inline-item">
@@ -1897,7 +1898,7 @@ More details can be found <a href="https://www.a-star.edu.sg/imre/Events/ctl/Det
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-08T17:08:22-05:00">Oct. 8, 2026 at 5:08 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-08T17:25:54-05:00">Oct. 8, 2026 at 5:25 p.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
