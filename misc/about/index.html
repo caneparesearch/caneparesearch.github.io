@@ -149,7 +149,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=bf29cc30a3">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=9d19ef996d">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -347,6 +347,8 @@ bundle <span class="nb">install</span>
   <h3 id="team">Team</h3>
 
   <p>Name a team post and its image <code class="language-plaintext highlighter-rouge">&lt;date&gt;-&lt;name&gt;</code>, all lowercase, matching the person’s <code class="language-plaintext highlighter-rouge">title</code>, for example <code class="language-plaintext highlighter-rouge">2020-10-25-aaron-tieu.md</code> and <code class="language-plaintext highlighter-rouge">images/team/2020-10-25-aaron-tieu.jpg</code>. The address of a member’s page is built from this name, so it must be unique; sidebar links (E-mail, GitHub, Google Scholar, ORCiD, etc.) are shown alphabetically by label regardless of the order fields appear in the header.</p>
+
+  <p>A member’s page lists, under Publications, every paper whose <code class="language-plaintext highlighter-rouge">authors</code> contain their surname and first initial (“Wang J” for Juefan Wang). When that is shared with other authors, list the member’s papers by their address in the member’s front matter instead, <code class="language-plaintext highlighter-rouge">papers: [wang-chem-mater-2021, wang-mater-futures-2023]</code>; only those are then shown. Juefan Wang, Yan Li and Yuheng Li have such lists; to sort out whose paper is whose, look up the paper’s DOI on Crossref (<code class="language-plaintext highlighter-rouge">https://api.crossref.org/works/&lt;doi&gt;</code>), which gives each author’s full given name.</p>
 
   <p>Write a bio in the first person. When a member leaves, set <code class="language-plaintext highlighter-rouge">alumni: true</code>, open the bio with a line saying where they are now (“I am now a research scientist at …”), and put finished student or postdoc periods in the past tense; hobbies and current interests stay in the present. On the Team page, current members are listed in reverse chronological order (most recently added first) and alumni alphabetically by name.</p>
 
@@ -573,7 +575,7 @@ bundle <span class="nb">install</span>
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-08T16:59:23-05:00">Oct. 8, 2026 at 4:59 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-08T17:08:22-05:00">Oct. 8, 2026 at 5:08 p.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
