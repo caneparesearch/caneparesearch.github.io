@@ -92,7 +92,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=05710fd0cc" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=d59563bcc0" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -148,7 +148,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=f6ebe4572e">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=03a15109ca">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -292,20 +292,28 @@
 
 
 
+<img src="/images/software/kmcpy-logo.svg" class="list-thumb list-thumb-logo code-logo-day" width="680" height="208" alt="" loading="lazy">
 
-<picture>
-	
-	<source type="image/webp" srcset="/images/papers/2023-08-05-deng-comput-mater-sci-2023.webp">
-	
-	<img src="/images/papers/2023-08-05-deng-comput-mater-sci-2023.png" class="list-thumb" width="282" height="282" alt="" loading="lazy">
-</picture>
+
+					
+
+
+
+
+
+
+
+
+
+<img src="/images/software/kmcpy-logo-dark.svg" class="list-thumb list-thumb-logo code-logo-dark" width="680" height="208" alt="" loading="lazy">
 
 
 					
 					<p>kMCpy is an open-source Python package for studying how ions move through crystalline materials with kinetic Monte Carlo (kMC). It enumerates the possible migration events in a structure, derives their transition rates with first-principles accuracy from local cluster expansion models, and solves the kinetics with a rejection-free kMC solver, giving diffusivities and ionic conductivities. It handles materials of any dimensionality (1D, 2D and 3D) and runs on Windows, macOS and Linux.</p>
 					
-					<p>Install: <code>pip install kmcpy</code> · MIT licence</p>
+					<p class="software-meta">Install: <code>pip install kmcpy</code> · License: MIT</p>
 					
+					<p class="software-developer">Main developers: <a href="/team/jerry-deng/">Zeyu Deng</a>, <a href="/team/tara-mishra/">Tara Mishra</a> and <a href="/team/weihang-xie/">Weihang Xie</a></p>
 					<ul class="software-links">
 						
 						<li><a href="https://kmcpy.readthedocs.io/en/latest/">Documentation</a></li>
@@ -314,9 +322,11 @@
 						
 					</ul>
 					
-					<p class="software-paper">Please cite:
-						<a href="/papers/deng-comput-mater-sci-2023/">kMCpy&#58; A Python Package to Simulate Transport Properties in Solids with Kinetic Monte Carlo</a>, <i>Comput. Mater. Sci.</i> 229, 112394 (2023).
-					</p>
+					<p class="software-paper software-paper-lead">Relevant literature:</p>
+					<ol class="software-papers">
+						<li><a href="/papers/deng-comput-mater-sci-2023/">kMCpy&#58; A Python Package to Simulate Transport Properties in Solids with Kinetic Monte Carlo</a>, <i>Comput. Mater. Sci.</i> 229, 112394 (2023).</li>
+						<li><a href="/papers/deng-nat-commun-2022/">Fundamental investigations on the sodium-ion transport properties of mixed polyanion solid-state battery electrolytes</a>, <i>Nat. Commun.</i> 13, 4470 (2022).</li>
+					</ol>
 					<details class="bibtex">
 	<summary>BibTeX</summary>
 	<div class="bibtex-entries">
@@ -328,6 +338,16 @@
   pages   = {112394},
   year    = {2023},
   doi     = {10.1016/j.commatsci.2023.112394}
+}
+
+@article{Deng2022fundamental,
+  author  = {Deng, Z. and Mishra, T. P. and Mahayoni, E. and Ma, Q. and Tieu, A. J. K. and Guillon, O. and Chotard, J.-N. and Seznec, V. and Cheetham, A. K. and Masquelier, C. and Gautam, G. S. and Canepa, P.},
+  title   = {{Fundamental investigations on the sodium-ion transport properties of mixed polyanion solid-state battery electrolytes}},
+  journal = {Nature Communications},
+  volume  = {13},
+  pages   = {4470},
+  year    = {2022},
+  doi     = {10.1038/s41467-022-32190-7}
 }</code></pre>
 		<button type="button" class="bibtex-copy" aria-label="Copy BibTeX" title="Copy BibTeX" hidden><i class="fa-regular fa-copy fa-fw" aria-hidden="true"></i></button>
 	</div>
@@ -370,6 +390,7 @@
 					
 					<p>JS-ICE extends JSmol, the web version of the Jmol molecular viewer, with tools to visualize and analyse the crystal structures and electronic properties that come out of computational materials science. It runs in a web browser, with nothing to install. It succeeds J-ICE, the Jmol interface described in the paper below.</p>
 					
+					<p class="software-developer">Main developer: <a href="/team/piero-canepa/">Pieremanuele Canepa</a></p>
 					<ul class="software-links">
 						
 						<li><a href="https://js-ice.github.io/JS-ICE/test/">Open JS-ICE (development version)</a></li>
@@ -378,9 +399,7 @@
 						
 					</ul>
 					
-					<p class="software-paper">Please cite:
-						<a href="/papers/canepa-j-appl-crystallogr-2011/">J-ICE&#58; a new Jmol interface for handling and visualizing crystallographic and electronic properties</a>, <i>J. Appl. Crystallogr.</i> 44, 225–229 (2011).
-					</p>
+					<p class="software-paper">Relevant literature: <a href="/papers/canepa-j-appl-crystallogr-2011/">J-ICE&#58; a new Jmol interface for handling and visualizing crystallographic and electronic properties</a>, <i>J. Appl. Crystallogr.</i> 44, 225–229 (2011).</p>
 					<details class="bibtex">
 	<summary>BibTeX</summary>
 	<div class="bibtex-entries">
@@ -434,8 +453,9 @@
 					
 					<p>SALAMI builds realistic surface slab models of crystalline materials for first-principles calculations. Cutting a crystal along a plane rarely gives a slab that is symmetric, stoichiometric and low in energy, especially for compounds of several elements; SALAMI gets there automatically by cleaving the crystal and then trimming surface atoms in stages guided by their coordination. It can also build off-stoichiometric and charged slabs, has a graphical interface for setting its parameters, and runs on computing clusters in a Singularity/Apptainer container.</p>
 					
-					<p>MIT licence</p>
+					<p class="software-meta">Install: <code>pip install pysalami</code> · License: MIT</p>
 					
+					<p class="software-developer">Main developer: <a href="/team/weihang-xie/">Weihang Xie</a></p>
 					<ul class="software-links">
 						
 						<li><a href="https://salami.readthedocs.io/">Documentation</a></li>
@@ -444,10 +464,11 @@
 						
 					</ul>
 					
-					<p class="software-paper">Please cite:
-						<a href="/papers/xie-arxiv-2026/">Revealing low-energy surfaces of multinary compounds by controlling surface coordination environments</a>, <i>arXiv</i> (2026); and
-						<a href="/papers/xie-adv-energy-mater-2024/">Effects of Grain Boundaries and Surfaces on Electronic and Mechanical Properties of Solid Electrolytes</a>, <i>Adv. Energy Mater.</i> 14, 2304230 (2024).
-					</p>
+					<p class="software-paper software-paper-lead">Relevant literature:</p>
+					<ol class="software-papers">
+						<li><a href="/papers/xie-arxiv-2026/">Revealing low-energy surfaces of multinary compounds by controlling surface coordination environments</a>, <i>arXiv</i> (2026).</li>
+						<li><a href="/papers/xie-adv-energy-mater-2024/">Effects of Grain Boundaries and Surfaces on Electronic and Mechanical Properties of Solid Electrolytes</a>, <i>Adv. Energy Mater.</i> 14, 2304230 (2024).</li>
+					</ol>
 					<details class="bibtex">
 	<summary>BibTeX</summary>
 	<div class="bibtex-entries">
@@ -510,8 +531,9 @@
 					
 					<p>A database of Raman spectra of inorganic compounds computed with accurate hybrid functionals in density functional theory, as reference spectra for interpreting measurements. The spectra come from the dynamical matrices and polarizability tensors of structures from the Inorganic Crystal Structure Database, computed with one consistent level of theory by an automated workflow, which also gives other phonon properties such as infrared spectra. The web app lets anyone browse the database, which keeps growing as more materials are computed.</p>
 					
-					<p>CC BY 4.0 licence</p>
+					<p class="software-meta">License: CC BY 4.0</p>
 					
+					<p class="software-developer">Main developers: <a href="/team/yuheng-li/">Yuheng Li</a> and <a href="/team/damien-lee/">Damien K. J. Lee</a></p>
 					<ul class="software-links">
 						
 						<li><a href="https://raman-db.streamlit.app/">Open the database</a></li>
@@ -520,9 +542,7 @@
 						
 					</ul>
 					
-					<p class="software-paper">Please cite:
-						<a href="/papers/li-sci-data-2024/">A Database of Computed Raman Spectra of Inorganic Compounds with Accurate Hybrid Functionals</a>, <i>Sci. Data</i> 11, 105 (2024).
-					</p>
+					<p class="software-paper">Relevant literature: <a href="/papers/li-sci-data-2024/">A Database of Computed Raman Spectra of Inorganic Compounds with Accurate Hybrid Functionals</a>, <i>Sci. Data</i> 11, 105 (2024).</p>
 					<details class="bibtex">
 	<summary>BibTeX</summary>
 	<div class="bibtex-entries">
@@ -590,7 +610,6 @@
 							<a class="off" href="https://github.com/caneparesearch" target="_blank" rel="noopener noreferrer" aria-label="The lab on GitHub" title="The lab on GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
 							<a class="off" href="https://www.youtube.com/channel/UCtl7hY0OlLKp05ch8Njj_GA" target="_blank" rel="noopener noreferrer" aria-label="The lab's talks on YouTube" title="The lab's talks on YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
 							<a class="off" href="https://www.linkedin.com/in/pieremanuele/" target="_blank" rel="noopener noreferrer" aria-label="Piero Canepa on LinkedIn" title="Piero Canepa on LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
-							<a class="off" href="https://bsky.app/profile/pierocanepa.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Piero Canepa on Bluesky" title="Piero Canepa on Bluesky"><i class="fa-brands fa-bluesky" aria-hidden="true"></i></a>
 							<a class="off" href="https://x.com/Piero_Canepa" aria-label="Piero Canepa on X (formerly Twitter)" title="Piero Canepa on X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
 						</li>
 					</ul>
@@ -610,7 +629,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-08T17:39:29-05:00">Oct. 8, 2026 at 5:39 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-08T22:02:04-05:00">Oct. 8, 2026 at 10:02 p.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
