@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<!-- upgrade-insecure-requests is production-only: it would make a browser
+	     retry every link over HTTPS, which breaks `jekyll serve`'s plain-HTTP
+	     local server. -->
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; base-uri 'self'; object-src 'none'; form-action 'self'">
+	<meta name="referrer" content="strict-origin-when-cross-origin">
+	<!-- "Papers · Canepa Research Lab": the page first, as tabs and search results cut long titles;
+	     the home page is just the lab's name -->
+	<title>Gas Storage and Separation in Porous Frameworks · Canepa Research Lab</title>
+	<!-- a page's own description, else a post's first paragraph, else the site's tagline. Papers
+	     open with an "Abstract" heading, so theirs is the abstract's text; videos have no text,
+	     so theirs says whose talk it is and where. -->
+	<meta name="description" content="How the Canepa Research Lab models gas adsorption in porous frameworks such as aluminum formate, for CO2 capture, air separation and hydrogen storage.">
+	<!-- the page's one address, so search engines count /papers/?q=…, http:// or www. as this page;
+	     not on the 404 page, which is served at whatever address was missing -->
+	<link rel="canonical" href="https://caneparesearch.org/research/porous-frameworks/">
+	<!-- The card shown when a page is shared on LinkedIn, X, Slack, WhatsApp…: its title,
+	     description and picture (a paper's graphical abstract, a news picture, a person's
+	     photo, a talk's YouTube frame), else the lab's card (images/social-card.png).
+	     Square pictures get the small card, the lab's card and news and talks the large one. -->
+	<meta property="og:site_name" content="Canepa Research Lab">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Gas Storage and Separation in Porous Frameworks">
+	<meta property="og:description" content="How the Canepa Research Lab models gas adsorption in porous frameworks such as aluminum formate, for CO2 capture, air separation and hydrogen storage.">
+	<meta property="og:url" content="https://caneparesearch.org/research/porous-frameworks/">
+	<meta property="og:image" content="https://caneparesearch.org/images/papers/2025-08-13-evans-chem-mater-2025.png">
+	<meta property="og:image:alt" content="Gas Storage and Separation in Porous Frameworks">
+	<meta property="article:published_time" content="2026-10-09T00:00:00-05:00">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Day / night theme: choose the theme before first paint (no flash), then wire up the navbar toggle.
+     Order of preference: the visitor's saved choice, then the OS setting. -->
+<script>
+	(function () {
+		var root = document.documentElement;
+		var KEY = 'theme';
+		var query = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+		function saved() {
+			try {
+				var value = localStorage.getItem(KEY);
+				return value === 'light' || value === 'dark' ? value : null;
+			} catch (e) {
+				return null;
+			}
+		}
+
+		function system() {
+			return query && query.matches ? 'dark' : 'light';
+		}
+
+		function apply(theme) {
+			root.setAttribute('data-bs-theme', theme);
+			var button = document.getElementById('theme-toggle');
+			if (button) {
+				var label = theme === 'dark' ? 'Switch to day mode' : 'Switch to night mode';
+				button.setAttribute('aria-label', label);
+				button.setAttribute('title', label);
+			}
+		}
+
+		apply(saved() || system());
+
+		document.addEventListener('DOMContentLoaded', function () {
+			apply(root.getAttribute('data-bs-theme'));
+			var button = document.getElementById('theme-toggle');
+			if (!button) return;
+			button.addEventListener('click', function () {
+				var next = root.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+				apply(next);
+				try {
+					localStorage.setItem(KEY, next);
+				} catch (e) { /* storage unavailable: the choice just lasts for this page */ }
+			});
+		});
+
+		if (query && query.addEventListener) {
+			query.addEventListener('change', function () {
+				if (!saved()) apply(system());
+			});
+		}
+	})();
+</script>
+
+	<!-- RSS feed -->
+	<link rel="alternate" type="application/rss+xml" title="Canepa Research Lab" href="https://caneparesearch.org/feed.xml">
+	<!-- IBM Plex Sans is self-hosted (css/_plex-sans.scss). Preloading the one file every page needs
+	     starts its download with the stylesheet's, instead of after the stylesheet has been parsed. -->
+	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
+	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
+	<link href="/css/style.css?v=6b624097fa" rel="stylesheet" media="screen">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+	<!-- Opens and closes the mobile menu (in place of Bootstrap's JavaScript bundle) -->
+<script src="/js/nav-toggle.js?v=8da5aef213" defer></script>
+
+<!-- Spam-protected e-mail links -->
+<script src="/js/email-links.js?v=5f0ad451d1" defer></script>
+
+<!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
+<script src="/js/back-to-top.js?v=fdddfbc7ff" defer></script>
+
+<!-- Search overlay opened by the navbar's magnifying glass, with the search page's matching -->
+<script src="/js/search-core.js?v=e27153e896" defer></script>
+<script src="/js/search-dialog.js?v=95a4119d28" defer></script>
+
+<!-- The footer's "Loaded in … s", from the browser's own timing of the page -->
+<script src="/js/load-time.js?v=8a464f19cf" defer></script>
+
+	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
+<script src="/js/analytics.js?v=5118609518" defer></script>
+
+</head>
+
+<body>
+	<!-- first stop for keyboard and screen-reader users: hidden until focused (Tab), then jumps past the navbar -->
+	<a class="skip-link visually-hidden-focusable" href="#main">Skip to main content</a>
+	<button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+		<i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i>
+	</button>
+
+	<dialog id="search-dialog" class="search-dialog" aria-label="Search the site">
+	<button type="button" class="search-dialog-close" aria-label="Close search" title="Close (Esc)">
+		<!-- the same thin orange X as the navbar's menu button when the menu is open -->
+		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
+	</button>
+	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=889f0efda1">
+		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
+		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
+			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
+		<p class="search-dialog-hint" aria-live="polite">News, papers, people, software and more</p>
+		<a class="search-dialog-more" href="/search/" hidden>See all results →</a>
+		<ul class="search-dialog-results"></ul>
+	</form>
+</dialog>
+
+
+	<div id="header">
+		<nav class="navbar navbar-expand-md navbar-light bg-navbar">
+			<div class="container">
+
+				<!--<div class="navbar-header"> -->
+
+				<a class="navbar-brand" href="/">
+					<img class="logo navbar-brand align-top ms-0 me-1" src="/images/logo-plex-color.svg"
+						width="110" height="65" alt="Canepa Research Lab">
+				</a>
+				<button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- </div> -->
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<hr style="height:2px;border:none;color:rgb(255, 83, 13);background-color:rgb(255, 83, 13)">
+					<ul class="navbar-nav nav-pills ms-auto">
+						<!-- <ul class="nav navbar-nav navbar-right"> -->
+						<!-- what the lab does, its output, its people, then news; Join for prospective members (Sponsors is in the footer) -->
+						
+						<li class="nav-link active">
+							
+							<a href="/research/">Research</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/papers/">Papers</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/software/">Software</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/team/">Team</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/news/">News</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/misc/join-our-team/">Join</a>
+						</li>
+<!-- 						
+						
+						<li class="nav-link">
+							
+							<a href="/videos/"><i class="fa-brands fa-youtube fa-lg"></i></a>
+						</li> 
+-->
+						
+						<li class="nav-link">
+							
+							<a href="/search/" data-search-dialog aria-label="Search the site" title="Search the site"><i
+									class="fa-solid fa-magnifying-glass fa-lg" aria-hidden="true"></i></a>
+						</li>
+						<li class="nav-link">
+							<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to night mode"
+								title="Switch to night mode">
+								<i class="fa-regular fa-moon fa-lg theme-icon-moon" aria-hidden="true"></i>
+								<!-- drawn as an SVG: Font Awesome's sun icon is a spiky burst that looks like a cog -->
+								<svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+									<circle cx="12" cy="12" r="5" />
+									<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+								</svg>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<main id="main" tabindex="-1" class="container main">
+
+		<div class="blog-post">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="page-title page-title-meta">Gas Storage and Separation in Porous Frameworks</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			
+			<p class="news-author"><span class="reading-time"><i class="fa-regular fa-clock" aria-hidden="true"></i>3 min read</span>
+</p>
+		
+		</div>
+	</div>
+	<!-- <div class="col-md-1"></div> -->
+
+	<div class="bigspacer"></div>
+
+	<div class="row">
+		<!-- <div class="col-md-1"></div> -->
+		<div class="col-sm-12 col-12">
+			
+			
+			
+			
+
+
+
+
+
+
+
+
+
+
+<picture>
+	
+	<source type="image/webp" srcset="/images/papers/2025-08-13-evans-chem-mater-2025.webp">
+	
+	<img src="/images/papers/2025-08-13-evans-chem-mater-2025.png" class="offset offset-research" width="500" height="500" alt="">
+</picture>
+
+
+			
+			
+			<div class="post research-text">
+				<p>Porous frameworks, such as metal–organic frameworks, hold small molecules inside pores only a few ångströms wide. By choosing the size and chemistry of those pores, a framework can be made to store a gas or to take up one gas and reject another, which makes these materials candidates for capturing CO<sub>2</sub>, separating air and hydrocarbons, and storing hydrogen at moderate pressures. Our first-principles calculations, working alongside adsorption, diffraction and spectroscopy measurements by our collaborators, show where the molecules bind and why a framework prefers one gas over another.</p>
+
+<p>Much of our recent work concerns aluminum formate, Al(HCOO)<sub>3</sub> or ALF, a framework made cheaply from commodity chemicals. ALF removes CO<sub>2</sub> from N<sub>2</sub>-rich gas streams by a size-selective separation that rests on the small difference between the two molecules’ kinetic diameters,<sup><a href="https://doi.org/10.1126/sciadv.ade1473">[1]</a></sup> and its hydrogen-lined pore cavities recognize CO<sub>2</sub> while rejecting hydrocarbons, including acetylene and methane.<sup><a href="https://doi.org/10.1021/jacs.3c01705">[2]</a></sup> The same material adsorbs O<sub>2</sub> from air near dry-ice temperatures, without cryogenic distillation,<sup><a href="https://doi.org/10.1021/jacs.3c02100">[3]</a></sup> and stores hydrogen competitively at 120–160 K and 10–20 bar.<sup><a href="https://doi.org/10.1021/jacs.3c08037">[4]</a></sup> We have also traced its temperature-regulated gating, which lets temperature alone switch the separation of one gas from another, to the motion of the formate linkers that frame the windows between its cavities.<sup><a href="https://doi.org/10.1021/acs.chemmater.5c01157">[5]</a></sup></p>
+
+<p>This builds on our earlier first-principles work on metal–organic frameworks, from the diffusion of small molecules through their channels<sup><a href="https://doi.org/10.1103/PhysRevLett.110.026102">[6]</a></sup> to high-throughput screening of small-molecule adsorption.<sup><a href="https://doi.org/10.1039/C3TA12395B">[7]</a></sup></p>
+
+<p><strong>Relevant references</strong></p>
+
+<ol>
+  <li><a href="https://doi.org/10.1126/sciadv.ade1473" class="off">Evans H. A., Mullangi D., Deng Z., Wang Y., Peh S. B., Wei F., Wang J., Brown C. M., Zhao D., <b>Canepa P.</b>, and Cheetham A. K.; <i>Sci. Adv.</i> 8, eade1473 (2022)</a></li>
+  <li><a href="https://doi.org/10.1021/jacs.3c01705" class="off">Zhang Z., Deng Z., Evans H. A., Mullangi D., Kang C., Bo Peh S., Wang Y., Brown C. M., Wang J., <b>Canepa P.</b>, Cheetham A., and Zhao D.; <i>J. Am. Chem. Soc.</i> 145, 11643 (2023)</a></li>
+  <li><a href="https://doi.org/10.1021/jacs.3c02100" class="off">Mullangi D., Evans H. A., Yildirim T., Wang Y., Deng Z., Zhang Z., Mai T. T., Wei F., Wang J., Hight Walker A. R., Brown C. M., Zhao D., <b>Canepa P.</b>, and Cheetham A.; <i>J. Am. Chem. Soc.</i> 145, 9850 (2023)</a></li>
+  <li><a href="https://doi.org/10.1021/jacs.3c08037" class="off">Evans H. A., Yildirim T., Peng P., Cheng Y., Deng Z., Zhang Q., Mullangi D., Zhao D., <b>Canepa P.</b>, Breunig H. M., Cheetham A. K., and Brown C. M.; <i>J. Am. Chem. Soc.</i> 145, 22150 (2023)</a></li>
+  <li><a href="https://doi.org/10.1021/acs.chemmater.5c01157" class="off">Evans H. A., Yildirim T., McCarver G. A., Mai T. T., Cheng Y., Deng Z., Klein R. A., Zhao D., <b>Canepa P.</b>, Hight Walker A. R., Cheetham A. K., and Brown C. M.; <i>Chem. Mater.</i> 37, 7102–7114 (2025)</a></li>
+  <li><a href="https://doi.org/10.1103/PhysRevLett.110.026102" class="off"><b>Canepa P.</b>, Nijem N., Chabal Y. J., and Thonhauser T.; <i>Phys. Rev. Lett.</i> 110, 026102 (2013)</a></li>
+  <li><a href="https://doi.org/10.1039/C3TA12395B" class="off"><b>Canepa P.</b>, Arter C. A., Conwill E. M., Johnson D. H., Shoemaker B. A., Soliman K. Z., and Thonhauser T.; <i>J. Mater. Chem. A</i> 1, 13597–13604 (2013)</a></li>
+</ol>
+
+			</div>
+		</div>
+		<!--  <div class="col-md-1"></div> -->
+	</div>
+
+	<div class="bigspacer"></div>
+	<div class="spacer"></div>
+
+</div>
+
+
+		<div class="row mt60">
+			<div class="col-md-12 col-12">
+				<div class="footer-bar">
+					<ul class="list-inline">
+						
+						
+						
+						<li class="footernav footernav-text list-inline-item">
+							<a class="off" href="/misc/about/">About</a>
+						</li>
+						
+						
+						<li class="footernav footernav-text list-inline-item">
+							<a class="off" href="/misc/contact/">Contact Us</a>
+						</li>
+						
+						
+						
+						<li class="footernav footernav-text list-inline-item">
+							<a class="off" href="/misc/sponsors/">Sponsors</a>
+						</li>
+						
+						<!--
+						<li class="footernav list-inline-item">
+							<i class="fa"></i> <a class="off" href="https://www.eng.nus.edu.sg/mse/">MSE</a>
+						</li>
+						<li class="footernav list-inline-item">
+							<i class="fa"></i> <a class="off" href="https://www.nus.edu.sg">NUS</a>
+						</li>
+						-->
+						<!-- the lab's intranet, a Google Site that needs a sign-in (it was a padlock in the
+						     navbar, which read as a "private" or "secure" sign rather than a link) -->
+						<li class="footernav footernav-text list-inline-item">
+							<a class="off" href="https://sites.google.com/view/caneparesearch/home" target="_blank" rel="noopener noreferrer" title="The lab's intranet (sign-in required)">Intranet</a>
+						</li>
+						<!-- social links: one item, so the three icons always wrap together -->
+						<li class="footernav footernav-icons list-inline-item">
+							<a class="off" href="https://github.com/caneparesearch" target="_blank" rel="noopener noreferrer" aria-label="The lab on GitHub" title="The lab on GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+							<a class="off" href="https://www.youtube.com/channel/UCtl7hY0OlLKp05ch8Njj_GA" target="_blank" rel="noopener noreferrer" aria-label="The lab's talks on YouTube" title="The lab's talks on YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+							<a class="off" href="https://www.linkedin.com/in/pieremanuele/" target="_blank" rel="noopener noreferrer" aria-label="Piero Canepa on LinkedIn" title="Piero Canepa on LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+							<a class="off" href="https://x.com/Piero_Canepa" aria-label="Piero Canepa on X (formerly Twitter)" title="Piero Canepa on X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<footer class="row footer">
+			<div class="col-lg-12 col-12">
+				<div class="colophon">
+					<p>&copy; 2018–2026 Pieremanuele Canepa —
+						Proudly running on <a class="off" href="https://jekyllrb.com" rel="noopener">Jekyll</a>
+						and based on <a class="off" href="https://github.com/trvrb" target="_blank"
+							rel="noopener">bedford.io</a> theme.
+						<a class="off" href="https://albertocanepa.me/" target="_blank" rel="noopener">CWD</a> is
+						acknowledged.
+					</p>
+					<div class="colophon-meta">
+						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
+						<p class="last-update">Last update on <time datetime="2026-10-09T14:57:37-05:00">Oct. 9, 2026 at 2:57 p.m. CDT</time></p>
+						<!-- Filled in by js/load-time.js once the page has loaded -->
+						<p id="load-time" class="load-time" hidden></p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</main>
+</body>
+
+</html>

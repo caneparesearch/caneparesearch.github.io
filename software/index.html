@@ -92,7 +92,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1c4dc8044e" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=6b624097fa" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -148,7 +148,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=5acca49eff">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=889f0efda1">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -275,40 +275,47 @@
 	
 	<div class="blog-post" id="kmcpy">
 		<div class="row">
-			<div class="col-12">
+			
+			<div class="col-lg-3 col-sm-4 col-12 order-sm-2 news-img research-img software-img">
+				
+				
+				
+				
+				
+				
+
+
+
+
+
+
+
+
+
+<img src="/images/software/kmcpy-logo.svg" class="offset offset-left news-thumb news-thumb-contain code-logo-day" width="680" height="208" alt="" loading="lazy">
+
+
+				
+
+
+
+
+
+
+
+
+
+<img src="/images/software/kmcpy-logo-dark.svg" class="offset offset-left news-thumb news-thumb-contain code-logo-dark" width="680" height="208" alt="" loading="lazy">
+
+
+				
+			</div>
+			<div class="col-lg-9 col-sm-8 col-12 order-sm-1">
 				<h2>
 					<a href="https://kmcpy.readthedocs.io/en/latest/">kMCpy</a>
 				</h2>
 				<p class="software-tagline">Kinetic Monte Carlo for ion transport in crystalline materials</p>
 				<div class="post research-text">
-					
-					
-
-
-
-
-
-
-
-
-
-<img src="/images/software/kmcpy-logo.svg" class="list-thumb list-thumb-logo code-logo-day" width="680" height="208" alt="" loading="lazy">
-
-
-					
-
-
-
-
-
-
-
-
-
-<img src="/images/software/kmcpy-logo-dark.svg" class="list-thumb list-thumb-logo code-logo-dark" width="680" height="208" alt="" loading="lazy">
-
-
-					
 					<p>kMCpy is an open-source Python package for studying how ions move through crystalline materials with kinetic Monte Carlo (kMC). It enumerates the possible migration events in a structure, derives their transition rates with first-principles accuracy from local cluster expansion models, and solves the kinetics with a rejection-free kMC solver, giving diffusivities and ionic conductivities. It handles materials of any dimensionality (1D, 2D and 3D) and runs on Windows, macOS and Linux.</p>
 					
 					<p class="software-meta">Install: <code>pip install kmcpy</code> · License: MIT</p>
@@ -361,14 +368,12 @@
 	
 	<div class="blog-post" id="js-ice">
 		<div class="row">
-			<div class="col-12">
-				<h2>
-					<a href="https://js-ice.github.io/JS-ICE/test/">JS-ICE</a>
-				</h2>
-				<p class="software-tagline">JSmol Interface for Crystallographic and Electronic properties</p>
-				<div class="post research-text">
-					
-					
+			
+			<div class="col-lg-3 col-sm-4 col-12 order-sm-2 news-img research-img software-img">
+				
+				
+				
+				
 
 
 
@@ -383,11 +388,18 @@
 	
 	<source type="image/webp" srcset="/images/papers/2010-11-25-canepa-j-appl-crystallogr-2011-v2.webp">
 	
-	<img src="/images/papers/2010-11-25-canepa-j-appl-crystallogr-2011-v2.png" class="list-thumb" width="480" height="480" alt="" loading="lazy">
+	<img src="/images/papers/2010-11-25-canepa-j-appl-crystallogr-2011-v2.png" class="offset offset-left news-thumb news-thumb-contain" width="480" height="480" alt="" loading="lazy">
 </picture>
 
 
-					
+				
+			</div>
+			<div class="col-lg-9 col-sm-8 col-12 order-sm-1">
+				<h2>
+					<a href="https://js-ice.github.io/JS-ICE/test/">JS-ICE</a>
+				</h2>
+				<p class="software-tagline">JSmol Interface for Crystallographic and Electronic properties</p>
+				<div class="post research-text">
 					<p>JS-ICE extends JSmol, the web version of the Jmol molecular viewer, with tools to visualize and analyse the crystal structures and electronic properties that come out of computational materials science. It runs in a web browser, with nothing to install. It succeeds J-ICE, the Jmol interface described in the paper below.</p>
 					
 					<p class="software-developer">Main developer: <a href="/team/piero-canepa/">Pieremanuele Canepa</a></p>
@@ -424,14 +436,12 @@
 	
 	<div class="blog-post" id="salami">
 		<div class="row">
-			<div class="col-12">
-				<h2>
-					<a href="https://salami.readthedocs.io/">SALAMI</a>
-				</h2>
-				<p class="software-tagline">Symmetric, Stoichiometric and Low-energy Slab Model Generator</p>
-				<div class="post research-text">
-					
-					
+			
+			<div class="col-lg-3 col-sm-4 col-12 order-sm-2 news-img research-img software-img">
+				
+				
+				
+				
 
 
 
@@ -446,11 +456,18 @@
 	
 	<source type="image/webp" srcset="/images/papers/2024-01-03-xie-adv-energy-mater-2024.webp">
 	
-	<img src="/images/papers/2024-01-03-xie-adv-energy-mater-2024.png" class="list-thumb" width="220" height="209" alt="" loading="lazy">
+	<img src="/images/papers/2024-01-03-xie-adv-energy-mater-2024.png" class="offset offset-left news-thumb news-thumb-contain" width="220" height="209" alt="" loading="lazy">
 </picture>
 
 
-					
+				
+			</div>
+			<div class="col-lg-9 col-sm-8 col-12 order-sm-1">
+				<h2>
+					<a href="https://salami.readthedocs.io/">SALAMI</a>
+				</h2>
+				<p class="software-tagline">Symmetric, Stoichiometric and Low-energy Slab Model Generator</p>
+				<div class="post research-text">
 					<p>SALAMI builds realistic surface slab models of crystalline materials for first-principles calculations. Cutting a crystal along a plane rarely gives a slab that is symmetric, stoichiometric and low in energy, especially for compounds of several elements; SALAMI gets there automatically by cleaving the crystal and then trimming surface atoms in stages guided by their coordination. It can also build off-stoichiometric and charged slabs, has a graphical interface for setting its parameters, and runs on computing clusters in a Singularity/Apptainer container.</p>
 					
 					<p class="software-meta">Install: <code>pip install pysalami</code> · License: MIT</p>
@@ -502,14 +519,12 @@
 	
 	<div class="blog-post" id="raman-database">
 		<div class="row">
-			<div class="col-12">
-				<h2>
-					<a href="https://raman-db.streamlit.app/">Raman Database</a>
-				</h2>
-				<p class="software-tagline">Computed Raman spectra of inorganic compounds with hybrid functionals</p>
-				<div class="post research-text">
-					
-					
+			
+			<div class="col-lg-3 col-sm-4 col-12 order-sm-2 news-img research-img software-img">
+				
+				
+				
+				
 
 
 
@@ -524,11 +539,18 @@
 	
 	<source type="image/webp" srcset="/images/papers/2024-01-05-li-sci-data-2024.webp">
 	
-	<img src="/images/papers/2024-01-05-li-sci-data-2024.png" class="list-thumb" width="320" height="320" alt="" loading="lazy">
+	<img src="/images/papers/2024-01-05-li-sci-data-2024.png" class="offset offset-left news-thumb news-thumb-contain" width="320" height="320" alt="" loading="lazy">
 </picture>
 
 
-					
+				
+			</div>
+			<div class="col-lg-9 col-sm-8 col-12 order-sm-1">
+				<h2>
+					<a href="https://raman-db.streamlit.app/">Raman Database</a>
+				</h2>
+				<p class="software-tagline">Computed Raman spectra of inorganic compounds with hybrid functionals</p>
+				<div class="post research-text">
 					<p>A database of Raman spectra of inorganic compounds computed with accurate hybrid functionals in density functional theory, as reference spectra for interpreting measurements. The spectra come from the dynamical matrices and polarizability tensors of structures from the Inorganic Crystal Structure Database, computed with one consistent level of theory by an automated workflow, which also gives other phonon properties such as infrared spectra. The web app lets anyone browse the database, which keeps growing as more materials are computed.</p>
 					
 					<p class="software-meta">License: CC BY 4.0</p>
@@ -629,7 +651,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-09T13:29:37-05:00">Oct. 9, 2026 at 1:29 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-09T14:57:37-05:00">Oct. 9, 2026 at 2:57 p.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>

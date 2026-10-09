@@ -93,7 +93,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=1c4dc8044e" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=6b624097fa" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -149,7 +149,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=5acca49eff">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=889f0efda1">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -309,7 +309,7 @@ bundle <span class="nb">install</span>
       <tr>
         <td>Research</td>
         <td><code class="language-plaintext highlighter-rouge">research/_posts/</code></td>
-        <td><code class="language-plaintext highlighter-rouge">layout: post</code>, <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">image</code></td>
+        <td><code class="language-plaintext highlighter-rouge">layout: post</code>, <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">image</code>, <code class="language-plaintext highlighter-rouge">order</code> (its place on the Research page, battery topics first), optional <code class="language-plaintext highlighter-rouge">description</code>, and <code class="language-plaintext highlighter-rouge">listed: false</code> with <code class="language-plaintext highlighter-rouge">sitemap: false</code> to keep a page at its address but leave it off the Research page, its Index, the site search and the sitemap (as for Non-linear Optics)</td>
       </tr>
       <tr>
         <td>Papers</td>
@@ -376,7 +376,7 @@ bundle <span class="nb">install</span>
   <ul>
     <li>Styles are SCSS partials in <code class="language-plaintext highlighter-rouge">css/</code>, compiled into <code class="language-plaintext highlighter-rouge">css/style.css</code>. Layouts are in <code class="language-plaintext highlighter-rouge">_layouts/</code> and shared snippets in <code class="language-plaintext highlighter-rouge">_includes/</code>.</li>
     <li>Only the Bootstrap 5 parts the site uses are compiled in: the list of <code class="language-plaintext highlighter-rouge">@import</code>s at the top of <code class="language-plaintext highlighter-rouge">css/style.scss</code> (grid, containers, type, nav, navbar, collapse transitions, breadcrumb, helpers and utilities) replaces the full <code class="language-plaintext highlighter-rouge">bootstrap/bootstrap.scss</code>, which roughly halves the stylesheet. Components such as cards, buttons, forms, dropdowns and modals are left out, so a new page that uses one of them will look unstyled until its import is added there, in the same order as <code class="language-plaintext highlighter-rouge">bootstrap.scss</code>.</li>
-    <li>Long titles fade out instead of stretching their row: the News page cuts a title after two lines, and the news archive (the News page’s Index view) after four, with the top of the next line fading to show that it goes on, while the date and author below a title always show in full. Both use the <code class="language-plaintext highlighter-rouge">fade-lines</code> mixin in <code class="language-plaintext highlighter-rouge">css/_variables.scss</code>, which leaves titles whole on phones. On the Papers page a card’s title and the authors and journal line below it are never taller than the card’s picture: <code class="language-plaintext highlighter-rouge">js/paper-titles.js</code> measures each card and fades a longer title on its last line that fits (<code class="language-plaintext highlighter-rouge">.is-cut</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>), and phones keep titles whole. Without JavaScript the titles fade after five lines. The preview text in the news list (<code class="language-plaintext highlighter-rouge">.feedbox</code>) and on the Research page (<code class="language-plaintext highlighter-rouge">.feedboxblog</code>) still fades at a fixed height (<code class="language-plaintext highlighter-rouge">fade-box</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>). The home page’s Recent News and Recent papers show their two newest items in full instead.</li>
+    <li>Long titles fade out instead of stretching their row: the News page cuts a title after two lines, and the news archive (the News page’s Index view) after four, with the top of the next line fading to show that it goes on, while the date and author below a title always show in full. Both use the <code class="language-plaintext highlighter-rouge">fade-lines</code> mixin in <code class="language-plaintext highlighter-rouge">css/_variables.scss</code>, which leaves titles whole on phones. On the Papers page a card’s title and the authors and journal line below it are never taller than the card’s picture: <code class="language-plaintext highlighter-rouge">js/paper-titles.js</code> measures each card and fades a longer title on its last line that fits (<code class="language-plaintext highlighter-rouge">.is-cut</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>), and phones keep titles whole. Without JavaScript the titles fade after five lines. The preview text in the news list (<code class="language-plaintext highlighter-rouge">.feedbox</code>) still fades at a fixed height (<code class="language-plaintext highlighter-rouge">fade-box</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code>), and on the Research page (<code class="language-plaintext highlighter-rouge">.feedboxblog</code>) after five lines of text (six on phones) under a title shown in full. The home page’s Recent News and Recent papers show their two newest items in full instead.</li>
     <li>
       <p>The card grids show one, two or three cards a row depending on the window width, so text is not squeezed into narrow columns:</p>
 
@@ -578,7 +578,7 @@ bundle <span class="nb">install</span>
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-09T13:29:37-05:00">Oct. 9, 2026 at 1:29 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-09T14:57:37-05:00">Oct. 9, 2026 at 2:57 p.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
