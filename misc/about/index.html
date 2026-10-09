@@ -93,7 +93,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=6d31ecf4d3" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=4a53e473d9" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -149,7 +149,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=17df0ea8c7">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=128d111232">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -247,6 +247,9 @@
  </div>
 </div>
 
+<p class="news-author"><span class="reading-time"><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i>26 min read</span>
+</p>
+
 <div class="about-text">
 
   <p>Source of the website of the Canepa Research Group, <a href="https://caneparesearch.org">caneparesearch.org</a>. The site is built with <a href="https://jekyllrb.com/">Jekyll</a> and published through GitHub Pages from a separate and private repository. A <code class="language-plaintext highlighter-rouge">HISTORY.md</code> file in the source repository records the site’s milestones and the Cloudflare changes that git does not.</p>
@@ -325,7 +328,7 @@ bundle <span class="nb">install</span>
 
   <p>Photos and figures live in <code class="language-plaintext highlighter-rouge">images/</code>, in a folder named after the section.</p>
 
-  <p>The pages in <code class="language-plaintext highlighter-rouge">misc/_posts/</code> are linked from the footer by their <code class="language-plaintext highlighter-rouge">title</code>. Give one a <code class="language-plaintext highlighter-rouge">nav_title</code> to use a shorter label there (the About page’s footer link reads “About” while its title is “About this website”), or <code class="language-plaintext highlighter-rouge">footer: false</code> to leave it out (Join, which is already in the navigation bar). The navigation bar lists Research, Papers, Software, Team, News and Join, in that order (what the lab does, its output, its people, then news, and a way in for prospective members); its links are in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>. Dates are shown as “Sept. 19, 2026” everywhere (the <code class="language-plaintext highlighter-rouge">ap_date</code> filter in <code class="language-plaintext highlighter-rouge">_plugins/last-update.rb</code>).</p>
+  <p>The pages in <code class="language-plaintext highlighter-rouge">misc/_posts/</code> are linked from the footer by their <code class="language-plaintext highlighter-rouge">title</code>. Give one a <code class="language-plaintext highlighter-rouge">nav_title</code> to use a shorter label there (the About page’s footer link reads “About” while its title is “About this website”), or <code class="language-plaintext highlighter-rouge">footer: false</code> to leave it out (Join, which is already in the navigation bar). The navigation bar lists Research, Papers, Software, Team, News and Join, in that order (what the lab does, its output, its people, then news, and a way in for prospective members); its links are in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>. Dates are shown as “Sept. 19, 2026” everywhere (the <code class="language-plaintext highlighter-rouge">ap_date</code> filter in <code class="language-plaintext highlighter-rouge">_plugins/last-update.rb</code>). News and research posts show an estimated reading time after their date (“1 min read”), as do the About and Join pages under their title: the words of the text at 200 a minute, rounded up (<code class="language-plaintext highlighter-rouge">_includes/reading-time.html</code>). To add it to another page, put <code class="language-plaintext highlighter-rouge">&lt;p class="news-author"&gt;{% include reading-time.html text=page.content %}&lt;/p&gt;</code> after its title block.</p>
 
   <p>Every page gets a <code class="language-plaintext highlighter-rouge">&lt;meta name="description"&gt;</code> for search results: the page’s own <code class="language-plaintext highlighter-rouge">description</code> field if it has one, otherwise for a paper its abstract and for a video <code class="language-plaintext highlighter-rouge">Talk by &lt;author&gt; at &lt;conference&gt;: &lt;title&gt;</code>, otherwise a post’s first paragraph, otherwise the site tagline in <code class="language-plaintext highlighter-rouge">_config.yml</code>, cut to 160 characters. The home page sets its own in <code class="language-plaintext highlighter-rouge">index.html</code>; add a <code class="language-plaintext highlighter-rouge">description</code> to any other page whose first paragraph makes a poor summary.</p>
 
@@ -575,7 +578,7 @@ bundle <span class="nb">install</span>
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-09T08:39:28-05:00">Oct. 9, 2026 at 8:39 a.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-09T09:35:05-05:00">Oct. 9, 2026 at 9:35 a.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
