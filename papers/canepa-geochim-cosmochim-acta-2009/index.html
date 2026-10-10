@@ -106,12 +106,12 @@
 
 	<!-- RSS feed -->
 	<link rel="alternate" type="application/rss+xml" title="Canepa Research Lab" href="https://caneparesearch.org/feed.xml">
-	<!-- IBM Plex Sans is self-hosted (css/_plex-sans.scss). Preloading the one file every page needs
+	<!-- Inter, the text font, is self-hosted (css/_inter.scss). Preloading the one file every page needs
 	     starts its download with the stylesheet's, instead of after the stylesheet has been parsed. -->
-	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/css/fonts/inter/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=d121408705" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=ff233d03ae" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -167,7 +167,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=e479c7bf21">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=a9fcaf0a2d">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -440,7 +440,7 @@ Traditional density functional theory (DFT) techniques cannot be applied to stud
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-10T08:16:59-05:00">Oct. 10, 2026 at 8:16 a.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-10T08:28:38-05:00">Oct. 10, 2026 at 8:28 a.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
