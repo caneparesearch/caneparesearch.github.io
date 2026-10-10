@@ -32,6 +32,9 @@
 	<meta property="article:published_time" content="2026-10-09T00:00:00-05:00">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- iOS Safari would otherwise link number runs such as a paper's pages ("9897–9907") as phone
+	     numbers; a real phone number on the site needs an explicit tel: link -->
+	<meta name="format-detection" content="telephone=no">
 	<!-- Day / night theme: choose the theme before first paint (no flash), then wire up the navbar toggle.
      Order of preference: the visitor's saved choice, then the OS setting. -->
 <script>
@@ -93,7 +96,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=6b624097fa" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=d121408705" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -149,7 +152,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=889f0efda1">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=74fde2b262">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -250,7 +253,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			
-			<p class="news-author"><span class="reading-time"><i class="fa-regular fa-clock" aria-hidden="true"></i>3 min read</span>
+			<p class="news-author"><span class="reading-time"><i class="fa-regular fa-clock" aria-hidden="true"></i>2 min read</span>
 </p>
 		
 		</div>
@@ -289,21 +292,22 @@
 			<div class="post research-text">
 				<p>Porous frameworks, such as metal–organic frameworks, hold small molecules inside pores only a few ångströms wide. By choosing the size and chemistry of those pores, a framework can be made to store a gas or to take up one gas and reject another, which makes these materials candidates for capturing CO<sub>2</sub>, separating air and hydrocarbons, and storing hydrogen at moderate pressures. Our first-principles calculations, working alongside adsorption, diffraction and spectroscopy measurements by our collaborators, show where the molecules bind and why a framework prefers one gas over another.</p>
 
-<p>Much of our recent work concerns aluminum formate, Al(HCOO)<sub>3</sub> or ALF, a framework made cheaply from commodity chemicals. ALF removes CO<sub>2</sub> from N<sub>2</sub>-rich gas streams by a size-selective separation that rests on the small difference between the two molecules’ kinetic diameters,<sup><a href="https://doi.org/10.1126/sciadv.ade1473">[1]</a></sup> and its hydrogen-lined pore cavities recognize CO<sub>2</sub> while rejecting hydrocarbons, including acetylene and methane.<sup><a href="https://doi.org/10.1021/jacs.3c01705">[2]</a></sup> The same material adsorbs O<sub>2</sub> from air near dry-ice temperatures, without cryogenic distillation,<sup><a href="https://doi.org/10.1021/jacs.3c02100">[3]</a></sup> and stores hydrogen competitively at 120–160 K and 10–20 bar.<sup><a href="https://doi.org/10.1021/jacs.3c08037">[4]</a></sup> We have also traced its temperature-regulated gating, which lets temperature alone switch the separation of one gas from another, to the motion of the formate linkers that frame the windows between its cavities.<sup><a href="https://doi.org/10.1021/acs.chemmater.5c01157">[5]</a></sup></p>
+<p>Much of our recent work concerns aluminum formate, Al(HCOO)<sub>3</sub> or ALF, a framework made cheaply from commodity chemicals. ALF removes CO<sub>2</sub> from N<sub>2</sub>-rich gas streams by a size-selective separation that rests on the small difference between the two molecules’ kinetic diameters,<sup><a href="/papers/evans-sci-adv-2022/">1</a></sup> and its hydrogen-lined pore cavities recognize CO<sub>2</sub> while rejecting hydrocarbons, including acetylene and methane.<sup><a href="/papers/zhang-j-am-chem-soc-2023/">2</a></sup> The same material adsorbs O<sub>2</sub> from air near dry-ice temperatures, without cryogenic distillation,<sup><a href="/papers/mullangi-j-am-chem-soc-2023/">3</a></sup> and stores hydrogen competitively at 120–160 K and 10–20 bar.<sup><a href="/papers/evans-j-am-chem-soc-2023/">4</a></sup> We have also traced its temperature-regulated gating, which lets temperature alone switch the separation of one gas from another, to the motion of the formate linkers that frame the windows between its cavities.<sup><a href="/papers/evans-chem-mater-2025/">5</a></sup></p>
 
-<p>This builds on our earlier first-principles work on metal–organic frameworks, from the diffusion of small molecules through their channels<sup><a href="https://doi.org/10.1103/PhysRevLett.110.026102">[6]</a></sup> to high-throughput screening of small-molecule adsorption.<sup><a href="https://doi.org/10.1039/C3TA12395B">[7]</a></sup></p>
+<p>This builds on our earlier first-principles work on metal–organic frameworks, from the diffusion of small molecules through their channels<sup><a href="/papers/canepa-phys-rev-lett-2013/">6</a></sup> to high-throughput screening of small-molecule adsorption.<sup><a href="/papers/canepa-j-mater-chem-a-2013/">7</a></sup></p>
 
 <p><strong>Relevant references</strong></p>
 
-<ol>
-  <li><a href="https://doi.org/10.1126/sciadv.ade1473" class="off">Evans H. A., Mullangi D., Deng Z., Wang Y., Peh S. B., Wei F., Wang J., Brown C. M., Zhao D., <b>Canepa P.</b>, and Cheetham A. K.; <i>Sci. Adv.</i> 8, eade1473 (2022)</a></li>
-  <li><a href="https://doi.org/10.1021/jacs.3c01705" class="off">Zhang Z., Deng Z., Evans H. A., Mullangi D., Kang C., Bo Peh S., Wang Y., Brown C. M., Wang J., <b>Canepa P.</b>, Cheetham A., and Zhao D.; <i>J. Am. Chem. Soc.</i> 145, 11643 (2023)</a></li>
-  <li><a href="https://doi.org/10.1021/jacs.3c02100" class="off">Mullangi D., Evans H. A., Yildirim T., Wang Y., Deng Z., Zhang Z., Mai T. T., Wei F., Wang J., Hight Walker A. R., Brown C. M., Zhao D., <b>Canepa P.</b>, and Cheetham A.; <i>J. Am. Chem. Soc.</i> 145, 9850 (2023)</a></li>
-  <li><a href="https://doi.org/10.1021/jacs.3c08037" class="off">Evans H. A., Yildirim T., Peng P., Cheng Y., Deng Z., Zhang Q., Mullangi D., Zhao D., <b>Canepa P.</b>, Breunig H. M., Cheetham A. K., and Brown C. M.; <i>J. Am. Chem. Soc.</i> 145, 22150 (2023)</a></li>
-  <li><a href="https://doi.org/10.1021/acs.chemmater.5c01157" class="off">Evans H. A., Yildirim T., McCarver G. A., Mai T. T., Cheng Y., Deng Z., Klein R. A., Zhao D., <b>Canepa P.</b>, Hight Walker A. R., Cheetham A. K., and Brown C. M.; <i>Chem. Mater.</i> 37, 7102–7114 (2025)</a></li>
-  <li><a href="https://doi.org/10.1103/PhysRevLett.110.026102" class="off"><b>Canepa P.</b>, Nijem N., Chabal Y. J., and Thonhauser T.; <i>Phys. Rev. Lett.</i> 110, 026102 (2013)</a></li>
-  <li><a href="https://doi.org/10.1039/C3TA12395B" class="off"><b>Canepa P.</b>, Arter C. A., Conwill E. M., Johnson D. H., Shoemaker B. A., Soliman K. Z., and Thonhauser T.; <i>J. Mater. Chem. A</i> 1, 13597–13604 (2013)</a></li>
+<ol class="research-refs">
+  <li><a class="off" href="/papers/evans-sci-adv-2022/">H. A. Evans, D. Mullangi, Z. Deng, Y. Wang, S. B. Peh, F. Wei, J. Wang, C. M. Brown, D. Zhao, <b>P. Canepa</b>, and A. K. Cheetham; <i>Sci. Adv.</i> 8, eade1473 (2022).</a></li>
+  <li><a class="off" href="/papers/zhang-j-am-chem-soc-2023/">Z. Zhang, Z. Deng, H. A. Evans, D. Mullangi, C. Kang, S. B. Peh, Y. Wang, C. M. Brown, J. Wang, <b>P. Canepa</b>, A. Cheetham, and D. Zhao; <i>J. Am. Chem. Soc.</i> 145, 11643 (2023).</a></li>
+  <li><a class="off" href="/papers/mullangi-j-am-chem-soc-2023/">D. Mullangi, H. A. Evans, T. Yildirim, Y. Wang, Z. Deng, Z. Zhang, T. T. Mai, F. Wei, J. Wang, A. R. Hight Walker, C. M. Brown, D. Zhao, <b>P. Canepa</b>, and A. Cheetham; <i>J. Am. Chem. Soc.</i> 145, 9850 (2023).</a></li>
+  <li><a class="off" href="/papers/evans-j-am-chem-soc-2023/">H. A. Evans, T. Yildirim, P. Peng, Y. Cheng, Z. Deng, Q. Zhang, D. Mullangi, D. Zhao, <b>P. Canepa</b>, H. M. Breunig, A. K. Cheetham, and C. M. Brown; <i>J. Am. Chem. Soc.</i> 145, 22150 (2023).</a></li>
+  <li><a class="off" href="/papers/evans-chem-mater-2025/">H. A. Evans, T. Yildirim, G. A. McCarver, T. T. Mai, Y. Cheng, Z. Deng, R. A. Klein, D. Zhao, <b>P. Canepa</b>, A. R. Hight Walker, A. K. Cheetham, and C. M. Brown; <i>Chem. Mater.</i> 37, 7102–7114 (2025).</a></li>
+  <li><a class="off" href="/papers/canepa-phys-rev-lett-2013/"><b>P. Canepa</b>, N. Nijem, Y. J. Chabal, and T. Thonhauser; <i>Phys. Rev. Lett.</i> 110, 026102 (2013).</a></li>
+  <li><a class="off" href="/papers/canepa-j-mater-chem-a-2013/"><b>P. Canepa</b>, C. A. Arter, E. M. Conwill, D. H. Johnson, B. A. Shoemaker, K. Z. Soliman, and T. Thonhauser; <i>J. Mater. Chem. A</i> 1, 13597–13604 (2013).</a></li>
 </ol>
+
 
 			</div>
 		</div>
@@ -375,7 +379,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-09T14:57:37-05:00">Oct. 9, 2026 at 2:57 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-10T08:07:12-05:00">Oct. 10, 2026 at 8:07 a.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
