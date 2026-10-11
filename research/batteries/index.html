@@ -27,7 +27,7 @@
 	<meta property="og:title" content="Rechargeable batteries">
 	<meta property="og:description" content="How the Canepa Research Lab designs electrodes, electrolytes and their interfaces for sodium-ion, all-solid-state and multivalent batteries from first principles.">
 	<meta property="og:url" content="https://caneparesearch.org/research/batteries/">
-	<meta property="og:image" content="https://caneparesearch.org/images/research/2019-10-26_Multivalent_batteries.png">
+	<meta property="og:image" content="https://caneparesearch.org/images/research/batteries_splash.jpg">
 	<meta property="og:image:alt" content="Rechargeable batteries">
 	<meta property="article:published_time" content="2019-10-25T00:00:00-05:00">
 	<meta name="twitter:card" content="summary_large_image">
@@ -96,7 +96,7 @@
 	<link rel="preload" href="/css/fonts/inter/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=ff233d03ae" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=48b6ab633b" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -152,7 +152,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=a9fcaf0a2d">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=1457f3d145">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -253,7 +253,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			
-			<p class="news-author"><span class="reading-time"><i class="fa-regular fa-clock" aria-hidden="true"></i>4 min read</span>
+			<p class="news-author"><span class="reading-time"><i class="fa-regular fa-clock" aria-hidden="true"></i>6 min read</span>
 </p>
 		
 		</div>
@@ -281,9 +281,9 @@
 
 <picture>
 	
-	<source type="image/webp" srcset="/images/research/2019-10-26_Multivalent_batteries.webp">
+	<source type="image/webp" srcset="/images/research/batteries_splash.webp">
 	
-	<img src="/images/research/2019-10-26_Multivalent_batteries.png" class="offset offset-research" width="359" height="122" alt="">
+	<img src="/images/research/batteries_splash.jpg" class="offset offset-research" width="414" height="207" alt="">
 </picture>
 
 
@@ -292,33 +292,108 @@
 			<div class="post research-text">
 				<p>A clean energy economy needs batteries that store more energy, more safely and at lower cost than today’s Li-ion cells, and that are made from abundant elements. Our work spans sodium-ion batteries, all-solid-state batteries and their solid electrolytes, and multivalent batteries, and, across all three, the interphases, interfaces and surfaces where their components meet. We use first-principles calculations, statistical mechanics and machine learning, often together with experimental collaborators, to understand and design electrodes, electrolytes and the interfaces between them.</p>
 
-<p><strong>Sodium-ion batteries.</strong> Sodium is abundant and evenly distributed around the world, which makes sodium-ion batteries an inexpensive alternative to Li-ion, but their energy density is limited by the positive electrode. We have charted the stability and voltages of 28 NaSICON phosphate positive electrodes,<sup><a href="/papers/singh-j-mater-chem-a-2021/">1</a></sup> helped show that single-phase Na<sub>x</sub>V<sub>2</sub>(PO<sub>4</sub>)<sub>3</sub> electrodes raise the average operating voltage to about 3.70 V,<sup><a href="/papers/park-nat-mater-2025/">2</a></sup> and found that replacing half of the vanadium in the fluorophosphate Na<sub>x</sub>V<sub>2</sub>(PO<sub>4</sub>)<sub>2</sub>F<sub>3</sub> with molybdenum lowers the voltage for extracting its third sodium ion by 0.6 V, raising its theoretical capacity from about 128 to 174 mAh g<sup>−1</sup>.<sup><a href="/papers/vanderlubbe-chem-mater-2023/">3</a></sup> On the negative electrode, we have mapped the phase diagram of sodium–lead alloys and their sodium-alloying voltages.<sup><a href="/papers/lee-chem-mater-2024/">4</a></sup></p>
+<!-- Links to the page's four topics and its references, as on the Join and About pages -->
+<nav class="page-jump" aria-label="On this page">
+ <span class="page-jump-label">On this page:</span>
+ <ul>
+  <li><a href="#sodium-ion">Sodium-ion</a></li>
+  <li><a href="#solid-state">All-solid-state</a></li>
+  <li><a href="#multivalent">Multivalent</a></li>
+  <li><a href="#interfaces">Interphases and interfaces</a></li>
+  <li><a href="#references">References</a></li>
+ </ul>
+</nav>
 
-<p><strong>All-solid-state batteries and solid electrolytes.</strong> Solid-state batteries (see <strong>Figure 1</strong>) promise greater safety, energy density and cycle life, chiefly because they do without the flammable liquid electrolytes of Li-ion cells. Making them practical requires solid electrolytes that conduct ions quickly, remain stable against both electrodes, work with metal anodes, and keep physical contact with the electrodes over many cycles.<sup><a href="/papers/famprikis-nat-mater-2019/">5</a></sup></p>
+<figure class="text-figure text-figure-medium">
 
-<p class="text-center">
-<img src="/images/research/solid-state-battery.png" alt="Bipolar-stacked solid-state cell" />
-<br /><b>Figure 1:</b> Representation of a bipolar-stacked solid-state battery.<sup><a href="/papers/famprikis-nat-mater-2019/">5</a></sup>
-</p>
 
-<p>To understand fast ion conduction, we combined more than 2,000 kinetic Monte Carlo simulations with impedance measurements to map Na-ion transport across the NaSICON electrolytes Na<sub>1+x</sub>Zr<sub>2</sub>Si<sub>x</sub>P<sub>3−x</sub>O<sub>12</sub>,<sup><a href="/papers/deng-nat-commun-2022/">6</a></sup> synthesized zirconia-free NaSICON with a room-temperature conductivity of about 3.5 mS cm<sup>−1</sup>,<sup><a href="/papers/tieu-j-mater-chem-a-2023/">7</a></sup> and showed how stacking faults, set by synthesis, control Li-ion conduction in the halide Li<sub>3</sub>YCl<sub>6</sub>.<sup><a href="/papers/sebti-j-am-chem-soc-2022/">8</a></sup> A good solid electrolyte must also block electrons: we have predicted the electronic conductivity that native defects give solid electrolytes such as Li<sub>6</sub>PS<sub>5</sub>Cl and Na<sub>3</sub>PS<sub>4</sub>, a source of degradation and short circuits.<sup><a href="/papers/gorai-chem-mater-2021/">9</a></sup></p>
 
-<p><strong>Multivalent batteries.</strong> Multivalent ions such as magnesium and calcium carry two charges each and are far more abundant than lithium, so batteries built on them promise high energy densities at low cost. Their high charge, however, makes them move slowly through electrode materials, and plating and stripping them at the metal anode remains difficult.<sup><a href="/papers/palacin-j-phys-energy-2024/">10</a></sup> Interest in multivalent electrochemistry has grown rapidly (see <strong>Figure 2</strong>).</p>
 
-<p class="text-center">
-<img src="/images/research/Mgbatteries.jpeg" alt="Publications on multivalent batteries" />
-<br /><b>Figure 2:</b> Number of publications from 1985 until 2015 featuring multivalent electrochemistry.<sup><a href="/papers/canepa-chem-rev-2017/">11</a></sup>
-</p>
 
-<p>For calcium batteries, we have identified borate compounds in the solid–electrolyte interphase that let calcium plate reversibly, and showed that tuning how the electrolyte solvates the calcium ions speeds up plating tenfold.<sup><a href="/papers/forerosaboya-energy-environ-sci-2020/">12</a></sup> Screening large chemical spaces, we have found new candidate positive electrodes for calcium, such as the post-spinel CaV<sub>2</sub>O<sub>4</sub> and the layered CaNb<sub>2</sub>O<sub>4</sub>,<sup><a href="/papers/wang-chem-mater-2021/">13</a></sup> and singled out the NaSICON frameworks Ca<sub>x</sub>V<sub>2</sub>(PO<sub>4</sub>)<sub>3</sub>, Ca<sub>x</sub>Mn<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> and Ca<sub>x</sub>Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> as promising calcium cathodes.<sup><a href="/papers/tekliye-chem-mater-2022/">14</a></sup> For magnesium–sulfur batteries, we have traced how charge moves through the insulating discharge products MgS<sub>2</sub> and MgS.<sup><a href="/papers/vincent-chem-mater-2023/">15</a></sup></p>
 
-<p><strong>Interphases, interfaces and surfaces.</strong> Whether a battery lasts is often decided where its components meet: electrolytes decompose against the electrodes and form interphases, ions slow down as they cross interfaces and grain boundaries, and exposed surfaces react with their surroundings. These regions are the hardest parts of a battery to model, and we develop and apply first-principles approaches to describe them.<sup><a href="/papers/butler-npj-comput-mater-2019/">16</a>,<a href="/papers/deng-energy-environ-sci-2022/">17</a></sup></p>
 
-<p>At the metal anode, we have shown how electronic passivation stops the growth of the interphase between lithium metal and the LiPON electrolyte,<sup><a href="/papers/li-prx-energy-2022/">18</a></sup> and assessed the stability of more than 20 interfaces between lithium or sodium metal and the decomposition products of thiophosphate electrolytes, using machine-learned potentials to trace where the resistance to Li-ion transport arises.<sup><a href="/papers/wang-j-mater-chem-a-2022b/">19</a></sup> Coatings can protect the electrodes: we have revealed which phases of Li–Nb–O and Li–Ta–O coatings conduct lithium ions,<sup><a href="/papers/chen-chem-mater-2023b/">20</a></sup> and identified coating materials for magnesium batteries, such as MgSiN<sub>2</sub> and the magnesium halides against the Mg-metal anode, and MgAl<sub>2</sub>O<sub>4</sub> and Mg(PO<sub>3</sub>)<sub>2</sub> against oxide cathodes.<sup><a href="/papers/chen-chem-mater-2019/">21</a></sup></p>
 
-<p>In polycrystalline solid electrolytes, grain boundaries can slow Li-ion conduction by one to two orders of magnitude, as in the perovskite Li<sub>3x</sub>La<sub>2/3−x</sub>TiO<sub>3</sub>,<sup><a href="/papers/symington-j-mater-chem-a-2021/">22</a></sup> although they hinder transport far less in the sulfide Na<sub>3</sub>PS<sub>4</sub> than in the oxide Na<sub>3</sub>PO<sub>4</sub>.<sup><a href="/papers/dawson-chem-mater-2019/">23</a></sup> From a library of 590 surfaces and grain boundaries of 11 solid electrolytes, we found that grain boundaries are weaker than the bulk, so particles tend to crack there.<sup><a href="/papers/xie-adv-energy-mater-2024/">24</a></sup> We have also shown how H<sub>2</sub>O and CO<sub>2</sub> from air react with the surface of the garnet electrolyte Li<sub>7</sub>La<sub>3</sub>Zr<sub>2</sub>O<sub>12</sub> to form the contamination layers that harm its performance.<sup><a href="/papers/li-j-mater-chem-a-2022/">25</a></sup> Since no single electrolyte is stable against both a high-voltage cathode and a metal anode, we screen pairs of electrolytes for bilayer separators, such as the stable Li<sub>3</sub>PO<sub>4</sub>/Li<sub>3</sub>InCl<sub>6</sub>,<sup><a href="/papers/panchal-acs-energy-lett-2024/">26</a></sup> and test how chloride catholytes and thiophosphate anolytes react with each other.<sup><a href="/papers/pennebaker-chemrxiv-2025/">27</a></sup></p>
 
-<p><strong>Relevant references</strong></p>
+
+
+<picture>
+	
+	<source type="image/webp" srcset="/images/research/nasicon-voltage-map.webp" />
+	
+	<img src="/images/research/nasicon-voltage-map.png" width="1000" height="808" alt="Computed sodium-intercalation voltages of 28 NaSICON phosphate electrodes NaxMM&#39;(PO4)3 with M and M&#39; from Ti to Ni" loading="lazy" />
+</picture>
+
+
+<figcaption><b>Figure 1:</b> Computed voltages of the NaSICON phosphate electrodes Na<sub>x</sub>MM′(PO<sub>4</sub>)<sub>3</sub>, with M and M′ from Ti to Ni: for each pair, the voltage and redox couple of each step of sodium extraction (1 ≤ x ≤ 2, 2 ≤ x ≤ 3 and 3 ≤ x ≤ 4) and, framed in red, the average voltage per sodium.<sup><a href="/papers/singh-j-mater-chem-a-2021/">1</a></sup></figcaption>
+</figure>
+
+<p id="sodium-ion"><strong>Sodium-ion batteries.</strong> Sodium is abundant and evenly distributed around the world, which makes sodium-ion batteries an inexpensive alternative to Li-ion, but their energy density is limited by the positive electrode. In our research on sodium-ion batteries, we have charted the stability and voltages of 28 NaSICON phosphate positive electrodes (see <strong>Figure 1</strong>),<sup><a href="/papers/singh-j-mater-chem-a-2021/">1</a></sup> helped show that single-phase Na<sub>x</sub>V<sub>2</sub>(PO<sub>4</sub>)<sub>3</sub> electrodes raise the average operating voltage to about 3.70 V,<sup><a href="/papers/park-nat-mater-2025/">2</a></sup> and found that replacing half of the vanadium in the fluorophosphate Na<sub>x</sub>V<sub>2</sub>(PO<sub>4</sub>)<sub>2</sub>F<sub>3</sub> with molybdenum lowers the voltage for extracting its third sodium ion by 0.6 V, raising its theoretical capacity from about 128 to 174 mAh g<sup>−1</sup>.<sup><a href="/papers/vanderlubbe-chem-mater-2023/">3</a></sup> On the negative electrode, we have mapped the phase diagram of sodium–lead alloys and their sodium-alloying voltages.<sup><a href="/papers/lee-chem-mater-2024/">4</a></sup></p>
+
+<p id="solid-state"><strong>All-solid-state batteries and solid electrolytes.</strong> Solid-state batteries promise greater safety, energy density and cycle life, chiefly because they do without the flammable liquid electrolytes of Li-ion cells. Making them practical requires solid electrolytes that conduct ions quickly, remain stable against both electrodes, work with metal anodes, and keep physical contact with the electrodes over many cycles.<sup><a href="/papers/famprikis-nat-mater-2019/">5</a></sup></p>
+
+<p>Our own research on solid electrolytes starts from how fast they conduct ions: we combined more than 2,000 kinetic Monte Carlo simulations with impedance measurements to map Na-ion transport across the NaSICON electrolytes Na<sub>1+x</sub>Zr<sub>2</sub>Si<sub>x</sub>P<sub>3−x</sub>O<sub>12</sub>,<sup><a href="/papers/deng-nat-commun-2022/">6</a></sup> synthesized zirconia-free NaSICON with a room-temperature conductivity of about 3.5 mS cm<sup>−1</sup>,<sup><a href="/papers/tieu-j-mater-chem-a-2023/">7</a></sup> and showed how stacking faults, set by synthesis, control Li-ion conduction in the halide Li<sub>3</sub>YCl<sub>6</sub>.<sup><a href="/papers/sebti-j-am-chem-soc-2022/">8</a></sup> With machine-learned interatomic potentials, we found that these faults raise the Li-ion conductivity of Li<sub>3</sub>YCl<sub>6</sub> tenfold and lower its activation energy from 0.33 to 0.21 eV.<sup><a href="/papers/li-chemrxiv-2026/">9</a></sup></p>
+
+<p>How a solid electrolyte is made and what it is made of shape how well it conducts. We have shown how ball milling disorders the sodium ions of Na<sub>3</sub>PS<sub>4</sub> and changes how pressure affects their migration,<sup><a href="/papers/famprikis-j-am-chem-soc-2020/">10</a></sup> identified γ-Na<sub>4</sub>P<sub>2</sub>S<sub>6</sub>, which forms above 580 °C, as a mechanically soft plastic crystal in which the P<sub>2</sub>S<sub>6</sub><sup>4−</sup> anions rotate freely and sodium ions move fast,<sup><a href="/papers/scholz-acs-energy-lett-2022/">11</a></sup> and found that substituting tin or phosphorus for antimony in Li<sub>3</sub>SbS<sub>4</sub> raises its ionic conductivity by up to four orders of magnitude.<sup><a href="/papers/helm-acs-appl-energy-mater-2024/">12</a></sup> We also predict new solid electrolytes: mixing Li<sub>3</sub>PS<sub>4</sub> with Li<sub>4</sub>GeO<sub>4</sub> gives an ordered oxysulfide, Li<sub>7</sub>PO<sub>4</sub>GeS<sub>4</sub>, with high computed Li-ion conductivity;<sup><a href="/papers/li-chem-mater-2024/">13</a></sup> among eight lithium (thio)boracites, only Li<sub>4</sub>B<sub>7</sub>O<sub>12</sub>Cl is predicted to be stable;<sup><a href="/papers/lynch-phys-rev-mater-2024/">14</a></sup> and we have re-evaluated the crystal structure of the thio-LISICON Li<sub>4</sub>SiS<sub>4</sub> and studied its solid solution with Li<sub>4</sub>SnS<sub>4</sub>.<sup><a href="/papers/balzat-chem-mater-2025/">15</a></sup></p>
+
+<figure class="text-figure text-figure-left">
+
+
+
+
+
+
+
+
+
+
+
+<picture>
+	
+	<source type="image/webp" srcset="/images/research/electrolyte-band-gaps.webp" />
+	
+	<img src="/images/research/electrolyte-band-gaps.png" width="1200" height="648" alt="Change in band gap at the surfaces and grain boundaries of eleven lithium and sodium solid electrolytes, relative to their bulk band gaps" loading="lazy" />
+</picture>
+
+
+<figcaption><b>Figure 2:</b> Change in band gap, ΔE, at the surfaces (blue) and grain boundaries (orange) of eleven Li and Na solid electrolytes, relative to the bulk band gap given under each material: extended defects narrow the gap, most at surfaces.<sup><a href="/papers/xie-adv-energy-mater-2024/">17</a></sup></figcaption>
+</figure>
+
+<p>A practical solid electrolyte must also block electrons and carry away heat. Our research has identified several routes by which electrons leak through a solid-state battery, a source of degradation and short circuits: native point defects give solid electrolytes such as Li<sub>6</sub>PS<sub>5</sub>Cl and Na<sub>3</sub>PS<sub>4</sub> a measurable electronic conductivity,<sup><a href="/papers/gorai-chem-mater-2021/">16</a></sup> their surfaces and grain boundaries add electronic states within the band gap, narrowing it (see <strong>Figure 2</strong>) and raising the number of free electrons and holes locally,<sup><a href="/papers/xie-adv-energy-mater-2024/">17</a></sup> and the interphases formed against a lithium-metal anode stop growing only once they are electronically passivated.<sup><a href="/papers/li-prx-energy-2022/">18</a></sup> We have also shown that the thermal conductivities of argyrodite and Li<sub>10</sub>GeP<sub>2</sub>S<sub>12</sub> electrolytes are as low as those of liquid electrolytes,<sup><a href="/papers/boger-acs-appl-energy-mater-2023/">19</a></sup> and traced the lattice dynamics behind the thermal conductivity of NaSICON electrolytes.<sup><a href="/papers/boger-j-am-chem-soc-2024/">20</a></sup></p>
+
+<p id="multivalent"><strong>Multivalent batteries.</strong> Multivalent ions such as magnesium and calcium carry two charges each and are far more abundant than lithium, so batteries built on them promise high energy densities at low cost. Their high charge, however, makes them move slowly through electrode materials, and plating and stripping them at the metal anode remains difficult.<sup><a href="/papers/palacin-j-phys-energy-2024/">21</a></sup></p>
+
+<p>In our research on multivalent batteries, we have focused on calcium and magnesium. For calcium batteries, we have identified borate compounds in the solid–electrolyte interphase that let calcium plate reversibly, and showed that tuning how the electrolyte solvates the calcium ions speeds up plating tenfold.<sup><a href="/papers/forerosaboya-energy-environ-sci-2020/">22</a></sup> Screening large chemical spaces, we have found new candidate positive electrodes for calcium, such as the post-spinel CaV<sub>2</sub>O<sub>4</sub> and the layered CaNb<sub>2</sub>O<sub>4</sub>,<sup><a href="/papers/wang-chem-mater-2021/">23</a></sup> and singled out the NaSICON frameworks Ca<sub>x</sub>V<sub>2</sub>(PO<sub>4</sub>)<sub>3</sub>, Ca<sub>x</sub>Mn<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> and Ca<sub>x</sub>Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> as promising calcium cathodes.<sup><a href="/papers/tekliye-chem-mater-2022/">24</a></sup> For magnesium–sulfur batteries, we have traced how charge moves through the insulating discharge products MgS<sub>2</sub> and MgS.<sup><a href="/papers/vincent-chem-mater-2023/">25</a></sup></p>
+
+<p id="interfaces"><strong>Interphases, interfaces and surfaces.</strong> Whether a battery lasts is often decided where its components meet: electrolytes decompose against the electrodes and form interphases, ions slow down as they cross interfaces and grain boundaries, and exposed surfaces react with their surroundings. These regions are the hardest parts of a battery to model, and we develop and apply first-principles approaches to describe them.<sup><a href="/papers/butler-npj-comput-mater-2019/">26</a>,<a href="/papers/deng-energy-environ-sci-2022/">27</a></sup></p>
+
+<p>Our research has examined each of these regions, from the electrodes to the electrolyte. At the metal anode, we have shown how electronic passivation stops the growth of the interphase between lithium metal and the LiPON electrolyte,<sup><a href="/papers/li-prx-energy-2022/">18</a></sup> and assessed the stability of more than 20 interfaces between lithium or sodium metal and the decomposition products of thiophosphate electrolytes, using machine-learned potentials to trace where the resistance to Li-ion transport arises.<sup><a href="/papers/wang-j-mater-chem-a-2022b/">28</a></sup> Coatings can protect the electrodes: we have revealed which phases of Li–Nb–O and Li–Ta–O coatings conduct lithium ions,<sup><a href="/papers/chen-chem-mater-2023b/">29</a></sup> and identified coating materials for magnesium batteries, such as MgSiN<sub>2</sub> and the magnesium halides against the Mg-metal anode, and MgAl<sub>2</sub>O<sub>4</sub> and Mg(PO<sub>3</sub>)<sub>2</sub> against oxide cathodes.<sup><a href="/papers/chen-chem-mater-2019/">30</a></sup></p>
+
+<figure class="text-figure">
+
+
+
+
+
+
+
+
+
+
+
+<picture>
+	
+	<source type="image/webp" srcset="/images/research/llzo-water-adsorption.webp" />
+	
+	<img src="/images/research/llzo-water-adsorption.png" width="1200" height="560" alt="Change in grand-potential energy of water adsorbed on a Li7La3Zr2O12 surface, relative to the clean surface and gas-phase water, at coverages from 1/5 to 6/5 of a monolayer" loading="lazy" />
+</picture>
+
+
+<figcaption><b>Figure 3:</b> Change in grand-potential energy, ΔΩ, relative to the clean Li<sub>7</sub>La<sub>3</sub>Zr<sub>2</sub>O<sub>12</sub> surface and gas-phase H<sub>2</sub>O, as water adsorbs on the surface from 1/5 to 6/5 of a monolayer (ML), at 1 bar and 300 K.<sup><a href="/papers/li-j-mater-chem-a-2022/">33</a></sup></figcaption>
+</figure>
+
+<p>In polycrystalline solid electrolytes, grain boundaries can slow Li-ion conduction by one to two orders of magnitude, as in the perovskite Li<sub>3x</sub>La<sub>2/3−x</sub>TiO<sub>3</sub>,<sup><a href="/papers/symington-j-mater-chem-a-2021/">31</a></sup> although they hinder transport far less in the sulfide Na<sub>3</sub>PS<sub>4</sub> than in the oxide Na<sub>3</sub>PO<sub>4</sub>.<sup><a href="/papers/dawson-chem-mater-2019/">32</a></sup> From a library of 590 surfaces and grain boundaries of 11 solid electrolytes, we found that grain boundaries are weaker than the bulk, so particles tend to crack there.<sup><a href="/papers/xie-adv-energy-mater-2024/">17</a></sup> We have also shown how H<sub>2</sub>O and CO<sub>2</sub> from air react with the surface of the garnet electrolyte Li<sub>7</sub>La<sub>3</sub>Zr<sub>2</sub>O<sub>12</sub> to form the contamination layers that harm its performance (see <strong>Figure 3</strong>).<sup><a href="/papers/li-j-mater-chem-a-2022/">33</a></sup> Since no single electrolyte is stable against both a high-voltage cathode and a metal anode, we screen pairs of electrolytes for bilayer separators, such as the stable Li<sub>3</sub>PO<sub>4</sub>/Li<sub>3</sub>InCl<sub>6</sub>,<sup><a href="/papers/panchal-acs-energy-lett-2024/">34</a></sup> and test how chloride catholytes and thiophosphate anolytes react with each other.<sup><a href="/papers/pennebaker-chemrxiv-2025/">35</a></sup></p>
+
+<p id="references"><strong>Relevant references</strong></p>
 
 <ol class="research-refs">
   <li><a class="off" href="/papers/singh-j-mater-chem-a-2021/">B. Singh, Z. Wang, S. Park, G. S. Gautam, J.-N. Chotard, L. Croguennec, D. Carlier, A. K. Cheetham, C. Masquelier, and <b>P. Canepa</b>; <i>J. Mater. Chem. A</i> 9, 281 (2021).</a></li>
@@ -329,22 +404,30 @@
   <li><a class="off" href="/papers/deng-nat-commun-2022/">Z. Deng, T. P. Mishra, E. Mahayoni, Q. Ma, A. J. K. Tieu, O. Guillon, J.-N. Chotard, V. Seznec, A. K. Cheetham, C. Masquelier, G. S. Gautam, and <b>P. Canepa</b>; <i>Nat. Commun.</i> 13, 4470 (2022).</a></li>
   <li><a class="off" href="/papers/tieu-j-mater-chem-a-2023/">A. J. K. Tieu, E. Mahayoni, Y. Li, Z. Deng, F. Fauth, J.-N. Chotard, V. Seznec, S. Adams, C. Masquelier, and <b>P. Canepa</b>; <i>J. Mater. Chem. A</i> 11, 23233 (2023).</a></li>
   <li><a class="off" href="/papers/sebti-j-am-chem-soc-2022/">E. Sebti, H. A. Evans, H. Chen, P. M. Richardson, K. M. White, R. Giovine, K. P. Koirala, Y. Xu, E. Gonzalez-Correa, C. Wang, C. M. Brown, A. K. Cheetham, <b>P. Canepa</b>, and R. J. Clément; <i>J. Am. Chem. Soc.</i> 144, 5795 (2022).</a></li>
+  <li><a class="off" href="/papers/li-chemrxiv-2026/">Y. Li, W.-F. Huang, Z. Deng, L. Grabow, and <b>P. Canepa</b>; <i>ChemRxiv</i> (2026).</a></li>
+  <li><a class="off" href="/papers/famprikis-j-am-chem-soc-2020/">T. Famprikis, Ö. U. Kudu, J. A. Dawson, <b>P. Canepa</b>, F. Fauth, E. Suard, M. Zbiri, D. Dambournet, O. J. Borkiewicz, H. Bouyanfif, S. P. Emge, S. Cretu, J.-N. Chotard, C. P. Grey, W. G. Zeier, M. Saiful Islam, and C. Masquelier; <i>J. Am. Chem. Soc.</i> 142, 18422 (2020).</a></li>
+  <li><a class="off" href="/papers/scholz-acs-energy-lett-2022/">T. Scholz, C. Schneider, M. Terban, Z. Deng, R. Eger, M. Etter, R. Dinnebier, <b>P. Canepa</b>, and B. Lotsch; <i>ACS Energy Lett.</i> 7, 1403 (2022).</a></li>
+  <li><a class="off" href="/papers/helm-acs-appl-energy-mater-2024/">B. Helm, K. Strotmann, T. Böger, S. Bibek, A. Banik, M. A. Lange, Y. Li, C. Li, M. R. Hansen, <b>P. Canepa</b>, and W. G. Zeier; <i>ACS Appl. Energy Mater.</i> 7, 1735 (2024).</a></li>
+  <li><a class="off" href="/papers/li-chem-mater-2024/">Y. Li, Z. Deng, C. Chen, and <b>P. Canepa</b>; <i>Chem. Mater.</i> 36, 7877 (2024).</a></li>
+  <li><a class="off" href="/papers/lynch-phys-rev-mater-2024/">D. C. Lynch, Y. Li, <b>P. Canepa</b>, and N. A. W. Holzwarth; <i>Phys. Rev. Mater.</i> 8, 065401 (2024).</a></li>
+  <li><a class="off" href="/papers/balzat-chem-mater-2025/">L. Balzat, Y. Li, S. Dums, I. Moudrakovski, K. Gjorgjevikj, A. Schulz, Y. Li, S. Krause, <b>P. Canepa</b>, and B. Lotsch; <i>Chem. Mater.</i> 37, 6127–6139 (2025).</a></li>
   <li><a class="off" href="/papers/gorai-chem-mater-2021/">P. Gorai, T. Famprikis, B. Singh, V. Stevanović, and <b>P. Canepa</b>; <i>Chem. Mater.</i> 33, 7484–7498 (2021).</a></li>
+  <li><a class="off" href="/papers/xie-adv-energy-mater-2024/">W. Xie, Z. Deng, Z. Liu, T. Famprikis, K. T. Butler, and <b>P. Canepa</b>; <i>Adv. Energy Mater.</i> 14, 2304230 (2024).</a></li>
+  <li><a class="off" href="/papers/li-prx-energy-2022/">Y. Li, <b>P. Canepa</b>, and P. Gorai; <i>Phys. Rev. X Energy</i> 1, 023004 (2022).</a></li>
+  <li><a class="off" href="/papers/boger-acs-appl-energy-mater-2023/">T. Böger, T. Bernges, Y. Li, <b>P. Canepa</b>, and W. G. Zeier; <i>ACS Appl. Energy Mater.</i> 6, 10704 (2023).</a></li>
+  <li><a class="off" href="/papers/boger-j-am-chem-soc-2024/">T. Böger, T. Bernges, M. T. Agne, <b>P. Canepa</b>, F. Tietz, and W. G. Zeier; <i>J. Am. Chem. Soc.</i> 146, 32678 (2024).</a></li>
   <li><a class="off" href="/papers/palacin-j-phys-energy-2024/">M. P. Palacin, P. Johansson, R. Dominko, B. Dlugatch, D. Aurbach, Z. Li, M. Fichtner, O. Lužanin, J. Bitenc, Z. Wei, C. Glaser, J. Janek, A. Fernández-Barquín, A. R. Mainar, O. Leonet, I. Urdampilleta, J. A. Blázquez, D. S. Tchitchekova, A. Ponrouch, <b>P. Canepa</b>, G. S. Gautam, R. S. R. Gallego Casilda, C. S. Martinez-Cisneros, N. Ureña Torres, A. Varez, J.-Y. Sanchez, K. V. Kravchyk, M. V. Kovalenko, A. A. Teck, H. Shiel, I. E. L. Stephens, M. P. Ryan, E. Zemlyanushin, S. Dsoke, R. Grieco, N. Patil, R. Marcilla, X. Gao, C. J. Carmalt, G. He, and M.-M. Titirici; <i>J. Phys. Energy</i> 6, 031501 (2024).</a></li>
-  <li><a class="off" href="/papers/canepa-chem-rev-2017/"><b>P. Canepa</b>, G. S. Gautam, D. C. Hannah, R. Malik, M. Liu, K. G. Gallagher, K. Persson, and G. Ceder; <i>Chem. Rev.</i> 117, 4287–4341 (2017).</a></li>
   <li><a class="off" href="/papers/forerosaboya-energy-environ-sci-2020/">J. Forero-Saboya, C. Davoisne, R. Dedryvère, I. Yousef, <b>P. Canepa</b>, and A. Ponrouch; <i>Energy Environ. Sci.</i> 13, 3423–3431 (2020).</a></li>
   <li><a class="off" href="/papers/wang-chem-mater-2021/">W. Lu, J. Wang, G. S. Gautam, and <b>P. Canepa</b>; <i>Chem. Mater.</i> 33, 5809–5821 (2021).</a></li>
   <li><a class="off" href="/papers/tekliye-chem-mater-2022/">D. B. Tekliye, A. Kumar, W. Xie, T. D. Mercy, <b>P. Canepa</b>, and G. S. Gautam; <i>Chem. Mater.</i> 34, 10133 (2022).</a></li>
   <li><a class="off" href="/papers/vincent-chem-mater-2023/">S. Vincent, J. H. Chang, <b>P. Canepa</b>, and J. M. García-Lastra; <i>Chem. Mater.</i> 35, 3503 (2023).</a></li>
   <li><a class="off" href="/papers/butler-npj-comput-mater-2019/">K. T. Butler, G. S. Gautam, and <b>P. Canepa</b>; <i>npj Comput. Mater.</i> 5, 19 (2019).</a></li>
   <li><a class="off" href="/papers/deng-energy-environ-sci-2022/">Z. Deng, V. Kumar, F. T. Bölle, F. Caro, A. A. Franco, I. E. Castelli, <b>P. Canepa</b>, and Z.-W. Seh; <i>Energy Environ. Sci.</i> 15, 579 (2022).</a></li>
-  <li><a class="off" href="/papers/li-prx-energy-2022/">Y. Li, <b>P. Canepa</b>, and P. Gorai; <i>Phys. Rev. X Energy</i> 1, 023004 (2022).</a></li>
   <li><a class="off" href="/papers/wang-j-mater-chem-a-2022b/">J. Wang, A. A. Panchal, G. S. Gautam, and <b>P. Canepa</b>; <i>J. Mater. Chem. A</i> 10, 19732 (2022).</a></li>
   <li><a class="off" href="/papers/chen-chem-mater-2023b/">H. Chen, Z. Deng, Y. Li, and <b>P. Canepa</b>; <i>Chem. Mater.</i> 35, 5657 (2023).</a></li>
   <li><a class="off" href="/papers/chen-chem-mater-2019/">T. Chen, G. S. Gautam, and <b>P. Canepa</b>; <i>Chem. Mater.</i> 31, 8087–8099 (2019).</a></li>
   <li><a class="off" href="/papers/symington-j-mater-chem-a-2021/">A. R. Symington, M. Molinari, J. A. Dawson, J. M. Statham, J. Purton, <b>P. Canepa</b>, and S. C. Parker; <i>J. Mater. Chem. A</i> 9, 6487–6498 (2021).</a></li>
   <li><a class="off" href="/papers/dawson-chem-mater-2019/">J. A. Dawson, <b>P. Canepa</b>, M. J. Clarke, T. Famprikis, D. Ghosh, and M. S. Islam; <i>Chem. Mater.</i> 31, 5296 (2019).</a></li>
-  <li><a class="off" href="/papers/xie-adv-energy-mater-2024/">W. Xie, Z. Deng, Z. Liu, T. Famprikis, K. T. Butler, and <b>P. Canepa</b>; <i>Adv. Energy Mater.</i> 14, 2304230 (2024).</a></li>
   <li><a class="off" href="/papers/li-j-mater-chem-a-2022/">Y. Li, A. M. Prabhu, T. Choksi, and <b>P. Canepa</b>; <i>J. Mater. Chem. A</i> 10, 4960 (2022).</a></li>
   <li><a class="off" href="/papers/panchal-acs-energy-lett-2024/">A. A. Panchal, T. N. T. Pennebaker, E. Sebti, Y. Li, Y. Li, R. J. Clement, and <b>P. Canepa</b>; <i>ACS Energy Lett.</i> 9, 5935–5944 (2024).</a></li>
   <li><a class="off" href="/papers/pennebaker-chemrxiv-2025/">T. N. T. Pennebaker, E. Sebti, A. Panchal, C.-J. Huang, Y. Trenikhina, T. Li, Y. Li, Y. Li, S. T. Kelly, Y. S. Meng, <b>P. Canepa</b>, and R. J. Clement; <i>ChemRxiv</i> (2025).</a></li>
@@ -421,7 +504,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-10T08:28:38-05:00">Oct. 10, 2026 at 8:28 a.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-11T08:35:44-05:00">Oct. 11, 2026 at 8:35 a.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>

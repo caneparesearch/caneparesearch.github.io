@@ -27,7 +27,7 @@
 	<meta property="og:title" content="Method development">
 	<meta property="og:description" content="Methods and open-source codes of the Canepa Research Lab: accurate density functionals, surface models, kinetic Monte Carlo and machine-learning potentials.">
 	<meta property="og:url" content="https://caneparesearch.org/research/method-development/">
-	<meta property="og:image" content="https://caneparesearch.org/images/research/method-development_splash.png">
+	<meta property="og:image" content="https://caneparesearch.org/images/research/method-development_splash.jpg">
 	<meta property="og:image:alt" content="Method development">
 	<meta property="article:published_time" content="2026-10-09T00:00:00-05:00">
 	<meta name="twitter:card" content="summary_large_image">
@@ -96,7 +96,7 @@
 	<link rel="preload" href="/css/fonts/inter/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=ff233d03ae" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=48b6ab633b" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -152,7 +152,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=a9fcaf0a2d">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=1457f3d145">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -253,7 +253,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			
-			<p class="news-author"><span class="reading-time"><i class="fa-regular fa-clock" aria-hidden="true"></i>2 min read</span>
+			<p class="news-author"><span class="reading-time"><i class="fa-regular fa-clock" aria-hidden="true"></i>3 min read</span>
 </p>
 		
 		</div>
@@ -283,24 +283,59 @@
 	
 	<source type="image/webp" srcset="/images/research/method-development_splash.webp">
 	
-	<img src="/images/research/method-development_splash.png" class="offset offset-research" width="752" height="738" alt="">
+	<img src="/images/research/method-development_splash.jpg" class="offset offset-research" width="580" height="326" alt="">
 </picture>
 
 
 			
 			
 			<div class="post research-text">
-				<p>Our predictions about materials are only as reliable as the methods behind them. Alongside our work on specific materials, we develop and test methods that make first-principles simulations more accurate, reach properties that standard approaches miss, and extend them to the larger systems and longer times over which many properties of real materials emerge. Where we can, we release them as open-source codes, listed on our <a href="/software/">Software</a> page.</p>
+				<p>Our predictions about materials are only as reliable as the methods behind them. First-principles calculations, chiefly density functional theory, rest on approximations that fail for some materials, and they can follow only a few hundred atoms for tens of picoseconds, while many properties of real materials, such as ion transport, phase behaviour and degradation, emerge over far larger systems and longer times. Alongside our work on specific materials, we therefore develop and test methods that make first-principles simulations more accurate, build realistic models of surfaces and interfaces, and bridge length and time scales by combining first-principles data with cluster expansions, Monte Carlo and kinetic Monte Carlo simulations, and machine-learned interatomic potentials. We test them against experiments, often together with our collaborators, and, where we can, release them as open-source codes, such as <a href="/software/#kmcpy">kMCpy</a> and <a href="/software/#salami">SALAMI</a>, listed on our <a href="/software/">Software</a> page.</p>
 
-<p><strong>More accurate density functionals.</strong> Density functional theory struggles with transition-metal oxides, whose partly filled <em>d</em> shells make the self-interaction error of common functionals severe, which in turn degrades band gaps, magnetic moments and oxidation energies, all of which matter for battery cathodes. With r<sup>2</sup>SCANY@r<sup>2</sup>SCANX, we use one fraction of exact exchange to compute the electron density and another for the energy, correcting both sources of error at once. With only one or two parameters, it improves on r<sup>2</sup>SCAN for 20 strongly correlated oxides and outperforms the widely used r<sup>2</sup>SCAN+<em>U</em>.<sup><a href="/papers/gopidi-phys-rev-b-2026/">1</a></sup></p>
+<!-- Links to the page's four methods and its references, as on Rechargeable batteries -->
+<nav class="page-jump" aria-label="On this page">
+ <span class="page-jump-label">On this page:</span>
+ <ul>
+  <li><a href="#density-functionals">More accurate density functionals</a></li>
+  <li><a href="#surface-models">Realistic surface models</a></li>
+  <li><a href="#ion-transport">Ion transport over long times</a></li>
+  <li><a href="#machine-learning">Larger systems with machine learning</a></li>
+  <li><a href="#references">References</a></li>
+ </ul>
+</nav>
 
-<p><strong>Realistic surface models.</strong> Cutting a crystal of a multinary compound along a conventional plane often slices through its strongly bonded polyhedra and gives unphysical surface energies. Our code SALAMI builds symmetric, charge-neutral and dipole-free slab models whose surface atoms keep their preferred coordination. For the solid electrolyte Li<sub>3</sub>PS<sub>4</sub> and the transparent conducting oxide ZnSb<sub>2</sub>O<sub>6</sub>, these models lower the surface energies markedly and shrink the predicted Wulff shape by about 20%.<sup><a href="/papers/xie-arxiv-2026/">2</a></sup></p>
+<figure class="text-figure text-figure-small">
 
-<p><strong>Ion transport over long times.</strong> Kinetic Monte Carlo can follow ion migration for far longer than molecular dynamics, but building a model of the migration rates has been laborious. Our Python package kMCpy enumerates all possible migration events in a crystal, derives their rates at first-principles accuracy through cluster-expansion Hamiltonians, and solves the kinetics, for materials of any dimensionality.<sup><a href="/papers/deng-comput-mater-sci-2023/">3</a></sup></p>
 
-<p><strong>Larger systems with machine learning.</strong> Machine-learning interatomic potentials, trained on first-principles calculations, reproduce their accuracy at a small fraction of the cost and make simulations of thousands of atoms over nanoseconds routine. With colleagues across the field, we have reviewed what these potentials can and cannot yet do for battery research, and what the next generation will need.<sup><a href="/papers/phuthi-chem-mater-2026/">4</a></sup></p>
 
-<p><strong>Relevant references</strong></p>
+
+
+
+
+
+
+
+
+<picture>
+	
+	<source type="image/webp" srcset="/images/research/oxidation-energy-errors.webp" />
+	
+	<img src="/images/research/oxidation-energy-errors.png" width="752" height="738" alt="Errors in computed oxidation energies of transition-metal oxides for a range of density functionals" loading="lazy" />
+</picture>
+
+
+<figcaption><b>Figure 1:</b> Errors in the oxidation energies of transition-metal oxides, in eV per O<sub>2</sub>, computed with a range of density functionals, from LSDA-PW92 and PBE to r<sup>2</sup>SCAN, r<sup>2</sup>SCAN+<i>U</i> and r<sup>2</sup>SCANY@r<sup>2</sup>SCANX combinations such as r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN50.<sup><a href="/papers/gopidi-phys-rev-b-2026/">1</a></sup></figcaption>
+</figure>
+
+<p id="density-functionals"><strong>More accurate density functionals.</strong> Density functional theory struggles with transition-metal oxides, whose partly filled <em>d</em> shells make the self-interaction error of common functionals severe, which in turn degrades band gaps, magnetic moments and oxidation energies, all of which matter for battery cathodes. With r<sup>2</sup>SCANY@r<sup>2</sup>SCANX, we use one fraction of exact exchange to compute the electron density and another for the energy, correcting both sources of error at once. With only one or two parameters, it improves on r<sup>2</sup>SCAN for 20 strongly correlated oxides (see <strong>Figure 1</strong>) and outperforms the widely used r<sup>2</sup>SCAN+<em>U</em>.<sup><a href="/papers/gopidi-phys-rev-b-2026/">1</a></sup></p>
+
+<p id="surface-models"><strong>Realistic surface models.</strong> Cutting a crystal of a multinary compound along a conventional plane often slices through its strongly bonded polyhedra and gives unphysical surface energies. Our code SALAMI builds symmetric, charge-neutral and dipole-free slab models whose surface atoms keep their preferred coordination. For the solid electrolyte Li<sub>3</sub>PS<sub>4</sub> and the transparent conducting oxide ZnSb<sub>2</sub>O<sub>6</sub>, these models lower the surface energies markedly and shrink the predicted Wulff shape by about 20%.<sup><a href="/papers/xie-arxiv-2026/">2</a></sup></p>
+
+<p id="ion-transport"><strong>Ion transport over long times.</strong> Kinetic Monte Carlo can follow ion migration for far longer than molecular dynamics, but building a model of the migration rates has been laborious. Our Python package kMCpy enumerates all possible migration events in a crystal, derives their rates at first-principles accuracy through cluster-expansion Hamiltonians, and solves the kinetics, for materials of any dimensionality.<sup><a href="/papers/deng-comput-mater-sci-2023/">3</a></sup></p>
+
+<p id="machine-learning"><strong>Larger systems with machine learning.</strong> Machine-learning interatomic potentials, trained on first-principles calculations, reproduce their accuracy at a small fraction of the cost and make simulations of thousands of atoms over nanoseconds routine. With colleagues across the field, we have reviewed what these potentials can and cannot yet do for battery research, and what the next generation will need.<sup><a href="/papers/phuthi-chem-mater-2026/">4</a></sup></p>
+
+<p id="references"><strong>Relevant references</strong></p>
 
 <ol class="research-refs">
   <li><a class="off" href="/papers/gopidi-phys-rev-b-2026/">H. R. Gopidi, R. Zhang, Y. Wang, A. Patra, J. Sun, A. Ruzsinszky, J. P. Perdew, and <b>P. Canepa</b>; <i>Phys. Rev. B</i> 113, 165115 (2026).</a></li>
@@ -380,7 +415,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-10T08:28:38-05:00">Oct. 10, 2026 at 8:28 a.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-11T08:35:44-05:00">Oct. 11, 2026 at 8:35 a.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
