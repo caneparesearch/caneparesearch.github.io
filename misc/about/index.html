@@ -96,7 +96,7 @@
 	<link rel="preload" href="/css/fonts/inter/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=31144e792c" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=c7ca73b1ca" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -152,7 +152,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=665fccaf3e">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=eaae492a55">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -404,7 +404,7 @@ bundle <span class="nb">install</span>
     <summary><h4>Research pages</h4></summary>
 
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">order</code> sets a page’s place on the Research page (battery topics first), and in the row of research pictures on the home page, which shows the first four; there each title fits on one line, so a long one needs a <code class="language-plaintext highlighter-rouge">short_title</code> (“Porous frameworks”).</li>
+      <li><code class="language-plaintext highlighter-rouge">order</code> sets a page’s place on the Research page (battery topics first), and in the row of research pictures on the home page, which shows the first four; there each title fits on one line, so a longer one needs a shorter form there, in <code class="language-plaintext highlighter-rouge">short_title</code>.</li>
       <li><code class="language-plaintext highlighter-rouge">references</code> lists the addresses of our papers the page cites (<code class="language-plaintext highlighter-rouge">/papers/&lt;name&gt;/</code>), in order of first citation; <code class="language-plaintext highlighter-rouge">{% include research-refs.html refs=page.references %}</code> lists them under “Relevant references” in the style of the papers’ pages, linked to them, and each citation in the text is a superscript number linked to the same page. A paper from another group, which has no page here, is given as <code class="language-plaintext highlighter-rouge">authors</code>, <code class="language-plaintext highlighter-rouge">journal</code> and <code class="language-plaintext highlighter-rouge">doi</code>.</li>
       <li>Figures in the text are <code class="language-plaintext highlighter-rouge">&lt;figure class="text-figure"&gt;</code> blocks, placed before the paragraph they illustrate: floated right beside it, with their caption under them, and across the column on phones. Number them in order and cite each in the text (“see <strong>Figure 1</strong>”). Add the class <code class="language-plaintext highlighter-rouge">text-figure-medium</code> to give a figure 36% of the column instead of 45%, or <code class="language-plaintext highlighter-rouge">text-figure-small</code> for 30% (a square or tall figure). Add <code class="language-plaintext highlighter-rouge">text-figure-left</code> to place a figure on the left of its paragraph instead.</li>
       <li>On the Research page each picture fills a 3:2 frame, cropped from the bottom; a picture more than twice as wide as tall, or one whose page sets <code class="language-plaintext highlighter-rouge">image_fit: contain</code>, is shown whole, and <code class="language-plaintext highlighter-rouge">image_position</code> (for example <code class="language-plaintext highlighter-rouge">center 40%</code>) moves the crop. A picture on a transparent background (saved as PNG, with a WebP copy that keeps the transparency) takes <code class="language-plaintext highlighter-rouge">image_transparent: true</code>, so it sits straight on the page in dark mode instead of on the white card other pictures get. A page’s <code class="language-plaintext highlighter-rouge">image</code> also shows at the top of the page itself; set <code class="language-plaintext highlighter-rouge">splash: false</code> when it is set in the text as a figure instead.</li>
@@ -418,7 +418,7 @@ bundle <span class="nb">install</span>
 
     <ul>
       <li>The navigation bar lists Research, Papers, Software, Team, News and Join, in that order (what the lab does, its output, its people, then news, and a way in for prospective members); its links are in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>. The pages in <code class="language-plaintext highlighter-rouge">misc/_posts/</code> are linked from the footer by their <code class="language-plaintext highlighter-rouge">title</code>; give one a <code class="language-plaintext highlighter-rouge">nav_title</code> for a shorter label (About) or <code class="language-plaintext highlighter-rouge">footer: false</code> to leave it out (Join, already in the navigation bar).</li>
-      <li>Titles and headings are in sentence case, with capitals only for the first word and for proper nouns (“Gas storage and separation in porous frameworks”, “Graduate study at Purdue”); paper titles keep their journal’s capitals, and people’s positions on the Team page (“PhD Student”) keep theirs.</li>
+      <li>Titles and headings are in sentence case, with capitals only for the first word and for proper nouns (“Organic electroactive materials”, “Graduate study at Purdue”); paper titles keep their journal’s capitals, and people’s positions on the Team page (“PhD Student”) keep theirs.</li>
       <li>Dates are shown as “Sept. 19, 2026” everywhere (the <code class="language-plaintext highlighter-rouge">ap_date</code> filter in <code class="language-plaintext highlighter-rouge">_plugins/last-update.rb</code>).</li>
       <li>News and research posts show an estimated reading time after their date, as do the About, Join, and Mission and values pages under their title: the words of the text, without its references, at 200 a minute, rounded up (<code class="language-plaintext highlighter-rouge">_includes/reading-time.html</code>). To add it to another page, put <code class="language-plaintext highlighter-rouge">&lt;p class="news-author"&gt;{% include reading-time.html text=page.content %}&lt;/p&gt;</code> after its title block.</li>
       <li>Every page gets a <code class="language-plaintext highlighter-rouge">&lt;meta name="description"&gt;</code> for search results: its own <code class="language-plaintext highlighter-rouge">description</code> field, otherwise a paper’s abstract or <code class="language-plaintext highlighter-rouge">Talk by &lt;author&gt; at &lt;conference&gt;: &lt;title&gt;</code> for a video, otherwise a post’s first paragraph, otherwise the site tagline in <code class="language-plaintext highlighter-rouge">_config.yml</code>, cut to 160 characters. The home page sets its own in <code class="language-plaintext highlighter-rouge">index.html</code>; add a <code class="language-plaintext highlighter-rouge">description</code> to any other page whose first paragraph makes a poor summary. Character references in titles and descriptions (<code class="language-plaintext highlighter-rouge">&amp;#58;</code>, <code class="language-plaintext highlighter-rouge">&amp;alpha;</code>) are decoded for link previews by the <code class="language-plaintext highlighter-rouge">decode_entities</code> filter (<code class="language-plaintext highlighter-rouge">_plugins/decode-entities.rb</code>).</li>
@@ -673,7 +673,7 @@ bundle <span class="nb">install</span>
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-11T10:57:51-05:00">Oct. 11, 2026 at 10:57 a.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-11T11:53:46-05:00">Oct. 11, 2026 at 11:53 a.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
