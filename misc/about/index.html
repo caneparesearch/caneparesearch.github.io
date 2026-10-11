@@ -152,7 +152,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=b92d9fce6e">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=665fccaf3e">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -521,7 +521,7 @@ bundle <span class="nb">install</span>
     <summary><h4>Images</h4></summary>
 
     <ul>
-      <li>Pictures rendered through <code class="language-plaintext highlighter-rouge">_includes/responsive-image.html</code> (graphical abstracts, research and news pictures, team photos) are served as WebP, with the original PNG or JPEG as a <code class="language-plaintext highlighter-rouge">&lt;picture&gt;</code> fallback. Add a WebP copy beside every new picture (<code class="language-plaintext highlighter-rouge">cwebp original.png -o original.webp</code>) and never delete the original. A few large news photos also have a 640px-wide WebP for phones, listed in <code class="language-plaintext highlighter-rouge">_data/responsive_images.yml</code>.</li>
+      <li>Pictures rendered through <code class="language-plaintext highlighter-rouge">_includes/responsive-image.html</code> (graphical abstracts, research and news pictures, team photos) are served as WebP, with the original PNG or JPEG as a <code class="language-plaintext highlighter-rouge">&lt;picture&gt;</code> fallback. Add a WebP copy beside every new picture (<code class="language-plaintext highlighter-rouge">cwebp original.png -o original.webp</code>) and never delete the original. A few large pictures (news photos, and the porous-frameworks research picture) also have a 640px-wide WebP, <code class="language-plaintext highlighter-rouge">&lt;name&gt;-640w.webp</code>, listed in <code class="language-plaintext highlighter-rouge">_data/responsive_images.yml</code> with the original’s width, which phones and the home page’s research row load instead.</li>
       <li><code class="language-plaintext highlighter-rouge">_data/image_sizes.yml</code> records each picture’s width and height, so the include can reserve its space and the page does not shift while it loads; add an entry with <code class="language-plaintext highlighter-rouge">sips -g pixelWidth -g pixelHeight path/to/image</code>.</li>
       <li>Thumbnails on the listing pages (news, research, papers, team) pass <code class="language-plaintext highlighter-rouge">loading="lazy"</code> to the include, so they load only once they scroll into view.</li>
     </ul>
@@ -673,7 +673,7 @@ bundle <span class="nb">install</span>
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-11T10:53:33-05:00">Oct. 11, 2026 at 10:53 a.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-11T10:57:51-05:00">Oct. 11, 2026 at 10:57 a.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
