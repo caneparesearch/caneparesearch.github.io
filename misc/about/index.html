@@ -96,7 +96,7 @@
 	<link rel="preload" href="/css/fonts/inter/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=46034df3e0" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=d31db381e3" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -152,7 +152,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=04247422b6">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=afb263bebf">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -269,7 +269,7 @@
 
 <div class="about-text">
 
-  <p>Source of the website of the Canepa Research Group, <a href="https://caneparesearch.org">caneparesearch.org</a>. The site is built with <a href="https://jekyllrb.com/">Jekyll</a> and published through GitHub Pages from a separate and private repository. A <code class="language-plaintext highlighter-rouge">HISTORY.md</code> file in the source repository records the site’s milestones and the Cloudflare changes that git does not.</p>
+  <p>Source of the website of the Canepa Research Lab, <a href="https://caneparesearch.org">caneparesearch.org</a>. The site is built with <a href="https://jekyllrb.com/">Jekyll</a> and published through GitHub Pages from a separate and private repository. A <code class="language-plaintext highlighter-rouge">HISTORY.md</code> file in the source repository records the site’s milestones and the Cloudflare changes that git does not.</p>
 
   <h2 id="build-the-site-locally">Build the site locally</h2>
 
@@ -438,7 +438,7 @@ bundle <span class="nb">install</span>
 
   <h2 id="design">Design</h2>
 
-  <p>The site is a light layer over a trimmed Bootstrap 5 grid: text set in Inter, colours that follow the visitor’s light or dark setting and meet WCAG AA contrast in both, and every font, icon and script served from the site itself, apart from Google Analytics, the Altmetric and Dimensions badges, and the embedded videos and map. Pages are meant to load quickly on a phone, so pictures are served as WebP with their space reserved, and listing thumbnails load only as they scroll into view. The sections below give the details.</p>
+  <p>The site is a light layer over a trimmed Bootstrap 5 grid: text set in Inter, colors that follow the visitor’s light or dark setting and meet WCAG AA contrast in both, and every font, icon and script served from the site itself, apart from Google Analytics, the Altmetric and Dimensions badges, and the embedded videos and map. Pages are meant to load quickly on a phone, so pictures are served as WebP with their space reserved, and listing thumbnails load only as they scroll into view. The sections below give the details.</p>
 
   <details class="fold">
     <summary><h4>Styles and layout</h4></summary>
@@ -485,11 +485,11 @@ bundle <span class="nb">install</span>
   </details>
 
   <details class="fold">
-    <summary><h4>Colours and accessibility</h4></summary>
+    <summary><h4>Colors and accessibility</h4></summary>
 
     <ul>
-      <li>Colours are CSS variables in <code class="language-plaintext highlighter-rouge">css/_theme.scss</code>. The site follows the visitor’s light or dark setting, and the moon/sun button in the navigation bar switches and remembers the choice.</li>
-      <li>All text meets WCAG AA contrast (4.5:1) in both themes; keep it that way when you change a colour (the navigation bar’s hover and active text uses <code class="language-plaintext highlighter-rouge">$link-color-navlink-on-dark</code> in <code class="language-plaintext highlighter-rouge">css/_variables.scss</code> for this reason). Links in running text are not underlined, since their colour sets them apart, except those drawn in the colour of the surrounding text (the home page’s introduction, the author and DOI links in <code class="language-plaintext highlighter-rouge">.smallnote</code>, the footer credits), which get a faint underline so they are not told apart by colour alone (WCAG 1.4.1).</li>
+      <li>Colors are CSS variables in <code class="language-plaintext highlighter-rouge">css/_theme.scss</code>. The site follows the visitor’s light or dark setting, and the moon/sun button in the navigation bar switches and remembers the choice.</li>
+      <li>All text meets WCAG AA contrast (4.5:1) in both themes; keep it that way when you change a color (the navigation bar’s hover and active text uses <code class="language-plaintext highlighter-rouge">$link-color-navlink-on-dark</code> in <code class="language-plaintext highlighter-rouge">css/_variables.scss</code> for this reason). Links in running text are not underlined, since their color sets them apart, except those drawn in the color of the surrounding text (the home page’s introduction, the author and DOI links in <code class="language-plaintext highlighter-rouge">.smallnote</code>, the footer credits), which get a faint underline so they are not told apart by color alone (WCAG 1.4.1).</li>
       <li>Every page’s content sits in a <code class="language-plaintext highlighter-rouge">&lt;main&gt;</code> element, and icon-only links carry an <code class="language-plaintext highlighter-rouge">aria-label</code>, with <code class="language-plaintext highlighter-rouge">aria-hidden="true"</code> on the icon.</li>
     </ul>
 
@@ -673,7 +673,7 @@ bundle <span class="nb">install</span>
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-11T14:10:27-05:00">Oct. 11, 2026 at 2:10 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-12T04:45:12-05:00">Oct. 12, 2026 at 4:45 a.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
