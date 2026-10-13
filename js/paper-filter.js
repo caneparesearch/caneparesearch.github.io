@@ -147,8 +147,16 @@
       siteLink.hidden = !words.length && !phrases.length
     }
 
+    // each year's count beside its heading: the papers shown in it, or all of them unfiltered
+    const filtered = words.length || phrases.length || topic
     years.forEach(function (year) {
-      year.hidden = !year.querySelector('.paperbox:not([hidden])')
+      const visible = year.querySelectorAll('.paperbox:not([hidden])').length
+      year.hidden = !visible
+      const count = year.querySelector('.year-count')
+      if (count) {
+        const n = filtered ? visible : Number(count.getAttribute('data-total'))
+        count.textContent = n + (n === 1 ? ' paper' : ' papers')
+      }
     })
 
     if (!words.length && !phrases.length && !topic) {
