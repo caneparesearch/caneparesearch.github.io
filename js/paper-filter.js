@@ -1,7 +1,7 @@
 // Search box for the papers list (papers/index.html). As the visitor types, it hides
 // the paper cards whose text does not contain every word of the query, hides the years
 // left with no papers, and says how many papers match. A card's text is its data-search
-// attribute (title, authors, journal and its full name, year, DOI) plus the paper's
+// attribute (title, authors, journal and its full name, year, DOI, topics) plus the paper's
 // abstract, which comes
 // from papers/search.json: that file is fetched the first time the box is used (or at
 // once, for a ?q= address), and until it arrives the search covers the rest. The query
@@ -19,6 +19,13 @@
 // appear together, in that order: "Chemistry of Materials" (with the quotes) leaves out
 // papers whose abstract merely contains those three words.
 //
+// The topic buttons above the count (the topics of _data/topics.yml) narrow the list to one
+// topic, together with any words in the box; the topic is kept in the address too
+// (?topic=batteries), so the research pages can link to their papers. Typing a topic's name
+// exactly ("Solid-state batteries") presses its button, so the box and the button give the
+// same papers, rather than also the papers whose text happens to contain those words (as
+// "solid-state NMR" does); the button is released again when the text changes.
+//
 // Loaded with `defer`, so the page is fully parsed when this runs (see js/back-to-top.js).
 (function () {
   const box = document.querySelector('.paper-search')
@@ -28,6 +35,9 @@
   if (!box || !input || !status) return
 
   const cards = Array.prototype.slice.call(document.querySelectorAll('.paperbox[data-search]'))
+  const topicButtons = Array.prototype.slice.call(document.querySelectorAll('.paper-topic'))
+  let topic = ''
+  let topicFromText = false // the topic was pressed by typing its name, not by a click
   const years = Array.prototype.slice.call(document.querySelectorAll('.paper-year'))
 
   // Lower case without accents and with single spaces, so "lopez" finds "López" and a
@@ -73,6 +83,7 @@
   cards.forEach(function (card) {
     card.searchText = normalize(card.getAttribute('data-search'))
     card.authors = parseAuthors(card.getAttribute('data-authors'))
+    card.topics = (card.getAttribute('data-topics') || '').split(' ')
     team.forEach(function (names) {
       if (isAuthor(card, names[0])) card.searchText += ' ' + normalize(names.join(' '))
     })
@@ -121,7 +132,7 @@
     let shown = 0
 
     cards.forEach(function (card) {
-      const match = phrases.every(function (phrase) {
+      const match = (!topic || card.topics.indexOf(topic) !== -1) && phrases.every(function (phrase) {
         return card.searchText.indexOf(phrase) !== -1
       }) && words.every(function (word) {
         return card.searchText.indexOf(word) !== -1 || givenName(card, word, words)
@@ -140,16 +151,16 @@
       year.hidden = !year.querySelector('.paperbox:not([hidden])')
     })
 
-    if (!words.length && !phrases.length) {
+    if (!words.length && !phrases.length && !topic) {
       status.textContent = ''
     } else if (shown === 0) {
-      status.textContent = 'No papers match “' + query.trim() + '”'
+      status.textContent = query.trim() ? 'No papers match “' + query.trim() + '”' + (topic ? ' in this topic' : '') : 'No papers on this topic'
     } else {
       status.textContent = shown + ' of ' + cards.length + (cards.length === 1 ? ' paper' : ' papers')
     }
   }
 
-  // Keep ?q= in step with the box without adding a history entry per keystroke.
+  // Keep ?q= (and ?topic=) in step with the box without adding a history entry per keystroke.
   function saveQueryNow () {
     clearTimeout(saveTimer)
     const query = input.value.trim()
@@ -158,6 +169,11 @@
       url.searchParams.set('q', query)
     } else {
       url.searchParams.delete('q')
+    }
+    if (topic) {
+      url.searchParams.set('topic', topic)
+    } else {
+      url.searchParams.delete('topic')
     }
     if (url.href !== window.location.href) history.replaceState(null, '', url)
   }
@@ -174,8 +190,32 @@
 
   input.addEventListener('focus', loadAbstracts)
 
+  // The button whose topic name is exactly the text typed, if any
+  function topicNamed (query) {
+    const wanted = normalize(query).trim()
+    const button = wanted && topicButtons.filter(function (b) {
+      const name = b.getAttribute('data-topic') && b.firstChild.textContent
+      return name && normalize(name).trim() === wanted
+    })[0]
+    return button ? button.getAttribute('data-topic') : ''
+  }
+
+  // Typing a topic's name presses its button; changing the text releases a button pressed
+  // that way (a button the visitor clicked stays pressed)
+  function followTyping () {
+    const named = topicNamed(input.value)
+    if (named) {
+      selectTopic(named)
+      topicFromText = true
+    } else if (topicFromText) {
+      selectTopic('')
+      topicFromText = false
+    }
+  }
+
   input.addEventListener('input', function () {
     loadAbstracts()
+    followTyping()
     apply(input.value)
     saveQuerySoon()
   })
@@ -183,6 +223,7 @@
   input.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && input.value) {
       input.value = ''
+      followTyping()
       apply('')
       saveQueryNow()
     }
@@ -191,11 +232,30 @@
   input.addEventListener('blur', saveQueryNow)
   window.addEventListener('pagehide', saveQueryNow)
 
-  box.hidden = false
-  const initial = new URLSearchParams(window.location.search).get('q')
-  if (initial) {
-    input.value = initial
-    apply(initial)
-    loadAbstracts()
+  // One topic at a time: pressing a topic selects it, pressing it again (or All) clears it.
+  function selectTopic (slug) {
+    topic = topicButtons.some(function (button) { return button.getAttribute('data-topic') === slug }) ? slug : ''
+    topicButtons.forEach(function (button) {
+      button.setAttribute('aria-pressed', button.getAttribute('data-topic') === topic ? 'true' : 'false')
+    })
   }
+
+  topicButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      const slug = button.getAttribute('data-topic')
+      selectTopic(slug === topic ? '' : slug)
+      topicFromText = false
+      apply(input.value)
+      saveQueryNow()
+    })
+  })
+
+  box.hidden = false
+  const params = new URLSearchParams(window.location.search)
+  const initial = params.get('q')
+  selectTopic(params.get('topic') || '')
+  if (initial) input.value = initial
+  if (initial && !topic) followTyping()
+  if (initial || topic) apply(input.value)
+  if (initial) loadAbstracts()
 })()
