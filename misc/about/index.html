@@ -121,7 +121,7 @@
 	<!-- Opens and closes the mobile menu (in place of Bootstrap's JavaScript bundle) -->
 <script src="/js/nav-toggle.js?v=8da5aef213" defer></script>
 
-<!-- Spam-protected e-mail links -->
+<!-- Spam-protected email links -->
 <script src="/js/email-links.js?v=5f0ad451d1" defer></script>
 
 <!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
@@ -152,7 +152,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=ec57cd0c35">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=3264354cd3">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -431,9 +431,9 @@ bundle <span class="nb">install</span>
   </details>
 
   <details class="fold">
-    <summary><h4>E-mail addresses</h4></summary>
+    <summary><h4>Email addresses</h4></summary>
 
-    <p>Never write an e-mail address in a page. Use the include instead, which prints “name [at] example.org” and lets <code class="language-plaintext highlighter-rouge">js/email-links.js</code> build the <code class="language-plaintext highlighter-rouge">mailto:</code> link only while a visitor hovers, focuses or taps it, so the address is in neither the page source nor the loaded page. The member layout does this for a team page’s <code class="language-plaintext highlighter-rouge">email</code> field.</p>
+    <p>Never write an email address in a page. Use the include instead, which prints “name [at] example.org” and lets <code class="language-plaintext highlighter-rouge">js/email-links.js</code> build the <code class="language-plaintext highlighter-rouge">mailto:</code> link only while a visitor hovers, focuses or taps it, so the address is in neither the page source nor the loaded page. The member layout does this for a team page’s <code class="language-plaintext highlighter-rouge">email</code> field.</p>
 
     <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>email-link.html<span class="w"> </span><span class="na">address</span><span class="o">=</span><span class="s2">"name@example.org"</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div>    </div>
@@ -576,7 +576,7 @@ bundle <span class="nb">install</span>
     <li><strong>Fingerprinted addresses.</strong> The CSS, JS and search-index addresses end in <code class="language-plaintext highlighter-rouge">?v=</code> and a fingerprint of the file (the <code class="language-plaintext highlighter-rouge">fingerprint</code> filter in <code class="language-plaintext highlighter-rouge">_plugins/fingerprint.rb</code>), so a changed file gets a new address and is never held back by a stale cache, while an unchanged one stays cached.</li>
     <li><strong>Content-Security-Policy and Referrer-Policy</strong>, sent as <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> tags in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>: <code class="language-plaintext highlighter-rouge">base-uri 'self'</code> and <code class="language-plaintext highlighter-rouge">form-action 'self'</code> stop an injected script from changing the page’s base address or sending a form elsewhere; <code class="language-plaintext highlighter-rouge">object-src 'none'</code> blocks plugin content; <code class="language-plaintext highlighter-rouge">strict-origin-when-cross-origin</code> sends other sites only the origin of a page, not its path.</li>
     <li><strong>Cloudflare settings</strong> are dashboard configuration, recorded below because no file holds them.</li>
-    <li><strong>E-mail addresses never appear in a page</strong> (see E-mail addresses above).</li>
+    <li><strong>Email addresses never appear in a page</strong> (see Email addresses above).</li>
     <li><strong>No login of its own.</strong> The “Intranet” link in the footer leads to a separate Google Sites page that requires a Google sign-in; this codebase has no login, sessions or credentials.</li>
     <li><strong>Search engines.</strong> <code class="language-plaintext highlighter-rouge">robots.txt</code> allows every crawler and lists <code class="language-plaintext highlighter-rouge">sitemap.xml</code> (written by <code class="language-plaintext highlighter-rouge">jekyll-sitemap</code> and dated by <code class="language-plaintext highlighter-rouge">update.sh</code>); <code class="language-plaintext highlighter-rouge">map.xml</code>, the sitemap of the paper PDFs, is listed by the bucket’s own <code class="language-plaintext highlighter-rouge">robots.txt</code>. Nothing on the site is meant to be hidden from search engines. Edit <code class="language-plaintext highlighter-rouge">robots.txt</code> here, not in <code class="language-plaintext highlighter-rouge">caneparesearch.github.io</code>, whose copy is overwritten on every publish.</li>
   </ul>
@@ -682,7 +682,7 @@ bundle <span class="nb">install</span>
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-15T15:00:09-05:00">Oct. 15, 2026 at 3:00 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-15T15:11:54-05:00">Oct. 15, 2026 at 3:11 p.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
