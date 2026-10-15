@@ -96,7 +96,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=cd76f92f5e" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=6e5e53d865" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -152,7 +152,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=2783c8dc0d">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=ec57cd0c35">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -295,17 +295,29 @@
 			<div class="post research-text">
 				<p>Porous frameworks, such as metal–organic frameworks, hold small molecules inside pores only a few ångströms wide. By choosing the size and chemistry of those pores, a framework can be made to store a gas or to take up one gas and reject another, which makes these materials candidates for capturing CO<sub>2</sub>, separating air and hydrocarbons, and storing hydrogen at moderate pressures. Our first-principles calculations, working alongside adsorption, diffraction and spectroscopy measurements by our collaborators, show where the molecules bind and why a framework prefers one gas over another.</p>
 
-<p>Much of our recent work concerns aluminum formate, Al(HCOO)<sub>3</sub> or ALF, a framework made cheaply from commodity chemicals. ALF removes CO<sub>2</sub> from N<sub>2</sub>-rich gas streams by a size-selective separation that rests on the small difference between the two molecules’ kinetic diameters,<sup><a href="/papers/evans-sci-adv-2022/">1</a></sup> and its hydrogen-lined pore cavities recognize CO<sub>2</sub> while rejecting hydrocarbons, including acetylene and methane.<sup><a href="/papers/zhang-j-am-chem-soc-2023/">2</a></sup> The same material adsorbs O<sub>2</sub> from air near dry-ice temperatures, without cryogenic distillation,<sup><a href="/papers/mullangi-j-am-chem-soc-2023/">3</a></sup> and stores hydrogen competitively at 120–160 K and 10–20 bar.<sup><a href="/papers/evans-j-am-chem-soc-2023/">4</a></sup> We have also traced its temperature-regulated gating, which lets temperature alone switch the separation of one gas from another, to the motion of the formate linkers that frame the windows between its cavities.<sup><a href="/papers/evans-chem-mater-2025/">5</a></sup></p>
+<!-- Links to the page's work: aluminum formate first, then the four topics of the earlier work, as on Method development -->
+<nav class="page-jump" aria-label="On this page">
+ <span class="page-jump-label">On this page:</span>
+ <ul>
+  <li><a href="#aluminum-formate">Aluminum formate (ALF)</a></li>
+  <li><a href="#move-and-bind">How molecules move and bind</a></li>
+  <li><a href="#separation">Selective separation</a></li>
+  <li><a href="#stability">Stability in real gas streams</a></li>
+  <li><a href="#guests">Responses to guests</a></li>
+ </ul>
+</nav>
+
+<p id="aluminum-formate"><strong>Aluminum formate (ALF).</strong> Much of our recent work concerns Al(HCOO)<sub>3</sub>, a framework made cheaply from commodity chemicals. ALF removes CO<sub>2</sub> from N<sub>2</sub>-rich gas streams by a size-selective separation that rests on the small difference between the two molecules’ kinetic diameters,<sup><a href="/papers/evans-sci-adv-2022/">1</a></sup> and its hydrogen-lined pore cavities recognize CO<sub>2</sub> while rejecting hydrocarbons, including acetylene and methane.<sup><a href="/papers/zhang-j-am-chem-soc-2023/">2</a></sup> The same material adsorbs O<sub>2</sub> from air near dry-ice temperatures, without cryogenic distillation,<sup><a href="/papers/mullangi-j-am-chem-soc-2023/">3</a></sup> and stores hydrogen competitively at 120–160 K and 10–20 bar.<sup><a href="/papers/evans-j-am-chem-soc-2023/">4</a></sup> We have also traced its temperature-regulated gating, which lets temperature alone switch the separation of one gas from another, to the motion of the formate linkers that frame the windows between its cavities.<sup><a href="/papers/evans-chem-mater-2025/">5</a></sup></p>
 
 <p>This builds on our earlier first-principles work on metal–organic frameworks, carried out with experimental collaborators, which spans the main questions a porous framework raises.</p>
 
-<p><strong>How molecules move and bind.</strong> We have identified how H<sub>2</sub>, CO<sub>2</sub> and H<sub>2</sub>O diffuse through the channels of MOF-74-Mg,<sup><a href="/papers/canepa-phys-rev-lett-2013/">6</a></sup> screened the adsorption of H<sub>2</sub>, CO<sub>2</sub>, CH<sub>4</sub> and H<sub>2</sub>O in MOF-74 made with 25 different metals,<sup><a href="/papers/canepa-j-mater-chem-a-2013/">7</a></sup> and developed a continuum model that predicts gas uptake in porous materials directly from first-principles gas–framework interaction energies, far faster than grand canonical Monte Carlo simulations.<sup><a href="/papers/ihm-j-phys-chem-c-2017/">8</a></sup></p>
+<p id="move-and-bind"><strong>How molecules move and bind.</strong> We have identified how H<sub>2</sub>, CO<sub>2</sub> and H<sub>2</sub>O diffuse through the channels of MOF-74-Mg,<sup><a href="/papers/canepa-phys-rev-lett-2013/">6</a></sup> screened the adsorption of H<sub>2</sub>, CO<sub>2</sub>, CH<sub>4</sub> and H<sub>2</sub>O in MOF-74 made with 25 different metals,<sup><a href="/papers/canepa-j-mater-chem-a-2013/">7</a></sup> and developed a continuum model that predicts gas uptake in porous materials directly from first-principles gas–framework interaction energies, far faster than grand canonical Monte Carlo simulations.<sup><a href="/papers/ihm-j-phys-chem-c-2017/">8</a></sup></p>
 
-<p><strong>Selective separation.</strong> In a flexible framework, we found that hydrocarbons are separated by the different pressures at which each one opens the framework’s gates, depending on chain length and on how each gas interacts with the framework.<sup><a href="/papers/nijem-j-am-chem-soc-2012/">9</a></sup></p>
+<p id="separation"><strong>Selective separation.</strong> In a flexible framework, we found that hydrocarbons are separated by the different pressures at which each one opens the framework’s gates, depending on chain length and on how each gas interacts with the framework.<sup><a href="/papers/nijem-j-am-chem-soc-2012/">9</a></sup></p>
 
-<p><strong>Stability in real gas streams.</strong> Frameworks must survive water and acid gases. We have shown how water reacts with paddle-wheel frameworks M(bdc)(ted)<sub>0.5</sub>, depending on the metal,<sup><a href="/papers/tan-chem-mater-2012/">10</a></sup> and dissociates at the open metal sites of MOF-74;<sup><a href="/papers/tan-chem-mater-2014/">11</a></sup> how SO<sub>2</sub> is taken up by paddle-wheel frameworks,<sup><a href="/papers/tan-chem-mater-2013/">12</a></sup> and how NO<sub>2</sub> decomposes in MOF-74 while SO<sub>2</sub> binds intact,<sup><a href="/papers/tan-chem-mater-2017/">13</a></sup> which bears on poisoning by the minor components of flue gases.</p>
+<p id="stability"><strong>Stability in real gas streams.</strong> Frameworks must survive water and acid gases. We have shown how water reacts with paddle-wheel frameworks M(bdc)(ted)<sub>0.5</sub>, depending on the metal,<sup><a href="/papers/tan-chem-mater-2012/">10</a></sup> and dissociates at the open metal sites of MOF-74;<sup><a href="/papers/tan-chem-mater-2014/">11</a></sup> how SO<sub>2</sub> is taken up by paddle-wheel frameworks,<sup><a href="/papers/tan-chem-mater-2013/">12</a></sup> and how NO<sub>2</sub> decomposes in MOF-74 while SO<sub>2</sub> binds intact,<sup><a href="/papers/tan-chem-mater-2017/">13</a></sup> which bears on poisoning by the minor components of flue gases.</p>
 
-<p><strong>Responses to guests.</strong> Water forms clusters in the hydrophobic cavities of a fluorinated framework while methane is adsorbed,<sup><a href="/papers/nijem-j-am-chem-soc-2013/">14</a></sup> and loading MOF-74-Zn with H<sub>2</sub>, CO<sub>2</sub>, CH<sub>4</sub> or H<sub>2</sub>O changes its structural, elastic, thermal and electronic properties in ways specific to each molecule, pointing to frameworks as gas sensors.<sup><a href="/papers/canepa-j-mater-chem-a-2015/">15</a></sup></p>
+<p id="guests"><strong>Responses to guests.</strong> Water forms clusters in the hydrophobic cavities of a fluorinated framework while methane is adsorbed,<sup><a href="/papers/nijem-j-am-chem-soc-2013/">14</a></sup> and loading MOF-74-Zn with H<sub>2</sub>, CO<sub>2</sub>, CH<sub>4</sub> or H<sub>2</sub>O changes its structural, elastic, thermal and electronic properties in ways specific to each molecule, pointing to frameworks as gas sensors.<sup><a href="/papers/canepa-j-mater-chem-a-2015/">15</a></sup></p>
 
 <p id="references"><strong>Relevant references</strong></p>
 
@@ -415,7 +427,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-15T14:56:46-05:00">Oct. 15, 2026 at 2:56 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-15T15:00:09-05:00">Oct. 15, 2026 at 3:00 p.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
