@@ -52,6 +52,7 @@
     const title = document.createElement('h3')
     title.className = 'site-search-title'
     title.appendChild(link)
+    core.appendNative(title, page, found)
     const meta = document.createElement('p')
     meta.className = 'site-search-meta'
     meta.textContent = page.date ? page.section + ' · ' + page.date : page.section

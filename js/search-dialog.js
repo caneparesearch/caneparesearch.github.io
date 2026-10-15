@@ -57,6 +57,7 @@
       const title = document.createElement('span')
       title.className = 'search-dialog-result-title'
       core.appendMarked(title, page.title, page.foldedTitle, 0, page.title.length, found, page.titleScripts)
+      core.appendNative(title, page, found)
       const meta = document.createElement('span')
       meta.className = 'search-dialog-result-meta'
       meta.textContent = page.date ? page.section + ' · ' + page.date : page.section

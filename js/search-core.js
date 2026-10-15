@@ -83,6 +83,7 @@ window.siteSearch = window.siteSearch || (function () {
             page.foldedTitle = fold(page.title)
             page.foldedExtra = fold(page.extra)
             page.foldedText = fold(page.text)
+            page.foldedNative = fold(page.native || '')
             return page
           })
         })
@@ -174,6 +175,18 @@ window.siteSearch = window.siteSearch || (function () {
     }
   }
 
+  // A team member's name in its own script (邓泽宇, 최윤영), after their name in the results,
+  // lighter, in its language (so the browser picks the right font), with the terms marked
+  function appendNative (parent, page, found) {
+    if (!page.native) return
+    const span = document.createElement('span')
+    span.className = 'native-name'
+    if (page.nativeLang) span.lang = page.nativeLang
+    appendMarked(span, page.native, page.foldedNative, 0, page.native.length, found)
+    parent.appendChild(document.createTextNode(' '))
+    parent.appendChild(span)
+  }
+
   // "7 pages in 0.4 ms": the number of matches and how long `search` took. Browsers round
   // their clocks to protect privacy (Chrome to 0.1 ms, Firefox and Safari to 1 ms), so a
   // search too fast for the clock to tell shows as "under 1 ms".
@@ -182,5 +195,5 @@ window.siteSearch = window.siteSearch || (function () {
     return ms > 0 ? pages + ' in ' + ms.toFixed(1) + ' ms' : pages + ' in under 1 ms'
   }
 
-  return { terms, load, search, groups, appendMarked, summary }
+  return { terms, load, search, groups, appendMarked, appendNative, summary }
 })()
