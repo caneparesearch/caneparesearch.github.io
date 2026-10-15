@@ -96,7 +96,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=d28adf26bd" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=a6188371b9" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -152,7 +152,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=aa260d2c07">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=7aeb9556af">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -411,6 +411,7 @@ bundle <span class="nb">install</span>
       <li><code class="language-plaintext highlighter-rouge">references</code> lists the addresses of our papers the page cites (<code class="language-plaintext highlighter-rouge">/papers/&lt;name&gt;/</code>), in order of first citation; <code class="language-plaintext highlighter-rouge">{% include research-refs.html refs=page.references %}</code> lists them under “Relevant references” in the style of the papers’ pages, linked to them, and each citation in the text is a superscript number linked to the same page. A paper from another group, which has no page here, is given as <code class="language-plaintext highlighter-rouge">authors</code>, <code class="language-plaintext highlighter-rouge">journal</code> and <code class="language-plaintext highlighter-rouge">doi</code>.</li>
       <li>Figures in the text are <code class="language-plaintext highlighter-rouge">&lt;figure class="text-figure"&gt;</code> blocks, placed before the paragraph they illustrate: floated right beside it, with their caption under them, and across the column on phones. Number them in order and cite each in the text (“see <strong>Figure 1</strong>”). Add the class <code class="language-plaintext highlighter-rouge">text-figure-medium</code> to give a figure 36% of the column instead of 45%, or <code class="language-plaintext highlighter-rouge">text-figure-small</code> for 30% (a square or tall figure). Add <code class="language-plaintext highlighter-rouge">text-figure-left</code> to place a figure on the left of its paragraph instead.</li>
       <li>On the Research page each picture fills a 3:2 frame, cropped from the bottom; a picture more than twice as wide as tall, or one whose page sets <code class="language-plaintext highlighter-rouge">image_fit: contain</code>, is shown whole, and <code class="language-plaintext highlighter-rouge">image_position</code> (for example <code class="language-plaintext highlighter-rouge">center 40%</code>) moves the crop. A picture on a transparent background (saved as PNG, with a WebP copy that keeps the transparency) takes <code class="language-plaintext highlighter-rouge">image_transparent: true</code>, so it sits straight on the page in dark mode instead of on the white card other pictures get. A page’s <code class="language-plaintext highlighter-rouge">image</code> also shows at the top of the page itself; set <code class="language-plaintext highlighter-rouge">splash: false</code> when it is set in the text as a figure instead.</li>
+      <li>A long page can open with a summary instead of the “On this page” links: <code class="language-plaintext highlighter-rouge">summary</code> in its header lists a card per section (<code class="language-plaintext highlighter-rouge">anchor</code>, <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">image</code>, a one-line <code class="language-plaintext highlighter-rouge">text</code>), and <code class="language-plaintext highlighter-rouge">{% include research-summary.html items=page.summary references="#references" %}</code> shows them, four in a row (two on phones), each leading to its section, as on Rechargeable batteries; their pictures are tinted like the site’s others.</li>
       <li><code class="language-plaintext highlighter-rouge">listed: false</code> with <code class="language-plaintext highlighter-rouge">sitemap: false</code> keeps a page at its address but leaves it off the Research page, its Index, the site search and the sitemap, as for Non-linear optics.</li>
     </ul>
 
@@ -676,7 +677,7 @@ bundle <span class="nb">install</span>
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-15T09:40:24-05:00">Oct. 15, 2026 at 9:40 a.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-15T10:22:05-05:00">Oct. 15, 2026 at 10:22 a.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
