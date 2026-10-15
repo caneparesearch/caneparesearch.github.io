@@ -3,7 +3,7 @@
 // D3's force simulation (js/vendor/d3-force.min.js, loaded before this), drawn on a canvas,
 // which stays quick with a few hundred circles and a few thousand lines.
 //
-// Circles are sized by the papers a person shares with us, team members in the link colour;
+// Circles are sized by the papers a person shares with us, team members in the site's orange accent;
 // names show for the most frequent collaborators and, as one zooms in, for everyone. Clicking a
 // circle (or choosing a name in the box) focuses that person: their lines and co-authors stay,
 // the rest fade, and a note gives their papers with a link to them on the Papers page. Wheel or
@@ -63,7 +63,7 @@
   function colours () {
     const style = getComputedStyle(document.documentElement)
     function v (name) { return style.getPropertyValue(name).trim() }
-    return { bg: v('--site-bg'), text: v('--site-text'), heading: v('--site-heading'), link: v('--site-link'), muted: v('--site-muted'), border: v('--site-border') }
+    return { bg: v('--site-bg'), text: v('--site-text'), heading: v('--site-heading'), accent: v('--site-accent'), muted: v('--site-muted'), border: v('--site-border') }
   }
 
   function toScreen (n) { return [width / 2 + view.x + n.x * view.k, height / 2 + view.y + n.y * view.k] }
@@ -89,7 +89,7 @@
     ctx.stroke()
     if (focus) {
       ctx.globalAlpha = 0.9
-      ctx.strokeStyle = c.link
+      ctx.strokeStyle = c.accent
       links.forEach(function (l) {
         if (l.source !== focus && l.target !== focus) return
         ctx.lineWidth = (0.8 + 0.6 * l.papers) / view.k
@@ -104,7 +104,7 @@
     nodes.forEach(function (n) {
       const lit = !focus || n === focus || neighbours[focus.index].has(n.index)
       ctx.globalAlpha = lit ? 1 : 0.2
-      ctx.fillStyle = n.hub ? c.heading : n.team ? c.link : c.muted
+      ctx.fillStyle = n.hub ? c.heading : n.team ? c.accent : c.muted
       ctx.beginPath()
       ctx.arc(n.x, n.y, n.r, 0, 2 * Math.PI)
       ctx.fill()

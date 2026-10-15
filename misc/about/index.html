@@ -96,7 +96,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=ebf900dbd1" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=91675b13be" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -152,7 +152,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=3264354cd3">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=5205c1808c">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -397,7 +397,7 @@ bundle <span class="nb">install</span>
     <ul>
       <li>Write a bio in the first person. When a member leaves, set <code class="language-plaintext highlighter-rouge">alumni: true</code>, open the bio with where they are now (“I am now a research scientist at …”), and put finished student or postdoc periods in the past tense; hobbies and current interests stay in the present. Current members are listed most recently added first. Alumni are grouped by the position they held (research fellows, PhD students, master’s students, undergraduate and summer students, then research staff), alphabetically within each group; the group comes from <code class="language-plaintext highlighter-rouge">position</code>, or from <code class="language-plaintext highlighter-rouge">alumni_group</code> (<code class="language-plaintext highlighter-rouge">research-fellows</code>, <code class="language-plaintext highlighter-rouge">phd-students</code>, <code class="language-plaintext highlighter-rouge">masters-students</code>, <code class="language-plaintext highlighter-rouge">undergraduates</code> or <code class="language-plaintext highlighter-rouge">staff</code>) when the position names a later job, as for Zeyu Deng.</li>
       <li>Sidebar links are shown alphabetically by label, whatever their order in the header. <code class="language-plaintext highlighter-rouge">profile</code> is a university profile page, shown as “University profile” (set <code class="language-plaintext highlighter-rouge">profile_label</code> for another heading, such as “Institutional profile”); <code class="language-plaintext highlighter-rouge">website</code> is a personal website; <code class="language-plaintext highlighter-rouge">linkedin</code> is the name in <code class="language-plaintext highlighter-rouge">linkedin.com/in/&lt;name&gt;</code>; <code class="language-plaintext highlighter-rouge">twitter</code> is the X handle, linked to x.com; <code class="language-plaintext highlighter-rouge">scholar</code> is the Google Scholar profile ID (the <code class="language-plaintext highlighter-rouge">user=</code> part of its address).</li>
-      <li>“Life in the group”, between the current members and the alumni, shows the photos listed in <code class="language-plaintext highlighter-rouge">_data/gallery.yml</code> (its header says how to add one: the picture in <code class="language-plaintext highlighter-rouge">images/gallery/</code>, its smaller copy, a date and a caption), in one horizontal strip, newest first, with the year over the first photo of each year: it is swiped on phones, scrolled sideways elsewhere, and <code class="language-plaintext highlighter-rouge">js/gallery-strip.js</code> adds arrow buttons wherever there is a mouse or trackpad, whatever the window’s width. Only add a photo everyone recognisable in it is happy to share.</li>
+      <li>“Life in the group”, between the current members and the alumni, shows the photos listed in <code class="language-plaintext highlighter-rouge">_data/gallery.yml</code> (its header says how to add one: the picture in <code class="language-plaintext highlighter-rouge">images/gallery/</code>, its smaller copy, a date and a caption), in one horizontal strip, newest first, with the year over the first photo of each year: it is swiped on phones, scrolled sideways elsewhere, and <code class="language-plaintext highlighter-rouge">js/gallery-strip.js</code> adds arrow buttons wherever there is a mouse or trackpad, whatever the window’s width. Only add a photo everyone recognizable in it is happy to share.</li>
       <li>Under Publications, a member’s page lists every paper whose <code class="language-plaintext highlighter-rouge">authors</code> contain their surname and first initial (“Wang J” for Juefan Wang). When that is shared with other authors, list their papers by address instead, <code class="language-plaintext highlighter-rouge">papers: [wang-chem-mater-2021, wang-mater-futures-2023]</code>, as Juefan Wang, Yan Li and Yuheng Li have; Crossref (<code class="language-plaintext highlighter-rouge">https://api.crossref.org/works/&lt;doi&gt;</code>) gives each author’s full given name, to sort out whose paper is whose.</li>
     </ul>
 
@@ -682,7 +682,7 @@ bundle <span class="nb">install</span>
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-15T15:17:26-05:00">Oct. 15, 2026 at 3:17 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-15T16:25:20-05:00">Oct. 15, 2026 at 4:25 p.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
