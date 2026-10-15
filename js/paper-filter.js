@@ -221,14 +221,26 @@
     }
   }
 
-  input.addEventListener('input', function () {
+  // Chinese, Japanese and Korean are typed through an input method (IME), which composes a
+  // character (from pinyin, kana or jamo) before committing it: the box searches only once it is
+  // committed, and leaves Escape, Enter and the arrows to the IME while it is composing (Safari
+  // reports the key that ends a composition with keyCode 229 and isComposing false).
+  function composing (event) {
+    return event.isComposing || event.keyCode === 229
+  }
+
+  function typed (event) {
     loadAbstracts()
+    if (event.isComposing) return
     followTyping()
     apply(input.value)
     saveQuerySoon()
-  })
+  }
+  input.addEventListener('input', typed)
+  input.addEventListener('compositionend', typed)
 
   input.addEventListener('keydown', function (event) {
+    if (composing(event)) return
     if (event.key === 'Escape' && input.value) {
       input.value = ''
       followTyping()

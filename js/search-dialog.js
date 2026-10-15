@@ -112,12 +112,37 @@
     })
   })
 
-  input.addEventListener('input', render)
+  // Chinese, Japanese and Korean are typed through an input method (IME), which composes a
+  // character (from pinyin, kana or jamo) before committing it: the box searches only once it is
+  // committed, and leaves Escape, Enter and the arrows to the IME while it is composing (Safari
+  // reports the key that ends a composition with keyCode 229 and isComposing false).
+  // Escape while composing cancels the composition, not the overlay; Enter that commits a
+  // candidate does not submit the form.
+  let imeActive = false
+  function composing (event) {
+    return imeActive || event.isComposing || event.keyCode === 229
+  }
+
+  input.addEventListener('compositionstart', function () { imeActive = true })
+  input.addEventListener('compositionend', function () {
+    imeActive = false
+    render()
+  })
+  input.addEventListener('input', function (event) {
+    if (!event.isComposing) render()
+  })
+  input.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' && composing(event)) event.preventDefault()
+  })
+  dialog.addEventListener('cancel', function (event) {
+    if (imeActive) event.preventDefault()
+  })
 
   // Down from the field goes to "See all n results" (above the list) when it shows, then
   // down the results, in the order they are on screen; up goes back
   dialog.addEventListener('keydown', function (event) {
     if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return
+    if (composing(event)) return
     const targets = [input]
     if (!more.hidden) targets.push(more)
     targets.push.apply(targets, list.querySelectorAll('a'))
