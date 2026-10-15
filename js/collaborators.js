@@ -124,7 +124,7 @@
       if (!show) return
       ctx.globalAlpha = !focus || near ? 1 : 0.25
       const size = (n === focus ? 14 : n.papers >= 8 || n.hub ? 12.5 : 11) / view.k
-      ctx.font = (n === focus || n.hub ? '600 ' : '') + size + 'px Inter, "Inter fallback", Helvetica, Arial, sans-serif'
+      ctx.font = (n === focus || n.hub ? '600 ' : '') + size + 'px "IBM Plex Sans", "IBM Plex Sans fallback", Helvetica, Arial, sans-serif'
       ctx.fillStyle = n.team || n.hub ? c.heading : c.text
       ctx.lineWidth = 3 / view.k
       ctx.strokeStyle = c.bg

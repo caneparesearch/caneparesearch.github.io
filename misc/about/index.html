@@ -91,12 +91,12 @@
 
 	<!-- RSS feed -->
 	<link rel="alternate" type="application/rss+xml" title="Canepa Research Lab" href="https://caneparesearch.org/feed.xml">
-	<!-- Inter, the text font, is self-hosted (css/_inter.scss). Preloading the one file every page needs
+	<!-- IBM Plex Sans, the text font, is self-hosted (css/_plex-sans.scss). Preloading the one file every page needs
 	     starts its download with the stylesheet's, instead of after the stylesheet has been parsed. -->
-	<link rel="preload" href="/css/fonts/inter/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=9c1c0a547d" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=840a6e0993" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -152,7 +152,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=1824a5c5fd">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=8f663e8b87">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -441,7 +441,7 @@ bundle <span class="nb">install</span>
 
   <h2 id="design">Design</h2>
 
-  <p>The site is a light layer over a trimmed Bootstrap 5 grid: text set in Inter, colors that follow the visitor’s light or dark setting and meet WCAG AA contrast in both, and every font, icon and script served from the site itself, apart from Google Analytics, the Altmetric and Dimensions badges, and the embedded videos and map. Pages are meant to load quickly on a phone, so pictures are served as WebP with their space reserved, and listing thumbnails load only as they scroll into view. The sections below give the details.</p>
+  <p>The site is a light layer over a trimmed Bootstrap 5 grid: text set in the IBM Plex family, colors that follow the visitor’s light or dark setting and meet WCAG AA contrast in both, and every font, icon and script served from the site itself, apart from Google Analytics, the Altmetric and Dimensions badges, and the embedded videos and map. Pages are meant to load quickly on a phone, so pictures are served as WebP with their space reserved, and listing thumbnails load only as they scroll into view. The sections below give the details.</p>
 
   <details class="fold">
     <summary><h4>Styles and layout</h4></summary>
@@ -502,8 +502,8 @@ bundle <span class="nb">install</span>
     <summary><h4>Fonts</h4></summary>
 
     <ul>
-      <li>Text is set in <a href="https://rsms.me/inter/">Inter</a>, self-hosted in <code class="language-plaintext highlighter-rouge">css/fonts/inter/</code> with its <code class="language-plaintext highlighter-rouge">@font-face</code> rules in <code class="language-plaintext highlighter-rouge">css/_inter.scss</code>: in the unicode-range subsets Google Fonts uses, so pages do not wait on two connections to Google before their text can render. <code class="language-plaintext highlighter-rouge">_layouts/default.html</code> preloads <code class="language-plaintext highlighter-rouge">normal-latin.woff2</code>, the one file every page needs. Until Inter has loaded, the text is set in “Inter fallback” (also in <code class="language-plaintext highlighter-rouge">css/_inter.scss</code>): Arial, or Liberation Sans on Linux, scaled to take the same room, so the page does not shift when Inter replaces it. Inter’s alternate lowercase l with a tail (<code class="language-plaintext highlighter-rouge">cv05</code>) and capital I with crossbars (<code class="language-plaintext highlighter-rouge">cv08</code>) are turned on in <code class="language-plaintext highlighter-rouge">css/style.scss</code>, so that I and l are told apart in formulas such as LiCl or Li₃InCl₆. Google Fonts’ copies of Inter drop these alternates, so the files are cut from the official release (<a href="https://rsms.me/inter/">rsms.me/inter</a>) by <code class="language-plaintext highlighter-rouge">_scripts/subset-inter-font.py</code>, which explains how to rerun it.</li>
-      <li>Until October 2026 the site used <a href="https://github.com/IBM/plex">IBM Plex Sans</a>, kept on the <code class="language-plaintext highlighter-rouge">ibm-plex-sans</code> branch. Its files (<code class="language-plaintext highlighter-rouge">css/fonts/ibm-plex-sans/</code>, <code class="language-plaintext highlighter-rouge">css/_plex-sans.scss</code>) are still in <code class="language-plaintext highlighter-rouge">main</code>, so switching back means changing the <code class="language-plaintext highlighter-rouge">@import</code> and <code class="language-plaintext highlighter-rouge">font-family</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code> and the preload in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>. Inter runs about 4% wider than Plex at the same size.</li>
+      <li>The site is set in the <a href="https://github.com/IBM/plex">IBM Plex</a> family, self-hosted so pages do not wait on Google’s servers: <strong>IBM Plex Sans</strong> for the text (<code class="language-plaintext highlighter-rouge">css/fonts/ibm-plex-sans/</code>, <code class="language-plaintext highlighter-rouge">css/_plex-sans.scss</code>), in the unicode-range subsets Google Fonts uses, with <code class="language-plaintext highlighter-rouge">_layouts/default.html</code> preloading <code class="language-plaintext highlighter-rouge">normal-latin.woff2</code>, the one file every page needs; <strong>IBM Plex Serif</strong>, semibold, for the headings (h1 to h3; <code class="language-plaintext highlighter-rouge">css/fonts/ibm-plex-serif/</code>, <code class="language-plaintext highlighter-rouge">css/_plex-serif.scss</code>); and <strong>IBM Plex Mono</strong> for code, inline <code class="language-plaintext highlighter-rouge">code</code> and code blocks, at 0.9em (<code class="language-plaintext highlighter-rouge">css/fonts/ibm-plex-mono/</code>, <code class="language-plaintext highlighter-rouge">css/_plex-mono.scss</code>). Plex tells I, l and 1 apart on its own, as formulas such as LiCl need. Until Plex Sans has loaded, the text is set in “IBM Plex Sans fallback” (in <code class="language-plaintext highlighter-rouge">css/style.scss</code>): Arial, or Liberation Sans on Linux, scaled to take the same room, so the page does not shift when Plex replaces it.</li>
+      <li>In October 2026 the text was set in <a href="https://rsms.me/inter/">Inter</a>, with its alternate I and l; that version is kept on the <code class="language-plaintext highlighter-rouge">inter</code> branch, and its files (<code class="language-plaintext highlighter-rouge">css/fonts/inter/</code>, <code class="language-plaintext highlighter-rouge">css/_inter.scss</code>, <code class="language-plaintext highlighter-rouge">_scripts/subset-inter-font.py</code>) are still in <code class="language-plaintext highlighter-rouge">main</code>, so switching back means changing the <code class="language-plaintext highlighter-rouge">@import</code>s and <code class="language-plaintext highlighter-rouge">font-family</code> in <code class="language-plaintext highlighter-rouge">css/style.scss</code> and the preload in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>.</li>
       <li>iOS Safari would link number runs such as a paper’s pages as phone numbers; <code class="language-plaintext highlighter-rouge">&lt;meta name="format-detection" content="telephone=no"&gt;</code> stops it, so a real phone number needs an explicit <code class="language-plaintext highlighter-rouge">tel:</code> link.</li>
     </ul>
 
@@ -676,7 +676,7 @@ bundle <span class="nb">install</span>
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-14T15:13:34-05:00">Oct. 14, 2026 at 3:13 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-15T02:18:57-05:00">Oct. 15, 2026 at 2:18 a.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
