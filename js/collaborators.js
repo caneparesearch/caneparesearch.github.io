@@ -46,6 +46,7 @@
   let height = 0
   let view = { k: 1, x: 0, y: 0 }
   let focus = null
+  let bound = 0 // the containing circle's radius, once set (setBound below)
   let dragging = null
 
   function resize () {
@@ -63,7 +64,7 @@
   function colours () {
     const style = getComputedStyle(document.documentElement)
     function v (name) { return style.getPropertyValue(name).trim() }
-    return { bg: v('--site-bg'), text: v('--site-text'), heading: v('--site-heading'), accent: v('--site-accent'), muted: v('--site-muted'), border: v('--site-border') }
+    return { bg: v('--site-bg'), text: v('--site-text'), heading: v('--site-heading'), accent: v('--site-accent'), muted: v('--site-muted'), border: v('--site-border'), tint: v('--site-tag-bg') || v('--site-bg') }
   }
 
   function toScreen (n) { return [width / 2 + view.x + n.x * view.k, height / 2 + view.y + n.y * view.k] }
@@ -76,6 +77,18 @@
     ctx.save()
     ctx.translate(width / 2 + view.x, height / 2 + view.y)
     ctx.scale(view.k, view.k)
+
+    // the containing circle: a faint disc and ring around everyone
+    if (bound) {
+      ctx.globalAlpha = 1
+      ctx.beginPath()
+      ctx.arc(0, 0, bound, 0, 2 * Math.PI)
+      ctx.fillStyle = c.tint
+      ctx.fill()
+      ctx.lineWidth = 1.5 / view.k
+      ctx.strokeStyle = c.border
+      ctx.stroke()
+    }
 
     // lines: all faint, the focused person's in the link colour on top
     ctx.lineWidth = 0.6 / view.k
@@ -190,7 +203,13 @@
     view.y = -n.y * k
   }
 
+  // the whole circle in view (or, before it exists, everyone)
   function fit () {
+    if (bound) {
+      const k = Math.min(width, height) / (2 * bound + 40)
+      view = { k, x: 0, y: 0 }
+      return
+    }
     let minX = Infinity; let maxX = -Infinity; let minY = Infinity; let maxY = -Infinity
     nodes.forEach(function (n) {
       minX = Math.min(minX, n.x - n.r); maxX = Math.max(maxX, n.x + n.r)
@@ -198,6 +217,26 @@
     })
     const k = Math.min(width / (maxX - minX + 40), height / (maxY - minY + 40), 2)
     view = { k, x: -((minX + maxX) / 2) * k, y: -((minY + maxY) / 2) * k }
+  }
+
+  // The containing circle, centred on the hub: sized once the layout has settled to hold most
+  // people (the 95th percentile of their distance from the centre, plus room), then a force
+  // keeps everyone inside it, the small separate groups that drift out among them
+  function setBound () {
+    const d = nodes.map(function (n) { return Math.hypot(n.x, n.y) + n.r }).sort(function (a, b) { return a - b })
+    bound = d[Math.floor(d.length * 0.95)] * 1.08
+    sim.force('contain', function () {
+      nodes.forEach(function (n) {
+        if (n.fx != null) return
+        const r = Math.hypot(n.x, n.y)
+        const limit = bound - n.r - 2
+        if (r > limit) {
+          const s = limit / r
+          n.x *= s; n.y *= s
+          n.vx *= 0.5; n.vy *= 0.5
+        }
+      })
+    })
   }
 
   // pointer: drag a circle, drag the background to move, two fingers to pinch, click to focus
@@ -303,6 +342,9 @@
   // settle the layout before showing it, then let it finish moving on screen
   sim.stop()
   for (let i = 0; i < 220; i++) sim.tick()
+  setBound()
+  sim.alpha(0.3)
+  for (let i = 0; i < 120; i++) sim.tick()
   fit()
   draw()
   sim.alpha(0.05).restart()
