@@ -36,9 +36,13 @@
       }
     })
     if (count) count.textContent = (current + 1) + ' / ' + slides.length
-    // the next picture starts loading now, so it is ready when its turn comes
+    // the next picture starts loading, so it is ready when its turn comes; at first, only once the
+    // page has loaded, so it does not compete with the page's own pictures and fonts
     const upcoming = slides[(current + 1) % slides.length].querySelector('img')
-    if (upcoming) upcoming.loading = 'eager'
+    if (upcoming) {
+      if (document.readyState === 'complete') upcoming.loading = 'eager'
+      else window.addEventListener('load', function () { upcoming.loading = 'eager' }, { once: true })
+    }
   }
 
   function schedule () {

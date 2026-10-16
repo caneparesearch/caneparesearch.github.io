@@ -93,9 +93,11 @@
 	<!-- IBM Plex Sans, the text font, is self-hosted (css/_plex-sans.scss). Preloading the one file every page needs
 	     starts its download with the stylesheet's, instead of after the stylesheet has been parsed. -->
 	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<!-- and the page titles' font (IBM Plex Serif medium), which every page's title needs -->
+	<link rel="preload" href="/css/fonts/ibm-plex-serif/500-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=2f2c06d379" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=4640fa4438" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -268,9 +270,9 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/misc/galaxies/westerlund-2-1200w.webp 1200w, /images/misc/galaxies/westerlund-2-640w.webp 640w, /images/misc/galaxies/westerlund-2.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
+	<source type="image/webp" srcset="/images/misc/galaxies/westerlund-2-strip-1200w.webp 1200w, /images/misc/galaxies/westerlund-2-strip-800w.webp 800w, /images/misc/galaxies/westerlund-2-strip-640w.webp 640w, /images/misc/galaxies/westerlund-2-strip.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
 	
-	<img src="/images/misc/galaxies/westerlund-2.jpg" style="object-position: center 22%" width="2000" height="2024" alt="">
+	<img src="/images/misc/galaxies/westerlund-2-strip.jpg" style="object-position: center" width="2000" height="667" alt="" fetchpriority="high">
 </picture>
 
 </div>
@@ -293,9 +295,9 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/misc/galaxies/centaurus-a-1200w.webp 1200w, /images/misc/galaxies/centaurus-a-640w.webp 640w, /images/misc/galaxies/centaurus-a.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
+	<source type="image/webp" srcset="/images/misc/galaxies/centaurus-a-strip-1200w.webp 1200w, /images/misc/galaxies/centaurus-a-strip-800w.webp 800w, /images/misc/galaxies/centaurus-a-strip-640w.webp 640w, /images/misc/galaxies/centaurus-a-strip.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
 	
-	<img src="/images/misc/galaxies/centaurus-a.jpg" style="object-position: center 45%" width="2000" height="828" alt="" loading="lazy">
+	<img src="/images/misc/galaxies/centaurus-a-strip.jpg" style="object-position: center" width="2000" height="667" alt="" loading="lazy">
 </picture>
 
 </div>
@@ -318,9 +320,9 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/misc/galaxies/m82-1200w.webp 1200w, /images/misc/galaxies/m82-640w.webp 640w, /images/misc/galaxies/m82.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
+	<source type="image/webp" srcset="/images/misc/galaxies/m82-strip-1200w.webp 1200w, /images/misc/galaxies/m82-strip-800w.webp 800w, /images/misc/galaxies/m82-strip-640w.webp 640w, /images/misc/galaxies/m82-strip.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
 	
-	<img src="/images/misc/galaxies/m82.jpg" style="object-position: center 50%" width="2000" height="845" alt="" loading="lazy">
+	<img src="/images/misc/galaxies/m82-strip.jpg" style="object-position: center" width="2000" height="667" alt="" loading="lazy">
 </picture>
 
 </div>
@@ -343,9 +345,9 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/misc/galaxies/m83-1200w.webp 1200w, /images/misc/galaxies/m83-640w.webp 640w, /images/misc/galaxies/m83.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
+	<source type="image/webp" srcset="/images/misc/galaxies/m83-strip-1200w.webp 1200w, /images/misc/galaxies/m83-strip-800w.webp 800w, /images/misc/galaxies/m83-strip-640w.webp 640w, /images/misc/galaxies/m83-strip.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
 	
-	<img src="/images/misc/galaxies/m83.jpg" style="object-position: center 40%" width="2000" height="633" alt="" loading="lazy">
+	<img src="/images/misc/galaxies/m83-strip.jpg" style="object-position: center" width="2000" height="633" alt="" loading="lazy">
 </picture>
 
 </div>
@@ -368,9 +370,9 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/misc/galaxies/m51-1200w.webp 1200w, /images/misc/galaxies/m51-640w.webp 640w, /images/misc/galaxies/m51.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
+	<source type="image/webp" srcset="/images/misc/galaxies/m51-strip-1200w.webp 1200w, /images/misc/galaxies/m51-strip-800w.webp 800w, /images/misc/galaxies/m51-strip-640w.webp 640w, /images/misc/galaxies/m51-strip.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
 	
-	<img src="/images/misc/galaxies/m51.jpg" style="object-position: center 45%" width="2000" height="953" alt="" loading="lazy">
+	<img src="/images/misc/galaxies/m51-strip.jpg" style="object-position: center" width="2000" height="667" alt="" loading="lazy">
 </picture>
 
 </div>
@@ -393,9 +395,9 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/misc/galaxies/ngc-6822-1200w.webp 1200w, /images/misc/galaxies/ngc-6822-640w.webp 640w, /images/misc/galaxies/ngc-6822.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
+	<source type="image/webp" srcset="/images/misc/galaxies/ngc-6822-strip-1200w.webp 1200w, /images/misc/galaxies/ngc-6822-strip-800w.webp 800w, /images/misc/galaxies/ngc-6822-strip-640w.webp 640w, /images/misc/galaxies/ngc-6822-strip.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
 	
-	<img src="/images/misc/galaxies/ngc-6822.jpg" style="object-position: center 45%" width="2000" height="667" alt="" loading="lazy">
+	<img src="/images/misc/galaxies/ngc-6822-strip.jpg" style="object-position: center" width="2000" height="667" alt="" loading="lazy">
 </picture>
 
 </div>
@@ -418,9 +420,9 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/misc/galaxies/ngc-628-1200w.webp 1200w, /images/misc/galaxies/ngc-628-640w.webp 640w, /images/misc/galaxies/ngc-628.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
+	<source type="image/webp" srcset="/images/misc/galaxies/ngc-628-strip-1200w.webp 1200w, /images/misc/galaxies/ngc-628-strip-800w.webp 800w, /images/misc/galaxies/ngc-628-strip-640w.webp 640w, /images/misc/galaxies/ngc-628-strip.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
 	
-	<img src="/images/misc/galaxies/ngc-628.jpg" style="object-position: center 50%" width="2000" height="1252" alt="" loading="lazy">
+	<img src="/images/misc/galaxies/ngc-628-strip.jpg" style="object-position: center" width="2000" height="667" alt="" loading="lazy">
 </picture>
 
 </div>
@@ -443,9 +445,9 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/misc/galaxies/m82-hubble-1200w.webp 1200w, /images/misc/galaxies/m82-hubble-640w.webp 640w, /images/misc/galaxies/m82-hubble.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
+	<source type="image/webp" srcset="/images/misc/galaxies/m82-hubble-strip-1200w.webp 1200w, /images/misc/galaxies/m82-hubble-strip-800w.webp 800w, /images/misc/galaxies/m82-hubble-strip-640w.webp 640w, /images/misc/galaxies/m82-hubble-strip.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
 	
-	<img src="/images/misc/galaxies/m82-hubble.jpg" style="object-position: center 48%" width="2000" height="1558" alt="" loading="lazy">
+	<img src="/images/misc/galaxies/m82-hubble-strip.jpg" style="object-position: center" width="2000" height="667" alt="" loading="lazy">
 </picture>
 
 </div>
@@ -468,9 +470,9 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/misc/galaxies/sombrero-1200w.webp 1200w, /images/misc/galaxies/sombrero-640w.webp 640w, /images/misc/galaxies/sombrero.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
+	<source type="image/webp" srcset="/images/misc/galaxies/sombrero-strip-1200w.webp 1200w, /images/misc/galaxies/sombrero-strip-800w.webp 800w, /images/misc/galaxies/sombrero-strip-640w.webp 640w, /images/misc/galaxies/sombrero-strip.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
 	
-	<img src="/images/misc/galaxies/sombrero.jpg" style="object-position: center 50%" width="2000" height="726" alt="" loading="lazy">
+	<img src="/images/misc/galaxies/sombrero-strip.jpg" style="object-position: center" width="2000" height="667" alt="" loading="lazy">
 </picture>
 
 </div>
@@ -493,9 +495,9 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/misc/galaxies/ngc-5068-1200w.webp 1200w, /images/misc/galaxies/ngc-5068-640w.webp 640w, /images/misc/galaxies/ngc-5068.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
+	<source type="image/webp" srcset="/images/misc/galaxies/ngc-5068-strip-1200w.webp 1200w, /images/misc/galaxies/ngc-5068-strip-800w.webp 800w, /images/misc/galaxies/ngc-5068-strip-640w.webp 640w, /images/misc/galaxies/ngc-5068-strip.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
 	
-	<img src="/images/misc/galaxies/ngc-5068.jpg" style="object-position: center 40%" width="2000" height="1176" alt="" loading="lazy">
+	<img src="/images/misc/galaxies/ngc-5068-strip.jpg" style="object-position: center" width="2000" height="667" alt="" loading="lazy">
 </picture>
 
 </div>
@@ -518,9 +520,9 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/misc/galaxies/carina-1200w.webp 1200w, /images/misc/galaxies/carina-640w.webp 640w, /images/misc/galaxies/carina.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
+	<source type="image/webp" srcset="/images/misc/galaxies/carina-strip-1200w.webp 1200w, /images/misc/galaxies/carina-strip-800w.webp 800w, /images/misc/galaxies/carina-strip-640w.webp 640w, /images/misc/galaxies/carina-strip.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
 	
-	<img src="/images/misc/galaxies/carina.jpg" style="object-position: center 40%" width="2000" height="1160" alt="" loading="lazy">
+	<img src="/images/misc/galaxies/carina-strip.jpg" style="object-position: center" width="2000" height="667" alt="" loading="lazy">
 </picture>
 
 </div>
@@ -543,9 +545,9 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/misc/galaxies/chameleon-i-1200w.webp 1200w, /images/misc/galaxies/chameleon-i-640w.webp 640w, /images/misc/galaxies/chameleon-i.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
+	<source type="image/webp" srcset="/images/misc/galaxies/chameleon-i-strip-1200w.webp 1200w, /images/misc/galaxies/chameleon-i-strip-800w.webp 800w, /images/misc/galaxies/chameleon-i-strip-640w.webp 640w, /images/misc/galaxies/chameleon-i-strip.webp 2000w" sizes="(max-width: 1199px) 100vw, 1110px">
 	
-	<img src="/images/misc/galaxies/chameleon-i.jpg" style="object-position: center 35%" width="2000" height="982" alt="" loading="lazy">
+	<img src="/images/misc/galaxies/chameleon-i-strip.jpg" style="object-position: center" width="2000" height="667" alt="" loading="lazy">
 </picture>
 
 </div>
@@ -559,7 +561,7 @@
 		<button type="button" class="collab-banner-next" aria-label="Next picture"></button>
 	</div>
 </div>
-<script src="/js/collab-banner.js?v=f41e9a60d9" defer></script>
+<script src="/js/collab-banner.js?v=b3b7210669" defer></script>
 
 <div class="row">
 	<div class="col-md-12">
@@ -569,7 +571,7 @@
 	</div>
 </div>
 
-<div class="collab" hidden>
+<div class="collab">
 	<div class="collab-bar">
 		<label for="collab-search" class="visually-hidden">Find a collaborator</label>
 		<input type="search" id="collab-search" class="collab-search" placeholder="Find a collaborator…" autocomplete="off" list="collab-names">
@@ -579,6 +581,7 @@
 	</div>
 	<div class="collab-stage">
 		<canvas class="collab-canvas" aria-label="Network of co-authors; the list below gives the same people as text"></canvas>
+		<noscript><p class="collab-noscript">The map needs JavaScript; the most frequent collaborators are listed below.</p></noscript>
 		<p class="collab-info" aria-live="polite" hidden></p>
 	</div>
 </div>
@@ -618,7 +621,7 @@
 </div>
 
 <script src="/js/vendor/d3-force.min.js?v=5f30f00f2a" defer></script>
-<script src="/js/collaborators.js?v=ce60c288e2" defer></script>
+<script src="/js/collaborators.js?v=b77eb4f490" defer></script>
 
 
 		<div class="row mt60">
@@ -690,7 +693,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-15T20:58:34-05:00">Oct. 15, 2026 at 8:58 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-15T21:18:14-05:00">Oct. 15, 2026 at 9:18 p.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>

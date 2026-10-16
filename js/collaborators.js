@@ -339,13 +339,36 @@
 
   root.hidden = false
   resize()
-  // settle the layout before showing it, then let it finish moving on screen
+  // Settle the layout before showing it, then let it finish moving on screen. The 340 steps run
+  // in slices of about 12 ms, yielding to the browser between them, rather than in one long task
+  // that would block the page (Total Blocking Time); and only once the map is near the screen.
   sim.stop()
-  for (let i = 0; i < 220; i++) sim.tick()
-  setBound()
-  sim.alpha(0.3)
-  for (let i = 0; i < 120; i++) sim.tick()
-  fit()
-  draw()
-  sim.alpha(0.05).restart()
+  const steps = [[220, null], [120, function () { setBound(); sim.alpha(0.3) }]]
+  let phase = 0
+  let done = 0
+  function settle () {
+    const until = performance.now() + 12
+    while (phase < steps.length && performance.now() < until) {
+      if (done === 0 && steps[phase][1]) steps[phase][1]()
+      sim.tick()
+      if (++done >= steps[phase][0]) { phase++; done = 0 }
+    }
+    if (phase < steps.length) {
+      setTimeout(settle, 0)
+    } else {
+      fit()
+      draw()
+      stage.classList.add('is-ready')
+      sim.alpha(0.05).restart()
+    }
+  }
+  function begin () { setTimeout(settle, 0) }
+  if ('IntersectionObserver' in window) {
+    const seen = new IntersectionObserver(function (entries) {
+      if (entries.some(function (e) { return e.isIntersecting })) { seen.disconnect(); begin() }
+    }, { rootMargin: '300px' })
+    seen.observe(stage)
+  } else {
+    begin()
+  }
 })()
