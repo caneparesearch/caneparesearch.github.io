@@ -3,7 +3,8 @@
 // seconds, with each picture's credit under it while
 // it is on screen. The pause button stops and restarts them, the arrows step back and forth, and
 // a counter ("3 / 12") says which is showing;
-// they pause while the mouse is over the banner or a control has focus. A visitor who asks for
+// they pause while the mouse is over the banner or a control has keyboard focus, and a swipe
+// across the picture steps through them on a phone. A visitor who asks for
 // reduced motion sees one picture, and can step through them with the arrows. Without this
 // script the first picture stays.
 (function () {
@@ -55,10 +56,26 @@
   pause.addEventListener('click', function () { setPaused(!paused) })
   prev.addEventListener('click', function () { show(current - 1); schedule() })
   next.addEventListener('click', function () { show(current + 1); schedule() })
-  banner.addEventListener('mouseenter', function () { hovered = true; schedule() })
-  banner.addEventListener('mouseleave', function () { hovered = false; schedule() })
-  banner.addEventListener('focusin', function () { hovered = true; schedule() })
+  // paused while a mouse is over the banner or a control has keyboard focus. Only a real mouse
+  // and keyboard: iPhone Safari reports a tap as a hover and a focus that never end, which kept
+  // the pictures paused after any tap, and the play button seemingly dead
+  banner.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovered = true; schedule() } })
+  banner.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovered = false; schedule() } })
+  banner.addEventListener('focusin', function (e) {
+    if (e.target.matches && e.target.matches(':focus-visible')) { hovered = true; schedule() }
+  })
   banner.addEventListener('focusout', function () { hovered = false; schedule() })
+
+  // a swipe across the picture steps to the next or previous one
+  let touchX = null
+  const stage = banner.querySelector('.collab-banner-slides')
+  stage.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX }, { passive: true })
+  stage.addEventListener('touchend', function (e) {
+    if (touchX === null) return
+    const dx = e.changedTouches[0].clientX - touchX
+    touchX = null
+    if (Math.abs(dx) > 40) { show(current + (dx < 0 ? 1 : -1)); schedule() }
+  }, { passive: true })
 
   controls.hidden = false
   setPaused(paused)
