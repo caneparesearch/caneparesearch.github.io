@@ -6,7 +6,9 @@
 // Loaded with `defer`, so the page is fully parsed when this runs (see js/back-to-top.js).
 (function () {
   const bar = document.querySelector('.team-roles')
+  const fold = document.querySelector('.team-roles-fold')
   if (!bar) return
+  const foldCurrent = fold && fold.querySelector('.filter-fold-current')
 
   const buttons = Array.prototype.slice.call(bar.querySelectorAll('.paper-topic'))
   const cards = Array.prototype.slice.call(document.querySelectorAll('.memberbox[data-role]'))
@@ -27,8 +29,16 @@
     })
     if (alumniTitle) alumniTitle.hidden = groups.every(function (group) { return group.hidden })
     if (current) current.hidden = !current.querySelector('.memberbox:not([hidden])')
+    // the "On this page" links to a part left empty go with it
+    ;[current, alumniTitle].forEach(function (part) {
+      const jump = part && document.querySelector('.page-jump a[href="#' + part.id + '"]')
+      if (jump) jump.parentNode.hidden = part.hidden
+    })
     buttons.forEach(function (button) {
-      button.setAttribute('aria-pressed', button.getAttribute('data-role') === role ? 'true' : 'false')
+      const on = button.getAttribute('data-role') === role
+      button.setAttribute('aria-pressed', on ? 'true' : 'false')
+      // the "Tags" toggle the buttons are folded under names the role chosen
+      if (on && foldCurrent) foldCurrent.textContent = role ? ': ' + button.firstChild.textContent.trim() : ''
     })
     if (status) status.textContent = role ? shown + (shown === 1 ? ' person' : ' people') : ''
   }
@@ -54,6 +64,7 @@
 
   const wanted = new URLSearchParams(window.location.search).get('role') || ''
   role = buttons.some(function (button) { return button.getAttribute('data-role') === wanted }) ? wanted : ''
-  bar.hidden = false
+  if (fold) fold.hidden = false
+  else bar.hidden = false
   apply()
 })()

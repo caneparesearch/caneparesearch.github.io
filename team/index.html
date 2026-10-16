@@ -97,7 +97,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-serif/500-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=4640fa4438" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=c716e38949" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -153,7 +153,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=ac93beff2c">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=9a48d7a4c2">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -255,6 +255,14 @@
   <div class="col-md-12">
     <div class="smallhead">
 		<p>Our lab brings together talented students and researchers from around the world. Interested in joining us? Visit our <a href="/misc/join-our-team/">Join our team</a> page.</p>
+		<nav class="page-jump" aria-label="On this page">
+			<span class="page-jump-label">On this page:</span>
+			<ul>
+				<li><a href="#current-members">Current members</a></li>
+				<li><a href="#life-in-the-group">Life in the group</a></li>
+				<li><a href="#alumni">Alumni</a></li>
+			</ul>
+		</nav>
 	</div>
   </div>
 </div>
@@ -263,8 +271,9 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<div class="paper-topics team-roles" role="group" aria-label="Filter by role" hidden>
-			<i class="fa-solid fa-tag paper-topics-icon" aria-hidden="true"></i>
+		<details class="filter-fold team-roles-fold" hidden>
+		<summary class="filter-fold-toggle"><i class="fa-solid fa-tag" aria-hidden="true"></i> <span>Tags<span class="filter-fold-current"></span></span></summary>
+		<div class="paper-topics team-roles" role="group" aria-label="Filter by role">
 			<button type="button" class="paper-topic" data-role="" aria-pressed="true">All</button>
 			<button type="button" class="paper-topic" data-role="research-fellows" aria-pressed="false">Research fellows <span class="paper-topic-count">8</span></button>
 			<button type="button" class="paper-topic" data-role="visiting-scientists" aria-pressed="false">Visiting scientists <span class="paper-topic-count">1</span></button>
@@ -273,11 +282,12 @@
 			<button type="button" class="paper-topic" data-role="undergraduates" aria-pressed="false">Undergraduate and summer students <span class="paper-topic-count">10</span></button>
 			<button type="button" class="paper-topic" data-role="staff" aria-pressed="false">Research staff <span class="paper-topic-count">2</span></button>
 		</div>
+		</details>
 		<p class="team-roles-status" aria-live="polite"></p>
 	</div>
 </div>
 
-<div class="row team-current">
+<div class="row team-current" id="current-members">
 
 	
 	
@@ -883,7 +893,7 @@
 <script src="/js/gallery-strip.js?v=3af6dcce9b" defer></script>
 
 
-<div class="row team-alumni-title">
+<div class="row team-alumni-title" id="alumni">
 	<div class="col-md-12">
 		<h1 class="page-title">
 		Alumni	
@@ -1915,7 +1925,7 @@
 
 				</a>
 				<div>
-					<h3 class="head mb-1"><a href="/team/zhengyu-liu/">Zhengyu Liu</a> <span class="native-name" lang="zh-Hans">刘征宇</span></h3>
+					<h3 class="head mb-1"><a href="/team/zhengyu-liu/">Zhengyu Liu</a> <span class="native-name" lang="zh-Hans">刘政宇</span></h3>
 					<p class="team-note">Master's Student</p>
 				</div>
 			</div>
@@ -2461,7 +2471,7 @@
 </div>
 	
 
-<script src="/js/team-filter.js?v=3195e2e767" defer></script>
+<script src="/js/team-filter.js?v=270ea10264" defer></script>
 
 
 		<div class="row mt60">
@@ -2533,7 +2543,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-15T21:18:14-05:00">Oct. 15, 2026 at 9:18 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-16T06:55:04-05:00">Oct. 16, 2026 at 6:55 a.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>

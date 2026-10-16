@@ -29,7 +29,9 @@
     current = (i + slides.length) % slides.length
     slides.forEach(function (slide, k) {
       slide.classList.toggle('is-active', k === current)
-      slide.setAttribute('aria-hidden', k === current ? 'false' : 'true')
+      // the slides not showing are inert: out of the tab order and the accessibility tree, credit
+      // links included (aria-hidden would hide them from screen readers but leave them focusable)
+      slide.inert = k !== current
       if (k === current) {
         const img = slide.querySelector('img')
         if (img) img.loading = 'eager'

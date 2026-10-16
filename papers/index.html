@@ -97,7 +97,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-serif/500-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=4640fa4438" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=c716e38949" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -153,7 +153,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=ac93beff2c">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=9a48d7a4c2">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -264,11 +264,13 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<!-- Filled in and shown by js/paper-filter.js; without JavaScript the full list is shown as before. --><div class="paper-search" role="search" data-team='[["Hoa My Nguyễn","Hoa My Nguyen","Mimi Nguyen"],["Michael Ho"],["Folasade Adegoju"],["Zhengyu Liu","刘征宇"],["Zhang Ziyi","章子怡"],["Tang Lian","唐莲"],["Zhang Kaixin","张开心"],["Wang Yuxiang","王宇翔"],["Chen Chuyang","陈楚阳"],["Zhang Jiayu","张嘉予"],["Han Yunlu","韩云路"],["Niloy Faiyaz"],["Preston Lim"],["Damien K. J. Lee","Damien Khai Jie Lee"],["Yao Kuan"],["Timothy D. Pook"],["Ziyi Hu"],["Wang Lu"],["Vishakha Kapoor"],["Sumaira Rani"],["Nafiseh Amiri"],["Monal Bhatt"],["Harshan Reddy Gopidi"],["Aaron J. K. Tieu"],["Siddharth Krishnakumar"],["Shidong Yu","于世东"],["Weihang Xie","谢维航"],["Pengfei Cai"],["Abhishek A. Panchal"],["Hengning Chen","陈恒宁"],["Tara P. Mishra"],["Ziliang Wang","王梓良"],["Najmeh Honari"],["Yan Li","李炎"],["Stephanie van der Lubbe"],["Juefan Wang","王珏凡"],["Yuheng Li","李宇恒"],["Baltej Singh"],["Zeyu Deng","Jerry Deng","邓泽宇"],["Yunyeong Choi","최윤영"],["Hữu Đức Lương","Huu Duc Luong"],["Lingyi Liu"],["Piero Canepa","Pieremanuele Canepa"]]' data-abstracts="/papers/search.json?v=dd11ce20d3" hidden>
+		<!-- Filled in and shown by js/paper-filter.js; without JavaScript the full list is shown as before. --><div class="paper-search" role="search" data-team='[["Hoa My Nguyễn","Hoa My Nguyen","Mimi Nguyen"],["Michael Ho"],["Folasade Adegoju"],["Zhengyu Liu","刘政宇"],["Zhang Ziyi","章子怡"],["Tang Lian","唐莲"],["Zhang Kaixin","张开心"],["Wang Yuxiang","王宇翔"],["Chen Chuyang","陈楚阳"],["Zhang Jiayu","张嘉予"],["Han Yunlu","韩云路"],["Niloy Faiyaz"],["Preston Lim"],["Damien K. J. Lee","Damien Khai Jie Lee"],["Yao Kuan"],["Timothy D. Pook"],["Ziyi Hu"],["Wang Lu"],["Vishakha Kapoor"],["Sumaira Rani"],["Nafiseh Amiri"],["Monal Bhatt"],["Harshan Reddy Gopidi"],["Aaron J. K. Tieu"],["Siddharth Krishnakumar"],["Shidong Yu","于世东"],["Weihang Xie","谢维航"],["Pengfei Cai"],["Abhishek A. Panchal"],["Hengning Chen","陈恒宁"],["Tara P. Mishra"],["Ziliang Wang","王梓良"],["Najmeh Honari"],["Yan Li","李炎"],["Stephanie van der Lubbe"],["Juefan Wang","王珏凡"],["Yuheng Li","李宇恒"],["Baltej Singh"],["Zeyu Deng","Jerry Deng","邓泽宇"],["Yunyeong Choi","최윤영"],["Hữu Đức Lương","Huu Duc Luong"],["Lingyi Liu"],["Piero Canepa","Pieremanuele Canepa"]]' data-abstracts="/papers/search.json?v=dd11ce20d3" hidden>
 			<label for="paper-search-input" class="visually-hidden">Search papers</label>
 			<input type="search" id="paper-search-input" class="paper-search-input"
-				placeholder="Search titles, authors, abstracts, journals, years or DOIs" autocomplete="off" spellcheck="false"><div class="paper-topics" role="group" aria-label="Filter by topic">
-				<i class="fa-solid fa-tag paper-topics-icon" aria-hidden="true"></i>
+				placeholder="Search titles, authors, abstracts, journals, years or DOIs" autocomplete="off" spellcheck="false">
+			<details class="filter-fold">
+			<summary class="filter-fold-toggle"><i class="fa-solid fa-tag" aria-hidden="true"></i> <span>Topics<span class="filter-fold-current"></span></span></summary>
+			<div class="paper-topics" role="group" aria-label="Filter by topic">
 				<button type="button" class="paper-topic" data-topic="" aria-pressed="true">All</button>
 				<button type="button" class="paper-topic" data-topic="batteries" aria-pressed="false">Batteries <span class="paper-topic-count">78</span></button>
 				<button type="button" class="paper-topic" data-topic="lithium" aria-pressed="false">Lithium <span class="paper-topic-count">23</span></button>
@@ -285,6 +287,7 @@
 				<button type="button" class="paper-topic" data-topic="optical-materials" aria-pressed="false">Optical materials <span class="paper-topic-count">9</span></button>
 				<button type="button" class="paper-topic" data-topic="other-topics" aria-pressed="false">Other topics <span class="paper-topic-count">2</span></button>
 			</div>
+			</details>
 			<!-- the count, then (once something is typed) a link that searches the whole site for the same words -->
 			<p class="paper-search-status"><span class="paper-search-count" aria-live="polite"></span><a class="paper-search-site" href="/search/" hidden>Search the whole site →</a></p>
 		</div>
@@ -4823,7 +4826,7 @@
 	</div>
 </section>
 
-<script src="/js/paper-filter.js?v=6782a6bd8d" defer></script>
+<script src="/js/paper-filter.js?v=3b89753ea6" defer></script>
 <script src="/js/paper-titles.js?v=4d01174bad" defer></script>
 
 
@@ -4896,7 +4899,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-15T21:18:14-05:00">Oct. 15, 2026 at 9:18 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-16T06:55:04-05:00">Oct. 16, 2026 at 6:55 a.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>

@@ -47,6 +47,7 @@
   let view = { k: 1, x: 0, y: 0 }
   let focus = null
   let bound = 0 // the containing circle's radius, once set (setBound below)
+  let ready = false // the layout has settled: nothing is drawn before
   let dragging = null
 
   function resize () {
@@ -71,7 +72,7 @@
   function toWorld (px, py) { return [(px - width / 2 - view.x) / view.k, (py - height / 2 - view.y) / view.k] }
 
   function draw () {
-    if (!width) return
+    if (!width || !ready) return
     const c = colours()
     ctx.clearRect(0, 0, width, height)
     ctx.save()
@@ -148,7 +149,9 @@
   }
 
   // layout: linked people pulled together (more papers, closer), everyone pushed apart a little
-  const sim = window.d3.forceSimulation(nodes)
+  // created stopped: it runs only while someone drags a circle (the layout itself is settled in a
+  // background thread, js/collaborators-worker.js, or below if that is not possible)
+  const sim = window.d3.forceSimulation(nodes).stop()
     .force('link', window.d3.forceLink(links).distance(function (l) { return 90 / Math.sqrt(l.papers) }).strength(function (l) {
       return 0.6 / Math.min(l.source.links, l.target.links)
     }))
@@ -222,9 +225,13 @@
   // The containing circle, centred on the hub: sized once the layout has settled to hold most
   // people (the 95th percentile of their distance from the centre, plus room), then a force
   // keeps everyone inside it, the small separate groups that drift out among them
-  function setBound () {
-    const d = nodes.map(function (n) { return Math.hypot(n.x, n.y) + n.r }).sort(function (a, b) { return a - b })
-    bound = d[Math.floor(d.length * 0.95)] * 1.08
+  function setBound (given) {
+    if (given) {
+      bound = given
+    } else {
+      const d = nodes.map(function (n) { return Math.hypot(n.x, n.y) + n.r }).sort(function (a, b) { return a - b })
+      bound = d[Math.floor(d.length * 0.95)] * 1.08
+    }
     sim.force('contain', function () {
       nodes.forEach(function (n) {
         if (n.fx != null) return
@@ -339,30 +346,56 @@
 
   root.hidden = false
   resize()
-  // Settle the layout before showing it, then let it finish moving on screen. The 340 steps run
-  // in slices of about 12 ms, yielding to the browser between them, rather than in one long task
-  // that would block the page (Total Blocking Time); and only once the map is near the screen.
-  sim.stop()
-  const steps = [[220, null], [120, function () { setBound(); sim.alpha(0.3) }]]
-  let phase = 0
-  let done = 0
-  function settle () {
-    const until = performance.now() + 12
-    while (phase < steps.length && performance.now() < until) {
-      if (done === 0 && steps[phase][1]) steps[phase][1]()
-      sim.tick()
-      if (++done >= steps[phase][0]) { phase++; done = 0 }
-    }
-    if (phase < steps.length) {
-      setTimeout(settle, 0)
-    } else {
-      fit()
-      draw()
-      stage.classList.add('is-ready')
-      sim.alpha(0.05).restart()
-    }
+
+  function show () {
+    ready = true
+    fit()
+    draw()
+    stage.classList.add('is-ready')
   }
-  function begin () { setTimeout(settle, 0) }
+
+  // Settle the layout before showing it: in a background thread when the browser has one, so the
+  // page never waits on it; otherwise here, in slices of about 12 ms between which the browser can
+  // get on with other work. Either way only once the map is near the screen.
+  function settleHere () {
+    const steps = [[220, null], [120, function () { setBound(); sim.alpha(0.3) }]]
+    let phase = 0
+    let done = 0
+    sim.alpha(1)
+    function slice () {
+      const until = performance.now() + 12
+      while (phase < steps.length && performance.now() < until) {
+        if (done === 0 && steps[phase][1]) steps[phase][1]()
+        sim.tick()
+        if (++done >= steps[phase][0]) { phase++; done = 0 }
+      }
+      if (phase < steps.length) setTimeout(slice, 0)
+      else show()
+    }
+    setTimeout(slice, 0)
+  }
+
+  function begin () {
+    const workerUrl = root.getAttribute('data-worker')
+    const d3Url = root.getAttribute('data-d3')
+    if (!window.Worker || !workerUrl || !d3Url) { settleHere(); return }
+    let worker
+    try { worker = new Worker(workerUrl) } catch (e) { settleHere(); return }
+    worker.onmessage = function (event) {
+      const r = event.data
+      nodes.forEach(function (n, i) { n.x = r.x[i]; n.y = r.y[i]; n.vx = 0; n.vy = 0 })
+      setBound(r.bound)
+      worker.terminate()
+      show()
+    }
+    worker.onerror = function () { worker.terminate(); settleHere() }
+    worker.postMessage({
+      d3: new URL(d3Url, window.location.href).href,
+      nodes: nodes.map(function (n) { return { r: n.r, links: n.links, hub: !!n.hub } }),
+      links: data.links
+    })
+  }
+
   if ('IntersectionObserver' in window) {
     const seen = new IntersectionObserver(function (entries) {
       if (entries.some(function (e) { return e.isIntersecting })) { seen.disconnect(); begin() }

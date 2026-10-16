@@ -253,10 +253,14 @@
   window.addEventListener('pagehide', saveQueryNow)
 
   // One topic at a time: pressing a topic selects it, pressing it again (or All) clears it.
+  // the "Topics" toggle the buttons are folded under names the topic chosen ("Topics: Lithium")
+  const foldCurrent = document.querySelector('.paper-search .filter-fold-current')
   function selectTopic (slug) {
     topic = topicButtons.some(function (button) { return button.getAttribute('data-topic') === slug }) ? slug : ''
     topicButtons.forEach(function (button) {
-      button.setAttribute('aria-pressed', button.getAttribute('data-topic') === topic ? 'true' : 'false')
+      const on = button.getAttribute('data-topic') === topic
+      button.setAttribute('aria-pressed', on ? 'true' : 'false')
+      if (on && foldCurrent) foldCurrent.textContent = topic ? ': ' + button.firstChild.textContent.trim() : ''
     })
   }
 
