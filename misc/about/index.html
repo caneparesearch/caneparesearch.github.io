@@ -98,7 +98,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-serif/500-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=fa2fb8fef3" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=f11af52324" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -160,7 +160,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=524f081625">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=f7b79fa2fe">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -457,7 +457,7 @@ bundle <span class="nb">install</span>
 
     <ul>
       <li>Styles are SCSS partials in <code class="language-plaintext highlighter-rouge">css/</code>, compiled into <code class="language-plaintext highlighter-rouge">css/style.css</code>; layouts are in <code class="language-plaintext highlighter-rouge">_layouts/</code> and shared snippets in <code class="language-plaintext highlighter-rouge">_includes/</code>.</li>
-      <li>Only the parts of Bootstrap 5 the site uses are compiled in: the <code class="language-plaintext highlighter-rouge">@import</code>s at the top of <code class="language-plaintext highlighter-rouge">css/style.scss</code> (grid, containers, type, nav, navbar, collapse transitions, breadcrumb, helpers and utilities), which roughly halves the stylesheet. Cards, buttons, forms, dropdowns and modals are left out, so a page that uses one looks unstyled until its import is added there, in the same order as <code class="language-plaintext highlighter-rouge">bootstrap.scss</code>. Bootstrap’s JavaScript is not loaded either: <code class="language-plaintext highlighter-rouge">js/nav-toggle.js</code> opens and closes the mobile menu with Bootstrap’s <code class="language-plaintext highlighter-rouge">collapse</code> classes.</li>
+      <li>Only the parts of Bootstrap 5 the site uses are compiled in: the <code class="language-plaintext highlighter-rouge">@import</code>s at the top of <code class="language-plaintext highlighter-rouge">css/style.scss</code> (grid, containers, type, nav, navbar and collapse transitions, with only the visually-hidden helper and the utility classes the site uses, listed there), which keeps the stylesheet to about 106 KB, 20 KB compressed. Cards, buttons, forms, dropdowns and modals are left out, so a page that uses one looks unstyled until its import is added there, in the same order as <code class="language-plaintext highlighter-rouge">bootstrap.scss</code>. Bootstrap’s JavaScript is not loaded either: <code class="language-plaintext highlighter-rouge">js/nav-toggle.js</code> opens and closes the mobile menu with Bootstrap’s <code class="language-plaintext highlighter-rouge">collapse</code> classes.</li>
       <li>Long text fades out instead of stretching its row. Titles fade after two lines on the News page and four in its Index view, with the date and author below always in full (the <code class="language-plaintext highlighter-rouge">fade-lines</code> mixin in <code class="language-plaintext highlighter-rouge">css/_variables.scss</code>, which leaves titles whole on phones). On the Papers page <code class="language-plaintext highlighter-rouge">js/paper-titles.js</code> fades a title on the last line that keeps the card no taller than its picture (<code class="language-plaintext highlighter-rouge">.is-cut</code>), or after five lines without JavaScript. Preview text fades (the <code class="language-plaintext highlighter-rouge">fade-box</code> mixin in <code class="language-plaintext highlighter-rouge">css/style.scss</code>) at a fixed height in the news list (<code class="language-plaintext highlighter-rouge">.feedbox</code>) and after five lines (six on phones) on the Research page (<code class="language-plaintext highlighter-rouge">.feedboxblog</code>). The home page’s Recent news and Recent papers show their two newest items in full.</li>
       <li>
         <p>The card grids show one, two or three cards a row by window width, so text is not squeezed into narrow columns:</p>
@@ -690,7 +690,7 @@ bundle <span class="nb">install</span>
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-16T20:28:45-05:00">Oct. 16, 2026 at 8:28 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-16T21:19:54-05:00">Oct. 16, 2026 at 9:19 p.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
