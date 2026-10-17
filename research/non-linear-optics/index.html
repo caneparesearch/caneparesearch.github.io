@@ -10,11 +10,11 @@
 	<meta name="referrer" content="strict-origin-when-cross-origin">
 	<!-- "Papers · Canepa Research Lab": the page first, as tabs and search results cut long titles;
 	     the home page is just the lab's name -->
-	<title>Non-linear optics · Canepa Research Lab</title>
+	<title>Optical materials · Canepa Research Lab</title>
 	<!-- a page's own description, else a post's first paragraph, else the site's tagline. Papers
 	     open with an "Abstract" heading, so theirs is the abstract's text; videos have no text,
 	     so theirs says whose talk it is and where. -->
-	<meta name="description" content="Light has been utilized as a communication device for many centuries. Recently, non-linear optics (NLO) and second harmonic generation (SHG) have been at the...">
+	<meta name="description" content="How the Canepa Research Lab studies optical materials: crystals for second-harmonic generation and birefringence, light-emitting metal halides and nitride LEDs.">
 	<!-- the page's one address, so search engines count /papers/?q=…, http:// or www. as this page;
 	     not on the 404 page, which is served at whatever address was missing -->
 	<link rel="canonical" href="https://caneparesearch.org/research/non-linear-optics/">
@@ -24,11 +24,11 @@
 	     Square pictures get the small card, the lab's card and news and talks the large one. -->
 	<meta property="og:site_name" content="Canepa Research Lab">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="Non-linear optics">
-	<meta property="og:description" content="Light has been utilized as a communication device for many centuries. Recently, non-linear optics (NLO) and second harmonic generation (SHG) have been at the heart of several technological revoluti...">
+	<meta property="og:title" content="Optical materials">
+	<meta property="og:description" content="How the Canepa Research Lab studies optical materials: crystals for second-harmonic generation and birefringence, light-emitting metal halides and nitride LEDs.">
 	<meta property="og:url" content="https://caneparesearch.org/research/non-linear-optics/">
 	<meta property="og:image" content="https://caneparesearch.org/images/research/non-linear-optics_splash.jpg">
-	<meta property="og:image:alt" content="Non-linear optics">
+	<meta property="og:image:alt" content="Optical materials">
 	<meta property="article:published_time" content="2019-09-25T00:00:00-05:00">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,7 +98,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-serif/500-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=f11af52324" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=94f050b6b9" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -160,7 +160,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=4cb033b3e0">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=549a078b64">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -255,13 +255,13 @@
 		<div class="blog-post">
 	<div class="row">
 		<div class="col-md-12">
-			<h1 class="page-title page-title-meta">Non-linear optics</h1>
+			<h1 class="page-title page-title-meta">Optical materials</h1>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-12">
 			
-			<p class="news-author"><span class="reading-time"><i class="fa-regular fa-clock" aria-hidden="true"></i>2 min read</span>
+			<p class="news-author"><span class="reading-time"><i class="fa-regular fa-clock" aria-hidden="true"></i>4 min read</span>
  &middot; <a class="references-jump" href="#references">References ↓</a></p>
 		
 		</div>
@@ -298,29 +298,88 @@
 			
 			
 			<div class="post research-text">
-				<p>Light has been utilized as a communication device for many centuries. Recently, non-linear optics (NLO) and second
-harmonic generation (SHG) have been at the heart of several technological revolutions. With the advent of the internet,
-conveying information and data by means of fiber-optics and lasers has transformed telecommunications. The development
-of fiber-optic devices with increased performance has fueled a surge of interest in the development of materials with ever-increasing data-transfer capabilities.</p>
+				<p>Light carries most of the world’s data, through optical fibers and lasers, and lights our screens and rooms. Behind these technologies are crystals that change light: non-linear optical (NLO) crystals such as LiNbO<sub>3</sub> and LiTaO<sub>3</sub> double its frequency and modulate it in telecommunication networks, birefringent crystals control its polarization, and semiconductors such as InGaN and the metal halides emit it. Our calculations, starting from the electronic structure of these materials, explain why one crystal interacts with light more strongly than another, and guide our experimental collaborators towards new ones, made of cheaper, more abundant and less toxic elements.</p>
 
-<p>Materials, such as LiNbO<sub>3</sub> and LiTaO<sub>3</sub> with NLO and SHG are at the core of high-speed electro-optic modulator devices, significantly boosting the transmission capacities of the telecommunication infra-structure (~10 Gbit s<sup>−1</sup>).</p>
+<!-- Links to the page's four topics, as on Porous framework materials -->
+<nav class="page-jump" aria-label="On this page">
+ <span class="page-jump-label">On this page:</span>
+ <ul>
+  <li><a href="#shg">Second-harmonic generation</a></li>
+  <li><a href="#birefringence">Birefringence</a></li>
+  <li><a href="#halides">Light-emitting metal halides</a></li>
+  <li><a href="#nitrides">Nitride light-emitting diodes</a></li>
+ </ul>
+</nav>
 
-<p class="text-center">
-<img src="/images/research/non-linear-optics_birefringence.png" alt="Computed birefringence of metal-free perovskites" />
-<br /><b>Figure 1:</b> Computed birefringence &Delta;n and 2V angle of metal-free perovskite materials. More detail about this study can be found in Ref. <a href="/papers/kasel-chem-sci-2019/">2</a>
-</p>
+<figure class="text-figure text-figure-small">
 
-<p>The demand for apparatus with increased performance requires the development of novel inexpensive NLO materials and every year the electronic and telecommunication industries demand the production of 40,000 tons of LiNbO<sub>3</sub>. The soaring costs of lithium and niobium thus require the development of the new generation of NLO materials relying on more earth-abundant elements.</p>
 
-<p>Through computational materials science we unravel the complex mechanisms that maximize the interaction of light with advanced NLO materials. We use high-throughput techniques to discover novel NLO materials, as well as to unveil the structure properties relationship in novel SHG and NLO materials.</p>
+
+
+
+
+
+
+
+
+
+<picture>
+	
+	<source type="image/webp" srcset="/images/research/non-linear-optics_birefringence.webp" />
+	
+	<img src="/images/research/non-linear-optics_birefringence.png" width="585" height="458" alt="Computed birefringence and 2V angle of metal-free perovskites" loading="lazy" />
+</picture>
+
+
+<figcaption><b>Figure 1:</b> Computed birefringence &Delta;n and 2V angle of metal-free perovskites.<sup><a href="/papers/kasel-chem-sci-2019/">4</a></sup></figcaption>
+</figure>
+
+<p id="shg"><strong>Second-harmonic generation.</strong> A crystal that generates the second harmonic combines two photons of light into one of twice the frequency, as first observed in quartz in 1961.<sup><a href="https://doi.org/10.1103/PhysRevLett.7.118">1</a></sup> Only crystals without a center of symmetry can do so,<sup><a href="https://doi.org/10.1021/cm980140w">2</a></sup> and a useful one must also be transparent at the wavelengths involved, which is especially hard in the deep ultraviolet.<sup><a href="https://doi.org/10.1038/s41467-018-05411-1">3</a></sup> Our first-principles calculations found NLO activity in metal-free perovskites ABX<sub>3</sub>, in which an organic cation A and NH<sub>4</sub><sup>+</sup> replace the metals, and showed that the dipole moment of the organic cation tunes the response: adding a polar cyanide group to it raises the second-harmonic generation markedly, making these materials candidates for the deep ultraviolet.<sup><a href="/papers/kasel-chem-sci-2019/">4</a></sup> With experimental colleagues, we have explained the strong response of hybrid germanium bromide perovskites, five times that of the standard potassium dihydrogen phosphate (KDP) in CH<sub>3</sub>NH<sub>3</sub>GeBr<sub>3</sub>, by the displacement of Ge<sup>2+</sup> along the [111] direction and the interaction of its lone pair of electrons with the polar organic cations,<sup><a href="/papers/liu-angew-chem-int-ed-2022/">5</a></sup> and our calculated responses of two-dimensional Dion–Jacobson germanium iodide perovskites agree with those measured, up to 0.53 times that of AgGaS<sub>2</sub>.<sup><a href="/papers/chen-chem-mater-2023a/">6</a></sup></p>
+
+<p id="birefringence"><strong>Birefringence.</strong> A birefringent crystal slows light polarized along one direction more than along another, which is how waveplates and polarizers work. We compute the birefringence Δn of candidate crystals and the angle 2V between their optic axes (Figure 1).<sup><a href="/papers/kasel-chem-sci-2019/">4</a></sup> Van der Waals crystals of ferrocene combine high birefringence (Δn = 0.149 at 636 nm) with little absorption, and grow directly into ultrathin true zero-order waveplates that need no cutting or polishing; our calculations suggest that they work from 550 nm to 20 µm.<sup><a href="/papers/li-adv-mater-2023/">7</a></sup></p>
+
+<figure class="text-figure">
+
+
+
+
+
+
+
+
+
+
+
+<picture>
+	
+	<source type="image/webp" srcset="/images/research/non-linear-optics_sbcl5-emission.webp" />
+	
+	<img src="/images/research/non-linear-optics_sbcl5-emission.png" width="972" height="431" alt="Photoluminescence spectra of (Pr3BzN)2SbCl5 from 80 to 460 K, as curves and as an intensity map" loading="lazy" />
+</picture>
+
+
+<figcaption><b>Figure 2:</b> Photoluminescence of the antimony(III) chloride (Pr<sub>3</sub>BzN)<sub>2</sub>SbCl<sub>5</sub>, with square-pyramidal [SbCl<sub>5</sub>] units, excited at 405 nm, from 80 to 460 K: spectra (left) and intensity map, from blue (dimmest) to red (brightest).<sup><a href="/papers/sun-angew-chem-int-ed-2023/">9</a></sup></figcaption>
+</figure>
+
+<p id="halides"><strong>Light-emitting metal halides.</strong> Metal halides of bismuth and antimony are lead-free relatives of the halide perovskites used in solar cells and light-emitting devices. We have calculated the stability and band gaps of the bismuth trihalides BiX<sub>3</sub> in known and hypothetical structures, and the role of the lone pair of electrons on Bi(III).<sup><a href="/papers/deng-inorg-chem-2020/">8</a></sup> In hybrid antimony(III) chlorides, the geometry of the antimony sites decides how brightly they shine: square-pyramidal [SbCl<sub>5</sub>] units emit light with a quantum yield near one, whereas [Sb<sub>2</sub>Cl<sub>8</sub>] dimers barely emit at all (Figure 2).<sup><a href="/papers/sun-angew-chem-int-ed-2023/">9</a></sup> In layered bimetallic halides that alternate antimony chloride pyramids with two-dimensional layers, our calculations follow the measured band gaps, and compression tunes the electronic structure, raising the light emission of one compound eleven-fold at 19 GPa.<sup><a href="/papers/liu-angew-chem-int-ed-2023/">10</a></sup></p>
+
+<p id="nitrides"><strong>Nitride light-emitting diodes.</strong> Blue and green LEDs are built from In<sub>x</sub>Ga<sub>1−x</sub>N quantum wells, which lose efficiency as their indium content rises. Combining electron energy-loss spectroscopy at sub-nanometer resolution with multiscale models, we have shown that a random alloy describes wells with about 18% indium, but not those with 24% or more, where composition fluctuates far more and localizes the charge carriers.<sup><a href="/papers/mishra-phys-rev-mater-2021/">11</a></sup> In GaN-on-silicon heterostructures, these fluctuations become nanoscale optical inhomogeneities within single wells, and our calculations of the alloys’ mixing energies show that relaxing the epitaxial strain stabilizes particular compositions, so that both strain and composition must be controlled for homogeneous, long-wavelength light emission.<sup><a href="/papers/chung-adv-sci-2026/">12</a></sup></p>
 
 <p id="references"><strong>Relevant references</strong></p>
 
 <ol class="research-refs">
   <li><a class="off" href="https://doi.org/10.1103/PhysRevLett.7.118">P. A. Franken, A. E. Hill, C. W. Peters, and G. Weinreich; <i>Phys. Rev. Lett.</i> 7, 118–119 (1961).</a></li>
-  <li><a class="off" href="/papers/kasel-chem-sci-2019/">T. W. Kasel, Z. Deng, A. M. Mroz, C. H. Hendon, K. T. Butler, and <b>P. Canepa</b>; <i>Chem. Sci.</i> 10, 8187–8194 (2019).</a></li>
   <li><a class="off" href="https://doi.org/10.1021/cm980140w">P. S. Halasyamani and K. R. Poeppelmeier; <i>Chem. Mater.</i> 10, 2753–2769 (1998).</a></li>
   <li><a class="off" href="https://doi.org/10.1038/s41467-018-05411-1">P. S. Halasyamani and J. M. Rondinelli; <i>Nat. Commun.</i> 9, 2972 (2018).</a></li>
+  <li><a class="off" href="/papers/kasel-chem-sci-2019/">T. W. Kasel, Z. Deng, A. M. Mroz, C. H. Hendon, K. T. Butler, and <b>P. Canepa</b>; <i>Chem. Sci.</i> 10, 8187–8194 (2019).</a></li>
+  <li><a class="off" href="/papers/liu-angew-chem-int-ed-2022/">Y. Liu, Y.-P. Gong, S. Geng, M.-L. Feng, D. Manidaki, Z. Deng, C. C. Stoumpos, <b>P. Canepa</b>, Z. Xiao, W.-X. Zhang, and L. Mao; <i>Angew. Chem.</i> 61, e202208875 (2022).</a></li>
+  <li><a class="off" href="/papers/chen-chem-mater-2023a/">C. Chen, Z. Zhao, Y. Gong, Y. Liu, Z. Chen, L. Zhang, J. Chen, Z. Deng, H. Lu, M. Luo, <b>P. Canepa</b>, and L. Mao; <i>Chem. Mater.</i> 35, 3265 (2023).</a></li>
+  <li><a class="off" href="/papers/li-adv-mater-2023/">Z. Li, X. Ma, F. Wei, D. Wang, Z. Deng, M. Jiang, A. M. Siddiquee, K. Qi, D. Zhu, M. Zhao, M. Shen, <b>P. Canepa</b>, S. Kou, J. Lin, and Q. Wang; <i>Adv. Mater.</i> 35, 2302468 (2023).</a></li>
+  <li><a class="off" href="/papers/deng-inorg-chem-2020/">Z. Deng, F. Wei, Y. Wu, R. Seshadri, A. K. Cheetham, and <b>P. Canepa</b>; <i>Inorg. Chem.</i> 59, 3377–3386 (2020).</a></li>
+  <li><a class="off" href="/papers/sun-angew-chem-int-ed-2023/">C. Sun, Z. Deng, Z. Li, Z. Chen, X. Zhang, J. Chen, H. Lu, <b>P. Canepa</b>, R. Chen, and L. Mao; <i>Angew. Chem.</i> 62, e202216720 (2023).</a></li>
+  <li><a class="off" href="/papers/liu-angew-chem-int-ed-2023/">Y. Liu, J. Liang, Z. Deng, S. Guo, X. Ji, C. Chen, <b>P. Canepa</b>, X. Lü, and L. Mao; <i>Angew. Chem.</i> 62, e2023149 (2023).</a></li>
+  <li><a class="off" href="/papers/mishra-phys-rev-mater-2021/">T. P. Mishra, G. J. Syaranamual, Z. Deng, J. Y. Chung, L. Zhang, S. A. Goodman, L. Jones, M. Bosman, S. Gradečak, S. J. Pennycook, and <b>P. Canepa</b>; <i>Phys. Rev. Mater.</i> 5, 024605 (2021).</a></li>
+  <li><a class="off" href="/papers/chung-adv-sci-2026/">J.-Y. Chung, T. P. Mishra, Z. Mahfoud, T. E. Gage, J. Wen, K. P. Rice, I. Martin, L. Zhang, G. J. Syaranamual, S. P. Pennycook, S. Gradečak, <b>P. Canepa</b>, and M. Bosman; <i>Adv. Sci.</i> e76414 (2026).</a></li>
 </ol>
 
 
@@ -411,7 +470,7 @@ of fiber-optic devices with increased performance has fueled a surge of interest
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-17T08:19:49-05:00">Oct. 17, 2026 at 8:19 a.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-17T08:29:27-05:00">Oct. 17, 2026 at 8:29 a.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>
