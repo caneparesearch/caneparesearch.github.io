@@ -24,10 +24,11 @@ self.onmessage = function (event) {
 
   for (let i = 0; i < 220; i++) sim.tick()
 
-  // the containing circle: holds 95% of people with room to spare; the rest are pulled inside it
+  // the containing circle: holds 95% of people with room to spare; the rest are moved back to its
+  // edge after every step (after it, not as one of its forces, which the step's own movement undoes)
   const d = nodes.map(function (n) { return Math.hypot(n.x, n.y) + n.r }).sort(function (a, b) { return a - b })
   const bound = d[Math.floor(d.length * 0.95)] * 1.08
-  sim.force('contain', function () {
+  function contain () {
     nodes.forEach(function (n) {
       if (n.fx != null) return
       const r = Math.hypot(n.x, n.y)
@@ -38,9 +39,9 @@ self.onmessage = function (event) {
         n.vx *= 0.5; n.vy *= 0.5
       }
     })
-  })
+  }
   sim.alpha(0.3)
-  for (let i = 0; i < 120; i++) sim.tick()
+  for (let i = 0; i < 120; i++) { sim.tick(); contain() }
 
   self.postMessage({ x: nodes.map(function (n) { return n.x }), y: nodes.map(function (n) { return n.y }), bound })
 }

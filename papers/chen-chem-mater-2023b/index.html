@@ -114,7 +114,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-serif/500-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=27e0275811" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=fa2fb8fef3" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -153,13 +153,19 @@
 <script src="/js/load-time.js?v=8a464f19cf" defer></script>
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=70879d47fa" defer></script>
+<script src="/js/analytics.js?v=09fa31689c" defer></script>
 
 </head>
 
 <body>
 	<!-- first stop for keyboard and screen-reader users: hidden until focused (Tab), then jumps past the navbar -->
 	<a class="skip-link visually-hidden-focusable" href="#main">Skip to main content</a>
+	<!-- a round cookie button in the lower left corner that shows the cookie banner again, with
+	     its name beside it on hover or keyboard focus; js/analytics.js unhides it -->
+	<button id="cookie-settings" class="cookie-settings" type="button" aria-label="Cookie settings" hidden>
+		<i class="fa-solid fa-cookie-bite fa-fw" aria-hidden="true"></i>
+		<span class="cookie-settings-tip" aria-hidden="true">Cookie settings</span>
+	</button>
 	<button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
 		<i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i>
 	</button>
@@ -452,10 +458,6 @@
 						<li class="footernav footernav-text list-inline-item">
 							<a class="off" href="https://intranet.caneparesearch.org/" target="_blank" rel="noopener noreferrer" title="The lab's intranet (sign-in required)">Intranet</a>
 						</li>
-						<!-- shows the cookie banner again (js/analytics.js unhides it) -->
-						<li id="cookie-settings" class="footernav footernav-text list-inline-item" hidden>
-							<button type="button" class="footer-button">Cookie settings</button>
-						</li>
 						<!-- social links: one item, so the three icons always wrap together -->
 						<li class="footernav footernav-icons list-inline-item">
 							<a class="off" href="https://github.com/caneparesearch" target="_blank" rel="noopener noreferrer" aria-label="The lab on GitHub" title="The lab on GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
@@ -480,7 +482,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-16T14:50:56-05:00">Oct. 16, 2026 at 2:50 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-16T20:28:45-05:00">Oct. 16, 2026 at 8:28 p.m. CDT</time></p>
 						<!-- Filled in by js/load-time.js once the page has loaded -->
 						<p id="load-time" class="load-time" hidden></p>
 					</div>

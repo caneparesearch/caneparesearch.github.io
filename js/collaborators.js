@@ -3,12 +3,14 @@
 // D3's force simulation (js/vendor/d3-force.min.js, loaded before this), drawn on a canvas,
 // which stays quick with a few hundred circles and a few thousand lines.
 //
-// Circles are sized by the papers a person shares with us, team members in the site's orange accent;
-// names show for the most frequent collaborators and, as one zooms in, for everyone. Clicking a
-// circle (or choosing a name in the box) focuses that person: their lines and co-authors stay,
-// the rest fade, and a note gives their papers with a link to them on the Papers page. Wheel or
-// pinch zooms, dragging the background moves the map, dragging a circle moves it, and "Reset
-// view" brings everything back. Colours follow the light or dark theme.
+// Circles are sized by the papers a person shares with us, team members in the site's orange
+// accent with a ring; names show for the most frequent collaborators and, as one zooms in, for
+// everyone, as long as they do not overlap. Clicking a circle (or choosing a name in the box)
+// focuses that person: their lines and co-authors stay, the rest fade, and a note gives their
+// papers with a link to them on the Papers page. Ctrl/⌘ + wheel or a pinch zooms (a plain wheel
+// scrolls the page), dragging the background moves the map, dragging a circle moves it; on a
+// touch screen, two fingers move and zoom, one scrolls the page. "Reset view" brings everything
+// back. Colours follow the light or dark theme.
 //
 // Loaded with `defer`, after js/vendor/d3-force.min.js (see js/back-to-top.js).
 (function () {
@@ -33,6 +35,7 @@
   const ctx = canvas.getContext('2d')
   const stage = root.querySelector('.collab-stage')
   const info = root.querySelector('.collab-info')
+  const note = root.querySelector('.collab-note')
   const search = root.querySelector('.collab-search')
   const reset = root.querySelector('.collab-reset')
 
@@ -114,7 +117,7 @@
       })
     }
 
-    // circles
+    // circles; team members' with a ring around them too, so they stand out without the colour
     nodes.forEach(function (n) {
       const lit = !focus || n === focus || neighbours[focus.index].has(n.index)
       ctx.globalAlpha = lit ? 1 : 0.2
@@ -122,28 +125,53 @@
       ctx.beginPath()
       ctx.arc(n.x, n.y, n.r, 0, 2 * Math.PI)
       ctx.fill()
+      if (n.team && !n.hub) {
+        ctx.lineWidth = 1.2 / view.k
+        ctx.strokeStyle = c.accent
+        ctx.beginPath()
+        ctx.arc(n.x, n.y, n.r + 2.2 / view.k, 0, 2 * Math.PI)
+        ctx.stroke()
+      }
       if (n === focus) {
         ctx.lineWidth = 2.5 / view.k
         ctx.strokeStyle = c.heading
+        ctx.beginPath()
+        ctx.arc(n.x, n.y, n.r, 0, 2 * Math.PI)
         ctx.stroke()
       }
     })
 
-    // names: frequent collaborators always, everyone once zoomed in, the focused person's circle
+    // names: frequent collaborators always, everyone once zoomed in, the focused person's circle.
+    // Placed in turn, the focused person and the hub first, then their co-authors, then by
+    // papers (the nodes come sorted by papers), each left out where it would overlap a name
+    // already placed or fall off the screen; zooming in makes room for them
     ctx.textAlign = 'center'
     ctx.textBaseline = 'top'
-    nodes.forEach(function (n) {
+    const corner = toWorld(0, 0)
+    const far = toWorld(width, height)
+    const pad = 2 / view.k
+    const placed = []
+    function rank (n) { return n === focus ? 0 : n.hub ? 1 : focus && neighbours[focus.index].has(n.index) ? 2 : 3 }
+    nodes.filter(function (n) {
       const near = focus && (n === focus || neighbours[focus.index].has(n.index))
-      const show = near || n.hub || n.papers >= 5 * Math.min(1, 1 / view.k) || view.k >= 2.5 || (view.k >= 1.6 && n.papers >= 2)
-      if (!show) return
-      ctx.globalAlpha = !focus || near ? 1 : 0.25
+      return near || n.hub || n.papers >= 5 * Math.min(1, 1 / view.k) || view.k >= 2.5 || (view.k >= 1.6 && n.papers >= 2)
+    }).sort(function (a, b) { return rank(a) - rank(b) || a.index - b.index }).forEach(function (n) {
+      const near = focus && (n === focus || neighbours[focus.index].has(n.index))
       const size = (n === focus ? 14 : n.papers >= 8 || n.hub ? 12.5 : 11) / view.k
+      const text = n.label || n.name
+      const top = n.y + n.r + 2 / view.k
       ctx.font = (n === focus || n.hub ? '600 ' : '') + size + 'px "IBM Plex Sans", "IBM Plex Sans fallback", Helvetica, Arial, sans-serif'
+      const half = ctx.measureText(text).width / 2
+      const box = [n.x - half - pad, top - pad, n.x + half + pad, top + size * 1.15 + pad]
+      if (box[2] < corner[0] || box[0] > far[0] || box[3] < corner[1] || box[1] > far[1]) return
+      if (placed.some(function (p) { return box[0] < p[2] && p[0] < box[2] && box[1] < p[3] && p[1] < box[3] })) return
+      placed.push(box)
+      ctx.globalAlpha = !focus || near ? 1 : 0.25
       ctx.fillStyle = n.team || n.hub ? c.heading : c.text
       ctx.lineWidth = 3 / view.k
       ctx.strokeStyle = c.bg
-      ctx.strokeText(n.name, n.x, n.y + n.r + 2 / view.k)
-      ctx.fillText(n.name, n.x, n.y + n.r + 2 / view.k)
+      ctx.strokeText(text, n.x, top)
+      ctx.fillText(text, n.x, top)
     })
     ctx.restore()
   }
@@ -159,7 +187,7 @@
     .force('collide', window.d3.forceCollide().radius(function (n) { return n.r + 4 }))
     .force('x', window.d3.forceX(0).strength(0.03))
     .force('y', window.d3.forceY(0).strength(0.03))
-    .on('tick', draw)
+    .on('tick', function () { contain(); draw() })
 
   function nodeAt (px, py) {
     const p = toWorld(px, py)
@@ -223,8 +251,10 @@
   }
 
   // The containing circle, centred on the hub: sized once the layout has settled to hold most
-  // people (the 95th percentile of their distance from the centre, plus room), then a force
-  // keeps everyone inside it, the small separate groups that drift out among them
+  // people (the 95th percentile of their distance from the centre, plus room); from then on,
+  // after every step of the layout, anyone outside it (the small separate groups that drift
+  // out) is moved back to its edge. After the step, not as one of its forces, which the
+  // step's own movement would undo
   function setBound (given) {
     if (given) {
       bound = given
@@ -232,21 +262,35 @@
       const d = nodes.map(function (n) { return Math.hypot(n.x, n.y) + n.r }).sort(function (a, b) { return a - b })
       bound = d[Math.floor(d.length * 0.95)] * 1.08
     }
-    sim.force('contain', function () {
-      nodes.forEach(function (n) {
-        if (n.fx != null) return
-        const r = Math.hypot(n.x, n.y)
-        const limit = bound - n.r - 2
-        if (r > limit) {
-          const s = limit / r
-          n.x *= s; n.y *= s
-          n.vx *= 0.5; n.vy *= 0.5
-        }
-      })
+  }
+  function contain () {
+    if (!bound) return
+    nodes.forEach(function (n) {
+      if (n.fx != null) return
+      const r = Math.hypot(n.x, n.y)
+      const limit = bound - n.r - 2
+      if (r > limit) {
+        const s = limit / r
+        n.x *= s; n.y *= s
+        n.vx *= 0.5; n.vy *= 0.5
+      }
     })
   }
 
-  // pointer: drag a circle, drag the background to move, two fingers to pinch, click to focus
+  // a short note over the map, for a moment: how to zoom, when a scroll went to the page, or to
+  // move the map, when a finger's swipe did (shown to the eye only: the hint above says the same)
+  let noteTimer = null
+  function flash (text) {
+    note.textContent = text
+    note.hidden = false
+    clearTimeout(noteTimer)
+    noteTimer = setTimeout(function () { note.hidden = true }, 1600)
+  }
+  const apple = /Mac|iPhone|iPad/.test(navigator.userAgent)
+
+  // pointer: with a mouse, drag a circle, drag the background to move, click to focus; on a
+  // touch screen one finger scrolls the page as anywhere else (the stage's touch-action) and a
+  // tap focuses, two fingers move and pinch the map
   const pointers = new Map()
   let moved = false
   let pinch = null
@@ -257,12 +301,12 @@
     moved = false
     if (pointers.size === 2) {
       const p = Array.from(pointers.values())
-      pinch = { d: Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y), k: view.k }
+      pinch = { d: Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y), k: view.k, x: (p[0].x + p[1].x) / 2, y: (p[0].y + p[1].y) / 2 }
       dragging = null
       return
     }
     const n = nodeAt(event.offsetX, event.offsetY)
-    dragging = n ? { node: n } : { pan: true }
+    dragging = event.pointerType === 'touch' ? { node: n, tap: true } : n ? { node: n } : { pan: true }
   })
 
   canvas.addEventListener('pointermove', function (event) {
@@ -277,10 +321,16 @@
     if (Math.abs(dx) + Math.abs(dy) > 1) moved = true
     if (pinch && pointers.size === 2) {
       const p = Array.from(pointers.values())
-      zoomAt((p[0].x + p[1].x) / 2, (p[0].y + p[1].y) / 2, pinch.k * Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y) / pinch.d / view.k)
+      const mx = (p[0].x + p[1].x) / 2
+      const my = (p[0].y + p[1].y) / 2
+      view.x += mx - pinch.x
+      view.y += my - pinch.y
+      pinch.x = mx
+      pinch.y = my
+      zoomAt(mx, my, pinch.k * Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y) / pinch.d / view.k)
       return
     }
-    if (!dragging) return
+    if (!dragging || dragging.tap) return
     if (dragging.node && !dragging.node.hub) {
       const w = toWorld(event.offsetX, event.offsetY)
       dragging.node.fx = w[0]
@@ -297,6 +347,13 @@
     pointers.delete(event.pointerId)
     if (pointers.size < 2) pinch = null
     if (!dragging) return
+    if (dragging.tap) {
+      // the browser took a one-finger swipe to scroll the page
+      if (event.type === 'pointercancel') flash('Use two fingers to move the map')
+      else if (!moved) setFocus(dragging.node)
+      dragging = null
+      return
+    }
     if (dragging.node && !dragging.node.hub) {
       dragging.node.fx = null
       dragging.node.fy = null
@@ -316,20 +373,50 @@
     view.y = py - height / 2 - w[1] * k
     draw()
   }
+  // the wheel zooms only with Ctrl (or ⌘) held, as a trackpad's pinch sends it in Chrome and
+  // Firefox; a plain scroll moves the page past the map, with a note on how to zoom
   canvas.addEventListener('wheel', function (event) {
+    if (!event.ctrlKey && !event.metaKey) {
+      flash((apple ? '⌘' : 'Ctrl') + ' + scroll to zoom the map')
+      return
+    }
     event.preventDefault()
-    zoomAt(event.offsetX, event.offsetY, Math.exp(-event.deltaY * 0.0015))
+    zoomAt(event.offsetX, event.offsetY, Math.exp(-event.deltaY * (event.ctrlKey && !event.metaKey && Math.abs(event.deltaY) < 50 ? 0.01 : 0.0015)))
   }, { passive: false })
+  // Safari's trackpad pinch comes as gesture events instead (on an iPhone or iPad, the two
+  // fingers' pointers above already handle it, so it is left to them)
+  let gestureK = null
+  canvas.addEventListener('gesturestart', function (event) {
+    if (pointers.size) return
+    event.preventDefault()
+    gestureK = view.k
+  })
+  canvas.addEventListener('gesturechange', function (event) {
+    if (pointers.size || gestureK === null) return
+    event.preventDefault()
+    const box = canvas.getBoundingClientRect()
+    zoomAt(event.clientX - box.left, event.clientY - box.top, gestureK * event.scale / view.k)
+  })
+  canvas.addEventListener('gestureend', function () { gestureK = null })
 
-  // the box: choosing or typing a full name focuses that person
+  // the box: choosing or typing a name, in full or as on the map ("W. Xie"), accents optional,
+  // focuses that person; a name not found says so
+  function fold (text) { return text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase() }
   search.addEventListener('change', findTyped)
   search.addEventListener('keydown', function (event) { if (event.key === 'Enter') findTyped() })
   function findTyped () {
-    const wanted = search.value.trim().toLowerCase()
+    const typed = search.value.trim()
+    const wanted = fold(typed)
     if (!wanted) return
-    const n = nodes.filter(function (m) { return m.name.toLowerCase() === wanted })[0] ||
-      nodes.filter(function (m) { return m.name.toLowerCase().indexOf(wanted) !== -1 })[0]
-    if (!n) return
+    function names (m) { return [fold(m.name), fold(m.label || m.name)] }
+    const n = nodes.filter(function (m) { return names(m).indexOf(wanted) !== -1 })[0] ||
+      nodes.filter(function (m) { return names(m).some(function (s) { return s.indexOf(wanted) !== -1 }) })[0]
+    if (!n) {
+      setFocus(null)
+      info.textContent = 'No one called “' + typed + '” on the map'
+      info.hidden = false
+      return
+    }
     centreOn(n, Math.max(view.k, 1.8))
     setFocus(n)
   }
@@ -367,6 +454,7 @@
       while (phase < steps.length && performance.now() < until) {
         if (done === 0 && steps[phase][1]) steps[phase][1]()
         sim.tick()
+        contain()
         if (++done >= steps[phase][0]) { phase++; done = 0 }
       }
       if (phase < steps.length) setTimeout(slice, 0)

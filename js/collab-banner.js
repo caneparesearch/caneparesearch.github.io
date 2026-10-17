@@ -49,6 +49,9 @@
 
   function schedule () {
     clearTimeout(timer)
+    // the counter is read out by screen readers only while the pictures stand still, not at
+    // every change while they play
+    if (count) count.setAttribute('aria-live', paused || hovered ? 'polite' : 'off')
     if (!paused && !hovered) timer = setTimeout(function () { show(current + 1); schedule() }, DELAY)
   }
 
