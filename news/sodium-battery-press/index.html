@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<!-- upgrade-insecure-requests is production-only: it would make a browser
+	     retry every link over HTTPS, which breaks `jekyll serve`'s plain-HTTP
+	     local server. -->
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; base-uri 'self'; object-src 'none'; form-action 'self'">
+	<meta name="referrer" content="strict-origin-when-cross-origin">
+	<!-- "Papers · Canepa Research Lab": the page first, as tabs and search results cut long titles;
+	     the home page is just the lab's name -->
+	<title>Our new sodium-battery material in Nature Materials makes the news · Canepa Research Lab</title>
+	<!-- a page's own description, else a post's first paragraph, else the site's tagline. Papers
+	     open with an "Abstract" heading, so theirs is the abstract's text; videos have no text,
+	     so theirs says whose talk it is and where. -->
+	<meta name="description" content="Our paper “Obtaining V2(PO4)3 by sodium extraction from single-phase NaxV2(PO4)3 (1 &lt; x &lt; 3) positive electrode materials”, published in Nature Materials (DO...">
+	<!-- the page's one address, so search engines count /papers/?q=…, http:// or www. as this page;
+	     not on the 404 page, which is served at whatever address was missing -->
+	<link rel="canonical" href="https://caneparesearch.org/news/sodium-battery-press/">
+	<!-- The card shown when a page is shared on LinkedIn, X, Slack, WhatsApp…: its title,
+	     description and picture (a paper's graphical abstract, a news picture, a person's
+	     photo, a talk's YouTube frame), else the lab's card (images/social-card.png).
+	     Square pictures get the small card, the lab's card and news and talks the large one. -->
+	<meta property="og:site_name" content="Canepa Research Lab">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Our new sodium-battery material in Nature Materials makes the news">
+	<meta property="og:description" content="Our paper “Obtaining V2(PO4)3 by sodium extraction from single-phase NaxV2(PO4)3 (1 &lt; x &lt; 3) positive electrode materials”, published in Nature Materials (DOI: 10.1038/s41563-024-02023-7) with our ...">
+	<meta property="og:url" content="https://caneparesearch.org/news/sodium-battery-press/">
+	<meta property="og:image" content="https://caneparesearch.org/images/news/2024-11-15-sodium-battery-press.png">
+	<meta property="og:image:alt" content="Our new sodium-battery material in Nature Materials makes the news">
+	<meta property="article:published_time" content="2024-11-15T00:00:00-06:00">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- iOS Safari would otherwise link number runs such as a paper's pages ("9897–9907") as phone
+	     numbers; a real phone number on the site needs an explicit tel: link -->
+	<meta name="format-detection" content="telephone=no">
+	<!-- Day / night theme: choose the theme before first paint (no flash), then wire up the navbar toggle.
+     Order of preference: the visitor's saved choice, then the OS setting. -->
+<script>
+	(function () {
+		var root = document.documentElement;
+		var KEY = 'theme';
+		var query = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+		function saved() {
+			try {
+				var value = localStorage.getItem(KEY);
+				return value === 'light' || value === 'dark' ? value : null;
+			} catch (e) {
+				return null;
+			}
+		}
+
+		function system() {
+			return query && query.matches ? 'dark' : 'light';
+		}
+
+		function apply(theme) {
+			root.setAttribute('data-bs-theme', theme);
+			var button = document.getElementById('theme-toggle');
+			if (button) {
+				var label = theme === 'dark' ? 'Switch to day mode' : 'Switch to night mode';
+				button.setAttribute('aria-label', label);
+				button.setAttribute('title', label);
+			}
+		}
+
+		apply(saved() || system());
+
+		document.addEventListener('DOMContentLoaded', function () {
+			apply(root.getAttribute('data-bs-theme'));
+			var button = document.getElementById('theme-toggle');
+			if (!button) return;
+			button.addEventListener('click', function () {
+				var next = root.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+				apply(next);
+				try {
+					localStorage.setItem(KEY, next);
+				} catch (e) { /* storage unavailable: the choice just lasts for this page */ }
+			});
+		});
+
+		if (query && query.addEventListener) {
+			query.addEventListener('change', function () {
+				if (!saved()) apply(system());
+			});
+		}
+	})();
+</script>
+
+	<!-- RSS feed -->
+	<link rel="alternate" type="application/rss+xml" title="Canepa Research Lab" href="https://caneparesearch.org/feed.xml">
+	<!-- IBM Plex Sans, the text font, is self-hosted (css/_plex-sans.scss). Preloading the one file every page needs
+	     starts its download with the stylesheet's, instead of after the stylesheet has been parsed. -->
+	<link rel="preload" href="/css/fonts/ibm-plex-sans/normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<!-- and the page titles' font (IBM Plex Serif medium), which every page's title needs -->
+	<link rel="preload" href="/css/fonts/ibm-plex-serif/500-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
+	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
+	<link href="/css/style.css?v=54cf7a59e0" rel="stylesheet" media="screen">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+	<!-- Opens and closes the mobile menu (in place of Bootstrap's JavaScript bundle) -->
+<script src="/js/nav-toggle.js?v=8da5aef213" defer></script>
+
+<!-- Spam-protected email links -->
+<script src="/js/email-links.js?v=5f0ad451d1" defer></script>
+
+<!-- Floating "back to top" button, shown once the page is scrolled past a threshold -->
+<script src="/js/back-to-top.js?v=fdddfbc7ff" defer></script>
+
+<!-- Search overlay opened by the navbar's magnifying glass, with the search page's matching -->
+<script src="/js/search-core.js?v=61d4d56abd" defer></script>
+<script src="/js/search-dialog.js?v=0ee86af17b" defer></script>
+
+<!-- The footer's "Loaded in … s", from the browser's own timing of the page -->
+<script src="/js/load-time.js?v=8a464f19cf" defer></script>
+
+	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
+<script src="/js/analytics.js?v=09fa31689c" defer></script>
+
+</head>
+
+<body>
+	<!-- first stop for keyboard and screen-reader users: hidden until focused (Tab), then jumps past the navbar -->
+	<a class="skip-link visually-hidden-focusable" href="#main">Skip to main content</a>
+	<!-- a round cookie button in the lower left corner that shows the cookie banner again, with
+	     its name beside it on hover or keyboard focus; js/analytics.js unhides it -->
+	<button id="cookie-settings" class="cookie-settings" type="button" aria-label="Cookie settings" hidden>
+		<i class="fa-solid fa-cookie-bite fa-fw" aria-hidden="true"></i>
+		<span class="cookie-settings-tip" aria-hidden="true">Cookie settings</span>
+	</button>
+	<button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+		<i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i>
+	</button>
+
+	<dialog id="search-dialog" class="search-dialog" aria-label="Search the site">
+	<button type="button" class="search-dialog-close" aria-label="Close search" title="Close (Esc)">
+		<!-- the same thin orange X as the navbar's menu button when the menu is open -->
+		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
+	</button>
+	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=1dbe329118">
+		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
+		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
+			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
+		<p class="search-dialog-hint" aria-live="polite">News, papers, people, software and more</p>
+		<a class="search-dialog-more" href="/search/" hidden>See all results →</a>
+		<ul class="search-dialog-results"></ul>
+	</form>
+</dialog>
+
+
+	<div id="header">
+		<nav class="navbar navbar-expand-md navbar-light bg-navbar">
+			<div class="container">
+
+				<!--<div class="navbar-header"> -->
+
+				<a class="navbar-brand" href="/">
+					<img class="logo navbar-brand align-top ms-0 me-1" src="/images/logo-plex-color.svg"
+						width="110" height="65" alt="Canepa Research Lab">
+				</a>
+				<button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- </div> -->
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<hr style="height:2px;border:none;color:rgb(255, 83, 13);background-color:rgb(255, 83, 13)">
+					<ul class="navbar-nav nav-pills ms-auto">
+						<!-- <ul class="nav navbar-nav navbar-right"> -->
+						<!-- what the lab does, its output, its people, then news; Join for prospective members (Sponsors is in the footer) -->
+						
+						<li class="nav-link">
+							
+							<a href="/research/">Research</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/papers/">Papers</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/software/">Software</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/team/">Team</a>
+						</li>
+						
+						<li class="nav-link active">
+							
+							<a href="/news/">News</a>
+						</li>
+						
+						<li class="nav-link">
+							
+							<a href="/misc/join-our-team/">Join</a>
+						</li>
+<!-- 						
+						
+						<li class="nav-link">
+							
+							<a href="/videos/"><i class="fa-brands fa-youtube fa-lg"></i></a>
+						</li> 
+-->
+						
+						<li class="nav-link">
+							
+							<a href="/search/" data-search-dialog aria-label="Search the site" title="Search the site"><i
+									class="fa-solid fa-magnifying-glass fa-lg" aria-hidden="true"></i></a>
+						</li>
+						<li class="nav-link">
+							<button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to night mode"
+								title="Switch to night mode">
+								<i class="fa-regular fa-moon fa-lg theme-icon-moon" aria-hidden="true"></i>
+								<!-- drawn as an SVG: Font Awesome's sun icon is a spiky burst that looks like a cog -->
+								<svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+									<circle cx="12" cy="12" r="5" />
+									<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+								</svg>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<main id="main" tabindex="-1" class="container main">
+
+		<div class="blog-post">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="page-title page-title-meta">Our new sodium-battery material in Nature Materials makes the news</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			
+			<p class="news-author">
+				Nov. 15, 2024
+				
+				by <a class="off" href="/team/piero-canepa/">Piero</a>
+				
+				
+				&middot; <span class="reading-time"><i class="fa-regular fa-clock" aria-hidden="true"></i>2 min read</span>
+
+			</p>
+			
+		</div>
+	</div>
+	<!-- <div class="col-md-1"></div> -->
+
+	<div class="bigspacer"></div>
+
+	<div class="row">
+		<!-- <div class="col-md-1"></div> -->
+		<div class="col-sm-12 col-12">
+			
+			
+			
+			
+
+
+
+
+
+
+
+
+
+
+<picture>
+	
+	<source type="image/webp" srcset="/images/news/2024-11-15-sodium-battery-press.webp">
+	
+	<img src="/images/news/2024-11-15-sodium-battery-press.png" class="offset offset-news" width="409" height="410" alt="">
+</picture>
+
+
+			
+			
+			<div class="post news-text">
+				<p>Our paper “<a href="/papers/park-nat-mater-2025/">Obtaining V<sub>2</sub>(PO<sub>4</sub>)<sub>3</sub> by sodium extraction from single-phase Na<sub>x</sub>V<sub>2</sub>(PO<sub>4</sub>)<sub>3</sub> (1 &lt; x &lt; 3) positive electrode materials</a>”, published in <em>Nature Materials</em> (<a href="https://doi.org/10.1038/s41563-024-02023-7">DOI: 10.1038/s41563-024-02023-7</a>) with our colleagues at <a href="https://www.lrcs.u-picardie.fr/en/">LRCS in Amiens</a> and <a href="https://www.icmcb-bordeaux.cnrs.fr/">ICMCB in Bordeaux</a>, France, has been covered widely in the press, in English and other languages, including through a University of Houston press release. <a href="/team/ziliang-wang/">Ziliang Wang</a> worked on the paper as a member of our group. The new single-phase cathode material raises the operating voltage of a sodium-ion battery from 3.37 V to 3.70 V, increasing its theoretical energy density by about 15%, from 396 to 458 Wh kg<sup>−1</sup>.</p>
+
+<p>The work was featured in:</p>
+
+<ul>
+  <li>November 15, 2024, <em>Enerzine</em>: “<a href="https://www.enerzine.com/le-sodium-simpose-comme-alternative-durable-au-lithium-dans-les-batteries/150115-2024-11">Le sodium s’impose comme alternative durable au lithium dans les batteries</a>” (in French)</li>
+  <li>December 20, 2024, <em>tiisys</em>: “<a href="https://tiisys.com/blog/2024/12/21/post-148949/">ナトリウムイオン電池における画期的な新材料</a>” (in Japanese)</li>
+  <li>December 20, 2024, <em>Tech Xplore</em>: “<a href="https://techxplore.com/news/2024-12-material-sodium-ion-batteries-sustainable.html">New material for sodium-ion batteries brings affordable, sustainable future within grasp</a>”</li>
+  <li>December 21, 2024, <em>ScienceDaily</em>: “<a href="https://www.sciencedaily.com/releases/2024/12/241220191013.htm">Breakthrough new material brings affordable, sustainable future within grasp</a>”</li>
+  <li>December 21, 2024, <em>Mirage News</em>: “<a href="https://www.miragenews.com/new-material-promises-affordable-sustainable-1383423/">New Material Promises Affordable, Sustainable Future</a>”</li>
+  <li>December 23, 2024, <em>Energy Daily</em>: “<a href="https://www.energy-daily.com/reports/Breakthrough_new_material_brings_affordable_sustainable_future_within_grasp_999.html">Breakthrough new material brings affordable, sustainable future within grasp</a>”</li>
+  <li>December 23, 2024, <em>Rinnovabili</em>: “<a href="https://www.rinnovabili.it/energia/accumulo/batterie-agli-ioni-di-sodio-densita-energetica/">Batterie agli ioni di sodio, aumentata la densità energetica del 15%</a>” (in Italian)</li>
+  <li>December 25, 2024, <em>Mercom</em>: “<a href="https://www.mercomindia.com/researchers-develop-material-to-improve-efficiency-of-sodium-ion-batteries">Researchers develop material to improve efficiency of sodium-ion batteries</a>”</li>
+  <li>December 30, 2024, <em>FOCUS</em>: “<a href="https://www.focus.de/auto/elektroauto/news/akkus-ohne-lithium-forscher-loesen-mit-neuem-element-ein-grosses-problem_id_260596925.html">Akkus ohne Lithium: Forscher lösen mit neuem Element ein großes Problem</a>” (in German)</li>
+  <li>January 2, 2025, <em>Technology Networks</em>: “<a href="https://www.technologynetworks.com/tn/news/new-material-for-sodium-ion-batteries-could-boost-performance-and-sustainability-394588">New Material for Sodium-Ion Batteries Could Boost Performance and Sustainability</a>”</li>
+  <li>January 6, 2025, <em>Karmactive</em>: “<a href="https://www.karmactive.com/new-sodium-batteries-offer-15-more-energy-cost-50x-less-than-lithium/">New Sodium Batteries Offer 15% More Energy, Cost 50x Less Than Lithium</a>”</li>
+  <li>January 18, 2025, <em>Yahoo Tech</em>: “<a href="https://www.yahoo.com/tech/scientists-discover-key-material-could-103021009.html">Scientists discover key material that could unlock next-gen EV batteries: ‘A game changer’</a>”</li>
+  <li>February 20, 2025, <em>Science</em>: “Move over lithium: Sodium batteries could one day power a green economy” (<a href="/news/sodium-batteries-science-news/">see our news</a>)</li>
+</ul>
+
+			</div>
+			
+		</div>
+		<!--  <div class="col-md-1"></div> -->
+	</div>
+
+	<div class="bigspacer"></div>
+	<div class="spacer"></div>
+
+</div>
+
+
+		<div class="row mt60">
+			<div class="col-md-12 col-12">
+				<div class="footer-bar">
+					<ul class="list-inline">
+						
+						
+						
+						<li class="footernav footernav-text list-inline-item">
+							<a class="off" href="/misc/about/">About</a>
+						</li>
+						
+						
+						<li class="footernav footernav-text list-inline-item">
+							<a class="off" href="/misc/mission-and-values/">Mission and values</a>
+						</li>
+						
+						
+						<li class="footernav footernav-text list-inline-item">
+							<a class="off" href="/misc/sponsors/">Sponsors</a>
+						</li>
+						
+						
+						<li class="footernav footernav-text list-inline-item">
+							<a class="off" href="/misc/work-with-industry/">Work with industry</a>
+						</li>
+						
+						
+						<li class="footernav footernav-text list-inline-item">
+							<a class="off" href="/misc/contact/">Contact us</a>
+						</li>
+						
+						
+						<!--
+						<li class="footernav list-inline-item">
+							<i class="fa"></i> <a class="off" href="https://www.eng.nus.edu.sg/mse/">MSE</a>
+						</li>
+						<li class="footernav list-inline-item">
+							<i class="fa"></i> <a class="off" href="https://www.nus.edu.sg">NUS</a>
+						</li>
+						-->
+						<!-- the lab's intranet, a Google Site that needs a sign-in (it was a padlock in the
+						     navbar, which read as a "private" or "secure" sign rather than a link) -->
+						<li class="footernav footernav-text list-inline-item">
+							<a class="off" href="https://intranet.caneparesearch.org/" target="_blank" rel="noopener noreferrer" title="The lab's intranet (sign-in required)">Intranet</a>
+						</li>
+						<!-- social links: one item, so the three icons always wrap together -->
+						<li class="footernav footernav-icons list-inline-item">
+							<a class="off" href="https://github.com/caneparesearch" target="_blank" rel="noopener noreferrer" aria-label="The lab on GitHub" title="The lab on GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+							<a class="off" href="https://www.youtube.com/channel/UCtl7hY0OlLKp05ch8Njj_GA" target="_blank" rel="noopener noreferrer" aria-label="The lab's talks on YouTube" title="The lab's talks on YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+							<a class="off" href="https://www.linkedin.com/in/pieremanuele/" target="_blank" rel="noopener noreferrer" aria-label="Piero Canepa on LinkedIn" title="Piero Canepa on LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+							<a class="off" href="https://x.com/Piero_Canepa" aria-label="Piero Canepa on X (formerly Twitter)" title="Piero Canepa on X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<footer class="row footer">
+			<div class="col-lg-12 col-12">
+				<div class="colophon">
+					<p>&copy; 2018–2026 Pieremanuele Canepa —
+						Proudly running on <a class="off" href="https://jekyllrb.com" rel="noopener">Jekyll</a>
+						and based on <a class="off" href="https://github.com/trvrb" target="_blank"
+							rel="noopener">bedford.io</a> theme.
+						<a class="off" href="https://albertocanepa.me/" target="_blank" rel="noopener">CWD</a> is
+						acknowledged.
+					</p>
+					<div class="colophon-meta">
+						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
+						<p class="last-update">Last update on <time datetime="2026-10-18T09:30:02-05:00">Oct. 18, 2026 at 9:30 a.m. CDT</time></p>
+						<!-- Filled in by js/load-time.js once the page has loaded -->
+						<p id="load-time" class="load-time" hidden></p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</main>
+	<!-- Asks before Google Analytics is loaded; js/analytics.js shows it until the visitor accepts or
+     declines, and again from "Cookie settings" in the footer. Hidden without JavaScript, when
+     analytics cannot run either. -->
+<section id="cookie-banner" class="cookie-banner" aria-label="Cookie consent" hidden>
+	<div class="cookie-banner-inner">
+		<p class="cookie-banner-text">This website uses Google Analytics cookies to understand how visitors use it, only if you accept. <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses this data</a></p>
+		<div class="cookie-banner-actions">
+			<button type="button" class="cookie-banner-button cookie-banner-decline" data-cookie-decline>Decline</button>
+			<button type="button" class="cookie-banner-button cookie-banner-accept" data-cookie-accept>Accept</button>
+		</div>
+	</div>
+</section>
+
+</body>
+
+</html>
