@@ -1,6 +1,6 @@
 // Papers page: keeps each card's text (title, then authors and journal) no taller than its thumbnail.
-// A title that would run below the picture is cut at the last whole line that fits and fades out
-// (.is-cut in css/style.scss); the authors and journal line always shows in full. Thumbnails range
+// A title that would run below the picture is cut at the last whole line that fits, but never
+// shorter than two lines, and fades out (.is-cut in css/style.scss); the authors and journal line always shows in full. Thumbnails range
 // from 100px to 131px tall and that line takes one or two lines, so each card is measured on its own.
 // Phones, where a card has the screen's whole width, keep every title whole. Without JavaScript the
 // titles fade after five lines instead (fade-lines in css/style.scss).
@@ -27,7 +27,11 @@
     const room = img.getBoundingClientRect().height - below
     if (!line || title.scrollHeight <= room + 0.5) return
 
-    const lines = Math.max(1, Math.floor(room / line))
+    // at least two lines, even where the picture is short: a title cut to one faded line can
+    // hardly be read, so the card may then be a line taller than its picture; and a title that
+    // fits in those two lines stays whole
+    const lines = Math.max(2, Math.floor(room / line))
+    if (title.scrollHeight <= lines * line + 0.5) return
     title.style.maxHeight = lines * line + 'px'
     title.classList.add('is-cut')
   }
