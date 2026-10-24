@@ -14,7 +14,7 @@
 	<!-- a page's own description, else a post's first paragraph, else the site's tagline. Papers
 	     open with an "Abstract" heading, so theirs is their "In brief" summary or else the abstract's text; videos have no text,
 	     so theirs says whose talk it is and where. -->
-	<meta name="description" content="Density functional theory (DFT) in chemistry and materials science aims for “chemical accuracy,” but this goal is challenged by the need to approximate the e...">
+	<meta name="description" content="The r2SCAN density functional is accurate for many materials but struggles with transition-metal oxides, central to battery cathodes. We propose r2SCANY@r2SC...">
 	<!-- the page's one address, so search engines count /papers/?q=…, http:// or www. as this page;
 	     not on the 404 page, which is served at whatever address was missing -->
 	<link rel="canonical" href="https://caneparesearch.org/papers/gopidi-phys-rev-b-2026/">
@@ -25,7 +25,7 @@
 	<meta property="og:site_name" content="Canepa Research Lab">
 	<meta property="og:type" content="article">
 	<meta property="og:title" content="Reducing self-interaction error in transition-metal oxides with different exact-exchange fractions for energy and density">
-	<meta property="og:description" content="Density functional theory (DFT) in chemistry and materials science aims for “chemical accuracy,” but this goal is challenged by the need to approximate the exact exchange-correlation (XC) energy fu...">
+	<meta property="og:description" content="The r2SCAN density functional is accurate for many materials but struggles with transition-metal oxides, central to battery cathodes. We propose r2SCANY@r2SCANX, which uses one fraction of exact ex...">
 	<meta property="og:url" content="https://caneparesearch.org/papers/gopidi-phys-rev-b-2026/">
 	<meta property="og:image" content="https://caneparesearch.org/images/papers/2026-03-19-gopidi-phys-rev-b-2026.png">
 	<meta property="og:image:alt" content="Reducing self-interaction error in transition-metal oxides with different exact-exchange fractions for energy and density">
@@ -62,7 +62,7 @@
   "name": "Reducing self-interaction error in transition-metal oxides with different exact-exchange fractions for energy and density",
   "author": [{"@type": "Person", "name": "Gopidi, H. R."}, {"@type": "Person", "name": "Zhang, R."}, {"@type": "Person", "name": "Wang, Y."}, {"@type": "Person", "name": "Patra, A."}, {"@type": "Person", "name": "Sun, J."}, {"@type": "Person", "name": "Ruzsinszky, A."}, {"@type": "Person", "name": "Perdew, J. P."}, {"@type": "Person", "name": "Canepa, P."}],
   "datePublished": "2026-03-19",
-  "description": "Density functional theory (DFT) in chemistry and materials science aims for “chemical accuracy,” but this goal is challenged by the need to approximate the exact exchange-correlation (XC) energy functional. The restored-regularized strongly constrained and appropriately normed (r2SCAN), meta-generalized gradient approximation to the XC functional fulfills 17 exact constraints of the XC energy, and has significantly boosted prediction accuracy for molecules and materials. However, r2SCAN remains inadequate at predicting the properties of open d and f transition-metal strongly correlated comp...",
+  "description": "The r2SCAN density functional is accurate for many materials but struggles with transition-metal oxides, central to battery cathodes. We propose r2SCANY@r2SCANX, which uses one fraction of exact exchange for the electron density and another for the energy, and improves band gaps, magnetic moments and oxidation energies of strongly correlated oxides over r2SCAN and r2SCAN+U.",
   "isPartOf": {"@type": "Periodical", "name": "Physical Review B"},
   "sameAs": "https://doi.org/10.1103/myd5-l4f4",
   "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.1103/myd5-l4f4"},
@@ -420,6 +420,8 @@
 	</div>
 	<div class="col-lg-9 col-12">
 		<div class="post paper-abstract">
+			<h2 id="in-brief">In brief</h2>
+			<p class="paper-summary">The r<sup>2</sup>SCAN density functional is accurate for many materials but struggles with transition-metal oxides, central to battery cathodes. We propose r<sup>2</sup>SCANY@r<sup>2</sup>SCANX, which uses one fraction of exact exchange for the electron density and another for the energy, and improves band gaps, magnetic moments and oxidation energies of strongly correlated oxides over r<sup>2</sup>SCAN and r<sup>2</sup>SCAN+U.</p>
 			<h2 id="abstract">Abstract</h2>
 
 <p>Density functional theory (DFT) in chemistry and materials science aims for “chemical accuracy,” but this goal is challenged by the need to approximate the exact exchange-correlation (XC) energy functional. The restored-regularized strongly constrained and appropriately normed (r<sup>2</sup>SCAN), meta-generalized gradient approximation to the XC functional fulfills 17 exact constraints of the XC energy, and has significantly boosted prediction accuracy for molecules and materials. However, r<sup>2</sup>SCAN remains inadequate at predicting the properties of open <i>d</i> and <i>f</i> transition-metal strongly correlated compounds, such as band gaps, magnetic moments, and oxidation energies. Prediction inaccuracies of r<sup>2</sup>SCAN energies arise from functional- and density-driven errors, mainly resulting from the DFT self-interaction error. Here, we propose a method termed r<sup>2</sup>SCANY@r<sup>2</sup>SCANX to mitigate the self-interaction error of XC functionals for the accurate simulations of electronic, magnetic, and thermochemical properties of transition-metal oxides. r<sup>2</sup>SCANY@r<sup>2</sup>SCANX uses different fractions of exact Hartree-Fock exchange, X for the electronic density and Y for the density functional approximation of the total energy, thereby simultaneously addressing functional-driven and density-driven inaccuracies. Building on just one (or maximum two) parameters that apply unchanged to <i>s-p</i>-bonded systems, we demonstrate that r<sup>2</sup>SCANY@r<sup>2</sup>SCANX improves upon the r<sup>2</sup>SCAN predictions for 20 highly correlated oxides and even out-performs the highly parametrized DFT(r<sup>2</sup>SCAN)+<i>U</i> method—the state-of-the-art approach to predict strongly correlated materials. Prediction uncertainties for oxidation energies and magnetic moments of transition-metal oxides are significantly reduced by r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN50 and band gaps with r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN. r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN50 diminishes the density-driven error of the energy in r<sup>2</sup>SCAN and r<sup>2</sup>SCAN10. We demonstrate that the computationally efficient r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN is nearly as accurate as the global hybrid r<sup>2</sup>SCAN10 for oxidation energies. This indicates that accurate energy differences can be obtained through rate-limiting self-consistent iterations and geometry optimizations with the efficient r<sup>2</sup>SCAN. Subsequently, a more expensive nonlocal functional, such as a hybrid or self-interaction correction, can be applied in a fast, single post-self-consistent calculation, as in r<sup>2</sup>SCAN10@r<sup>2</sup>SCAN.</p>
@@ -498,7 +500,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-23T22:34:08-05:00">Oct. 23, 2026 at 10:34 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-23T22:42:04-05:00">Oct. 23, 2026 at 10:42 p.m. CDT</time></p>
 					</div>
 				</div>
 			</div>

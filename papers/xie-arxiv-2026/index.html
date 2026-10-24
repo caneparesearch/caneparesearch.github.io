@@ -14,7 +14,7 @@
 	<!-- a page's own description, else a post's first paragraph, else the site's tagline. Papers
 	     open with an "Abstract" heading, so theirs is their "In brief" summary or else the abstract's text; videos have no text,
 	     so theirs says whose talk it is and where. -->
-	<meta name="description" content="When modeling surfaces of multinary compounds, conventional cleavage planes often cut through strongly bonded polyhedra, resulting in unphysical surface ener...">
+	<meta name="description" content="Modelling surfaces of complex compounds often cuts through strongly bonded units, giving unrealistic surface energies. We introduce SALAMI, a Python package ...">
 	<!-- the page's one address, so search engines count /papers/?q=…, http:// or www. as this page;
 	     not on the 404 page, which is served at whatever address was missing -->
 	<link rel="canonical" href="https://caneparesearch.org/papers/xie-arxiv-2026/">
@@ -25,7 +25,7 @@
 	<meta property="og:site_name" content="Canepa Research Lab">
 	<meta property="og:type" content="article">
 	<meta property="og:title" content="Revealing low-energy surfaces of multinary compounds by controlling surface coordination environments">
-	<meta property="og:description" content="When modeling surfaces of multinary compounds, conventional cleavage planes often cut through strongly bonded polyhedra, resulting in unphysical surface energies. Here, we introduce SALAMI (Symmetr...">
+	<meta property="og:description" content="Modelling surfaces of complex compounds often cuts through strongly bonded units, giving unrealistic surface energies. We introduce SALAMI, a Python package that builds symmetric, charge-neutral, l...">
 	<meta property="og:url" content="https://caneparesearch.org/papers/xie-arxiv-2026/">
 	<meta property="og:image" content="https://caneparesearch.org/images/papers/2026-08-28-xie-arxiv-2026.png">
 	<meta property="og:image:alt" content="Revealing low-energy surfaces of multinary compounds by controlling surface coordination environments">
@@ -59,7 +59,7 @@
   "name": "Revealing low-energy surfaces of multinary compounds by controlling surface coordination environments",
   "author": [{"@type": "Person", "name": "Xie, W."}, {"@type": "Person", "name": "Gopidi, H. R."}, {"@type": "Person", "name": "Liu, Z."}, {"@type": "Person", "name": "Claes, R."}, {"@type": "Person", "name": "Squires, A. G."}, {"@type": "Person", "name": "Butler, K. T."}, {"@type": "Person", "name": "Scanlon, D. O."}, {"@type": "Person", "name": "Canepa, P."}],
   "datePublished": "2026-08-28",
-  "description": "When modeling surfaces of multinary compounds, conventional cleavage planes often cut through strongly bonded polyhedra, resulting in unphysical surface energies. Here, we introduce SALAMI (Symmetric Atomic Layers for Arbitrary Multinary Interfaces), a Python package that generates symmetric, charge-neutral, dipole-free, and low-energy slab models for multinary compounds. SALAMI performs combinatorial searches to selectively remove surface atoms and generate corrugated terminations that preserve optimal coordination environments. We applied this workflow to all symmetrically inequivalent cr...",
+  "description": "Modelling surfaces of complex compounds often cuts through strongly bonded units, giving unrealistic surface energies. We introduce SALAMI, a Python package that builds symmetric, charge-neutral, low-energy slab models by trimming surface atoms to keep sensible coordination, and use it to find the low-energy surfaces of the electrolyte Li3PS4 and the conducting oxide ZnSb2O6.",
   "sameAs": "https://doi.org/10.48550/arXiv.2608.28903",
   "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.48550/arXiv.2608.28903"},
   "image": "https://caneparesearch.org/images/papers/2026-08-28-xie-arxiv-2026.png",
@@ -417,6 +417,8 @@
 	</div>
 	<div class="col-lg-9 col-12">
 		<div class="post paper-abstract">
+			<h2 id="in-brief">In brief</h2>
+			<p class="paper-summary">Modelling surfaces of complex compounds often cuts through strongly bonded units, giving unrealistic surface energies. We introduce SALAMI, a Python package that builds symmetric, charge-neutral, low-energy slab models by trimming surface atoms to keep sensible coordination, and use it to find the low-energy surfaces of the electrolyte Li<sub>3</sub>PS<sub>4</sub> and the conducting oxide ZnSb<sub>2</sub>O<sub>6</sub>.</p>
 			<h2 id="abstract">Abstract</h2>
 
 <p>When modeling surfaces of multinary compounds, conventional cleavage planes often cut through strongly bonded polyhedra, resulting in unphysical surface energies. Here, we introduce SALAMI (Symmetric Atomic Layers for Arbitrary Multinary Interfaces), a Python package that generates symmetric, charge-neutral, dipole-free, and low-energy slab models for multinary compounds. SALAMI performs combinatorial searches to selectively remove surface atoms and generate corrugated terminations that preserve optimal coordination environments. We applied this workflow to all symmetrically inequivalent crystallographic orientations with Miller indices up to 2 for two prototypical structures: the solid-state electrolyte Li<sub>3</sub>PS<sub>4</sub> and the transparent conducting oxide ZnSb<sub>2</sub>O<sub>6</sub>. Density functional theory calculations reveal that Li<sub>3</sub>PS<sub>4</sub> must preserve all PS<sub>4</sub> units to achieve the minimum surface energy. For ZnSb<sub>2</sub>O<sub>6</sub>, low-energy surfaces are achieved by partial undercoordination of surface Sb atoms to SbO<sub>5</sub> or SbO<sub>4</sub> from the bulk SbO<sub>6</sub>, depending on the surface orientations. Compared to surface models generated with unconstrained coordination, applying constraints to achieve optimal local coordination environments significantly lowers surface energies, shrinking the volume of the predicted Wulff shape by approximately 20%. Our results demonstrate that meticulous control of local coordination environments is necessary for accurately predicting the surface energetics of multinary compounds.</p>
@@ -495,7 +497,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-23T22:34:08-05:00">Oct. 23, 2026 at 10:34 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-23T22:42:04-05:00">Oct. 23, 2026 at 10:42 p.m. CDT</time></p>
 					</div>
 				</div>
 			</div>
