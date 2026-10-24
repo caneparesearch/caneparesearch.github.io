@@ -99,7 +99,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-serif/500-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=e41b03d869" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=2d9e83a0f2" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -283,7 +283,7 @@
 
   <p>The repository is private: ask Prof. Canepa for access, then clone it and install the dependencies (Ruby 3 and Bundler; the Jekyll version is pinned in the <code class="language-plaintext highlighter-rouge">Gemfile</code>):</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:caneparesearch/source-care-website.git
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight" tabindex="0"><code>git clone git@github.com:caneparesearch/source-care-website.git
 <span class="nb">cd </span>source-care-website
 bundle <span class="nb">install</span>
 </code></pre></div>  </div>
@@ -296,14 +296,14 @@ bundle <span class="nb">install</span>
 
   <p><code class="language-plaintext highlighter-rouge">publish.sh</code> commits, pushes and publishes in one step:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./publish.sh <span class="s2">"short description of the change"</span> <span class="o">[</span>new-file ...]
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight" tabindex="0"><code>./publish.sh <span class="s2">"short description of the change"</span> <span class="o">[</span>new-file ...]
 </code></pre></div>  </div>
 
   <p>It commits the changes to tracked files (brand-new files only if you name them, never <code class="language-plaintext highlighter-rouge">.jekyll-cache/</code>), pushes, then runs <code class="language-plaintext highlighter-rouge">update.sh</code> with the same message. Add <code class="language-plaintext highlighter-rouge">-n</code> for a dry run or <code class="language-plaintext highlighter-rouge">-y</code> to skip the confirmation. It runs only on <code class="language-plaintext highlighter-rouge">main</code>, and stops before committing if the remote has commits you do not have. The live site is always built from a private snapshot (a temporary git worktree) of <code class="language-plaintext highlighter-rouge">main</code>, never from this folder’s files, so a checkout of another branch cannot end up on the live site (that happened once, on 8 October 2026, for about a minute).</p>
 
   <p><code class="language-plaintext highlighter-rouge">update.sh</code> publishes without committing anything. It needs <code class="language-plaintext highlighter-rouge">caneparesearch.github.io</code> checked out next to this repository:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./update.sh <span class="s2">"short description of the change"</span>
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight" tabindex="0"><code>./update.sh <span class="s2">"short description of the change"</span>
 </code></pre></div>  </div>
 
   <p>In turn it:</p>
@@ -358,7 +358,7 @@ bundle <span class="nb">install</span>
   </table>
 
   <details class="fold">
-    <summary><h4>Addresses and renames</h4></summary>
+    <summary><h3>Addresses and renames</h3></summary>
 
     <p>A page’s address is built from its file name, without the date, so a name must be unique and is best left unchanged once the page is out. Keep names lowercase, with words joined by hyphens:</p>
 
@@ -376,14 +376,14 @@ bundle <span class="nb">install</span>
   </details>
 
   <details class="fold">
-    <summary><h4>News</h4></summary>
+    <summary><h3>News</h3></summary>
 
     <p>On the News page every picture is shown in the same 3:2 frame: photos fill it, cropped from the bottom, while logos (<code class="language-plaintext highlighter-rouge">images/misc/logos/logo_*</code>, any <code class="language-plaintext highlighter-rouge">.svg</code>) and pictures more than twice as wide as tall are shown whole inside it. Add <code class="language-plaintext highlighter-rouge">image_fit: contain</code> to show a picture whole as well, for example a logo saved as a <code class="language-plaintext highlighter-rouge">.jpg</code>.</p>
 
   </details>
 
   <details class="fold">
-    <summary><h4>Papers</h4></summary>
+    <summary><h3>Papers</h3></summary>
 
     <ul>
       <li>Put the PDF in <code class="language-plaintext highlighter-rouge">_pdfs/</code> as <code class="language-plaintext highlighter-rouge">&lt;year&gt;/&lt;name&gt;.pdf</code> and set <code class="language-plaintext highlighter-rouge">pdf: &lt;year&gt;/&lt;name&gt;.pdf</code>. The build serves it from the paper’s own folder, <code class="language-plaintext highlighter-rouge">/papers/&lt;name&gt;/&lt;name&gt;.pdf</code> (<code class="language-plaintext highlighter-rouge">_plugins/paper-pdfs.rb</code>), where Google Scholar links it to the paper: Scholar wants the PDF of a page’s <code class="language-plaintext highlighter-rouge">citation_pdf_url</code> in the same folder as the page. Keep it under 5 MB, Scholar’s limit; compress a larger one with <code class="language-plaintext highlighter-rouge">gs -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -o small.pdf big.pdf</code>. (The PDFs used to be served from the <code class="language-plaintext highlighter-rouge">carepapers</code> S3 bucket, which keeps a copy.)</li>
@@ -399,7 +399,7 @@ bundle <span class="nb">install</span>
   </details>
 
   <details class="fold">
-    <summary><h4>Team</h4></summary>
+    <summary><h3>Team</h3></summary>
 
     <ul>
       <li>Write a bio in the first person. When a member leaves, set <code class="language-plaintext highlighter-rouge">alumni: true</code>, open the bio with where they are now (“I am now a research scientist at …”), and put finished student or postdoc periods in the past tense; hobbies and current interests stay in the present. Current members are listed most recently added first. Alumni are grouped by the position they held (research fellows, PhD students, master’s students, undergraduate and summer students, then research staff), alphabetically within each group; the group comes from <code class="language-plaintext highlighter-rouge">position</code>, or from <code class="language-plaintext highlighter-rouge">alumni_group</code> (<code class="language-plaintext highlighter-rouge">research-fellows</code>, <code class="language-plaintext highlighter-rouge">phd-students</code>, <code class="language-plaintext highlighter-rouge">masters-students</code>, <code class="language-plaintext highlighter-rouge">undergraduates</code> or <code class="language-plaintext highlighter-rouge">staff</code>) when the position names a later job, as for Zeyu Deng.</li>
@@ -411,7 +411,7 @@ bundle <span class="nb">install</span>
   </details>
 
   <details class="fold">
-    <summary><h4>Research pages</h4></summary>
+    <summary><h3>Research pages</h3></summary>
 
     <ul>
       <li><code class="language-plaintext highlighter-rouge">order</code> sets a page’s place on the Research page (battery topics first), and in the row of research pictures on the home page, which shows the first four; there each title fits on one line, so a longer one needs a shorter form there, in <code class="language-plaintext highlighter-rouge">short_title</code>.</li>
@@ -425,7 +425,7 @@ bundle <span class="nb">install</span>
   </details>
 
   <details class="fold">
-    <summary><h4>Conventions</h4></summary>
+    <summary><h3>Conventions</h3></summary>
 
     <ul>
       <li>The navigation bar lists Research, Papers, Software, Team, News and Join, in that order (what the lab does, its output, its people, then news, and a way in for prospective members); its links are in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>. The pages in <code class="language-plaintext highlighter-rouge">misc/_posts/</code> are linked from the footer by their <code class="language-plaintext highlighter-rouge">title</code>; give one a <code class="language-plaintext highlighter-rouge">nav_title</code> for a shorter label (About) or <code class="language-plaintext highlighter-rouge">footer: false</code> to leave it out (Join, already in the navigation bar).</li>
@@ -439,11 +439,11 @@ bundle <span class="nb">install</span>
   </details>
 
   <details class="fold">
-    <summary><h4>Email addresses</h4></summary>
+    <summary><h3>Email addresses</h3></summary>
 
     <p>Never write an email address in a page. Use the include instead, which prints “name [at] example.org” and lets <code class="language-plaintext highlighter-rouge">js/email-links.js</code> build the <code class="language-plaintext highlighter-rouge">mailto:</code> link only while a visitor hovers, focuses or taps it, so the address is in neither the page source nor the loaded page. The member layout does this for a team page’s <code class="language-plaintext highlighter-rouge">email</code> field.</p>
 
-    <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>email-link.html<span class="w"> </span><span class="na">address</span><span class="o">=</span><span class="s2">"name@example.org"</span><span class="w"> </span><span class="cp">%}</span>
+    <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight" tabindex="0"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>email-link.html<span class="w"> </span><span class="na">address</span><span class="o">=</span><span class="s2">"name@example.org"</span><span class="w"> </span><span class="cp">%}</span>
 </code></pre></div>    </div>
 
   </details>
@@ -453,7 +453,7 @@ bundle <span class="nb">install</span>
   <p>The site is a light layer over a trimmed Bootstrap 5 grid: text set in the IBM Plex family, colors that follow the visitor’s light or dark setting and meet WCAG AA contrast in both, and every font, icon and script served from the site itself, apart from Google Analytics, the Altmetric and Dimensions badges, and the embedded videos and map. Pages are meant to load quickly on a phone, so pictures are served as WebP with their space reserved, and listing thumbnails load only as they scroll into view. The sections below give the details.</p>
 
   <details class="fold">
-    <summary><h4>Styles and layout</h4></summary>
+    <summary><h3>Styles and layout</h3></summary>
 
     <ul>
       <li>Styles are SCSS partials in <code class="language-plaintext highlighter-rouge">css/</code>, compiled into <code class="language-plaintext highlighter-rouge">css/style.css</code>; layouts are in <code class="language-plaintext highlighter-rouge">_layouts/</code> and shared snippets in <code class="language-plaintext highlighter-rouge">_includes/</code>.</li>
@@ -497,7 +497,7 @@ bundle <span class="nb">install</span>
   </details>
 
   <details class="fold">
-    <summary><h4>Colors and accessibility</h4></summary>
+    <summary><h3>Colors and accessibility</h3></summary>
 
     <ul>
       <li>Colors are CSS variables in <code class="language-plaintext highlighter-rouge">css/_theme.scss</code>. The site follows the visitor’s light or dark setting, and the moon/sun button in the navigation bar switches and remembers the choice.</li>
@@ -508,7 +508,7 @@ bundle <span class="nb">install</span>
   </details>
 
   <details class="fold">
-    <summary><h4>Fonts</h4></summary>
+    <summary><h3>Fonts</h3></summary>
 
     <ul>
       <li>The site is set in the <a href="https://github.com/IBM/plex">IBM Plex</a> family, self-hosted so pages do not wait on Google’s servers: <strong>IBM Plex Sans</strong> for the text (<code class="language-plaintext highlighter-rouge">css/fonts/ibm-plex-sans/</code>, <code class="language-plaintext highlighter-rouge">css/_plex-sans.scss</code>), in the unicode-range subsets Google Fonts uses, with <code class="language-plaintext highlighter-rouge">_layouts/default.html</code> preloading <code class="language-plaintext highlighter-rouge">normal-latin.woff2</code>, the one file every page needs; <strong>IBM Plex Serif</strong>, semibold, for the headings (h1 to h3; <code class="language-plaintext highlighter-rouge">css/fonts/ibm-plex-serif/</code>, <code class="language-plaintext highlighter-rouge">css/_plex-serif.scss</code>); and <strong>IBM Plex Mono</strong> for code, inline <code class="language-plaintext highlighter-rouge">code</code> and code blocks, at 0.9em (<code class="language-plaintext highlighter-rouge">css/fonts/ibm-plex-mono/</code>, <code class="language-plaintext highlighter-rouge">css/_plex-mono.scss</code>). Plex tells I, l and 1 apart on its own, as formulas such as LiCl need. Until Plex Sans has loaded, the text is set in “IBM Plex Sans fallback” (in <code class="language-plaintext highlighter-rouge">css/style.scss</code>): Arial, or Liberation Sans on Linux, scaled to take the same room, so the page does not shift when Plex replaces it.</li>
@@ -519,7 +519,7 @@ bundle <span class="nb">install</span>
   </details>
 
   <details class="fold">
-    <summary><h4>Icons</h4></summary>
+    <summary><h3>Icons</h3></summary>
 
     <ul>
       <li>Icons are <a href="https://fontawesome.com/">Font Awesome Free</a> 6.7.2 (<code class="language-plaintext highlighter-rouge">fa-solid</code>, <code class="language-plaintext highlighter-rouge">fa-regular</code> and <code class="language-plaintext highlighter-rouge">fa-brands</code>, for example <code class="language-plaintext highlighter-rouge">fa-brands fa-x-twitter</code>) and <a href="https://jpswalsh.github.io/academicons/">Academicons</a> 1.9.5 (<code class="language-plaintext highlighter-rouge">ai ai-doi</code>), both self-hosted: the SCSS in <code class="language-plaintext highlighter-rouge">css/fontawesome/</code> and <code class="language-plaintext highlighter-rouge">css/_academicons.scss</code>, the fonts in <code class="language-plaintext highlighter-rouge">css/webfonts/</code> and <code class="language-plaintext highlighter-rouge">css/fonts/</code>. The sun of the light/dark button is a hand-drawn inline SVG in <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>, because Font Awesome’s looks like a cog.</li>
@@ -530,7 +530,7 @@ bundle <span class="nb">install</span>
   </details>
 
   <details class="fold">
-    <summary><h4>Images</h4></summary>
+    <summary><h3>Images</h3></summary>
 
     <ul>
       <li>Pictures rendered through <code class="language-plaintext highlighter-rouge">_includes/responsive-image.html</code> (graphical abstracts, research and news pictures, team photos) are served as WebP, with the original PNG or JPEG as a <code class="language-plaintext highlighter-rouge">&lt;picture&gt;</code> fallback. Add a WebP copy beside every new picture (<code class="language-plaintext highlighter-rouge">cwebp original.png -o original.webp</code>) and never delete the original. A few large pictures also have smaller WebP copies, listed in <code class="language-plaintext highlighter-rouge">_data/responsive_images.yml</code>, which phones and the home page’s research row load instead: a news photo has a 640px copy, <code class="language-plaintext highlighter-rouge">&lt;name&gt;-640w.webp</code>, listed with the original’s width; a research picture lists the original’s width and then those of its copies, as <code class="language-plaintext highlighter-rouge">[800, 640, 360]</code> for <code class="language-plaintext highlighter-rouge">&lt;name&gt;-640w.webp</code> and <code class="language-plaintext highlighter-rouge">&lt;name&gt;-360w.webp</code>. A page passes the width a picture takes in its layout as the include’s <code class="language-plaintext highlighter-rouge">sizes</code>, so the browser picks the smallest copy that is sharp enough.</li>
@@ -541,7 +541,7 @@ bundle <span class="nb">install</span>
   </details>
 
   <details class="fold">
-    <summary><h4>Analytics</h4></summary>
+    <summary><h3>Analytics</h3></summary>
 
     <ul>
       <li>Google Analytics is in <code class="language-plaintext highlighter-rouge">js/analytics.js</code> (loaded by <code class="language-plaintext highlighter-rouge">_includes/ga.html</code>), not inline, because of the Content-Security-Policy (see Security). It queues the page view at once but downloads the ~150 KB gtag.js library only after the page has loaded, so it does not slow the first paint on phones; a visitor who leaves before then is not counted.</li>
@@ -550,7 +550,7 @@ bundle <span class="nb">install</span>
   </details>
 
   <details class="fold">
-    <summary><h4>Browsers and standards</h4></summary>
+    <summary><h3>Browsers and standards</h3></summary>
 
     <ul>
       <li>Supported browsers are current Chrome, Edge, Firefox, Safari and Opera; Internet Explorer is not (the theme relies on CSS custom properties, and Bootstrap 5 dropped it).</li>
@@ -590,7 +590,7 @@ bundle <span class="nb">install</span>
   </ul>
 
   <details class="fold">
-    <summary><h4>Cloudflare settings</h4></summary>
+    <summary><h3>Cloudflare settings</h3></summary>
 
     <ul>
       <li><em>Rules → Transform Rules</em>, rule “CSP and permissions” (all requests) sets three response headers. <strong><code class="language-plaintext highlighter-rouge">Content-Security-Policy</code></strong> is stricter than the <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> one: <code class="language-plaintext highlighter-rouge">default-src 'self'</code>, and <code class="language-plaintext highlighter-rouge">script-src</code> allows the site’s own files, a few named hosts (Google Tag Manager, Altmetric, Dimensions) and <em>inline scripts only by their exact SHA-256 hash</em>. The theme script in <code class="language-plaintext highlighter-rouge">_includes/theme.html</code> is the only inline script left, so keep its formatting: editing it, or adding another inline script, blocks it silently until its new hash is added to the rule. The rule still lists a second hash, for a jQuery call removed in September 2026, which can be deleted. A new third-party script, stylesheet, image or API host must be added to the matching directive. <code class="language-plaintext highlighter-rouge">frame-src</code> allows <code class="language-plaintext highlighter-rouge">https://www.youtube.com</code> for the talks and <code class="language-plaintext highlighter-rouge">https://maps.google.com https://www.google.com</code> for the map on the Contact us page (the embed starts at the first and redirects to the second). The rule also sets <code class="language-plaintext highlighter-rouge">Permissions-Policy</code> (camera, microphone, geolocation, payment and USB off) and <code class="language-plaintext highlighter-rouge">Cross-Origin-Opener-Policy: same-origin</code>.</li>
@@ -690,7 +690,7 @@ bundle <span class="nb">install</span>
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-23T23:01:27-05:00">Oct. 23, 2026 at 11:01 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-24T18:17:13-05:00">Oct. 24, 2026 at 6:17 p.m. CDT</time></p>
 					</div>
 				</div>
 			</div>
