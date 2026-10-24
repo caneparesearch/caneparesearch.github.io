@@ -133,7 +133,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-serif/500-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=bd07ce4763" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=e41b03d869" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -430,10 +430,13 @@
 		<div class="post paper-abstract">
 			<h2 id="in-brief">In brief</h2>
 			<p class="paper-summary">We built kMCpy, a free and open-source Python code that predicts how fast ions move through a crystal. It works out every possible jump an ion can make, computes how likely each jump is at the accuracy of quantum-mechanical calculations, and then simulates millions of jumps to give the material's conductivity, which helps screen new electrolytes and electrodes for batteries.</p>
-			<h2 id="abstract">Abstract</h2>
+			<details class="abstract-fold">
+				<summary>Abstract</summary>
+				<div class="abstract-fold-body">
 
 <p>Understanding ion transport in functional materials is crucial to unravel complex chemical reactions, improving the rate performance of materials for energy storage and conversion, and optimizing catalysts. To model ion transport, atomistic simulations, including molecular dynamics (MD) and kinetic Monte Carlo (kMC) have been developed and applied. However, kMC simulations are utilized to a lower extent than MDs due to a lack of systematic workflows to construct models for predicting transition rates. Here, we present kMCpy, a lightweight, customizable, and modular python package to compute the ionic transport properties in crystalline materials using kMC. kMCpy is remarkably versatile and user-friendly, making it a powerful code for studying materials kinetics in crystalline systems. kMCpy can be combined with (local) cluster expansion Hamiltonians derived from first-principles calculations. kMCpy is versatile with respect to any type of crystalline material, bearing any dimensionality, i.e., 1D, 2D, and 3D. kMCpy provides (i) a comprehensive workflow to enumerate all possible migration events in crystalline systems, (ii) to derive transition rates efficiently and at the accuracy of first-principles calculations, and (iii) a robust kMC solver to study kinetic phenomena in materials. The workflow implemented in kMCpy provides a systematic way to compute highly accurate kinetic properties. Hence, kMCpy can be used in high-throughput simulations for the discovery and optimization of novel functional materials.</p>
-
+</div>
+			</details>
 		</div>
 	</div>
 </div>
@@ -508,7 +511,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-23T22:42:04-05:00">Oct. 23, 2026 at 10:42 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-23T22:45:43-05:00">Oct. 23, 2026 at 10:45 p.m. CDT</time></p>
 					</div>
 				</div>
 			</div>

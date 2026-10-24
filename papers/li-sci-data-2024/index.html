@@ -133,7 +133,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-serif/500-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=bd07ce4763" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=e41b03d869" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -430,10 +430,13 @@
 		<div class="post paper-abstract">
 			<h2 id="in-brief">In brief</h2>
 			<p class="paper-summary">Raman spectra are widely used to identify materials, but hard to interpret without reliable references. We present a public database of Raman spectra of inorganic compounds, computed consistently with accurate hybrid density functionals and checked against about 80 measured spectra; it holds 161 compounds and keeps growing as our automated workflow adds more.</p>
-			<h2 id="abstract">Abstract</h2>
+			<details class="abstract-fold">
+				<summary>Abstract</summary>
+				<div class="abstract-fold-body">
 
 <p>Raman spectroscopy is widely applied in the identification of local structures in materials, but the interpretation of Raman spectra is non-trivial. An accurate computational database of reference spectra calculated with a consistent level of theory can significantly aid in interpreting measured Raman spectra. Here, we present a database of Raman spectra of inorganic compounds calculated with accurate hybrid functionals in density functional theory. Raman spectra were obtained by calculating dynamical matrices and polarizability tensors for structures from the Inorganic Crystal Structure Database. The calculated Raman spectra and other phonon properties (e.g., infrared spectra) are stored in a MongoDB database, which is publicly shared through a web application. We assess the accuracy of our Raman calculations by statistically comparing ∼80 calculated spectra with an exisiting experimental Raman database. To date, the database contains 161 compounds and is continuously growing as we add more materials computed with our automated workflow.</p>
-
+</div>
+			</details>
 		</div>
 	</div>
 </div>
@@ -508,7 +511,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-23T22:42:04-05:00">Oct. 23, 2026 at 10:42 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-23T22:45:43-05:00">Oct. 23, 2026 at 10:45 p.m. CDT</time></p>
 					</div>
 				</div>
 			</div>
