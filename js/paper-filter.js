@@ -255,12 +255,24 @@
   // One topic at a time: pressing a topic selects it, pressing it again (or All) clears it.
   // the "Topics" toggle the buttons are folded under names the topic chosen ("Topics: Lithium")
   const foldCurrent = document.querySelector('.paper-search .filter-fold-current')
+  // the chosen topic's name, after its colour square if it has one, without the count of papers
+  function showCurrent (button) {
+    foldCurrent.textContent = ''
+    if (!topic) return
+    const square = button.querySelector('.topic-square')
+    const name = Array.prototype.filter.call(button.childNodes, function (node) {
+      return node.nodeType === 3 && node.textContent.trim()
+    }).map(function (node) { return node.textContent.trim() }).join(' ')
+    foldCurrent.appendChild(document.createTextNode(': '))
+    if (square) foldCurrent.appendChild(square.cloneNode(true))
+    foldCurrent.appendChild(document.createTextNode(name))
+  }
   function selectTopic (slug) {
     topic = topicButtons.some(function (button) { return button.getAttribute('data-topic') === slug }) ? slug : ''
     topicButtons.forEach(function (button) {
       const on = button.getAttribute('data-topic') === topic
       button.setAttribute('aria-pressed', on ? 'true' : 'false')
-      if (on && foldCurrent) foldCurrent.textContent = topic ? ': ' + button.firstChild.textContent.trim() : ''
+      if (on && foldCurrent) showCurrent(button)
     })
   }
 
