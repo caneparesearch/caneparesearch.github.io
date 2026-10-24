@@ -160,7 +160,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-color.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=19f025b5d3">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=74738ff8c4">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -301,7 +301,7 @@ bundle <span class="nb">install</span>
 
   <p>It commits the changes to tracked files (brand-new files only if you name them, never <code class="language-plaintext highlighter-rouge">.jekyll-cache/</code>), pushes, then runs <code class="language-plaintext highlighter-rouge">update.sh</code> with the same message. Add <code class="language-plaintext highlighter-rouge">-n</code> for a dry run or <code class="language-plaintext highlighter-rouge">-y</code> to skip the confirmation. It runs only on <code class="language-plaintext highlighter-rouge">main</code>, and stops before committing if the remote has commits you do not have. The live site is always built from a private snapshot (a temporary git worktree) of <code class="language-plaintext highlighter-rouge">main</code>, never from this folder’s files, so a checkout of another branch cannot end up on the live site (that happened once, on 8 October 2026, for about a minute).</p>
 
-  <p><code class="language-plaintext highlighter-rouge">update.sh</code> publishes without committing anything. It needs <code class="language-plaintext highlighter-rouge">caneparesearch.github.io</code> checked out next to this repository, the <code class="language-plaintext highlighter-rouge">aws</code> CLI with access to the <code class="language-plaintext highlighter-rouge">carepapers</code> bucket, and <code class="language-plaintext highlighter-rouge">jq</code>:</p>
+  <p><code class="language-plaintext highlighter-rouge">update.sh</code> publishes without committing anything. It needs <code class="language-plaintext highlighter-rouge">caneparesearch.github.io</code> checked out next to this repository:</p>
 
   <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./update.sh <span class="s2">"short description of the change"</span>
 </code></pre></div>  </div>
@@ -310,7 +310,6 @@ bundle <span class="nb">install</span>
 
   <ul>
     <li>pulls this repository (it never pushes it, so push your commits separately);</li>
-    <li>regenerates <code class="language-plaintext highlighter-rouge">map.xml</code>, the sitemap of the paper PDFs, in the bucket itself (<code class="language-plaintext highlighter-rouge">update_aws_sitemap.sh</code>), where the bucket’s <code class="language-plaintext highlighter-rouge">robots.txt</code> lists it, since Google ignores a sitemap of PDFs on another host;</li>
     <li>builds the site and dates every address in <code class="language-plaintext highlighter-rouge">sitemap.xml</code> by its last real edit in git (<code class="language-plaintext highlighter-rouge">_scripts/generate-sitemap.rb</code>), ignoring commits that touch more than 30 files as repository-wide sweeps and following renamed files back to their old names;</li>
     <li>makes <code class="language-plaintext highlighter-rouge">caneparesearch.github.io</code> match <code class="language-plaintext highlighter-rouge">_site/</code> exactly (<code class="language-plaintext highlighter-rouge">rsync --delete</code>, keeping its <code class="language-plaintext highlighter-rouge">.git</code> and <code class="language-plaintext highlighter-rouge">.gitignore</code>), then commits and pushes it.</li>
   </ul>
@@ -387,7 +386,7 @@ bundle <span class="nb">install</span>
     <summary><h4>Papers</h4></summary>
 
     <ul>
-      <li>The PDF is stored in the <code class="language-plaintext highlighter-rouge">carepapers</code> S3 bucket as <code class="language-plaintext highlighter-rouge">&lt;year&gt;/&lt;name&gt;.pdf</code> and is public. Set <code class="language-plaintext highlighter-rouge">pdf: &lt;year&gt;/&lt;name&gt;.pdf</code>; the site builds the download link from it.</li>
+      <li>Put the PDF in <code class="language-plaintext highlighter-rouge">_pdfs/</code> as <code class="language-plaintext highlighter-rouge">&lt;year&gt;/&lt;name&gt;.pdf</code> and set <code class="language-plaintext highlighter-rouge">pdf: &lt;year&gt;/&lt;name&gt;.pdf</code>. The build serves it from the paper’s own folder, <code class="language-plaintext highlighter-rouge">/papers/&lt;name&gt;/&lt;name&gt;.pdf</code> (<code class="language-plaintext highlighter-rouge">_plugins/paper-pdfs.rb</code>), where Google Scholar links it to the paper: Scholar wants the PDF of a page’s <code class="language-plaintext highlighter-rouge">citation_pdf_url</code> in the same folder as the page. Keep it under 5 MB, Scholar’s limit; compress a larger one with <code class="language-plaintext highlighter-rouge">gs -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -o small.pdf big.pdf</code>. (The PDFs used to be served from the <code class="language-plaintext highlighter-rouge">carepapers</code> S3 bucket, which keeps a copy.)</li>
       <li>A preprint’s <code class="language-plaintext highlighter-rouge">doi</code> on arXiv (<code class="language-plaintext highlighter-rouge">10.48550/arXiv.…</code>) shows the arXiv icon and label, and one on ChemRxiv (<code class="language-plaintext highlighter-rouge">10.26434/chemrxiv.…</code>) a flask icon and the label “ChemRxiv”, instead of the DOI icon.</li>
       <li>Write <code class="language-plaintext highlighter-rouge">authors</code> surname first, <code class="language-plaintext highlighter-rouge">Surname I. I.</code>, comma-separated, with “and” before the last one (also after a comma when there are three or more) and your own name in <code class="language-plaintext highlighter-rouge">&lt;b&gt;</code>: <code class="language-plaintext highlighter-rouge">Xie W., Deng Z., and &lt;b&gt;Canepa P.&lt;/b&gt;</code>. The site shows them initials first (“W. Xie, Z. Deng, and <strong>P. Canepa</strong>”, the <code class="language-plaintext highlighter-rouge">initials_first</code> filter in <code class="language-plaintext highlighter-rouge">_plugins/initials-first.rb</code>), while the Google Scholar tags, BibTeX, the team pages’ Publications and the Papers search read the stored form.</li>
       <li>Write <code class="language-plaintext highlighter-rouge">journal</code> as <code class="language-plaintext highlighter-rouge">&lt;i&gt;Journal&lt;/i&gt; volume, pages (year)</code>, with the ISO 4 abbreviation (except <em>Angewandte Chemie International Edition</em>, written <code class="language-plaintext highlighter-rouge">Angew. Chem.</code>), no comma after the journal name, an en dash in page ranges and no issue number: <code class="language-plaintext highlighter-rouge">&lt;i&gt;Chem. Mater.&lt;/i&gt; 33, 5652–5667 (2021)</code>. Use <code class="language-plaintext highlighter-rouge">&lt;i&gt;Journal&lt;/i&gt; (year)</code> while volume and pages are not known, and <code class="language-plaintext highlighter-rouge">&lt;i&gt;arXiv&lt;/i&gt; (year)</code> or <code class="language-plaintext highlighter-rouge">&lt;i&gt;ChemRxiv&lt;/i&gt; (year)</code> for a preprint. Keep anything else, such as a book’s ISBN, in a field of its own.</li>
@@ -587,7 +586,7 @@ bundle <span class="nb">install</span>
     <li><strong>Cloudflare settings</strong> are dashboard configuration, recorded below because no file holds them.</li>
     <li><strong>Email addresses never appear in a page</strong> (see Email addresses above).</li>
     <li><strong>No login of its own.</strong> The “Intranet” link in the footer leads to a separate Google Sites page that requires a Google sign-in; this codebase has no login, sessions or credentials.</li>
-    <li><strong>Search engines.</strong> <code class="language-plaintext highlighter-rouge">robots.txt</code> allows every crawler and lists <code class="language-plaintext highlighter-rouge">sitemap.xml</code> (written by <code class="language-plaintext highlighter-rouge">jekyll-sitemap</code> and dated by <code class="language-plaintext highlighter-rouge">update.sh</code>); <code class="language-plaintext highlighter-rouge">map.xml</code>, the sitemap of the paper PDFs, is listed by the bucket’s own <code class="language-plaintext highlighter-rouge">robots.txt</code>. Nothing on the site is meant to be hidden from search engines. Edit <code class="language-plaintext highlighter-rouge">robots.txt</code> here, not in <code class="language-plaintext highlighter-rouge">caneparesearch.github.io</code>, whose copy is overwritten on every publish.</li>
+    <li><strong>Search engines.</strong> <code class="language-plaintext highlighter-rouge">robots.txt</code> allows every crawler and lists <code class="language-plaintext highlighter-rouge">sitemap.xml</code> (written by <code class="language-plaintext highlighter-rouge">jekyll-sitemap</code> and dated by <code class="language-plaintext highlighter-rouge">update.sh</code>), which also lists the paper PDFs. Nothing on the site is meant to be hidden from search engines. Edit <code class="language-plaintext highlighter-rouge">robots.txt</code> here, not in <code class="language-plaintext highlighter-rouge">caneparesearch.github.io</code>, whose copy is overwritten on every publish.</li>
   </ul>
 
   <details class="fold">
@@ -691,7 +690,7 @@ bundle <span class="nb">install</span>
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-23T22:51:02-05:00">Oct. 23, 2026 at 10:51 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-23T23:01:27-05:00">Oct. 23, 2026 at 11:01 p.m. CDT</time></p>
 					</div>
 				</div>
 			</div>
