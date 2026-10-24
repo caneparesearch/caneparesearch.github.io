@@ -12,9 +12,9 @@
 	     the home page is just the lab's name -->
 	<title>kMCpy&#58; A Python Package to Simulate Transport Properties in Solids with Kinetic Monte Carlo · Canepa Research Lab</title>
 	<!-- a page's own description, else a post's first paragraph, else the site's tagline. Papers
-	     open with an "Abstract" heading, so theirs is the abstract's text; videos have no text,
+	     open with an "Abstract" heading, so theirs is their "In brief" summary or else the abstract's text; videos have no text,
 	     so theirs says whose talk it is and where. -->
-	<meta name="description" content="Understanding ion transport in functional materials is crucial to unravel complex chemical reactions, improving the rate performance of materials for energy ...">
+	<meta name="description" content="We built kMCpy, a free and open-source Python code that predicts how fast ions move through a crystal. It works out every possible jump an ion can make, comp...">
 	<!-- the page's one address, so search engines count /papers/?q=…, http:// or www. as this page;
 	     not on the 404 page, which is served at whatever address was missing -->
 	<link rel="canonical" href="https://caneparesearch.org/papers/deng-comput-mater-sci-2023/">
@@ -25,7 +25,7 @@
 	<meta property="og:site_name" content="Canepa Research Lab">
 	<meta property="og:type" content="article">
 	<meta property="og:title" content="kMCpy: A Python Package to Simulate Transport Properties in Solids with Kinetic Monte Carlo">
-	<meta property="og:description" content="Understanding ion transport in functional materials is crucial to unravel complex chemical reactions, improving the rate performance of materials for energy storage and conversion, and optimizing c...">
+	<meta property="og:description" content="We built kMCpy, a free and open-source Python code that predicts how fast ions move through a crystal. It works out every possible jump an ion can make, computes how likely each jump is at the accu...">
 	<meta property="og:url" content="https://caneparesearch.org/papers/deng-comput-mater-sci-2023/">
 	<meta property="og:image" content="https://caneparesearch.org/images/papers/2023-08-05-deng-comput-mater-sci-2023.png">
 	<meta property="og:image:alt" content="kMCpy: A Python Package to Simulate Transport Properties in Solids with Kinetic Monte Carlo">
@@ -52,6 +52,22 @@
 <meta name="citation_doi" content="10.1016/j.commatsci.2023.112394">
 <meta name="citation_pdf_url" content="https://carepapers.s3-ap-southeast-1.amazonaws.com/2023/2023-08-05-deng-comput-mater-sci-2023.pdf">
 <meta name="citation_abstract_html_url" content="https://caneparesearch.org/papers/deng-comput-mater-sci-2023/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "kMCpy: A Python Package to Simulate Transport Properties in Solids with Kinetic Monte Carlo",
+  "name": "kMCpy: A Python Package to Simulate Transport Properties in Solids with Kinetic Monte Carlo",
+  "author": [{"@type": "Person", "name": "Deng, Z."}, {"@type": "Person", "name": "Mishra, T."}, {"@type": "Person", "name": "Xie, W."}, {"@type": "Person", "name": "Saeed, D."}, {"@type": "Person", "name": "Gautam, G. S."}, {"@type": "Person", "name": "Canepa, P."}],
+  "datePublished": "2023-08-05",
+  "description": "We built kMCpy, a free and open-source Python code that predicts how fast ions move through a crystal. It works out every possible jump an ion can make, computes how likely each jump is at the accuracy of quantum-mechanical calculations, and then simulates millions of jumps to give the material's conductivity, which helps screen new electrolytes and electrodes for batteries.",
+  "isPartOf": {"@type": "Periodical", "name": "Computational Materials Science"},
+  "sameAs": "https://doi.org/10.1016/j.commatsci.2023.112394",
+  "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.1016/j.commatsci.2023.112394"},
+  "image": "https://caneparesearch.org/images/papers/2023-08-05-deng-comput-mater-sci-2023.png",
+  "url": "https://caneparesearch.org/papers/deng-comput-mater-sci-2023/"
+}
+</script>
 
 	<!-- Day / night theme: choose the theme before first paint (no flash), then wire up the navbar toggle.
      Order of preference: the visitor's saved choice, then the OS setting. -->
@@ -412,6 +428,8 @@
 	</div>
 	<div class="col-lg-9 col-12">
 		<div class="post paper-abstract">
+			<h2 id="in-brief">In brief</h2>
+			<p class="paper-summary">We built kMCpy, a free and open-source Python code that predicts how fast ions move through a crystal. It works out every possible jump an ion can make, computes how likely each jump is at the accuracy of quantum-mechanical calculations, and then simulates millions of jumps to give the material's conductivity, which helps screen new electrolytes and electrodes for batteries.</p>
 			<h2 id="abstract">Abstract</h2>
 
 <p>Understanding ion transport in functional materials is crucial to unravel complex chemical reactions, improving the rate performance of materials for energy storage and conversion, and optimizing catalysts. To model ion transport, atomistic simulations, including molecular dynamics (MD) and kinetic Monte Carlo (kMC) have been developed and applied. However, kMC simulations are utilized to a lower extent than MDs due to a lack of systematic workflows to construct models for predicting transition rates. Here, we present kMCpy, a lightweight, customizable, and modular python package to compute the ionic transport properties in crystalline materials using kMC. kMCpy is remarkably versatile and user-friendly, making it a powerful code for studying materials kinetics in crystalline systems. kMCpy can be combined with (local) cluster expansion Hamiltonians derived from first-principles calculations. kMCpy is versatile with respect to any type of crystalline material, bearing any dimensionality, i.e., 1D, 2D, and 3D. kMCpy provides (i) a comprehensive workflow to enumerate all possible migration events in crystalline systems, (ii) to derive transition rates efficiently and at the accuracy of first-principles calculations, and (iii) a robust kMC solver to study kinetic phenomena in materials. The workflow implemented in kMCpy provides a systematic way to compute highly accurate kinetic properties. Hence, kMCpy can be used in high-throughput simulations for the discovery and optimization of novel functional materials.</p>
@@ -490,7 +508,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-10-23T22:26:18-05:00">Oct. 23, 2026 at 10:26 p.m. CDT</time></p>
+						<p class="last-update">Last update on <time datetime="2026-10-23T22:34:08-05:00">Oct. 23, 2026 at 10:34 p.m. CDT</time></p>
 					</div>
 				</div>
 			</div>
