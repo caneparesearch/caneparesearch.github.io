@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Canepa Research Lab - News</title>
@@ -30,7 +31,7 @@
 
 &lt;picture&gt;
 	
-	&lt;source type=&quot;image/webp&quot; srcset=&quot;/images/news/2026-10-22-tcsuh-farewell-speeches.webp&quot; /&gt;
+	&lt;source type=&quot;image/webp&quot; srcset=&quot;https://caneparesearch.org/images/news/2026-10-22-tcsuh-farewell-speeches.webp&quot; /&gt;
 	
 	&lt;img src=&quot;https://caneparesearch.org/images/news/2026-10-22-tcsuh-farewell-speeches.jpg&quot; width=&quot;1200&quot; height=&quot;675&quot; alt=&quot;Two men standing before a screen reading &amp;quot;Farewell! Professor Yan Yao, Professor Piero Canepa&amp;quot;, beside a table with a cake and flowers, as others look on&quot; loading=&quot;lazy&quot; /&gt;
 &lt;/picture&gt;
@@ -52,7 +53,7 @@
 
 &lt;picture&gt;
 	
-	&lt;source type=&quot;image/webp&quot; srcset=&quot;/images/news/2026-10-22-tcsuh-farewell-group-members.webp&quot; /&gt;
+	&lt;source type=&quot;image/webp&quot; srcset=&quot;https://caneparesearch.org/images/news/2026-10-22-tcsuh-farewell-group-members.webp&quot; /&gt;
 	
 	&lt;img src=&quot;https://caneparesearch.org/images/news/2026-10-22-tcsuh-farewell-group-members.jpg&quot; width=&quot;1200&quot; height=&quot;900&quot; alt=&quot;Four members of the group standing arm in arm in front of a screen reading &amp;quot;Farewell!&amp;quot;, one giving a thumbs-up&quot; loading=&quot;lazy&quot; /&gt;
 &lt;/picture&gt;

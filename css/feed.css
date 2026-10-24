@@ -1,0 +1,85 @@
+/* The page a browser shows for the RSS feeds (feed.xsl): plain, in the site's colours,
+   light or dark with the visitor's setting. Not part of the site's own stylesheet. */
+:root {
+  color-scheme: light dark;
+  --bg: #fff;
+  --text: #212529;
+  --muted: #495057;
+  --link: #006fd4;
+  --rule: #dee2e6;
+  --code-bg: #f1f3f5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #162230;
+    --text: #d5dde5;
+    --muted: #9fb0bf;
+    --link: #5fb0ff;
+    --rule: #34475a;
+    --code-bg: #213244;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 18px/1.7 "IBM Plex Sans", Helvetica, Arial, sans-serif;
+}
+
+main {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 3rem 1rem 4rem;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-family: "IBM Plex Serif", Georgia, serif;
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+
+h2 {
+  margin: 2.5rem 0 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 1.3rem;
+}
+
+a {
+  color: var(--link);
+}
+
+.feed-kind {
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.feed-address code {
+  display: block;
+  padding: 0.6rem 0.9rem;
+  border-radius: 5px;
+  background: var(--code-bg);
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin: 0 0 0.9rem;
+}
+
+.feed-date {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}

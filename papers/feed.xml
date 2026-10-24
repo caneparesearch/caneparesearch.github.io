@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Canepa Research Lab - Papers</title>
+		<description>New papers from the Canepa Research Lab</description>
+		<link>https://caneparesearch.org/papers/</link>
+		<atom:link href="https://caneparesearch.org/papers/feed.xml" rel="self" type="application/rss+xml" />
+		<language>en-us</language>
+		
+			<item>
+				<title>Decoding Composition–Structure–Performance Relations in Sodium Layered Oxide Positive Electrode Materials</title>
+				<description>&lt;p&gt;Choi Y., Lokuge H. H., Bocarsly J. D., and &lt;b&gt;Canepa P.&lt;/b&gt;; &lt;i&gt;arXiv&lt;/i&gt; (2026). &lt;a href=&quot;https://doi.org/10.48550/arXiv.2610.30591&quot;&gt;doi:10.48550/arXiv.2610.30591&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Layered sodium transition-metal (TM) oxides, Na&lt;sub&gt;&lt;i&gt;x&lt;/i&gt;&lt;/sub&gt;TMO&lt;sub&gt;2&lt;/sub&gt;, are among the most promising sodium-ion positive electrode materials, yet their Na/vacancy orderings, layer stacking sequences, and cooperative Jahn–Teller distortions are known only for a few single-TM compounds. We compile the Na/vacancy orderings reported in earlier studies into a single library of 41 unique orderings and apply this uniformly to five single-TM and all ten Na&lt;sub&gt;&lt;i&gt;x&lt;/i&gt;&lt;/sub&gt;TM&lt;sub&gt;0.5&lt;/sub&gt;TM′&lt;sub&gt;0.5&lt;/sub&gt;O&lt;sub&gt;2&lt;/sub&gt; oxides (TM = Ti, Mn, Fe, Co, Ni), screening more than 120,000 structures with machine-learning interatomic potentials prior to 1,025 accurate first-principles calculations. The phase diagrams explained the observed O3/P3/O1 sequences and voltages, and the O3-to-P3 competition hinges on ordering energies of a few meV per atom that scalar descriptors, such as the cationic potential and the interlayer-slab distance, miss. Our extensive analysis reveals that the redox couples form a nearly partner-independent ladder, Ti&lt;sup&gt;3+/4+&lt;/sup&gt; &amp;lt; Mn&lt;sup&gt;3+/4+&lt;/sup&gt; &amp;lt; Co&lt;sup&gt;3+/4+&lt;/sup&gt; &amp;lt; Ni&lt;sup&gt;2+/3+&lt;/sup&gt; &amp;lt; Fe&lt;sup&gt;3+/4+&lt;/sup&gt;, explaining pristine charge transfer and the oxidation sequence. Van Vleck analysis of every TMO&lt;sub&gt;6&lt;/sub&gt; octahedron reveals that TM mixing suppresses the cooperative Jahn–Teller distortions of Mn&lt;sup&gt;3+&lt;/sup&gt; and Ni&lt;sup&gt;3+&lt;/sup&gt; through charge transfer to Jahn–Teller-inactive states or dilution of Jahn–Teller-active centers. We formulate an energy-density-versus-strain map that yields a design rule: a high-voltage couple without Jahn–Teller strain, which Mn&lt;sup&gt;4+&lt;/sup&gt;/Ni&lt;sup&gt;2+&lt;/sup&gt; charge transfer realizes in Na&lt;sub&gt;&lt;i&gt;x&lt;/i&gt;&lt;/sub&gt;Mn&lt;sub&gt;0.5&lt;/sub&gt;Ni&lt;sub&gt;0.5&lt;/sub&gt;O&lt;sub&gt;2&lt;/sub&gt;, the most practical composition. We release the ordering-resolved dataset as a training set for subsequent training of accurate machine-learning interatomic potentials.&lt;/p&gt;
+</description>
+				<pubDate>Thu, 22 Oct 2026 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/choi-arxiv-2026/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/choi-arxiv-2026/</guid>
+			</item>
+		
+			<item>
+				<title>Machine Learning Interatomic Potentials for Modeling Solid-State Batteries</title>
+				<description>&lt;p&gt;Phuthi M. K., Wei G., Li B., Majumdar S., Kolluru V. S. C., Kumar N., Blau S., &lt;b&gt;Canepa P.&lt;/b&gt;, Chan M. K. Y., Gómez-Bombarelli R., Persson K., Ceder G., and Ong S. P.; &lt;i&gt;Chem. Mater.&lt;/i&gt; 38, 9623–9640 (2026). &lt;a href=&quot;https://doi.org/10.1021/acs.chemmater.6c01051&quot;&gt;doi:10.1021/acs.chemmater.6c01051&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Atomistic simulations can provide critical insights into the fundamental behavior of battery materials. A necessary input for such simulations is a description of the potential energy surface (PES). Over the past decade, machine learning interatomic potentials (MLIPs) have emerged as a powerful approach to model the PES at near-first-principles accuracy with orders of magnitude lower computational cost. In this perspective, we examine the role of atomistic simulation in battery research, especially in the context of the capabilities afforded by MLIPs. We outline their advantages and trade-offs relative to ab initio methods and discuss how they enable the prediction of key intrinsic properties relevant to battery materials, especially for solid state batteries. We further explore their potential for modeling interfaces and chemical reactivity, as well as their integration into high-throughput screening and materials discovery workflows. Finally, we highlight promising applications and identify requirements for the next generation of MLIPs to advance the study of battery materials.&lt;/p&gt;
+</description>
+				<pubDate>Fri, 11 Sep 2026 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/phuthi-chem-mater-2026/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/phuthi-chem-mater-2026/</guid>
+			</item>
+		
+			<item>
+				<title>Hydrogen-Bonding Order Associated With Radical Delocalization in Layered Organic Cathode Materials</title>
+				<description>&lt;p&gt;Lakraychi A. E., Zhang Z., Lin O., Walter E. D., Wang J., Gopidi H. R., Woods E. F., Feng R., Wang W., &lt;b&gt;Canepa P.&lt;/b&gt;, Helms B. A., Wiaderek K. M., Chen Q., Yao Y., and Chen Y.; &lt;i&gt;Angew. Chem.&lt;/i&gt; e2483808 (2026). &lt;a href=&quot;https://doi.org/10.1002/anie.2483808&quot;&gt;doi:10.1002/anie.2483808&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Organic electrode materials (OEMs) offer a sustainable alternative to inorganic cathodes but typically suffer from low intrinsic electronic conductivity. The material historically reported as bis-tetraaminobenzoquinone (TAQ) exhibits bulk conductivity two orders of magnitude higher than its close analogue, tetraaminophenazine-tetraone (TAPT), despite their common precursor and nearly identical short-range structure. This disparity has previously been attributed to distinct molecular skeletons, with TAQ proposed to adopt a piperazine-type linkage and TAPT a pyrazine ring. Here, combining synchrotron X-ray scattering, solid-state &lt;sup&gt;15&lt;/sup&gt;N and &lt;sup&gt;13&lt;/sup&gt;C nuclear magnetic resonance (NMR), microcrystal electron diffraction (MicroED), and continuous-wave and pulsed electron paramagnetic resonance (EPR) spectroscopy, we show that “TAQ” has the same pyrazine-based molecular structure as TAPT, with no evidence for a piperazine core or keto–enol tautomerization. Their key difference lies in the synthesis-dependent degree of crystallinity: “TAQ” exhibits greater long-range structural coherence and a crystallographically resolved intermolecular hydrogen-bonding network, whereas TAPT is more disordered. EPR further shows that the higher structural order in “TAQ” is associated with a strongly delocalized π-spin manifold, while TAPT favors localized or weakly delocalized radicals and stronger local spin coupling. These findings identify the degree of crystallinity and hydrogen-bonding order as key structural features associated with radical delocalization and enhanced conductivity in organic electrodes.&lt;/p&gt;
+</description>
+				<pubDate>Mon, 07 Sep 2026 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/lakraychi-angew-chem-int-ed-2026/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/lakraychi-angew-chem-int-ed-2026/</guid>
+			</item>
+		
+			<item>
+				<title>Revealing low-energy surfaces of multinary compounds by controlling surface coordination environments</title>
+				<description>&lt;p&gt;Xie W., Gopidi H. R., Liu Z., Claes R., Squires A. G., Butler K. T., Scanlon D. O., and &lt;b&gt;Canepa P.&lt;/b&gt;; &lt;i&gt;arXiv&lt;/i&gt; (2026). &lt;a href=&quot;https://doi.org/10.48550/arXiv.2608.28903&quot;&gt;doi:10.48550/arXiv.2608.28903&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;When modeling surfaces of multinary compounds, conventional cleavage planes often cut through strongly bonded polyhedra, resulting in unphysical surface energies. Here, we introduce SALAMI (Symmetric Atomic Layers for Arbitrary Multinary Interfaces), a Python package that generates symmetric, charge-neutral, dipole-free, and low-energy slab models for multinary compounds. SALAMI performs combinatorial searches to selectively remove surface atoms and generate corrugated terminations that preserve optimal coordination environments. We applied this workflow to all symmetrically inequivalent crystallographic orientations with Miller indices up to 2 for two prototypical structures: the solid-state electrolyte Li&lt;sub&gt;3&lt;/sub&gt;PS&lt;sub&gt;4&lt;/sub&gt; and the transparent conducting oxide ZnSb&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;6&lt;/sub&gt;. Density functional theory calculations reveal that Li&lt;sub&gt;3&lt;/sub&gt;PS&lt;sub&gt;4&lt;/sub&gt; must preserve all PS&lt;sub&gt;4&lt;/sub&gt; units to achieve the minimum surface energy. For ZnSb&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;6&lt;/sub&gt;, low-energy surfaces are achieved by partial undercoordination of surface Sb atoms to SbO&lt;sub&gt;5&lt;/sub&gt; or SbO&lt;sub&gt;4&lt;/sub&gt; from the bulk SbO&lt;sub&gt;6&lt;/sub&gt;, depending on the surface orientations. Compared to surface models generated with unconstrained coordination, applying constraints to achieve optimal local coordination environments significantly lowers surface energies, shrinking the volume of the predicted Wulff shape by approximately 20%. Our results demonstrate that meticulous control of local coordination environments is necessary for accurately predicting the surface energetics of multinary compounds.&lt;/p&gt;
+</description>
+				<pubDate>Fri, 28 Aug 2026 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/xie-arxiv-2026/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/xie-arxiv-2026/</guid>
+			</item>
+		
+			<item>
+				<title>Stacking-Fault Defects Modulate Ion Transport in Ternary Halide Solid Electrolytes</title>
+				<description>&lt;p&gt;Li Y., Huang W.-F., Deng Z., Grabow L., and &lt;b&gt;Canepa P.&lt;/b&gt;; &lt;i&gt;ChemRxiv&lt;/i&gt; (2026). &lt;a href=&quot;https://doi.org/10.26434/chemrxiv.15007134/v1&quot;&gt;doi:10.26434/chemrxiv.15007134/v1&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Despite the prevalence of stacking faults (SFs) as planar defects in crystalline materials used for energy applications, their thermodynamic stability and influence on Li-ion transport in ternary halide solid electrolytes (SEs) for all-solid-state batteries (ASSBs) remain poorly understood. Here, we combine first-principles-trained cluster-expansion Hamiltonians and Monte Carlo simulations with machine-learned interatomic potentials to investigate SFs in trigonal Li&lt;sub&gt;3&lt;/sub&gt;YCl&lt;sub&gt;6&lt;/sub&gt; (LYC) and monoclinic Li&lt;sub&gt;3&lt;/sub&gt;YBr&lt;sub&gt;6&lt;/sub&gt; (LYB), two promising SEs compatible with high-voltage positive-electrode materials. SFs in LYC are metastable. In LYB, SFs are nearly energetically degenerate with the pristine phase. Nanosecond-scale molecular dynamics simulations of thermodynamically accessible faulted structures show that SFs increase Li-ion conductivity in LYC by an order of magnitude while lowering the Li-ion migration activation energy from 0.33 (in the bulk) to 0.21 eV. The analysis suggests that this enhancement arises from the disruption of the rigid Li sublattice ordering and the activation of three-dimensional diffusion pathways by SFs at low temperatures. Our approach provides a general protocol for screening SFs in layered materials, including ion conductors. We show that defect-transport coupling is strongly framework dependent, highlighting synthesis-controlled defect engineering as a route to tune ionic conductivity in halide SEs and potentially other ion conductors.&lt;/p&gt;
+</description>
+				<pubDate>Wed, 05 Aug 2026 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/li-chemrxiv-2026/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/li-chemrxiv-2026/</guid>
+			</item>
+		
+			<item>
+				<title>Nanoscale Optical Inhomogeneities from Compositional Segregation within Individual GaN-on-Si Quantum Wells</title>
+				<description>&lt;p&gt;Chung J.-Y., Mishra T. P., Mahfoud Z., Gage T. E., Wen J., Rice K. P., Martin I., Zhang L., Syaranamual G. J., Pennycook S. P., Gradečak S., &lt;b&gt;Canepa P.&lt;/b&gt;, and Bosman M.; &lt;i&gt;Adv. Sci.&lt;/i&gt; e76414 (2026). &lt;a href=&quot;https://doi.org/10.1002/advs.76414&quot;&gt;doi:10.1002/advs.76414&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Modern high-electron-mobility transistors (HEMTs) and light-emitting diodes (LEDs) are
+engineered around epitaxial indium gallium nitride (In&lt;sub&gt;x&lt;/sub&gt;Ga&lt;sub&gt;1−x&lt;/sub&gt;N) heterostructures. We apply the highest-resolution structural, elemental, and optical characterization to a series of systematically-fabricated GaN-on-silicon (Si) epitaxial heterostructures and demonstrate hitherto unresolved nanoscale optical inhomogeneities in individual In&lt;sub&gt;x&lt;/sub&gt;Ga&lt;sub&gt;1−x&lt;/sub&gt;N quantum wells. Direct correlation of atom probe tomography and scanning transmission electron microscopy with cathodoluminescence collectively confirm that these optical inhomogeneities result from compositional segregation that only appears in high indium-content In&lt;sub&gt;x&lt;/sub&gt;Ga&lt;sub&gt;1−x&lt;/sub&gt;N specimens, but not in low indium-content quantum wells, thereby elucidating the origin of injection-current-induced blueshifts in long wavelength LEDs. Density functional theory (DFT) calculations of the various alloy mixing energies indicate that the relaxation of the epitaxial in-plane strain stabilizes specific In&lt;sub&gt;x&lt;/sub&gt;Ga&lt;sub&gt;1−x&lt;/sub&gt;N compositions. Our findings suggest both the proper use of strain management, and the careful selection of alloy composition, are necessary to control local phase separation. This work presents a path to high-mobility strain engineering in HEMTs and homogeneous, long-wavelength light emission in LEDs.&lt;/p&gt;
+</description>
+				<pubDate>Fri, 12 Jun 2026 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/chung-adv-sci-2026/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/chung-adv-sci-2026/</guid>
+			</item>
+		
+			<item>
+				<title>Molecular Design Strategies for High-Voltage Organic Cathodes</title>
+				<description>&lt;p&gt;Hong S., Lakraychi A. E., Lyssenko A., Panchal A. A., Gopidi H. R., &lt;b&gt;Canepa P.&lt;/b&gt;, Gómez-Bombarelli R., Yao Y., and Assary R. S.; &lt;i&gt;Adv. Energy Mater.&lt;/i&gt; 16, e71122 (2026). &lt;a href=&quot;https://doi.org/10.1002/aenm.71122&quot;&gt;doi:10.1002/aenm.71122&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Organic electrode materials (OEMs) offer promising pathways toward sustainable and high-performance rechargeable batteries, yet their practical implementation is limited by rigid crystal structures, poor electronic conductivity, and low redox potential. Here, we conduct a systematic molecular-level investigation of two organic cathodes, phenazine-1,4,6,9-tetrone (PzTO) and dithiin-fused naphthazarin (5,8-dihydroxy-1,4-naphthoquinone) (DNP), through a combined computational and experimental approach. Solution-phase cyclic voltammetry reveals a substantial redox potential gap between them, with DNP exhibiting a reduction potential ∼500 mV higher than PzTO. This difference becomes more pronounced in solid state measurements, where the first reduction potentials reach ∼3.68 V vs. Li&lt;sup&gt;+&lt;/sup&gt;/Li for DNP and 3.08 V for PzTO. By dissecting the molecular origins of these trends, we identify two governing features: (i) changes of aromaticity upon reduction (differential aromaticity) and (ii) Li–O coordination number. Density functional theory calculations confirm that these features strongly modulate lithiation free energies. Extending our analysis to a series of hypothetical derivatives of PzTO and DNP, we establish a linear relationship between differential aromaticity and lithiation free energy and show that the introduction of additional Li–O coordination enhances redox potentials. Taken together, these molecular engineering insights offer a mechanistic foundation for rationalizing high-voltage performance and guiding the design of next-generation OEMs.&lt;/p&gt;
+</description>
+				<pubDate>Wed, 27 May 2026 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/hong-adv-energy-mater-2026/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/hong-adv-energy-mater-2026/</guid>
+			</item>
+		
+			<item>
+				<title>Reducing self-interaction error in transition-metal oxides with different exact-exchange fractions for energy and density</title>
+				<description>&lt;p&gt;Gopidi H. R., Zhang R., Wang Y., Patra A., Sun J., Ruzsinszky A., Perdew J. P., and &lt;b&gt;Canepa P.&lt;/b&gt;; &lt;i&gt;Phys. Rev. B&lt;/i&gt; 113, 165115 (2026). &lt;a href=&quot;https://doi.org/10.1103/myd5-l4f4&quot;&gt;doi:10.1103/myd5-l4f4&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Density functional theory (DFT) in chemistry and materials science aims for “chemical accuracy,” but this goal is challenged by the need to approximate the exact exchange-correlation (XC) energy functional. The restored-regularized strongly constrained and appropriately normed (r&lt;sup&gt;2&lt;/sup&gt;SCAN), meta-generalized gradient approximation to the XC functional fulfills 17 exact constraints of the XC energy, and has significantly boosted prediction accuracy for molecules and materials. However, r&lt;sup&gt;2&lt;/sup&gt;SCAN remains inadequate at predicting the properties of open &lt;i&gt;d&lt;/i&gt; and &lt;i&gt;f&lt;/i&gt; transition-metal strongly correlated compounds, such as band gaps, magnetic moments, and oxidation energies. Prediction inaccuracies of r&lt;sup&gt;2&lt;/sup&gt;SCAN energies arise from functional- and density-driven errors, mainly resulting from the DFT self-interaction error. Here, we propose a method termed r&lt;sup&gt;2&lt;/sup&gt;SCANY@r&lt;sup&gt;2&lt;/sup&gt;SCANX to mitigate the self-interaction error of XC functionals for the accurate simulations of electronic, magnetic, and thermochemical properties of transition-metal oxides. r&lt;sup&gt;2&lt;/sup&gt;SCANY@r&lt;sup&gt;2&lt;/sup&gt;SCANX uses different fractions of exact Hartree-Fock exchange, X for the electronic density and Y for the density functional approximation of the total energy, thereby simultaneously addressing functional-driven and density-driven inaccuracies. Building on just one (or maximum two) parameters that apply unchanged to &lt;i&gt;s-p&lt;/i&gt;-bonded systems, we demonstrate that r&lt;sup&gt;2&lt;/sup&gt;SCANY@r&lt;sup&gt;2&lt;/sup&gt;SCANX improves upon the r&lt;sup&gt;2&lt;/sup&gt;SCAN predictions for 20 highly correlated oxides and even out-performs the highly parametrized DFT(r&lt;sup&gt;2&lt;/sup&gt;SCAN)+&lt;i&gt;U&lt;/i&gt; method—the state-of-the-art approach to predict strongly correlated materials. Prediction uncertainties for oxidation energies and magnetic moments of transition-metal oxides are significantly reduced by r&lt;sup&gt;2&lt;/sup&gt;SCAN10@r&lt;sup&gt;2&lt;/sup&gt;SCAN50 and band gaps with r&lt;sup&gt;2&lt;/sup&gt;SCAN10@r&lt;sup&gt;2&lt;/sup&gt;SCAN. r&lt;sup&gt;2&lt;/sup&gt;SCAN10@r&lt;sup&gt;2&lt;/sup&gt;SCAN50 diminishes the density-driven error of the energy in r&lt;sup&gt;2&lt;/sup&gt;SCAN and r&lt;sup&gt;2&lt;/sup&gt;SCAN10. We demonstrate that the computationally efficient r&lt;sup&gt;2&lt;/sup&gt;SCAN10@r&lt;sup&gt;2&lt;/sup&gt;SCAN is nearly as accurate as the global hybrid r&lt;sup&gt;2&lt;/sup&gt;SCAN10 for oxidation energies. This indicates that accurate energy differences can be obtained through rate-limiting self-consistent iterations and geometry optimizations with the efficient r&lt;sup&gt;2&lt;/sup&gt;SCAN. Subsequently, a more expensive nonlocal functional, such as a hybrid or self-interaction correction, can be applied in a fast, single post-self-consistent calculation, as in r&lt;sup&gt;2&lt;/sup&gt;SCAN10@r&lt;sup&gt;2&lt;/sup&gt;SCAN.&lt;/p&gt;
+</description>
+				<pubDate>Thu, 19 Mar 2026 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/gopidi-phys-rev-b-2026/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/gopidi-phys-rev-b-2026/</guid>
+			</item>
+		
+			<item>
+				<title>Search for Active and Inactive Ion Insertion Sites in Organic Crystalline Materials</title>
+				<description>&lt;p&gt;Gopidi H. R., Lakraychi A. E., Panchal A. A., Chen Y., Kolluru V. S. K., Wang J., Chen Y., Liu J., Wiaderek K., Chan M. K., Yao Y., and &lt;b&gt;Canepa P.&lt;/b&gt;; &lt;i&gt;Chem. Sci.&lt;/i&gt; 17, 5404–5415 (2026). &lt;a href=&quot;https://doi.org/10.1039/D5SC07602A&quot;&gt;doi:10.1039/D5SC07602A&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;The position of mobile active and inactive ions, specifically ion insertion sites, within organic crystals, significantly affects the properties of organic materials used for energy storage and ionic transport. Identifying the positions of these atom (and ion) sites in an organic crystal is difficult, especially when the element has a low X-ray scattering power, such as lithium (Li) and hydrogen, which are difficult to detect with powder X-ray diffraction (XRD) methods. First-principles calculations, exemplified by density functional theory (DFT), are very effective for confirming the relative stability of ion positions in materials. However, the lack of effective strategies to identify ion sites in these organic crystalline frameworks renders this task extremely challenging. This work presents two algorithms: (i) Efficient Location of Ion Insertion Sites from Extrema in electrostatic local potential and charge density (ELIISE), and (ii) ElectRostatic InsertioN (ERIN), which leverage charge density and electrostatic potential fields accessed from first-principles calculations, combined with the Simultaneous Ion Insertion and Evaluation (SIIE) workflow -that inserts all ions simultaneously-to determine ion positions in organic crystals. We demonstrate that these methods accurately reproduce known ion positions in 16 organic materials and also identify previously overlooked low-energy sites in tetralithium 2,6naphthalenedicarboxylate (Li&lt;sub&gt;4&lt;/sub&gt;NDC), an organic electrode material, highlighting the importance of inserting all ions simultaneously as done in the SIIE workflow.&lt;/p&gt;
+
+</description>
+				<pubDate>Sun, 18 Jan 2026 00:00:00 -0600</pubDate>
+				<link>https://caneparesearch.org/papers/gopidi-chem-sci-2026/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/gopidi-chem-sci-2026/</guid>
+			</item>
+		
+			<item>
+				<title>Phase Behavior and Ion Transport in Lithium–Niobium–Tantalum Oxide Alloys</title>
+				<description>&lt;p&gt;Chen H., Deng Z., Gautam G. S., Li Y., and &lt;b&gt;Canepa P.&lt;/b&gt;; &lt;i&gt;Chem. Mater.&lt;/i&gt; 37, 9897–9907 (2025). &lt;a href=&quot;https://doi.org/10.1021/acs.chemmater.5c02429&quot;&gt;doi:10.1021/acs.chemmater.5c02429&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Lithium niobate-tantalate mixtures have garnered considerable interest for their ability to merge the desirable properties of both end members, enabling diverse high-value applications, such as high-performance faradaic capacitors, nonlinear optics, and protective coatings in rechargeable batteries. While numerous studies on the application of LiNb&lt;sub&gt;x&lt;/sub&gt;Ta&lt;sub&gt;1-x&lt;/sub&gt;O&lt;sub&gt;3&lt;/sub&gt; exist, the phase behavior and properties of Li&lt;sub&gt;3&lt;/sub&gt;Nb&lt;sub&gt;x&lt;/sub&gt;Ta&lt;sub&gt;1-x&lt;/sub&gt;O&lt;sub&gt;4&lt;/sub&gt; remain largely unexplored. In this work, we employ a multiscale approach that encompasses first-principles phonon calculations, cluster expansion, and Monte Carlo simulations to derive the temperature–composition phase diagram for Li&lt;sub&gt;3&lt;/sub&gt;Nb&lt;sub&gt;x&lt;/sub&gt;Ta&lt;sub&gt;1-x&lt;/sub&gt;O&lt;sub&gt;4&lt;/sub&gt;. Our findings reveal the critical role of vibrational entropy in accurately predicting phase stability, which promotes the solubility of Nb in Li&lt;sub&gt;3&lt;/sub&gt;TaO&lt;sub&gt;4&lt;/sub&gt; while suppressing the miscibility of Ta in Li&lt;sub&gt;3&lt;/sub&gt;NbO&lt;sub&gt;4&lt;/sub&gt;. Additionally, we demonstrate that Nb/Ta mixing offers a promising avenue for tailoring the Li-ion conductivities of Li&lt;sub&gt;3&lt;/sub&gt;Nb&lt;sub&gt;x&lt;/sub&gt;Ta&lt;sub&gt;1-x&lt;/sub&gt;O&lt;sub&gt;4&lt;/sub&gt;. On the technical side, we demonstrated the importance of including vibrational entropy effects explicitly in Monte Carlo simulations dealing with multicomponent systems, beyond simple binary mixtures. On the application side, this study provides fundamental insights into the phase behavior and Li-ion transport properties of Li&lt;sub&gt;3&lt;/sub&gt;Nb&lt;sub&gt;x&lt;/sub&gt;Ta&lt;sub&gt;1-x&lt;/sub&gt;O&lt;sub&gt;4&lt;/sub&gt;, paving the way for its potential applications in energy storage and other fields.&lt;/p&gt;
+</description>
+				<pubDate>Thu, 04 Dec 2025 00:00:00 -0600</pubDate>
+				<link>https://caneparesearch.org/papers/chen-chem-mater-2025/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/chen-chem-mater-2025/</guid>
+			</item>
+		
+			<item>
+				<title>Temperature-Regulated Gating Enables Gas Separations in Ultramicroporous Aluminum Formate, ALF</title>
+				<description>&lt;p&gt;Evans H. A., Yildirim T., McCarver G. A., Mai T. T., Cheng Y., Deng Z., Klein R. A., Zhao D., &lt;b&gt;Canepa P.&lt;/b&gt;, Hight Walker A. R., Cheetham A. K., and Brown C. M.; &lt;i&gt;Chem. Mater.&lt;/i&gt; 37, 7102–7114 (2025). &lt;a href=&quot;https://doi.org/10.1021/acs.chemmater.5c01157&quot;&gt;doi:10.1021/acs.chemmater.5c01157&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Physisorption is a reversible exothermic phenomenon where molecular kinetic energy is limited and interactions between guest molecules and materials are favored at low temperatures. However, in certain ultramicroporous materials, physisorption can be impacted by subtle structural changes on decreasing temperature that slows or even stops adsorbate diffusion, circumventing thermodynamic expectations. These unique ultramicroporous materials are described as temperature-regulated gating adsorbents and given their special properties, can facilitate mix-and-match gas separations by simply controlling temperature. To date, though understood to be remarkably useful, there is still ambiguity about how best to identify, characterize, and rationalize the performance of these materials. To address this issue, we provide a practical analytical framework of a model gating material, Al(HCOO)&lt;sub&gt;3&lt;/sub&gt;, ALF. Our work illustrates how the gating effect in ALF originates from the changing dynamics of the formate linkers that define the apertures between porous cavities. As formate dynamics increase with temperature, new kinetic adsorption regimes for an adsorbate can be accessed, marked by kinetic inflection temperatures (KITs). Identification of these temperatures allows kinetic or absolute gating separations to be devised without exhaustive experimentation. However, though an elevated temperature regime may promote fast diffusion for an adsorbate, adsorption quantities can be minimal if thermodynamics of adsorption have been overcome. By using gas sorption studies with noble gases, H&lt;sub&gt;2&lt;/sub&gt;, N&lt;sub&gt;2&lt;/sub&gt;, O&lt;sub&gt;2&lt;/sub&gt;, CO&lt;sub&gt;2&lt;/sub&gt;, and C&lt;sub&gt;2&lt;/sub&gt;H&lt;sub&gt;2&lt;/sub&gt;, as well as crystallography, spectroscopy, and modeling, our work elucidates how the convoluted effects of thermodynamics and kinetics affect a system like ALF, and how they can be leveraged for separation design.&lt;/p&gt;
+</description>
+				<pubDate>Wed, 13 Aug 2025 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/evans-chem-mater-2025/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/evans-chem-mater-2025/</guid>
+			</item>
+		
+			<item>
+				<title>Structure and transport properties in the pseudo-binary phase system Li4SiS4-Li4SnS4</title>
+				<description>&lt;p&gt;Balzat L., Li Y., Dums S., Moudrakovski I., Gjorgjevikj K., Schulz A., Li Y., Krause S., &lt;b&gt;Canepa P.&lt;/b&gt;, and Lotsch B.; &lt;i&gt;Chem. Mater.&lt;/i&gt; 37, 6127–6139 (2025). &lt;a href=&quot;https://doi.org/10.1021/acs.chemmater.5c00358&quot;&gt;doi:10.1021/acs.chemmater.5c00358&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Thio-lithium superionic conductors (thio-LISICONs) are a family of promising solid electrolyte materials for potential applications in solid-state batteries. The orthorhombic polymorph of the thio-LISICON Li&lt;sub&gt;4&lt;/sub&gt;SiS&lt;sub&gt;4&lt;/sub&gt; (&lt;i&gt;o&lt;/i&gt;-Li&lt;sub&gt;4&lt;/sub&gt;SiS&lt;sub&gt;4&lt;/sub&gt;) has been known for decades, but its complete crystal structure has been reported only recently. Here, using single-crystal X-ray diffraction, we reevaluated the crystal structure of &lt;i&gt;o&lt;/i&gt;-Li&lt;sub&gt;4&lt;/sub&gt;SiS&lt;sub&gt;4&lt;/sub&gt; and showed that &lt;i&gt;o&lt;/i&gt;-Li&lt;sub&gt;4&lt;/sub&gt;SiS&lt;sub&gt;4&lt;/sub&gt; crystallizes in space group &lt;i&gt;Pmn2&lt;sub&gt;1&lt;/sub&gt;&lt;/i&gt; (no. 31, &lt;i&gt;a&lt;/i&gt; = 7.7694(15) Å, &lt;i&gt;b&lt;/i&gt;= 13.731(3) Å, and &lt;i&gt;c&lt;/i&gt; = 6.1413(12) Å). The crystal structure of &lt;i&gt;o&lt;/i&gt;-Li&lt;sub&gt;4&lt;/sub&gt;SiS&lt;sub&gt;4&lt;/sub&gt; consists of isolated SiS&lt;sub&gt;4&lt;/sub&gt; tetrahedra arranged in a zigzag-type manner, whereas Li atoms are coordinated both tetrahedrally and octahedrally by sulfur atoms of the SiS&lt;sub&gt;4&lt;/sub&gt; groups. Structures identified by first-principles calculations support the lower symmetry solution presented here, with the &lt;i&gt;Pmn2&lt;sub&gt;1&lt;/sub&gt;&lt;/i&gt; polymorph being more stable at room temperature than a higher symmetry phase. By knowing the accurate crystal structure of &lt;i&gt;o&lt;/i&gt;-Li&lt;sub&gt;4&lt;/sub&gt;SiS&lt;sub&gt;4&lt;/sub&gt;, we investigated the solid solution behavior with another group IV thio-LISICON, Li&lt;sub&gt;4&lt;/sub&gt;SnS&lt;sub&gt;4&lt;/sub&gt;. Rietveld refinements of powder X-ray diffraction data revealed the solid solution Li&lt;sub&gt;4&lt;/sub&gt;Si&lt;sub&gt;1-x&lt;/sub&gt;Sn&lt;sub&gt;x&lt;/sub&gt;S&lt;sub&gt;4&lt;/sub&gt; (0 ≤ x ≤ 1, Δx = 0.1), which shows a nearly ideal Vegard-type behavior for all silicon-containing samples. &lt;sup&gt;29&lt;/sup&gt;Si and &lt;sup&gt;119&lt;/sup&gt;Sn magic-angle-spinning solid-state NMR and Raman spectroscopy showed the presence of SiS&lt;sub&gt;4&lt;/sub&gt; and SnS&lt;sub&gt;4&lt;/sub&gt; tetrahedral moieties, with the spectra showing expected behavior consistent with the silicon−tin ratio in the materials. Electrochemical impedance spectroscopy revealed the highest ionic conductivity of 8.4x10&lt;sup&gt;−6&lt;/sup&gt; S cm&lt;sup&gt;−1&lt;/sup&gt; at 25 ℃ for Li&lt;sub&gt;4&lt;/sub&gt;Si&lt;sub&gt;0.5&lt;/sub&gt;Sn&lt;sub&gt;0.5&lt;/sub&gt;S&lt;sub&gt;4&lt;/sub&gt;, accompanied by the lowest migration barrier of ~0.37 eV.&lt;/p&gt;
+</description>
+				<pubDate>Wed, 06 Aug 2025 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/balzat-chem-mater-2025/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/balzat-chem-mater-2025/</guid>
+			</item>
+		
+			<item>
+				<title>Establishing the Compatibility of Anolytes and Catholytes in Dual Electrolyte Solid-State Batteries</title>
+				<description>&lt;p&gt;Pennebaker T. N. T., Sebti E., Panchal A., Huang C.-J., Trenikhina Y., Li T., Li Y., Li Y., Kelly S. T., Meng Y. S., &lt;b&gt;Canepa P.&lt;/b&gt;, and Clement R. J.; &lt;i&gt;ChemRxiv&lt;/i&gt; (2025). &lt;a href=&quot;https://doi.org/10.26434/chemrxiv-2025-chtzv&quot;&gt;doi:10.26434/chemrxiv-2025-chtzv&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;In the pursuit of long-lasting, high-energy density solid-state batteries, dual solid electrolyte designs offer a unique path toward stabilizing the electrode-electrolyte interfaces in the presence of a high-voltage positive electrode and a low-voltage negative electrode. However, electrolyte pairings that form a stable interface under battery operating conditions must be identified. In this study, we used the onset reaction temperature as a proxy to assess the chemical compatibility between a chloride (Li&lt;sub&gt;2&lt;/sub&gt;ZrCl&lt;sub&gt;6&lt;/sub&gt; (LZC)) catholyte (a high oxidative stability electrolyte) and two common thiophosphate (Li&lt;sub&gt;3&lt;/sub&gt;PS&lt;sub&gt;4&lt;/sub&gt; (LPS) and Li&lt;sub&gt;6&lt;/sub&gt;PS&lt;sub&gt;5&lt;/sub&gt;Cl (LPSC)) anolytes (high reductive stability electrolytes). While LPS reacts with LZC starting at 90°C, the LZC–LPSC pairing appears stable up to 260°C. When heated to 300°C, the two pairings decompose to form LiCl, a layered Li&lt;sub&gt;x&lt;/sub&gt;Zr&lt;sub&gt;y&lt;/sub&gt;P&lt;sub&gt;2&lt;/sub&gt;S&lt;sub&gt;6&lt;/sub&gt; phase, ZrS&lt;sub&gt;2&lt;/sub&gt;, ZrS&lt;sub&gt;3&lt;/sub&gt;, S&lt;sub&gt;8&lt;/sub&gt;, as well as γ−Li&lt;sub&gt;3&lt;/sub&gt;PS&lt;sub&gt;4&lt;/sub&gt; for the LZC–LPSC pairing. Consistent with those findings, first-principles calculations show that neither pairing is thermodynamically stable. However, a higher decomposition energy is predicted for the LZC–LPSC combination, suggesting that it is kinetically stabilized up to 260°C. The LZC–LPSC interface is conductive to Li-ions, with an extremely low resistance (4.2 Ω cm&lt;sup&gt;−2&lt;/sup&gt;). Furthermore, cells comprising an LZC–LPSC bilayer separating a LiNi&lt;sub&gt;0.8&lt;/sub&gt;Mn&lt;sub&gt;0.1&lt;/sub&gt;Co&lt;sub&gt;0.1&lt;/sub&gt;O&lt;sub&gt;2&lt;/sub&gt; positive electrode and Li-In negative electrode exhibit exceptionally stable performance, with 90.0% and 83.8% of their initial capacity retained after 200 and 500 cycles, respectively. These findings allow us to propose several criteria for designing stable electrified interfaces for a wide range of electrochemical devices.&lt;/p&gt;
+</description>
+				<pubDate>Mon, 12 May 2025 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/pennebaker-chemrxiv-2025/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/pennebaker-chemrxiv-2025/</guid>
+			</item>
+		
+			<item>
+				<title>Correction to “Pushing Forward Simulation Techniques of Ion Transport in Ion Conductors for Energy Materials”</title>
+				<description>&lt;p&gt;&lt;b&gt;Canepa P.&lt;/b&gt;; &lt;i&gt;ACS Mater. Au&lt;/i&gt; 5, 609 (2025). &lt;a href=&quot;https://doi.org/10.1021/acsmaterialsau.5c00024&quot;&gt;doi:10.1021/acsmaterialsau.5c00024&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Correction of previously published paper &lt;a href=&quot;https://caneparesearch.org/papers/canepa-acs-mater-au-2022/&quot;&gt;Canepa P., ACS Mater. Au 3, 75 (2022)&lt;/a&gt;.&lt;/p&gt;
+</description>
+				<pubDate>Wed, 05 Mar 2025 00:00:00 -0600</pubDate>
+				<link>https://caneparesearch.org/papers/canepa-acs-mater-au-2025/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/canepa-acs-mater-au-2025/</guid>
+			</item>
+		
+			<item>
+				<title>Correction to “Stacking Faults Assist Lithium-Ion Conduction in a Halide-Based Superionic Conductor”</title>
+				<description>&lt;p&gt;Sebti E., Evans H. A., Chen H., Richardson P. M., White K. M., Giovine R., Koirala K. P., Xu Y., Gonzalez-Correa E., Wang C., Brown C. M., Cheetham A. K., &lt;b&gt;Canepa P.&lt;/b&gt;, and Clément R. J.; &lt;i&gt;J. Am. Chem. Soc.&lt;/i&gt; 147, 9000 (2025). &lt;a href=&quot;https://doi.org/10.1021/jacs.5c02447&quot;&gt;doi:10.1021/jacs.5c02447&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Correction of previously published paper &lt;a href=&quot;https://caneparesearch.org/papers/sebti-j-am-chem-soc-2022/&quot;&gt;Sebti E. et al., J. Am. Chem. Soc., 144, 5795 (2022)&lt;/a&gt;.&lt;/p&gt;
+</description>
+				<pubDate>Fri, 28 Feb 2025 00:00:00 -0600</pubDate>
+				<link>https://caneparesearch.org/papers/sebti-j-am-chem-soc-2025/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/sebti-j-am-chem-soc-2025/</guid>
+			</item>
+		
+			<item>
+				<title>Correction to “Thermodynamics of Sodium–Lead Alloys for Negative Electrodes from First-Principles”</title>
+				<description>&lt;p&gt;Lee D. K. J., Deng Z., Gautam G. S., and &lt;b&gt;Canepa P.&lt;/b&gt;; &lt;i&gt;Chem. Mater.&lt;/i&gt; 37, 1682–1683 (2025). &lt;a href=&quot;https://doi.org/10.1021/acs.chemmater.5c00271&quot;&gt;doi:10.1021/acs.chemmater.5c00271&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Correction of previously published paper &lt;a href=&quot;https://caneparesearch.org/papers/lee-chem-mater-2024/&quot;&gt;Lee D. K. J. et al., Chem. Mater. 36, 6831 (2024)&lt;/a&gt;.&lt;/p&gt;
+</description>
+				<pubDate>Wed, 12 Feb 2025 00:00:00 -0600</pubDate>
+				<link>https://caneparesearch.org/papers/lee-chem-mater-2025/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/lee-chem-mater-2025/</guid>
+			</item>
+		
+			<item>
+				<title>Obtaining V2(PO4)3 by sodium extraction from single-phase NaxV2(PO4)3 (1 &amp;lt; x &amp;lt; 3) positive electrode materials</title>
+				<description>&lt;p&gt;Park S., Wang Z., Choudhary K., Chotard J.-N., Carlier D., Fauth F., &lt;b&gt;Canepa P.&lt;/b&gt;, Croguennec L., and Masquelier C.; &lt;i&gt;Nat. Mater.&lt;/i&gt; 24, 234 (2025). &lt;a href=&quot;https://doi.org/10.1038/s41563-024-02023-7&quot;&gt;doi:10.1038/s41563-024-02023-7&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;We report on single-phase Na&lt;sub&gt;x&lt;/sub&gt;V&lt;sub&gt;2&lt;/sub&gt;(PO&lt;sub&gt;4&lt;/sub&gt;)&lt;sub&gt;3&lt;/sub&gt; compositions (1.5 ⋜ x ⋜ 2.5) of the Na super ionic conductor type, obtained from a straightforward synthesis route. Typically, chemically prepared c-Na&lt;sub&gt;2&lt;/sub&gt;V&lt;sub&gt;2&lt;/sub&gt;(PO&lt;sub&gt;4&lt;/sub&gt;)&lt;sub&gt;3&lt;/sub&gt;, obtained by annealing an equimolar mixture of Na&lt;sub&gt;3&lt;/sub&gt;V&lt;sub&gt;2&lt;/sub&gt;(PO&lt;sub&gt;4&lt;/sub&gt;)&lt;sub&gt;3&lt;/sub&gt; and NaV&lt;sub&gt;2&lt;/sub&gt;(PO&lt;sub&gt;4&lt;/sub&gt;)&lt;sub&gt;3&lt;/sub&gt;, exhibits a specific sodium-ion distribution (occupancy of the Na(1) site of only 0.66(4)), whereas that of the electrochemically obtained e-Na&lt;sub&gt;2&lt;/sub&gt;V&lt;sub&gt;2&lt;/sub&gt;(PO&lt;sub&gt;4&lt;/sub&gt;)&lt;sub&gt;3&lt;/sub&gt; (from Na&lt;sub&gt;3&lt;/sub&gt;V&lt;sub&gt;2&lt;/sub&gt;(PO&lt;sub&gt;4&lt;/sub&gt;)&lt;sub&gt;3&lt;/sub&gt;) is close to 1. Unlike conventional Na&lt;sub&gt;3&lt;/sub&gt;V&lt;sub&gt;2&lt;/sub&gt;(PO&lt;sub&gt;4&lt;/sub&gt;)&lt;sub&gt;3&lt;/sub&gt;, when used as positive electrode materials in Na-ion batteries, the Na&lt;sub&gt;x&lt;/sub&gt;V&lt;sub&gt;2&lt;/sub&gt;(PO&lt;sub&gt;4&lt;/sub&gt;)&lt;sub&gt;3&lt;/sub&gt; compositions lead to unusual single-phase Na&lt;sup&gt;+&lt;/sup&gt; extraction/insertion mechanisms with continuous voltage changes upon Na&lt;sup&gt;+&lt;/sup&gt; extraction/insertion. We demonstrate that the average equilibrium operating voltage observed upon Na&lt;sup&gt;+&lt;/sup&gt; deintercalation from single-phase Na&lt;sub&gt;2&lt;/sub&gt;V&lt;sub&gt;2&lt;/sub&gt;(PO&lt;sub&gt;4&lt;/sub&gt;)&lt;sub&gt;3&lt;/sub&gt; is increased up to an average value of ~3.70 V versus Na&lt;sup&gt;+&lt;/sup&gt;/Na (thanks to the activation of the V&lt;sup&gt;4+&lt;/sup&gt;/V&lt;sup&gt;5+&lt;/sup&gt; redox couple) compared to 3.37 V versus Na&lt;sup&gt;+&lt;/sup&gt;/Na in conventional Na&lt;sub&gt;3&lt;/sub&gt;V&lt;sub&gt;2&lt;/sub&gt;(PO&lt;sub&gt;4&lt;/sub&gt;)&lt;sub&gt;3&lt;/sub&gt;, thus leading to an increase in the theoretical energy density from 396.3 Wh kg&lt;sup&gt;−1&lt;/sup&gt; to 458.1 Wh kg&lt;sup&gt;−1&lt;/sup&gt;. Electrochemical and chemical Na&lt;sup&gt;+&lt;/sup&gt; deintercalation from c-Na&lt;sub&gt;2&lt;/sub&gt;V&lt;sub&gt;2&lt;/sub&gt;(PO&lt;sub&gt;4&lt;/sub&gt;)&lt;sub&gt;3&lt;/sub&gt; enables complete Na-ion extraction, increasing energy density.&lt;/p&gt;
+</description>
+				<pubDate>Thu, 30 Jan 2025 00:00:00 -0600</pubDate>
+				<link>https://caneparesearch.org/papers/park-nat-mater-2025/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/park-nat-mater-2025/</guid>
+			</item>
+		
+			<item>
+				<title>Compatibility of Halide Bilayer Separators for All-Solid-State Batteries</title>
+				<description>&lt;p&gt;Panchal A. A., Pennebaker T. N. T., Sebti E., Li Y., Li Y., Clement R. J., and &lt;b&gt;Canepa P.&lt;/b&gt;; &lt;i&gt;ACS Energy Lett.&lt;/i&gt; 9, 5935–5944 (2024). &lt;a href=&quot;https://doi.org/10.1021/acsenergylett.4c02590&quot;&gt;doi:10.1021/acsenergylett.4c02590&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Considering the lack of solid electrolytes that are electrochemically stable when in contact with a high-voltage cathode and a low-voltage metallic anode,
+ bilayer separators in all-solid-state batteries are gaining increasing attention. However, previous studies have shown that the chemical reactivity between
+ materials comprising the electrolyte bilayer is one of the contributing factors to the deterioration of battery performance during cycling.
+ Here, we computationally screen the chemical compatibility of an extensive range of materials forming a bilayer separator using first-principles calculations.
+ Notably, several bilayer separators are found to be thermodynamically stable; among them, the stability of the Li&lt;sub&gt;3&lt;/sub&gt;PO&lt;sub&gt;4&lt;/sub&gt;/Li&lt;sub&gt;3&lt;/sub&gt;InCl&lt;sub&gt;6&lt;/sub&gt; pairing is further verified experimentally using a combination of X-ray diffraction, solid-state nuclear magnetic resonance, and X-ray photoelectron spectroscopy. This study underscores the importance of understanding the chemical compatibility of bilayer separators when engineering high-energy-density all-solid-state batteries.&lt;/p&gt;
+</description>
+				<pubDate>Thu, 21 Nov 2024 00:00:00 -0600</pubDate>
+				<link>https://caneparesearch.org/papers/panchal-acs-energy-lett-2024/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/panchal-acs-energy-lett-2024/</guid>
+			</item>
+		
+			<item>
+				<title>On the Thermal Conductivity and Local Lattice Dynamical Properties of NASICON Solid Electrolytes</title>
+				<description>&lt;p&gt;Böger T., Bernges T., Agne M. T., &lt;b&gt;Canepa P.&lt;/b&gt;, Tietz F., and Zeier W. G.; &lt;i&gt;J. Am. Chem. Soc.&lt;/i&gt; 146, 32678 (2024). &lt;a href=&quot;https://doi.org/10.1021/jacs.4c12034&quot;&gt;doi:10.1021/jacs.4c12034&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;The recent development of solid-state batteries brings them closer to commercialization and raises the need for heat management. The NASICON material class (Na&lt;sub&gt;1+x&lt;/sub&gt;Zr&lt;sub&gt;2&lt;/sub&gt;P&lt;sub&gt;x&lt;/sub&gt;Si&lt;sub&gt;3–x&lt;/sub&gt;O&lt;sub&gt;12&lt;/sub&gt; with 0 ≤ x ≤ 3) is one of the most promising families of solid electrolytes for sodium solid-state batteries. While extensive research has been conducted to improve the ionic conductivity of this material class, knowledge of thermal conductivity is scarce. At the same time, the material’s ability to dissipate heat is expected to play a pivotal role in determining efficiency and safety, both on a battery pack and local component level. Dissipation of heat, which was, for instance, generated during battery operation, is important to keep the battery at its optimal operating temperature and avoid accelerated degradation of battery materials at interfaces. In this study, the thermal conductivity of NaZr&lt;sub&gt;2&lt;/sub&gt;P&lt;sub&gt;3&lt;/sub&gt;O&lt;sub&gt;12&lt;/sub&gt; and Na&lt;sub&gt;4&lt;/sub&gt;Zr&lt;sub&gt;2&lt;/sub&gt;Si&lt;sub&gt;3&lt;/sub&gt;O&lt;sub&gt;12&lt;/sub&gt; is investigated in a wide temperature range from 2 to 773 K accompanied by in-depth lattice dynamical characterizations to understand underlying mechanisms and the striking difference in their low-temperature thermal conductivity. Consistently low thermal conductivities are observed, which can be explained by the strong suppression of propagating phonon transport through the structural complexity and the intrinsic anharmonicity of NASICONs. The associated low-frequency sodium ion vibrations lead to the emergence of local random-walk heat transport contributions via so-called diffusons. In addition, the importance of lattice dynamics in the discussion of ionic transport as well as the relevance of bonding characteristics typical for mobile ions on thermal transport, is highlighted.&lt;/p&gt;
+</description>
+				<pubDate>Wed, 13 Nov 2024 00:00:00 -0600</pubDate>
+				<link>https://caneparesearch.org/papers/boger-j-am-chem-soc-2024/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/boger-j-am-chem-soc-2024/</guid>
+			</item>
+		
+			<item>
+				<title>Miscibility of Li4GeO4 into Li3PS4 Solid Electrolytes from First-Principles Methods</title>
+				<description>&lt;p&gt;Li Y., Deng Z., Chen C., and &lt;b&gt;Canepa P.&lt;/b&gt;; &lt;i&gt;Chem. Mater.&lt;/i&gt; 36, 7877 (2024). &lt;a href=&quot;https://doi.org/10.1021/acs.chemmater.4c01267&quot;&gt;doi:10.1021/acs.chemmater.4c01267&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Lithium−based oxysulfide solid electrolytes are currently being researched for all−solid−state batteries, as they offer a combination of high electrochemical stabilities and elevated Li−ion conductivities, thus combining the best characteristics of sulfide and oxide solid electrolytes. In this work, we investigated the miscibility of Li&lt;sub&gt;3&lt;/sub&gt;PS&lt;sub&gt;4&lt;/sub&gt; and Li&lt;sub&gt;4&lt;/sub&gt;GeO&lt;sub&gt;4&lt;/sub&gt; polyanions. Building upon a robust multiscale first−principles methodology, we explore the configurational disorder arising from the mixing of GeO&lt;sub&gt;4&lt;/sub&gt;&lt;sup&gt;4−&lt;/sup&gt; and PS&lt;sub&gt;4&lt;/sub&gt;&lt;sup&gt;3−&lt;/sup&gt; in the (1 − x)Li&lt;sub&gt;3&lt;/sub&gt;PS&lt;sub&gt;4&lt;/sub&gt; − xLi&lt;sub&gt;4&lt;/sub&gt;GeO&lt;sub&gt;4&lt;/sub&gt; tie line. The computed phase diagram reveals a stable ordered phase with the composition Li&lt;sub&gt;7&lt;/sub&gt;PO&lt;sub&gt;4&lt;/sub&gt;GeS&lt;sub&gt;4&lt;/sub&gt;. In Li&lt;sub&gt;7&lt;/sub&gt;PO&lt;sub&gt;4&lt;/sub&gt;GeS&lt;sub&gt;4&lt;/sub&gt;, the sulfur atoms initially bound to pentavalent phosphorus as PS&lt;sub&gt;4&lt;/sub&gt;&lt;sup&gt;3−&lt;/sup&gt; are fully exchanged with oxygen atoms (from GeO&lt;sub&gt;4&lt;/sub&gt;&lt;sup&gt;4−&lt;/sup&gt;), giving rise to GeS&lt;sub&gt;4&lt;/sub&gt;&lt;sup&gt;4−&lt;/sup&gt; moieties. Ab initio molecular dynamics simulations demonstrated a high Li−ion conductivity of ∼13.31 mS cm&lt;sup&gt;−1&lt;/sup&gt; for Li&lt;sub&gt;7&lt;/sub&gt;PO&lt;sub&gt;4&lt;/sub&gt;GeS&lt;sub&gt;4&lt;/sub&gt; at 573 K. These results reveal the structural complexity and flexibility of these polyanion systems.&lt;/p&gt;
+</description>
+				<pubDate>Sun, 04 Aug 2024 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/li-chem-mater-2024/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/li-chem-mater-2024/</guid>
+			</item>
+		
+			<item>
+				<title>Structure and exfoliation mechanism of two-dimensional boron nanosheets</title>
+				<description>&lt;p&gt;Chung J.-Y., Yaun Y., Mishra T. P., Joseph C., &lt;b&gt;Canepa P.&lt;/b&gt;, Ranjan P., Sadki E. H. S., Gradečak S., and Garaj S.; &lt;i&gt;Nat. Commun.&lt;/i&gt; 15, 6122 (2024). &lt;a href=&quot;https://doi.org/10.1038/s41467-024-49974-8&quot;&gt;doi:10.1038/s41467-024-49974-8&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Exfoliation of two-dimensional (2D) nanosheets from three-dimensional (3D) non-layered, non-van der Waals crystals represents an emerging strategy for materials engineering that could significantly increase the library of 2D materials. Yet, the exfoliation mechanism in which nanosheets are derived from crystals that are not intrinsically layered remains unclear. Here, we show that planar defects in the starting 3D boron material promote the exfoliation of 2D boron sheets—by combining liquid-phase exfoliation, aberration-corrected scanning transmission electron microscopy, Raman spectroscopy, and density functional theory calculations. We demonstrate that 2D boron nanosheets consist of a planar arrangement of icosahedral sub-units cleaved along the {001} planes of β-rhombohedral boron. Correspondingly, intrinsic stacking faults in 3D boron form parallel layers of faulted planes in the same orientation as the exfoliated nanosheets, reducing the {001} cleavage energy. Planar defects represent a potential engineerable pathway for exfoliating 2D sheets from 3D boron and, more broadly, the other covalently bonded materials.&lt;/p&gt;
+</description>
+				<pubDate>Sat, 20 Jul 2024 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/chung-nat-commun-2024/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/chung-nat-commun-2024/</guid>
+			</item>
+		
+			<item>
+				<title>Alkali cation-induced cathodic corrosion in Cu electrocatalysts</title>
+				<description>&lt;p&gt;Liu S., Li Y., Wang D., Xi S., Xu H., Wang Y., Li X., Zang W., Liu W., Su M., Yan K., Nielander A. C., Wong A. B., Lu J., Jaramillo T. F., Wang L., &lt;b&gt;Canepa P.&lt;/b&gt;, and He Q.; &lt;i&gt;Nat. Commun.&lt;/i&gt; 15, 5080 (2024). &lt;a href=&quot;https://doi.org/10.1038/s41467-024-49492-7&quot;&gt;doi:10.1038/s41467-024-49492-7&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;The reconstruction of Cu catalysts during electrochemical reduction of CO&lt;sub&gt;2&lt;/sub&gt; is a widely known but poorly understood phenomenon. Herein, we examine the structural evolution of Cu nanocubes under CO&lt;sub&gt;2&lt;/sub&gt; reduction reaction and its relevant reaction conditions using identical location transmission electron microscopy, cyclic voltammetry, in situ X-ray absorption fine structure spectroscopy and ab initio molecular dynamics simulation. Our results suggest that Cu catalysts reconstruct via a hitherto unexplored yet critical pathway - alkali cation-induced cathodic corrosion, when the electrode potential is more negative than an onset value (e.g., -0.4 VRHE when using 0.1 M KHCO&lt;sub&gt;3&lt;/sub&gt;). Having alkali cations in the electrolyte is critical for such a process. Consequently, Cu catalysts will inevitably undergo surface reconstructions during a typical process of CO&lt;sub&gt;2&lt;/sub&gt; reduction reaction, resulting in dynamic catalyst morphologies. While having these reconstructions does not necessarily preclude stable electrocatalytic reactions, they will indeed prohibit long-term selectivity and activity enhancement by controlling the morphology of Cu pre-catalysts. Alternatively, by operating Cu catalysts at less negative potentials in the CO electrochemical reduction, we show that Cu nanocubes can provide a much more stable selectivity advantage over spherical Cu nanoparticles.&lt;/p&gt;
+</description>
+				<pubDate>Thu, 13 Jun 2024 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/liu-nat-commun-2024/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/liu-nat-commun-2024/</guid>
+			</item>
+		
+			<item>
+				<title>Thermodynamics of Sodium-Lead Alloys for Negative Electrodes from First-Principles</title>
+				<description>&lt;p&gt;Lee D. K. J., Deng Z., Gautam G. S., and &lt;b&gt;Canepa P.&lt;/b&gt;; &lt;i&gt;Chem. Mater.&lt;/i&gt; 36, 6831 (2024). &lt;a href=&quot;https://doi.org/10.1021/acs.chemmater.4c00592&quot;&gt;doi:10.1021/acs.chemmater.4c00592&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Metals, such as tin, antimony, and lead (Pb) have garnered renewed attention for their potential use as alloyant-negative electrode materials in sodium (Na)-ion batteries (NIBs). Despite Pb’s toxicity and its high molecular weight, lead is one of the most commonly recycled metals, positioning Pb as a promising candidate for a cost-effective, high-capacity anode material. Understanding the miscibility of Na into Pb is crucial for the development of high-energy density negative electrode materials for NIBs. Using a first-principles multiscale approach, we analyze the thermodynamic properties and estimate the Na-alloying voltage of the Na-Pb system by constructing the compositional phase diagram. In the Na-Pb system, we elucidate the phase boundaries of important phases, such as Pb-rich face-centered cubic and β-NaPb&lt;sub&gt;3&lt;/sub&gt;, thereby improving our understanding of the phase diagram of the Na-Pb alloy. Due to the strong ordering tendencies of the Na-Pb intermetallics (such as NaPb, Na&lt;sub&gt;5&lt;/sub&gt;Pb&lt;sub&gt;2&lt;/sub&gt;, and Na&lt;sub&gt;15&lt;/sub&gt;Pb&lt;sub&gt;4&lt;/sub&gt;), we do not observe any solid-solution behavior at intermediate and high Na concentrations.&lt;/p&gt;
+</description>
+				<pubDate>Tue, 11 Jun 2024 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/lee-chem-mater-2024/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/lee-chem-mater-2024/</guid>
+			</item>
+		
+			<item>
+				<title>Computational Investigation of the Structural and Electrolyte Properties of the Extended Family of Lithium (Thio)Boracite Materials&amp;#58; Li4B7O12Cl and Beyond</title>
+				<description>&lt;p&gt;Lynch D. C., Li Y., &lt;b&gt;Canepa P.&lt;/b&gt;, and Holzwarth N. A. W.; &lt;i&gt;Phys. Rev. Mater.&lt;/i&gt; 8, 065401 (2024). &lt;a href=&quot;https://doi.org/10.1103/PhysRevMaterials.8.065401&quot;&gt;doi:10.1103/PhysRevMaterials.8.065401&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Motivated by previous investigations that showed very promising high ionic conductivities within rela- tively stable framework structures, we report a systematic first-principles study of the extended family of lithium (thio)boracites, consisting of eight chemical compositions. Three of the compositions—Li&lt;sub&gt;4&lt;/sub&gt;B&lt;sub&gt;7&lt;/sub&gt;O&lt;sub&gt;12&lt;/sub&gt;Cl, Li&lt;sub&gt;4&lt;/sub&gt;Al&lt;sub&gt;3&lt;/sub&gt;B&lt;sub&gt;4&lt;/sub&gt;O&lt;sub&gt;12&lt;/sub&gt;Cl, and Li&lt;sub&gt;6&lt;/sub&gt;B&lt;sub&gt;7&lt;/sub&gt;S&lt;sub&gt;13&lt;/sub&gt;Cl—are comparable to synthesized and analyzed materials reported in the exper- imental literature. The five additional compositions—Li&lt;sub&gt;4&lt;/sub&gt;B&lt;sub&gt;7&lt;/sub&gt;S&lt;sub&gt;12&lt;/sub&gt;Cl, Li&lt;sub&gt;4&lt;/sub&gt;Al&lt;sub&gt;3&lt;/sub&gt;B&lt;sub&gt;4&lt;/sub&gt;S&lt;sub&gt;12&lt;/sub&gt;Cl, Li&lt;sub&gt;6&lt;/sub&gt;B&lt;sub&gt;7&lt;/sub&gt;O&lt;sub&gt;13&lt;/sub&gt;Cl, Li&lt;sub&gt;6&lt;/sub&gt;Al&lt;sub&gt;3&lt;/sub&gt;B&lt;sub&gt;4&lt;/sub&gt;O&lt;sub&gt;13&lt;/sub&gt;Cl, and Li&lt;sub&gt;6&lt;/sub&gt;Al&lt;sub&gt;3&lt;/sub&gt;B&lt;sub&gt;4&lt;/sub&gt;S&lt;sub&gt;13&lt;/sub&gt;Cl—are predicted from the computational modeling and analysis presented in this paper. For each material, idealized ordered rhombohedral, cubic, or monoclinic ground-state structures are determined. Through various methodologies including thermodynamic, voltage window, and harmonic phonon analyses, stability is assessed for all eight Li (thio)boracite-derived compositions. Based on the dominant energetics of density functional theory, an analysis of the thermodynamically accessible phases predicts stability for Li&lt;sub&gt;4&lt;/sub&gt;B&lt;sub&gt;7&lt;/sub&gt;O&lt;sub&gt;12&lt;/sub&gt;Cl only. The analysis of the voltage windows of these materials suggests that the sulfur materials are much more reactive in contact with lithium metal than their oxygen counterparts. This reactivity problem has been identified in other highly conducting solid electrolytes and various mitigation methods discussed in the literature look promising. Within the harmonic approximation, phonon analysis predicts that all eight materials are dynamically stable in their ground-state structures. Future investigations will focus on the performance of the family of lithium (thio)boracites, including ionic conductivity predictions and ion migration mechanisms.&lt;/p&gt;
+</description>
+				<pubDate>Wed, 15 May 2024 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/lynch-phys-rev-mater-2024/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/lynch-phys-rev-mater-2024/</guid>
+			</item>
+		
+			<item>
+				<title>Uncovering the Predictive Pathways of Lithium and Sodium Interchange in Layered Oxides</title>
+				<description>&lt;p&gt;Han Y., Xie W., Hill G. T., Smeets P., Hu X., Yan G., Zou S., Liu J., Wu R., Shi F., Zhou H., &lt;b&gt;Canepa P.&lt;/b&gt;, and Liu C.; &lt;i&gt;Nat. Mater.&lt;/i&gt; 23, 951 (2024). &lt;a href=&quot;https://doi.org/10.1038/s41563-024-01862-8&quot;&gt;doi:10.1038/s41563-024-01862-8&lt;/a&gt;&lt;/p&gt;
+				&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;Ion exchange is a powerful method to access metastable materials with advanced functionalities for energy storage applications. However, high concentrations and unfavourably large excesses of lithium are always used for synthesizing lithium cathodes from parent sodium material, and the reaction pathways remain elusive. Here, using layered oxides as model materials, we demonstrate that vacancy level and its corresponding lithium preference are critical in determining the accessible and inaccessible ion exchange pathways. Taking advantage of the strong lithium preference at the right vacancy level, we establish predictive compositional and structural evolution at extremely dilute and low excess lithium based on the phase equilibrium between Li&lt;sub&gt;0.94&lt;/sub&gt;CoO&lt;sub&gt;2&lt;/sub&gt; and Na&lt;sub&gt;0.48&lt;/sub&gt;CoO&lt;sub&gt;2&lt;/sub&gt;. Such phase separation behaviour is general in both surface reaction-limited and diffusion-limited exchange conditions and is accomplished with the charge redistribution
+on transition metals. Guided by this understanding, we demonstrate the synthesis of Na&lt;sub&gt;y&lt;/sub&gt;CoO&lt;sub&gt;2&lt;/sub&gt; from the parent Li&lt;sub&gt;x&lt;/sub&gt;CoO&lt;sub&gt;2&lt;/sub&gt; and the synthesis of Li&lt;sub&gt;0.94&lt;/sub&gt;CoO&lt;sub&gt;2&lt;/sub&gt; from Na&lt;sub&gt;y&lt;/sub&gt;CoO&lt;sub&gt;2&lt;/sub&gt; at 1-1,000 Li/Na (molar ratio) with an electrochemical assisted ion exchange method by mitigating the kinetic barriers. Our study opens new opportunities for ion exchange in predictive synthesis and separation applications.&lt;/p&gt;
+</description>
+				<pubDate>Tue, 16 Apr 2024 00:00:00 -0500</pubDate>
+				<link>https://caneparesearch.org/papers/han-nat-mater-2024/</link>
+				<guid isPermaLink="true">https://caneparesearch.org/papers/han-nat-mater-2024/</guid>
+			</item>
+		
+	</channel>
+</rss>
