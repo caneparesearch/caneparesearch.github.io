@@ -98,7 +98,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-serif/500-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=7233ff0d31" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=dfbebe20eb" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -159,7 +159,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-purdue.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=f7d5674128">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=e70869339e">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -329,10 +329,6 @@
 				<p class="software-tagline">Kinetic Monte Carlo for ion transport in crystalline materials</p>
 				<div class="post research-text">
 					<p>kMCpy is an open-source Python package for studying how ions move through crystalline materials with kinetic Monte Carlo (kMC). It enumerates the possible migration events in a structure, derives their transition rates with first-principles accuracy from local cluster expansion models, and solves the kinetics with a rejection-free kMC solver, giving diffusivities and ionic conductivities. It handles materials of any dimensionality (1D, 2D and 3D) and runs on Windows, macOS and Linux.</p>
-					
-					<p class="software-meta">Install: <span class="install-command"><code>pip install kmcpy</code><button type="button" class="install-copy" aria-label="Copy the install command" title="Copy the install command" hidden><i class="fa-regular fa-copy fa-fw" aria-hidden="true"></i></button></span> · License: MIT</p>
-					
-					<p class="software-developer">Main developers: <a href="/team/jerry-deng/">Zeyu Deng</a> <span class="native-name" lang="zh-Hans">邓泽宇</span>, <a href="/team/tara-mishra/">Tara Mishra</a> and <a href="/team/weihang-xie/">Weihang Xie</a> <span class="native-name" lang="zh-Hans">谢维航</span></p>
 					<ul class="software-links">
 						
 						<li><a href="https://kmcpy.readthedocs.io/en/latest/">Documentation</a></li>
@@ -340,6 +336,10 @@
 						<li><a href="https://github.com/caneparesearch/kMCpy"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i>GitHub</a></li>
 						
 					</ul>
+					
+					<p class="software-meta">Install: <span class="install-command"><code>pip install kmcpy</code><button type="button" class="install-copy" aria-label="Copy the install command" title="Copy the install command" hidden><i class="fa-regular fa-copy fa-fw" aria-hidden="true"></i></button></span> · License: MIT</p>
+					
+					<p class="software-developer">Main developers: <a href="/team/jerry-deng/">Zeyu Deng</a> <span class="native-name" lang="zh-Hans">邓泽宇</span>, <a href="/team/tara-mishra/">Tara Mishra</a> and <a href="/team/weihang-xie/">Weihang Xie</a> <span class="native-name" lang="zh-Hans">谢维航</span></p>
 					
 					<p class="software-paper software-paper-lead">Relevant literature:</p>
 					<ol class="software-papers">
@@ -414,8 +414,6 @@
 				<p class="software-tagline">JSmol Interface for Crystallographic and Electronic properties</p>
 				<div class="post research-text">
 					<p>JS-ICE extends JSmol, the web version of the Jmol molecular viewer, with tools to visualize and analyze the crystal structures and electronic properties that come out of computational materials science. It runs in a web browser, with nothing to install. It succeeds J-ICE, the Jmol interface described in the paper below.</p>
-					
-					<p class="software-developer">Main developer: <a href="/team/piero-canepa/">Pieremanuele Canepa</a></p>
 					<ul class="software-links">
 						
 						<li><a href="https://js-ice.github.io/JS-ICE/test/">Open JS-ICE (development version)</a></li>
@@ -423,6 +421,8 @@
 						<li><a href="https://github.com/JS-ICE/JS-ICE"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i>GitHub</a></li>
 						
 					</ul>
+					
+					<p class="software-developer">Main developer: <a href="/team/piero-canepa/">Pieremanuele Canepa</a></p>
 					
 					<p class="software-paper software-paper-lead">Relevant literature:</p>
 					<ol class="software-papers">
@@ -507,10 +507,6 @@
 				<p class="software-tagline">Symmetric, Stoichiometric and Low-energy Slab Model Generator</p>
 				<div class="post research-text">
 					<p>SALAMI builds realistic surface slab models of crystalline materials for first-principles calculations. Cutting a crystal along a plane rarely gives a slab that is symmetric, stoichiometric and low in energy, especially for compounds of several elements; SALAMI gets there automatically by cleaving the crystal and then trimming surface atoms in stages guided by their coordination. It can also build off-stoichiometric and charged slabs, has a graphical interface for setting its parameters, and runs on computing clusters in a Singularity/Apptainer container.</p>
-					
-					<p class="software-meta">Install: <span class="install-command"><code>pip install pysalami</code><button type="button" class="install-copy" aria-label="Copy the install command" title="Copy the install command" hidden><i class="fa-regular fa-copy fa-fw" aria-hidden="true"></i></button></span> · License: MIT</p>
-					
-					<p class="software-developer">Main developers: <a href="/team/weihang-xie/">Weihang Xie</a> <span class="native-name" lang="zh-Hans">谢维航</span> and <a href="/team/zhengyu-liu/">Zhengyu Liu</a> <span class="native-name" lang="zh-Hans">刘政宇</span></p>
 					<ul class="software-links">
 						
 						<li><a href="https://salami.readthedocs.io/">Documentation</a></li>
@@ -518,6 +514,10 @@
 						<li><a href="https://github.com/caneparesearch/salami"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i>GitHub</a></li>
 						
 					</ul>
+					
+					<p class="software-meta">Install: <span class="install-command"><code>pip install pysalami</code><button type="button" class="install-copy" aria-label="Copy the install command" title="Copy the install command" hidden><i class="fa-regular fa-copy fa-fw" aria-hidden="true"></i></button></span> · License: MIT</p>
+					
+					<p class="software-developer">Main developers: <a href="/team/weihang-xie/">Weihang Xie</a> <span class="native-name" lang="zh-Hans">谢维航</span> and <a href="/team/zhengyu-liu/">Zhengyu Liu</a> <span class="native-name" lang="zh-Hans">刘政宇</span></p>
 					
 					<p class="software-paper software-paper-lead">Relevant literature:</p>
 					<ol class="software-papers">
@@ -591,10 +591,6 @@
 				<p class="software-tagline">Computed Raman spectra of inorganic compounds with hybrid functionals</p>
 				<div class="post research-text">
 					<p>A database of Raman spectra of inorganic compounds computed with accurate hybrid functionals in density functional theory, as reference spectra for interpreting measurements. The spectra come from the dynamical matrices and polarizability tensors of structures from the Inorganic Crystal Structure Database, computed with one consistent level of theory by an automated workflow, which also gives other phonon properties such as infrared spectra. The web app lets anyone browse the database, which keeps growing as more materials are computed.</p>
-					
-					<p class="software-meta">License: CC BY 4.0</p>
-					
-					<p class="software-developer">Main developers: <a href="/team/yuheng-li/">Yuheng Li</a> <span class="native-name" lang="zh-Hans">李昱亨</span> and <a href="/team/damien-lee/">Damien K. J. Lee</a></p>
 					<ul class="software-links">
 						
 						<li><a href="https://raman-db.streamlit.app/">Open the database</a></li>
@@ -602,6 +598,10 @@
 						<li><a href="https://github.com/caneparesearch/project_Raman"><i class="fa-brands fa-github fa-fw" aria-hidden="true"></i>GitHub</a></li>
 						
 					</ul>
+					
+					<p class="software-meta">License: CC BY 4.0</p>
+					
+					<p class="software-developer">Main developers: <a href="/team/yuheng-li/">Yuheng Li</a> <span class="native-name" lang="zh-Hans">李昱亨</span> and <a href="/team/damien-lee/">Damien K. J. Lee</a></p>
 					
 					<p class="software-paper software-paper-lead">Relevant literature:</p>
 					<ol class="software-papers">
@@ -704,7 +704,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-11-01T15:18:21-06:00">Nov. 1, 2026 at 3:18 p.m. CST</time></p>
+						<p class="last-update">Last update on <time datetime="2026-11-01T15:34:48-06:00">Nov. 1, 2026 at 3:34 p.m. CST</time></p>
 					</div>
 					<!-- the lab's place in Purdue, with the university's accessibility and equal access/equal
 					     opportunity statements, as Purdue's own sites end their footers -->

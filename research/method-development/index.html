@@ -99,7 +99,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-serif/500-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=7233ff0d31" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=dfbebe20eb" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -160,7 +160,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-purdue.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=f7d5674128">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=e70869339e">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -341,9 +341,32 @@
 
 <p id="surface-models"><strong>Realistic surface models.</strong> Cutting a crystal of a multinary compound along a conventional plane often slices through its strongly bonded polyhedra and gives unphysical surface energies. Our code SALAMI builds symmetric, charge-neutral and dipole-free slab models whose surface atoms keep their preferred coordination. For the solid electrolyte Li<sub>3</sub>PS<sub>4</sub> and the transparent conducting oxide ZnSb<sub>2</sub>O<sub>6</sub>, these models lower the surface energies markedly and shrink the predicted Wulff shape by about 20%.<sup><a href="/papers/xie-arxiv-2026/">2</a></sup></p>
 
-<p id="ion-transport"><strong>Ion transport over long times.</strong> Kinetic Monte Carlo can follow ion migration for far longer than molecular dynamics, but building a model of the migration rates has been laborious. Our Python package kMCpy enumerates all possible migration events in a crystal, derives their rates at first-principles accuracy through cluster-expansion Hamiltonians, and solves the kinetics, for materials of any dimensionality.<sup><a href="/papers/deng-comput-mater-sci-2023/">3</a></sup></p>
+<figure class="text-figure text-figure-small text-figure-left">
 
-<p id="machine-learning"><strong>Larger systems with machine learning.</strong> Machine-learning interatomic potentials, trained on first-principles calculations, reproduce their accuracy at a small fraction of the cost and make simulations of thousands of atoms over nanoseconds routine. With colleagues across the field, we have reviewed what these potentials can and cannot yet do for battery research, and what the next generation will need.<sup><a href="/papers/phuthi-chem-mater-2026/">4</a></sup></p>
+
+
+
+
+
+
+
+
+
+
+<picture>
+	
+	<source type="image/webp" srcset="/images/research/method-development_nasicon-conductivity.webp" />
+	
+	<img src="/images/research/method-development_nasicon-conductivity.png" width="1000" height="742" alt="Computed and measured sodium-ion conductivity of the NASICON electrolyte Na1+xZr2SixP3-xO12 against its silicon content x, at 373, 473 and 573 K, highest near x = 2.4" loading="lazy" />
+</picture>
+
+
+<figcaption><b>Figure 2:</b> Na<sup>+</sup> conductivity of Na<sub>1+x</sub>Zr<sub>2</sub>Si<sub>x</sub>P<sub>3−x</sub>O<sub>12</sub> from kinetic Monte Carlo simulations at 373 (dark blue circles), 473 (orange squares) and 573 K (red triangles), with the confidence interval at 573 K in gray, compared with our measurements on pellets of over 70% and 90% densification (crosses: light blue, yellow and red at the same temperatures).<sup><a href="/papers/deng-nat-commun-2022/">4</a></sup></figcaption>
+</figure>
+
+<p id="ion-transport"><strong>Ion transport over long times.</strong> Kinetic Monte Carlo can follow ion migration for far longer than molecular dynamics, but building a model of the migration rates has been laborious. Our Python package kMCpy enumerates all possible migration events in a crystal, derives their rates at first-principles accuracy through cluster-expansion Hamiltonians, and solves the kinetics, for materials of any dimensionality.<sup><a href="/papers/deng-comput-mater-sci-2023/">3</a></sup> Applied to the NASICON solid electrolyte Na<sub>1+x</sub>Zr<sub>2</sub>Si<sub>x</sub>P<sub>3−x</sub>O<sub>12</sub>, more than 2,000 such simulations predict the fastest sodium transport at x ≈ 2.4, as our measurements confirm (<strong>Figure 2</strong>).<sup><a href="/papers/deng-nat-commun-2022/">4</a></sup></p>
+
+<p id="machine-learning"><strong>Larger systems with machine learning.</strong> Machine-learning interatomic potentials, trained on first-principles calculations, reproduce their accuracy at a small fraction of the cost and make simulations of thousands of atoms over nanoseconds routine. With colleagues across the field, we have reviewed what these potentials can and cannot yet do for battery research, and what the next generation will need.<sup><a href="/papers/phuthi-chem-mater-2026/">5</a></sup></p>
 
 <p id="references"><strong>Relevant references</strong></p>
 
@@ -351,6 +374,7 @@
   <li><a class="off" href="/papers/gopidi-phys-rev-b-2026/">H. R. Gopidi, R. Zhang, Y. Wang, A. Patra, J. Sun, A. Ruzsinszky, J. P. Perdew, and <b>P. Canepa</b>; <i>Phys. Rev. B</i> 113, 165115 (2026).</a></li>
   <li><a class="off" href="/papers/xie-arxiv-2026/">W. Xie, H. R. Gopidi, Z. Liu, R. Claes, A. G. Squires, K. T. Butler, D. O. Scanlon, and <b>P. Canepa</b>; <i>arXiv</i> (2026).</a></li>
   <li><a class="off" href="/papers/deng-comput-mater-sci-2023/">Z. Deng, T. Mishra, W. Xie, D. Saeed, G. S. Gautam, and <b>P. Canepa</b>; <i>Comput. Mater. Sci.</i> 229, 112394 (2023).</a></li>
+  <li><a class="off" href="/papers/deng-nat-commun-2022/">Z. Deng, T. P. Mishra, E. Mahayoni, Q. Ma, A. J. K. Tieu, O. Guillon, J.-N. Chotard, V. Seznec, A. K. Cheetham, C. Masquelier, G. S. Gautam, and <b>P. Canepa</b>; <i>Nat. Commun.</i> 13, 4470 (2022).</a></li>
   <li><a class="off" href="/papers/phuthi-chem-mater-2026/">M. K. Phuthi, G. Wei, B. Li, S. Majumdar, V. S. C. Kolluru, N. Kumar, S. Blau, <b>P. Canepa</b>, M. K. Y. Chan, R. Gómez-Bombarelli, K. Persson, G. Ceder, and S. P. Ong; <i>Chem. Mater.</i> 38, 9623–9640 (2026).</a></li>
 </ol>
 
@@ -443,7 +467,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-11-01T15:18:21-06:00">Nov. 1, 2026 at 3:18 p.m. CST</time></p>
+						<p class="last-update">Last update on <time datetime="2026-11-01T15:34:48-06:00">Nov. 1, 2026 at 3:34 p.m. CST</time></p>
 					</div>
 					<!-- the lab's place in Purdue, with the university's accessibility and equal access/equal
 					     opportunity statements, as Purdue's own sites end their footers -->
