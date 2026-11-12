@@ -98,7 +98,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-serif/500-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=dcfae33739" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=f79246bab9" rel="stylesheet" media="screen">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
@@ -159,7 +159,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-purdue.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=086c205d75">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=6d35f7c060">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -296,23 +296,42 @@
 	</div>
 </div>
 
+
+<div class="row">
+	<div class="col-md-12">
+		<details class="filter-fold news-kinds-fold" hidden>
+		<summary class="filter-fold-toggle"><i class="fa-solid fa-tag" aria-hidden="true"></i> <span>Kinds<span class="filter-fold-current"></span></span></summary>
+		<div class="paper-topics news-kinds" role="group" aria-label="Filter by kind of news">
+			<button type="button" class="paper-topic" data-kind="" aria-pressed="true">All</button>
+			<button type="button" class="paper-topic" data-kind="talk" aria-pressed="false"><i class="fa-solid fa-microphone fa-fw" aria-hidden="true"></i> Talk <span class="paper-topic-count">7</span></button>
+			<button type="button" class="paper-topic" data-kind="paper" aria-pressed="false"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i> Paper <span class="paper-topic-count">12</span></button>
+			<button type="button" class="paper-topic" data-kind="award" aria-pressed="false"><i class="fa-solid fa-award fa-fw" aria-hidden="true"></i> Award or grant <span class="paper-topic-count">13</span></button>
+			<button type="button" class="paper-topic" data-kind="people" aria-pressed="false"><i class="fa-solid fa-user-plus fa-fw" aria-hidden="true"></i> People <span class="paper-topic-count">7</span></button>
+			<button type="button" class="paper-topic" data-kind="lab" aria-pressed="false"><i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i> Lab news <span class="paper-topic-count">6</span></button>
+			<button type="button" class="paper-topic" data-kind="event" aria-pressed="false"><i class="fa-solid fa-calendar fa-fw" aria-hidden="true"></i> Event <span class="paper-topic-count">2</span></button>
+		</div>
+		</details>
+		<p class="news-kinds-status" aria-live="polite"></p>
+	</div>
+</div>
+
 <div class="archive-list">
 
 <section class="news-year" id="2026">
 	<div class="row">
 		<div class="col-md-12">
 			<hr class="year-rule">
-			<h2 class="page-title year-heading">2026 <span class="year-count">9 posts</span></h2>
+			<h2 class="page-title year-heading">2026 <span class="year-count" data-total="9">9 posts</span></h2>
 		</div>
 	</div>
 	<div class="row">
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="lab">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/purdue-me-welcome/">Purdue Mechanical Engineering welcomes Piero Canepa as Associate Professor with tenure</a>
 				</h3>
-				<p class="news-author">Nov. 6, 2026
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i> Lab news</span> · Nov. 6, 2026
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -321,12 +340,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="lab">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/first-day-at-purdue/">Our first day at Purdue University</a>
 				</h3>
-				<p class="news-author">Nov. 2, 2026
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i> Lab news</span> · Nov. 2, 2026
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -335,12 +354,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="talk">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/ecs-calgary/">Two invited talks and a contributed talk at the 250th ECS Meeting in Calgary</a>
 				</h3>
-				<p class="news-author">Oct. 28, 2026
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-microphone fa-fw" aria-hidden="true"></i> Talk</span> · Oct. 28, 2026
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -349,12 +368,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="lab">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/farewell-from-houston/">Farewell from the Texas Center for Superconductivity</a>
 				</h3>
-				<p class="news-author">Oct. 22, 2026
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i> Lab news</span> · Oct. 22, 2026
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -363,12 +382,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="lab">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/moving-to-purdue/">The Canepa Research Lab is moving to Purdue University</a>
 				</h3>
-				<p class="news-author">Sept. 19, 2026
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i> Lab news</span> · Sept. 19, 2026
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -377,12 +396,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="paper">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/mlip-perspective-chem-mater/">Our perspective on machine learning interatomic potentials for solid-state batteries appears in Chem. Mater.</a>
 				</h3>
-				<p class="news-author">Sept. 11, 2026
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i> Paper</span> · Sept. 11, 2026
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -391,12 +410,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="event">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/esra-all-hands/">The ESRA all-hands meeting at Argonne National Laboratory</a>
 				</h3>
-				<p class="news-author">Aug. 26, 2026
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-calendar fa-fw" aria-hidden="true"></i> Event</span> · Aug. 26, 2026
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -405,12 +424,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="award">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/arpa-e-magnets/">An ARPA-E award to design ultra-strong magnets</a>
 				</h3>
-				<p class="news-author">June 19, 2026
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-award fa-fw" aria-hidden="true"></i> Award or grant</span> · June 19, 2026
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -419,12 +438,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="people">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/hoa-my-nguyen-joins/">Hoa My Nguyễn joins the group to study Zr–Au hydrides</a>
 				</h3>
-				<p class="news-author">June 1, 2026
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-user-plus fa-fw" aria-hidden="true"></i> People</span> · June 1, 2026
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -440,17 +459,17 @@
 	<div class="row">
 		<div class="col-md-12">
 			<hr class="year-rule">
-			<h2 class="page-title year-heading">2025 <span class="year-count">5 posts</span></h2>
+			<h2 class="page-title year-heading">2025 <span class="year-count" data-total="5">5 posts</span></h2>
 		</div>
 	</div>
 	<div class="row">
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="award">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/vanadium-award/">Our sodium-battery paper wins the 2024 IOM3 Vanadium Award</a>
 				</h3>
-				<p class="news-author">Dec. 4, 2025
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-award fa-fw" aria-hidden="true"></i> Award or grant</span> · Dec. 4, 2025
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -459,12 +478,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="people">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/summer-students/">Michael Ho and Folasade Adegoju join the group for the summer</a>
 				</h3>
-				<p class="news-author">June 27, 2025
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-user-plus fa-fw" aria-hidden="true"></i> People</span> · June 27, 2025
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -473,12 +492,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="award">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/research-corporation-grant/">The Research Corporation for Science Advancement funds our research</a>
 				</h3>
-				<p class="news-author">May 27, 2025
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-award fa-fw" aria-hidden="true"></i> Award or grant</span> · May 27, 2025
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -487,12 +506,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="award">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/welch-foundation-grant/">The Welch Foundation funds our research</a>
 				</h3>
-				<p class="news-author">May 12, 2025
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-award fa-fw" aria-hidden="true"></i> Award or grant</span> · May 12, 2025
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -501,12 +520,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="paper">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/sodium-batteries-science-news/">Our sodium-battery work in Nature Materials is featured in Science</a>
 				</h3>
-				<p class="news-author">March 1, 2025
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i> Paper</span> · March 1, 2025
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -522,17 +541,17 @@
 	<div class="row">
 		<div class="col-md-12">
 			<hr class="year-rule">
-			<h2 class="page-title year-heading">2024 <span class="year-count">5 posts</span></h2>
+			<h2 class="page-title year-heading">2024 <span class="year-count" data-total="5">5 posts</span></h2>
 		</div>
 	</div>
 	<div class="row">
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="paper">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/sodium-battery-press/">Our new sodium-battery material in Nature Materials makes the news</a>
 				</h3>
-				<p class="news-author">Nov. 15, 2024
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i> Paper</span> · Nov. 15, 2024
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -541,12 +560,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="talk">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/houston-matters-interview/">Piero Canepa and Yan Yao talk about better batteries on Houston Public Media</a>
 				</h3>
-				<p class="news-author">Sept. 17, 2024
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-microphone fa-fw" aria-hidden="true"></i> Talk</span> · Sept. 17, 2024
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -555,12 +574,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="talk">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/pint-of-science-talk/">Piero Canepa gives a Pint of Science talk on sodium batteries in Houston</a>
 				</h3>
-				<p class="news-author">May 15, 2024
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-microphone fa-fw" aria-hidden="true"></i> Talk</span> · May 15, 2024
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -569,12 +588,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="paper">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/lithium-sodium-ion-exchange-nat-mater/">Our work on lithium and sodium ion exchange in layered oxides appears in Nature Materials</a>
 				</h3>
-				<p class="news-author">April 16, 2024
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i> Paper</span> · April 16, 2024
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -583,12 +602,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="award">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/chem-mater-lectureship/">Our solid-electrolyte paper wins the 2023 Chemistry of Materials Lectureship and Best Paper Award</a>
 				</h3>
-				<p class="news-author">March 17, 2024
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-award fa-fw" aria-hidden="true"></i> Award or grant</span> · March 17, 2024
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -604,17 +623,17 @@
 	<div class="row">
 		<div class="col-md-12">
 			<hr class="year-rule">
-			<h2 class="page-title year-heading">2023 <span class="year-count">2 posts</span></h2>
+			<h2 class="page-title year-heading">2023 <span class="year-count" data-total="2">2 posts</span></h2>
 		</div>
 	</div>
 	<div class="row">
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="event">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/energy-day-festival/">We took part in the Energy Day Festival in Houston</a>
 				</h3>
-				<p class="news-author">Oct. 21, 2023
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-calendar fa-fw" aria-hidden="true"></i> Event</span> · Oct. 21, 2023
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -623,12 +642,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="paper">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/zirconia-free-nasicon-rsc-fellows/">Our zirconia-free NaSICON paper in the Journal of Materials Chemistry A collection celebrating RSC Fellows</a>
 				</h3>
-				<p class="news-author">Oct. 18, 2023
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i> Paper</span> · Oct. 18, 2023
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -644,17 +663,17 @@
 	<div class="row">
 		<div class="col-md-12">
 			<hr class="year-rule">
-			<h2 class="page-title year-heading">2022 <span class="year-count">5 posts</span></h2>
+			<h2 class="page-title year-heading">2022 <span class="year-count" data-total="5">5 posts</span></h2>
 		</div>
 	</div>
 	<div class="row">
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="award">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/piero-acs-rising-star/">Piero Canepa named an ACS Materials Au Rising Star in materials science</a>
 				</h3>
-				<p class="news-author">Dec. 21, 2022
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-award fa-fw" aria-hidden="true"></i> Award or grant</span> · Dec. 21, 2022
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -663,12 +682,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="people">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/eshaan-caltech-visit/">Eshaan from Caltech visits our laboratory</a>
 				</h3>
-				<p class="news-author">Dec. 5, 2022
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-user-plus fa-fw" aria-hidden="true"></i> People</span> · Dec. 5, 2022
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -677,12 +696,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="talk">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/iba-bled/">An invited talk at the International Battery Association meeting in Bled</a>
 				</h3>
-				<p class="news-author">Oct. 7, 2022
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-microphone fa-fw" aria-hidden="true"></i> Talk</span> · Oct. 7, 2022
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -691,12 +710,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="award">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/piero-jmca-emerging-investigator/">Piero Canepa featured among the 2022 Emerging Investigators of the Journal of Materials Chemistry A</a>
 				</h3>
-				<p class="news-author">Sept. 16, 2022
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-award fa-fw" aria-hidden="true"></i> Award or grant</span> · Sept. 16, 2022
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -705,12 +724,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="paper">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/cav2o4-realized/">Our predicted calcium-battery cathode CaV<sub>2</sub>O<sub>4</sub> is made in the laboratory</a>
 				</h3>
-				<p class="news-author">Feb. 28, 2022
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i> Paper</span> · Feb. 28, 2022
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -726,17 +745,17 @@
 	<div class="row">
 		<div class="col-md-12">
 			<hr class="year-rule">
-			<h2 class="page-title year-heading">2021 <span class="year-count">5 posts</span></h2>
+			<h2 class="page-title year-heading">2021 <span class="year-count" data-total="5">5 posts</span></h2>
 		</div>
 	</div>
 	<div class="row">
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="paper">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/unsw-indium-alloys-paper/">Our work with UNSW on lithium–indium and lithium–tin alloy electrodes appears in Chem. Mater.</a>
 				</h3>
-				<p class="news-author">July 30, 2021
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i> Paper</span> · July 30, 2021
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -745,12 +764,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="people">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/ziliang-wang-second-qualifier/">Ziliang Wang passes his second PhD qualifying exam</a>
 				</h3>
-				<p class="news-author">July 15, 2021
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-user-plus fa-fw" aria-hidden="true"></i> People</span> · July 15, 2021
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -759,12 +778,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="award">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/piero-rsc-fellow/">Piero Canepa elected a Fellow of the Royal Society of Chemistry</a>
 				</h3>
-				<p class="news-author">May 31, 2021
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-award fa-fw" aria-hidden="true"></i> Award or grant</span> · May 31, 2021
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -773,12 +792,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="paper">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/tara-mishra-paper-press/">Tara Mishra’s work on InGaN LEDs gets wide press coverage</a>
 				</h3>
-				<p class="news-author">April 12, 2021
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i> Paper</span> · April 12, 2021
 					
 					by <a class="off" href="/team/tara-mishra/">Tara</a>
 					
@@ -787,12 +806,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="paper">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/tara-mishra-first-paper/">Tara Mishra publishes his first paper, in Physical Review Materials</a>
 				</h3>
-				<p class="news-author">Feb. 5, 2021
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i> Paper</span> · Feb. 5, 2021
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -808,17 +827,17 @@
 	<div class="row">
 		<div class="col-md-12">
 			<hr class="year-rule">
-			<h2 class="page-title year-heading">2020 <span class="year-count">5 posts</span></h2>
+			<h2 class="page-title year-heading">2020 <span class="year-count" data-total="5">5 posts</span></h2>
 		</div>
 	</div>
 	<div class="row">
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="people">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/ziliang-wang-first-qualifier/">Ziliang Wang passes his first PhD qualifying exam</a>
 				</h3>
-				<p class="news-author">Dec. 10, 2020
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-user-plus fa-fw" aria-hidden="true"></i> People</span> · Dec. 10, 2020
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -827,12 +846,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="paper">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/jerry-deng-nasicon-paper/">Jerry Deng’s work on NaSICON electrolytes and electrodes appears in Chemistry of Materials</a>
 				</h3>
-				<p class="news-author">Sept. 14, 2020
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i> Paper</span> · Sept. 14, 2020
 					
 					by <a class="off" href="/team/jerry-deng/">Jerry</a>
 					
@@ -841,12 +860,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="award">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/piero-nus-innovator/">Piero Canepa featured as an NUS innovator</a>
 				</h3>
-				<p class="news-author">July 27, 2020
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-award fa-fw" aria-hidden="true"></i> Award or grant</span> · July 27, 2020
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -855,12 +874,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="award">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/piero-outstanding-reviewer/">Piero Canepa named an outstanding reviewer for the Journal of Materials Chemistry A</a>
 				</h3>
-				<p class="news-author">May 10, 2020
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-award fa-fw" aria-hidden="true"></i> Award or grant</span> · May 10, 2020
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -869,12 +888,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="people">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/hengning-chen-joins/">Hengning Chen to join our group in August</a>
 				</h3>
-				<p class="news-author">May 7, 2020
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-user-plus fa-fw" aria-hidden="true"></i> People</span> · May 7, 2020
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -890,17 +909,17 @@
 	<div class="row">
 		<div class="col-md-12">
 			<hr class="year-rule">
-			<h2 class="page-title year-heading">2019 <span class="year-count">8 posts</span></h2>
+			<h2 class="page-title year-heading">2019 <span class="year-count" data-total="8">8 posts</span></h2>
 		</div>
 	</div>
 	<div class="row">
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="award">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/nrf-fellowship/">Piero Canepa awarded a National Research Fellowship, Class of 2020</a>
 				</h3>
-				<p class="news-author">Dec. 13, 2019
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-award fa-fw" aria-hidden="true"></i> Award or grant</span> · Dec. 13, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -909,12 +928,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="paper">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/nature-materials-cover/">Our review is on the cover of Nature Materials</a>
 				</h3>
-				<p class="news-author">Nov. 22, 2019
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i> Paper</span> · Nov. 22, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -923,12 +942,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="award">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/nrf-anr-grant/">Piero Canepa awarded an NRF–ANR joint grant with LRCS, Amiens, France</a>
 				</h3>
-				<p class="news-author">Oct. 22, 2019
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-award fa-fw" aria-hidden="true"></i> Award or grant</span> · Oct. 22, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -937,12 +956,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="paper">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/nature-materials-paper/">Our review of solid electrolytes for batteries appears in Nature Materials</a>
 				</h3>
-				<p class="news-author">Aug. 19, 2019
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-file-lines fa-fw" aria-hidden="true"></i> Paper</span> · Aug. 19, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -951,12 +970,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="talk">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/emrs-invited-talk/">Piero Canepa to give an invited talk at the E-MRS Spring Meeting in Nice</a>
 				</h3>
-				<p class="news-author">May 30, 2019
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-microphone fa-fw" aria-hidden="true"></i> Talk</span> · May 30, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -965,12 +984,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="people">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/jerry-deng-joins/">Jerry Deng joins our group from the University of Cambridge</a>
 				</h3>
-				<p class="news-author">Feb. 13, 2019
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-user-plus fa-fw" aria-hidden="true"></i> People</span> · Feb. 13, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -979,12 +998,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="talk">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/astar-invited-talk/">Piero Canepa to give an invited talk at A*STAR</a>
 				</h3>
-				<p class="news-author">Jan. 16, 2019
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-microphone fa-fw" aria-hidden="true"></i> Talk</span> · Jan. 16, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -993,12 +1012,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="lab">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/new-fileserver/">Our new Supermicro fileserver has arrived</a>
 				</h3>
-				<p class="news-author">Jan. 4, 2019
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i> Lab news</span> · Jan. 4, 2019
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1014,17 +1033,17 @@
 	<div class="row">
 		<div class="col-md-12">
 			<hr class="year-rule">
-			<h2 class="page-title year-heading">2018 <span class="year-count">3 posts</span></h2>
+			<h2 class="page-title year-heading">2018 <span class="year-count" data-total="3">3 posts</span></h2>
 		</div>
 	</div>
 	<div class="row">
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="award">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/nscc-computer-time/">10 million CPU hours on ASPIRE 1 at NSCC Singapore</a>
 				</h3>
-				<p class="news-author">Nov. 30, 2018
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-award fa-fw" aria-hidden="true"></i> Award or grant</span> · Nov. 30, 2018
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1033,12 +1052,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="talk">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/astar-job-management-talk/">Advanced job management class at A*STAR</a>
 				</h3>
-				<p class="news-author">Oct. 31, 2018
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-microphone fa-fw" aria-hidden="true"></i> Talk</span> · Oct. 31, 2018
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1047,12 +1066,12 @@
 			</div>
 		</div>
 	
-		<div class="col-xl-4 col-md-6 col-12">
+		<div class="col-xl-4 col-md-6 col-12 news-archive-item" data-kind="lab">
 			<div class="archive-card">
 				<h3 class="section-label">
 					<a href="/news/welcome/">Welcome</a>
 				</h3>
-				<p class="news-author">Oct. 29, 2018
+				<p class="news-author"><span class="news-kind"><i class="fa-solid fa-flask fa-fw" aria-hidden="true"></i> Lab news</span> · Oct. 29, 2018
 					
 					by <a class="off" href="/team/piero-canepa/">Piero</a>
 					
@@ -1065,6 +1084,8 @@
 </section>
 
 </div>
+
+<script src="/js/news-filter.js?v=0d089dbbfd" defer></script>
 
 
 		<div class="row mt60">
@@ -1135,7 +1156,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-11-12T12:21:27-06:00">Nov. 12, 2026 at 12:21 p.m. CST</time></p>
+						<p class="last-update">Last update on <time datetime="2026-11-12T12:48:28-06:00">Nov. 12, 2026 at 12:48 p.m. CST</time></p>
 					</div>
 					<!-- the lab's place in Purdue, with the university's accessibility and equal access/equal
 					     opportunity statements, as Purdue's own sites end their footers -->
