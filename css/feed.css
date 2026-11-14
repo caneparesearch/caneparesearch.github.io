@@ -1,23 +1,45 @@
-/* The page a browser shows for the RSS feeds (feed.xsl): plain, in the site's colours,
-   light or dark with the visitor's setting. Not part of the site's own stylesheet. */
+/* The page a browser shows for the RSS feeds (feed.xsl), in the site's Purdue style: the black bar
+   with the lab's symbol, IBM Plex type, Aged Gold links (Boilermaker Gold at night), neutral greys,
+   light or dark with the visitor's setting. Not part of the site's own stylesheet; the colours
+   are those of css/_theme.scss. */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/css/fonts/ibm-plex-sans/normal-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Serif";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/css/fonts/ibm-plex-serif/500-latin.woff2") format("woff2");
+}
+
 :root {
   color-scheme: light dark;
   --bg: #fff;
-  --text: #212529;
+  --text: #333;
+  --heading: #000;
   --muted: #495057;
-  --link: #006fd4;
-  --rule: #dee2e6;
-  --code-bg: #f1f3f5;
+  --link: #8e6f3e; /* Aged */
+  --accent: #7a5f33; /* Aged, darker */
+  --rule: #ddd;
+  --code-bg: #f0f0f0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #162230;
-    --text: #d5dde5;
-    --muted: #9fb0bf;
-    --link: #5fb0ff;
-    --rule: #34475a;
-    --code-bg: #213244;
+    --bg: #1c1d1f;
+    --text: #dcdcdc;
+    --heading: #f2f2f2;
+    --muted: #a8a6a3;
+    --link: #cfb991; /* Boilermaker Gold */
+    --accent: #ebd99f; /* Dust */
+    --rule: #3d3e42;
+    --code-bg: #2a2b2e;
   }
 }
 
@@ -28,15 +50,43 @@ body {
   font: 18px/1.7 "IBM Plex Sans", Helvetica, Arial, sans-serif;
 }
 
+.feed-bar {
+  background: #000;
+  border-bottom: 3px solid #cfb991;
+}
+
+.feed-bar div {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.feed-bar a {
+  display: inline-block;
+}
+
+.feed-bar img {
+  display: block;
+  width: auto;
+  height: 64px;
+}
+
 main {
   max-width: 46rem;
   margin: 0 auto;
-  padding: 3rem 1rem 4rem;
+  padding: 2.5rem 1rem 4rem;
+}
+
+h1,
+h2 {
+  color: var(--heading);
+  font-family: "IBM Plex Serif", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
 h1 {
   margin: 0 0 1rem;
-  font-family: "IBM Plex Serif", Georgia, serif;
   font-size: 2.2rem;
   line-height: 1.2;
 }
@@ -52,10 +102,15 @@ a {
   color: var(--link);
 }
 
+a:hover {
+  color: var(--accent);
+}
+
 .feed-kind {
   margin: 0 0 0.25rem;
-  color: var(--muted);
+  color: var(--accent);
   font-size: 0.85rem;
+  font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -63,8 +118,10 @@ a {
 .feed-address code {
   display: block;
   padding: 0.6rem 0.9rem;
+  border-left: 3px solid #cfb991;
   border-radius: 5px;
   background: var(--code-bg);
+  color: var(--text);
   font-size: 0.95rem;
   overflow-wrap: anywhere;
 }

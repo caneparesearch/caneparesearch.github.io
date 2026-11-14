@@ -1,7 +1,7 @@
 // Google Analytics (gtag.js), only once the visitor has accepted cookies in the banner at the
 // foot of the page (_includes/cookie-banner.html). The choice is kept in localStorage; until it
-// is made the banner shows on every page and nothing is sent to Google. The round cookie button in
-// the lower left corner shows the banner again. Once accepted, the ~150 KB library is only fetched after the page
+// is made the banner shows on every page and nothing is sent to Google. The "Cookie settings" link in
+// the footer shows the banner again. Once accepted, the ~150 KB library is only fetched after the page
 // has finished loading, so on slow connections it does not compete with the page's own stylesheet
 // and fonts.
 //
@@ -13,7 +13,6 @@
   const KEY = 'cookie-consent' // "accepted" or "declined"
 
   const banner = document.getElementById('cookie-banner')
-  const settings = document.getElementById('cookie-settings')
 
   // localStorage can throw (blocked site data, some private windows): then the banner is shown
   // on every page and analytics stays off unless accepted on that page
@@ -64,13 +63,11 @@
   function showBanner () {
     if (!banner) return
     banner.hidden = false
-    if (settings) settings.hidden = true
     if (room) room.observe(banner)
   }
   function hideBanner () {
     if (!banner) return
     banner.hidden = true
-    if (settings) settings.hidden = false
     if (room) room.unobserve(banner)
     document.body.style.paddingBottom = ''
   }
@@ -91,15 +88,16 @@
     })
   }
 
-  if (settings) {
-    settings.addEventListener('click', function () {
+  // the footer's "Cookie settings" link
+  document.querySelectorAll('[data-cookie-settings]').forEach(function (button) {
+    button.addEventListener('click', function () {
       showBanner()
       if (banner) banner.querySelector('[data-cookie-accept]').focus()
     })
-  }
+  })
 
   const choice = readChoice()
   if (choice === 'accepted') startAnalytics()
-  // the cookie button once a choice is made; until then the banner itself
-  if (choice === 'accepted' || choice === 'declined') { if (settings) settings.hidden = false } else showBanner()
+  // the banner until a choice is made (afterwards the footer's link brings it back)
+  if (choice !== 'accepted' && choice !== 'declined') showBanner()
 })()

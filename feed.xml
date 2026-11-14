@@ -35,7 +35,7 @@
 &lt;/div&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;We welcome &lt;a href=&quot;https://caneparesearch.org/team/khoa-le/&quot;&gt;Khoa Le&lt;/a&gt; (&lt;span lang=&quot;vi&quot;&gt;Lê Anh Khoa&lt;/span&gt;) to the group! Khoa is a PhD student in &lt;a href=&quot;https://engineering.purdue.edu/ME&quot;&gt;Mechanical Engineering&lt;/a&gt; at &lt;a href=&quot;https://www.purdue.edu&quot;&gt;Purdue University&lt;/a&gt;, and joins us to explore functional and energy materials with computational methods and simulations.&lt;/p&gt;
+&lt;p&gt;We welcome &lt;a href=&quot;https://caneparesearch.org/team/khoa-le/&quot;&gt;Khoa Le&lt;/a&gt; (&lt;span lang=&quot;vi&quot;&gt;Lê Anh Khoa&lt;/span&gt;) to the group! Khoa is a PhD student in &lt;a href=&quot;https://engineering.purdue.edu/ME&quot;&gt;Mechanical Engineering&lt;/a&gt; at &lt;a href=&quot;https://www.purdue.edu&quot;&gt;Purdue University&lt;/a&gt;, and joins us to explore functional and energy materials with computational methods and simulations. Khoa holds the &lt;a href=&quot;https://engineering.purdue.edu/Engr/Academics/Graduate/fellowship-list&quot;&gt;John H. Smith Fellowship&lt;/a&gt; at Purdue for the 2026–2027 academic year: congratulations!&lt;/p&gt;
 
 &lt;p&gt;Khoa comes to computation from the laboratory. He studied Materials Science and Engineering, with a double major in Chemistry, at the &lt;a href=&quot;https://www.gist.ac.kr/en/main.html&quot;&gt;Gwangju Institute of Science and Technology&lt;/a&gt; (GIST) in South Korea, where his undergraduate thesis was on high-entropy lanthanide-based perovskites. He has also studied the thin-film fabrication of inorganic semiconductors at &lt;a href=&quot;https://www.monash.edu&quot;&gt;Monash University&lt;/a&gt; in Australia and, at Purdue, laser-induced biomaterials with &lt;a href=&quot;https://www.jingangli.org/home&quot;&gt;Prof. Jingang Li&lt;/a&gt;.&lt;/p&gt;
 
@@ -101,13 +101,16 @@
 
 &lt;picture&gt;
 	
-	&lt;source type=&quot;image/webp&quot; srcset=&quot;https://caneparesearch.org/images/news/2026-11-02-first-day-at-purdue-voss-sun.webp&quot; /&gt;
+	
+	
+	
+	&lt;source type=&quot;image/webp&quot; srcset=&quot;https://caneparesearch.org/images/news/2026-11-02-first-day-at-purdue-voss-sun-800w.webp 800w, /images/news/2026-11-02-first-day-at-purdue-voss-sun-1200w.webp 1200w, /images/news/2026-11-02-first-day-at-purdue-voss-sun.webp 1600w&quot; sizes=&quot;(max-width: 576px) 100vw, 600px&quot; /&gt;
 	
 	&lt;img src=&quot;https://caneparesearch.org/images/news/2026-11-02-first-day-at-purdue-voss-sun.jpg&quot; width=&quot;1600&quot; height=&quot;900&quot; alt=&quot;The sun of the Visiting Our Solar System model at Purdue University, a dome of red arches with a yellow and white starburst inside, beside a model of Saturn, among autumn trees on an overcast day&quot; /&gt;
 &lt;/picture&gt;
 
 
-&lt;span class=&quot;image-credit&quot;&gt;Credit: &lt;a href=&quot;https://caneparesearch.org/team/piero-canepa/&quot;&gt;P. Canepa&lt;/a&gt;&lt;/span&gt;
+&lt;span class=&quot;image-credit&quot;&gt;Credit: &lt;a href=&quot;https://caneparesearch.org/team/piero-canepa/&quot;&gt;Piero Canepa&lt;/a&gt;&lt;/span&gt;
 &lt;/div&gt;
 &lt;/figure&gt;
 
@@ -575,9 +578,9 @@
 	
 	
 	
-	&lt;source type=&quot;image/webp&quot; srcset=&quot;https://caneparesearch.org/images/news/2023-10-21-energy-day-festival-640w.webp 640w, /images/news/2023-10-21-energy-day-festival.webp 1033w&quot; sizes=&quot;(max-width: 576px) 100vw, 300px&quot; /&gt;
+	&lt;source type=&quot;image/webp&quot; srcset=&quot;https://caneparesearch.org/images/news/2023-10-21-energy-day-festival-houston-640w.webp 640w, /images/news/2023-10-21-energy-day-festival-houston.webp 1033w&quot; sizes=&quot;(max-width: 576px) 100vw, 300px&quot; /&gt;
 	
-	&lt;img src=&quot;https://caneparesearch.org/images/news/2023-10-21-energy-day-festival.jpg&quot; width=&quot;1033&quot; height=&quot;667&quot; alt=&quot;Children at a table of fruit wired up with alligator clips, and Piero Canepa and Abhishek Panchal in red Energy Day T-shirts&quot; /&gt;
+	&lt;img src=&quot;https://caneparesearch.org/images/news/2023-10-21-energy-day-festival-houston.jpg&quot; width=&quot;1033&quot; height=&quot;562&quot; alt=&quot;Children at a table of fruit wired up with alligator clips, and Piero Canepa and Abhishek Panchal in red Energy Day T-shirts&quot; /&gt;
 &lt;/picture&gt;
 
 

@@ -16,6 +16,9 @@
         <link rel="stylesheet" href="/css/feed.css"/>
       </head>
       <body>
+        <header class="feed-bar">
+          <div><a href="/"><img src="/images/logo-plex-care-purdue.svg" width="38" height="64" alt="Canepa Research Lab, home"/></a></div>
+        </header>
         <main>
           <p class="feed-kind">RSS feed</p>
           <h1><xsl:value-of select="title"/></h1>

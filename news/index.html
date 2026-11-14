@@ -98,9 +98,10 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-serif/500-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=f79246bab9" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=472bb37691" rel="stylesheet" media="screen">
 
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg">
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
@@ -136,19 +137,13 @@
 <!-- The footer's "Loaded in … s", from the browser's own timing of the page -->
 
 	<!-- Google Analytics: see js/analytics.js (kept out of the page so the CSP header's inline-script hashes do not need updating) -->
-<script src="/js/analytics.js?v=09fa31689c" defer></script>
+<script src="/js/analytics.js?v=b65216463d" defer></script>
 
 </head>
 
 <body>
 	<!-- first stop for keyboard and screen-reader users: hidden until focused (Tab), then jumps past the navbar -->
 	<a class="skip-link visually-hidden-focusable" href="#main">Skip to main content</a>
-	<!-- a round cookie button in the lower left corner that shows the cookie banner again, with
-	     its name beside it on hover or keyboard focus; js/analytics.js unhides it -->
-	<button id="cookie-settings" class="cookie-settings" type="button" aria-label="Cookie settings" hidden>
-		<i class="fa-solid fa-cookie-bite fa-fw" aria-hidden="true"></i>
-		<span class="cookie-settings-tip" aria-hidden="true">Cookie settings</span>
-	</button>
 	<button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
 		<i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i>
 	</button>
@@ -159,7 +154,7 @@
 		<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 6l20 20M26 6L6 26" /></svg>
 	</button>
 	<img class="search-dialog-logo" src="/images/logo-plex-purdue.svg" width="165" height="98" alt="">
-	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=2fd963b5b6">
+	<form class="search-dialog-form" action="/search/" method="get" role="search" data-index="/search/index.json?v=155a7ee6b0">
 		<label for="search-dialog-input" class="visually-hidden">Search the site</label>
 		<input type="search" id="search-dialog-input" name="q" class="search-dialog-input"
 			placeholder="Search" autocomplete="off" spellcheck="false" enterkeyhint="search">
@@ -302,7 +297,7 @@
 				<div class="post news-text feedbox">
 					
 
-<p>We welcome <a href="/team/khoa-le/">Khoa Le</a> (<span lang="vi">Lê Anh Khoa</span>) to the group! Khoa is a PhD student in <a href="https://engineering.purdue.edu/ME">Mechanical Engineering</a> at <a href="https://www.purdue.edu">Purdue University</a>, and joins us to explore functional and energy materials with computational methods and simulations.</p>
+<p>We welcome <a href="/team/khoa-le/">Khoa Le</a> (<span lang="vi">Lê Anh Khoa</span>) to the group! Khoa is a PhD student in <a href="https://engineering.purdue.edu/ME">Mechanical Engineering</a> at <a href="https://www.purdue.edu">Purdue University</a>, and joins us to explore functional and energy materials with computational methods and simulations. Khoa holds the <a href="https://engineering.purdue.edu/Engr/Academics/Graduate/fellowship-list">John H. Smith Fellowship</a> at Purdue for the 2026–2027 academic year: congratulations!</p>
 				</div>
 			</div>
 			<div class="col-lg-3 col-sm-4 col-12 news-img order-sm-1">
@@ -329,7 +324,7 @@
 	
 	<source type="image/webp" srcset="/images/news/2026-11-13-khoa-le-joins.webp">
 	
-	<img src="/images/news/2026-11-13-khoa-le-joins.jpg" class="offset offset-left news-thumb news-thumb-contain" width="400" height="400" alt="" loading="lazy">
+	<img src="/images/news/2026-11-13-khoa-le-joins.jpg" class="offset offset-left news-thumb" width="400" height="400" alt="" loading="lazy">
 </picture>
 
 
@@ -445,7 +440,10 @@
 
 <picture>
 	
-	<source type="image/webp" srcset="/images/news/2026-11-02-first-day-at-purdue-voss-sun.webp">
+	
+	
+	
+	<source type="image/webp" srcset="/images/news/2026-11-02-first-day-at-purdue-voss-sun-800w.webp 800w, /images/news/2026-11-02-first-day-at-purdue-voss-sun-1200w.webp 1200w, /images/news/2026-11-02-first-day-at-purdue-voss-sun.webp 1600w" sizes="(max-width: 576px) 100vw, 300px">
 	
 	<img src="/images/news/2026-11-02-first-day-at-purdue-voss-sun.jpg" class="offset offset-left news-thumb" width="1600" height="900" alt="" loading="lazy">
 </picture>
@@ -863,7 +861,7 @@
 	
 	<source type="image/webp" srcset="/images/news/2026-06-01-hoa-my-nguyen-joins.webp">
 	
-	<img src="/images/news/2026-06-01-hoa-my-nguyen-joins.jpg" class="offset offset-left news-thumb news-thumb-contain" width="400" height="400" alt="" loading="lazy">
+	<img src="/images/news/2026-06-01-hoa-my-nguyen-joins.jpg" class="offset offset-left news-thumb" width="400" height="400" alt="" loading="lazy">
 </picture>
 
 
@@ -1494,9 +1492,9 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/news/2023-10-21-energy-day-festival-640w.webp 640w, /images/news/2023-10-21-energy-day-festival.webp 1033w" sizes="(max-width: 576px) 100vw, 300px">
+	<source type="image/webp" srcset="/images/news/2023-10-21-energy-day-festival-houston-640w.webp 640w, /images/news/2023-10-21-energy-day-festival-houston.webp 1033w" sizes="(max-width: 576px) 100vw, 300px">
 	
-	<img src="/images/news/2023-10-21-energy-day-festival.jpg" class="offset offset-left news-thumb" width="1033" height="667" alt="" loading="lazy">
+	<img src="/images/news/2023-10-21-energy-day-festival-houston.jpg" class="offset offset-left news-thumb" width="1033" height="562" alt="" loading="lazy">
 </picture>
 
 
@@ -3143,11 +3141,11 @@ More details can be found <a href="https://www.european-mrs.com/computations-mat
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-11-13T14:12:18-06:00">Nov. 13, 2026 at 2:12 p.m. CST</time></p>
+						<p class="last-update">Last update on <time datetime="2026-11-14T07:03:47-06:00">Nov. 14, 2026 at 7:03 a.m. CST</time></p>
 					</div>
 					<!-- the lab's place in Purdue, with the university's accessibility and equal access/equal
 					     opportunity statements, as Purdue's own sites end their footers -->
-					<p class="purdue-line">School of Mechanical Engineering, Purdue University, 585 Purdue Mall, West Lafayette, IN 47907 · <a class="off" href="https://www.purdue.edu/accessibility/">Accessibility</a> · <a class="off" href="https://www.purdue.edu/purdue/ea_eou_statement.php">An equal access/equal opportunity university</a></p>
+					<p class="purdue-line">School of Mechanical Engineering, Purdue University, 585 Purdue Mall, West Lafayette, IN 47907 · <a class="off" href="https://www.purdue.edu/accessibility/">Accessibility</a> · <a class="off" href="https://www.purdue.edu/purdue/ea_eou_statement.php">An equal access/equal opportunity university</a> · <button type="button" class="cookie-settings-link" data-cookie-settings>Cookie settings</button></p>
 				</div>
 			</div>
 		</footer>
