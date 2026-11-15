@@ -98,7 +98,7 @@
 	<link rel="preload" href="/css/fonts/ibm-plex-serif/500-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Customized Bootstrap + Font Awesome + Solarized. ?v= is the build time: every publish gets new
 	     CSS/JS addresses, so Cloudflare's and browsers' cached copies of the old files are never reused. -->
-	<link href="/css/style.css?v=472bb37691" rel="stylesheet" media="screen">
+	<link href="/css/style.css?v=7c0cf1b619" rel="stylesheet" media="screen">
 
 	<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg">
@@ -294,14 +294,14 @@
 	</div>
 </div>
 
-<!-- The research areas, each with its picture, as on the Research page: all five in a row on a
-     laptop, two a row on phones with the last one centred -->
+<!-- The research areas, each with its picture, as on the Research page (two a row on phones);
+     the first four by `order`: Optical materials, the fifth, is left out -->
 <section class="home-research" aria-labelledby="home-research-title">
 	<h2 id="home-research-title" class="section-label"><a href="/research/">Our research covers several topics</a></h2>
 	<div class="row">
 		
 		
-		<div class="col-6 home-research-card">
+		<div class="col-lg-3 col-6 home-research-card">
 			<a class="home-research-link tint-hover" href="/research/batteries/">
 				<span class="news-img home-research-img tint-frame">
 
@@ -327,7 +327,7 @@
 			</a>
 		</div>
 		
-		<div class="col-6 home-research-card">
+		<div class="col-lg-3 col-6 home-research-card">
 			<a class="home-research-link tint-hover" href="/research/organic-electroactive-materials/">
 				<span class="news-img home-research-img tint-frame">
 
@@ -345,7 +345,7 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/research/organic-electroactive-materials_splash-640w.webp 640w, /images/research/organic-electroactive-materials_splash-360w.webp 360w, /images/research/organic-electroactive-materials_splash.webp 1200w" sizes="(max-width: 991px) 46vw, 240px">
+	<source type="image/webp" srcset="/images/research/organic-electroactive-materials_splash-640w.webp 640w, /images/research/organic-electroactive-materials_splash-360w.webp 360w, /images/research/organic-electroactive-materials_splash.webp 1200w" sizes="(max-width: 991px) 46vw, 300px">
 	
 	<img src="/images/research/organic-electroactive-materials_splash.jpg" class="offset offset-left news-thumb" width="1200" height="800" alt="" loading="lazy">
 </picture>
@@ -356,7 +356,7 @@
 			</a>
 		</div>
 		
-		<div class="col-6 home-research-card">
+		<div class="col-lg-3 col-6 home-research-card">
 			<a class="home-research-link tint-hover" href="/research/method-development/">
 				<span class="news-img home-research-img tint-frame">
 
@@ -374,7 +374,7 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/research/method-development_splash-360w.webp 360w, /images/research/method-development_splash.webp 580w" sizes="(max-width: 991px) 46vw, 240px">
+	<source type="image/webp" srcset="/images/research/method-development_splash-360w.webp 360w, /images/research/method-development_splash.webp 580w" sizes="(max-width: 991px) 46vw, 300px">
 	
 	<img src="/images/research/method-development_splash.jpg" class="offset offset-left news-thumb" width="580" height="326" alt="" loading="lazy">
 </picture>
@@ -385,7 +385,7 @@
 			</a>
 		</div>
 		
-		<div class="col-6 home-research-card">
+		<div class="col-lg-3 col-6 home-research-card">
 			<a class="home-research-link tint-hover" href="/research/porous-frameworks/">
 				<span class="news-img home-research-img tint-frame">
 
@@ -403,7 +403,7 @@
 	
 	
 	
-	<source type="image/webp" srcset="/images/research/porous-frameworks_splash-640w.webp 640w, /images/research/porous-frameworks_splash-360w.webp 360w, /images/research/porous-frameworks_splash.webp 800w" sizes="(max-width: 991px) 46vw, 240px">
+	<source type="image/webp" srcset="/images/research/porous-frameworks_splash-640w.webp 640w, /images/research/porous-frameworks_splash-360w.webp 360w, /images/research/porous-frameworks_splash.webp 800w" sizes="(max-width: 991px) 46vw, 300px">
 	
 	<img src="/images/research/porous-frameworks_splash.jpg" class="offset offset-left news-thumb" width="800" height="746" alt="" loading="lazy">
 </picture>
@@ -411,32 +411,6 @@
 
 </span>
 				<span class="home-research-title"><span class="topic-square" style="background-color: #555960" aria-hidden="true"></span>Porous framework materials</span>
-			</a>
-		</div>
-		
-		<div class="col-6 home-research-card">
-			<a class="home-research-link tint-hover" href="/research/non-linear-optics/">
-				<span class="news-img home-research-img tint-frame">
-
-
-
-
-
-
-
-
-
-
-<picture>
-	
-	<source type="image/webp" srcset="/images/research/non-linear-optics_waves.webp">
-	
-	<img src="/images/research/non-linear-optics_waves.jpg" class="offset offset-left news-thumb" width="256" height="190" alt="" loading="lazy">
-</picture>
-
-
-</span>
-				<span class="home-research-title"><span class="topic-square" style="background-color: #cfb991" aria-hidden="true"></span>Optical materials</span>
 			</a>
 		</div>
 		
@@ -638,7 +612,7 @@
 					</p>
 					<div class="colophon-meta">
 						<!-- the date and time of the latest commit, in the committing computer's time zone (_plugins/last-update.rb) -->
-						<p class="last-update">Last update on <time datetime="2026-11-14T23:53:27-06:00">Nov. 14, 2026 at 11:53 p.m. CST</time></p>
+						<p class="last-update">Last update on <time datetime="2026-11-14T23:57:39-06:00">Nov. 14, 2026 at 11:57 p.m. CST</time></p>
 					</div>
 					<!-- the lab's place in Purdue, with the university's accessibility and equal access/equal
 					     opportunity statements, as Purdue's own sites end their footers -->
